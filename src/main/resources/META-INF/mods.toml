@@ -1,0 +1,62 @@
+modLoader="javafml" 
+
+loaderVersion="[31,)"
+
+issueTrackerURL="http://my.issue.tracker/"
+
+[[mods]] 
+
+modId="yggdrasil"
+
+#version="${file.jarVersion}"
+version="Dev 0.1"
+
+displayName="Yggdrasil"
+
+updateJSONURL="http://myurl.me/"
+
+displayURL="http://example.com"
+
+logoFile="examplemod.png"
+
+credits="David Montandon"
+
+authors="David Montandon"
+
+description='''
+Yggdrasil is an immense mythical tree in Norse cosmology, where it connects the Nine Worlds.
+Asgard - Aesir
+Vanaheim - Vanir
+Alfheim - Elves
+Midgard - Common world
+Jotunheim - Giants
+Svartalfheim - Dark Elf
+Niflheim - Mist
+Muspellheim - Fire
+Hel - Land of the dead
+
+You can read more about it on wikipedia : https://en.wikipedia.org/wiki/Yggdrasil
+'''
+
+
+
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.yggdrasil]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[31,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+    
+# Here's another dependency
+[[dependencies.yggdrasil]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
