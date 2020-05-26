@@ -1,4 +1,8 @@
 {
 	"item.yggdrasil.rune_elder_ansuz" : "Rune Ansuz",
-	"item.yggdrasil.rune_elder_berkanan" : "Rune Berkanan"
+	"item.yggdrasil.rune_elder_berkanan" : "Rune Berkanan",
+	
+	"block.yggdrasil.yggdrasil_wood" : "Yggdrasil Wood",
+	"block.yggdrasil.yggdrasil_planks" : "Yggdrasil Planks"
+
 }

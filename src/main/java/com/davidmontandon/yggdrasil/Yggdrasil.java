@@ -2,6 +2,8 @@ package com.davidmontandon.yggdrasil;
 
 //import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 //import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -52,4 +54,22 @@ public class Yggdrasil
         LOGGER.info("HELLO from server starting");
     }
 
+    
+    //https://www.youtube.com/watch?v=meRc9bq7H5A
+    /*
+    public static class YggdrasilRuneItemGroup extends ItemGroup {
+
+		public YggdrasilRuneItemGroup(String name) {
+			super(name);
+		}
+
+		@Override
+		public ItemStack createIcon() {
+			return null;
+		}
+    	
+    	
+    }
+    */
+    
  }
