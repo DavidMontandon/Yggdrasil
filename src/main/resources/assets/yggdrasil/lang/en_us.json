@@ -2,10 +2,18 @@
 	"item.yggdrasil.rune_elder_ansuz" : "Rune Ansuz",
 	"item.yggdrasil.rune_elder_berkanan" : "Rune Berkanan",
 	
+	"item.yggdrasil.iron_viking_sword" : "Iron Viking Sword",
+	"item.yggdrasil.vanir_viking_sword" : "Vanrish Viking Sword",
+	"item.yggdrasil.vanir_pickaxe" : "Vanrish Pickaxe",
+	"item.yggdrasil.vanir_shovel" : "Vanrish Shovel",
+	"item.yggdrasil.vanir_axe" : "Vanrish Axe",
+	"item.yggdrasil.vanir_hoe" : "Vanrish Hoe",
+	
 	"block.yggdrasil.yggdrasil_wood" : "Yggdrasil Wood",
 	"block.yggdrasil.yggdrasil_planks" : "Yggdrasil Planks",
 	
 	"itemGroup.YggdrasilRuneItemGroup" : "Yggdrasil Runes",
+	"itemGroup.YggdrasilToolItemGroup" : "Yggdrasil Tools",
 	"itemGroup.YggdrasilItemGroup" : "Yggdrasil Blocks"	
 
 }

@@ -63,6 +63,36 @@ public class Yggdrasil
     }
 
     
+    public static class YggdrasilRuneItemGroup extends ItemGroup {
+
+    	public static final YggdrasilRuneItemGroup instance = new YggdrasilRuneItemGroup(ItemGroup.GROUPS.length, "YggdrasilRuneItemGroup") ; 
+
+		private YggdrasilRuneItemGroup(int index, String label) {
+			super(index, label);
+		}
+
+		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(ItemInit.rune_elder_ansuz);
+		}
+    	
+    }   
+    
+    public static class YggdrasilToolItemGroup extends ItemGroup {
+
+    	public static final YggdrasilToolItemGroup instance = new YggdrasilToolItemGroup(ItemGroup.GROUPS.length, "YggdrasilToolItemGroup") ; 
+    	
+		private YggdrasilToolItemGroup(int index, String label) {
+			super(index, label);
+		}
+
+		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(ItemInit.vanir_viking_sword);
+		}
+    	
+    }
+ 
     public static class YggdrasilItemGroup extends ItemGroup {
 
     	public static final YggdrasilItemGroup instance = new YggdrasilItemGroup(ItemGroup.GROUPS.length, "YggdrasilItemGroup") ; 
@@ -78,20 +108,8 @@ public class Yggdrasil
     	
     }
     
-    public static class YggdrasilRuneItemGroup extends ItemGroup {
 
-    	public static final YggdrasilRuneItemGroup instance = new YggdrasilRuneItemGroup(ItemGroup.GROUPS.length, "YggdrasilRuneItemGroup") ; 
-
-		private YggdrasilRuneItemGroup(int index, String label) {
-			super(index, label);
-		}
-
-		@Override
-		public ItemStack createIcon() {
-			return new ItemStack(ItemInit.rune_elder_ansuz);
-		}
-    	
-    }
+    
     
 
  }
