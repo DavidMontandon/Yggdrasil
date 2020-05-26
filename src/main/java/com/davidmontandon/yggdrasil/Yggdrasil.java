@@ -10,8 +10,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 //import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 //import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 //import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -21,13 +23,15 @@ import org.apache.logging.log4j.Logger;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.ItemInit;
+import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
 
 //import java.util.stream.Collectors;
 
 @Mod("yggdrasil")
+@Mod.EventBusSubscriber(modid = Yggdrasil.MOD_ID, bus = Bus.MOD)
 public class Yggdrasil
 {
-    private static final Logger LOGGER = LogManager.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "yggdrasil" ; 
     public static Yggdrasil instance ; 
     
@@ -62,6 +66,10 @@ public class Yggdrasil
         LOGGER.info("HELLO from server starting");
     }
 
+    @SubscribeEvent
+    public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
+    	OverworldOreGen.generateOre() ; 
+    }
     
     public static class YggdrasilRuneItemGroup extends ItemGroup {
 

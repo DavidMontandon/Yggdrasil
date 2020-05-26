@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "yggdrasil:rune_elder_ansuz"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "yggdrasil:rune_elder_berkanan"
+        }
+      ]
+    }
+  ]
+}
