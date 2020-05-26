@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.IEventBus;
 //import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 //import net.minecraftforge.fml.InterModComms;
@@ -18,6 +19,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.davidmontandon.yggdrasil.init.BlockInit;
+import com.davidmontandon.yggdrasil.init.ItemInit;
+
 //import java.util.stream.Collectors;
 
 @Mod("yggdrasil")
@@ -28,8 +32,12 @@ public class Yggdrasil
     public static Yggdrasil instance ; 
     
     public Yggdrasil() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+    	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus() ; 
+    	modEventBus.addListener(this::setup);
+    	modEventBus.addListener(this::doClientStuff);
+
+    	//FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        //FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
         instance = this ; 
         
         // Register ourselves for server and other game events we are interested in
@@ -55,21 +63,35 @@ public class Yggdrasil
     }
 
     
-    //https://www.youtube.com/watch?v=meRc9bq7H5A
-    /*
-    public static class YggdrasilRuneItemGroup extends ItemGroup {
+    public static class YggdrasilItemGroup extends ItemGroup {
 
-		public YggdrasilRuneItemGroup(String name) {
-			super(name);
+    	public static final YggdrasilItemGroup instance = new YggdrasilItemGroup(ItemGroup.GROUPS.length, "YggdrasilItemGroup") ; 
+    	
+		private YggdrasilItemGroup(int index, String label) {
+			super(index, label);
 		}
 
 		@Override
 		public ItemStack createIcon() {
-			return null;
+			return new ItemStack(BlockInit.yggdrasil_wood);
 		}
     	
+    }
+    
+    public static class YggdrasilRuneItemGroup extends ItemGroup {
+
+    	public static final YggdrasilRuneItemGroup instance = new YggdrasilRuneItemGroup(ItemGroup.GROUPS.length, "YggdrasilRuneItemGroup") ; 
+
+		private YggdrasilRuneItemGroup(int index, String label) {
+			super(index, label);
+		}
+
+		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(ItemInit.rune_elder_ansuz);
+		}
     	
     }
-    */
     
+
  }

@@ -1,6 +1,9 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
+import com.davidmontandon.yggdrasil.Yggdrasil.YggdrasilItemGroup;
+import com.davidmontandon.yggdrasil.Yggdrasil.YggdrasilRuneItemGroup;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -33,8 +36,8 @@ public class BlockInit {
 
 	@SubscribeEvent
 	public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
-		event.getRegistry().register(new BlockItem(yggdrasil_wood, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("yggdrasil_wood"));
-		event.getRegistry().register(new BlockItem(yggdrasil_planks, new Item.Properties().group(ItemGroup.MISC)).setRegistryName("yggdrasil_planks"));
+		event.getRegistry().register(new BlockItem(yggdrasil_wood, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("yggdrasil_wood"));
+		event.getRegistry().register(new BlockItem(yggdrasil_planks, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("yggdrasil_planks"));
 	}
 	
 }
