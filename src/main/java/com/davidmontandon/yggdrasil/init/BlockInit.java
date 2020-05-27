@@ -25,7 +25,7 @@ public class BlockInit {
 	public static final Block yggdrasil_wood = null ;
 	public static final Block yggdrasil_planks = null ;
 	public static final Block rune_ore = null ; 
-	public static final Block vanaheim_ore = null ; 
+	public static final Block vanafreintine_ore = null ; 
 	//public static final Block niflheim_nickel = null ;
 	
 	@SubscribeEvent
@@ -33,7 +33,7 @@ public class BlockInit {
 		event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("yggdrasil_wood"));
 		event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("yggdrasil_planks"));
 		event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)).setRegistryName("rune_ore"));
-		event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)).setRegistryName("vanaheim_ore"));
+		event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)).setRegistryName("vanafreintine_ore"));
 	}
 
 	@SubscribeEvent
@@ -41,7 +41,7 @@ public class BlockInit {
 		event.getRegistry().register(new BlockItem(yggdrasil_wood, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("yggdrasil_wood"));
 		event.getRegistry().register(new BlockItem(yggdrasil_planks, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("yggdrasil_planks"));
 		event.getRegistry().register(new BlockItem(rune_ore, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("rune_ore"));
-		event.getRegistry().register(new BlockItem(vanaheim_ore, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("vanaheim_ore"));
+		event.getRegistry().register(new BlockItem(vanafreintine_ore, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("vanafreintine_ore"));
 	}
 	
 }
