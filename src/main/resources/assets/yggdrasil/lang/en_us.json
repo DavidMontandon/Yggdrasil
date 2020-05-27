@@ -1,13 +1,24 @@
 {
+	"block.yggdrasil.rune_ore" : "Rune Ore",
 	"item.yggdrasil.rune_elder_ansuz" : "Rune Ansuz",
 	"item.yggdrasil.rune_elder_berkanan" : "Rune Berkanan",
 	
 	"item.yggdrasil.iron_viking_sword" : "Iron Viking Sword",
-	"item.yggdrasil.vanir_viking_sword" : "Vanrish Viking Sword",
-	"item.yggdrasil.vanir_pickaxe" : "Vanrish Pickaxe",
-	"item.yggdrasil.vanir_shovel" : "Vanrish Shovel",
-	"item.yggdrasil.vanir_axe" : "Vanrish Axe",
-	"item.yggdrasil.vanir_hoe" : "Vanrish Hoe",
+	"item.yggdrasil.vanir_viking_sword" : "Vanafreintine Viking Sword",
+	"item.yggdrasil.vanir_pickaxe" : "Vanafreintine Pickaxe",
+	"item.yggdrasil.vanir_shovel" : "Vanafreintine Shovel",
+	"item.yggdrasil.vanir_axe" : "Vanafreintine Axe",
+	"item.yggdrasil.vanir_hoe" : "Vanafreintine Hoe",
+
+	"item.yggdrasil.vanafreintine_helmet" : "Vanafreintine Helmet",
+	"item.yggdrasil.vanafreintine_chestplate" : "Vanafreintine Chestplate",
+	"item.yggdrasil.vanafreintine_leggings" : "Vanafreintine Leggings",
+	"item.yggdrasil.vanafreintine_boots" : "Vanafreintine Boots",
+
+	"item.yggdrasil.vanafreintine" : "Vanafreintine",
+	"block.yggdrasil.vanaheim_ore" : "Vanafreintine Ore",
+	"item.yggdrasil.vanafreintine_ingot" : "Vanafreintine Ingot",
+	"item.yggdrasil.kewheatrium_ingot" : "Kewheatrium Ingot",
 	
 	"block.yggdrasil.yggdrasil_wood" : "Yggdrasil Wood",
 	"block.yggdrasil.yggdrasil_planks" : "Yggdrasil Planks",
