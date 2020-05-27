@@ -21,7 +21,7 @@ public class OverworldOreGen {
 				ConfiguredPlacement<CountRangeConfig> customConfig = Placement.COUNT_RANGE.configure( new CountRangeConfig(20, 5, 5, 25)) ; 
 				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 						Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, 
-								BlockInit.rune_ore.getDefaultState(), 10)).withPlacement(customConfig));
+								BlockInit.rune_ore.get().getDefaultState(), 10)).withPlacement(customConfig));
 			}
 			
 		}

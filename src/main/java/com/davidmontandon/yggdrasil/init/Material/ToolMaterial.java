@@ -12,10 +12,10 @@ public enum ToolMaterial implements IItemTier {
 	
 	//Tier, Durability, efficiency, attack, enchant, supplier
 	KEWHEATRIUM(4, 500, 15.0f, 7.0f, 250, () -> {
-		return Ingredient.fromItems(ItemInit.kewheatrium_ingot) ; 
+		return Ingredient.fromItems(ItemInit.kewheatrium_ingot.get()) ; 
 	}),
 	VANAFREINTINE(4, 500, 15.0f, 7.0f, 250, () -> {
-		return Ingredient.fromItems(ItemInit.vanafreintine_ingot) ; 
+		return Ingredient.fromItems(ItemInit.vanafreintine_ingot.get()) ; 
 	}) ;
 	
 	private final int harvestLevel; 

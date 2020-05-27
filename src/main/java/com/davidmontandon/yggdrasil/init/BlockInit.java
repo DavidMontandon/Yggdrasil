@@ -1,47 +1,28 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.Yggdrasil.YggdrasilItemGroup;
-import com.davidmontandon.yggdrasil.Yggdrasil.YggdrasilRuneItemGroup;
-
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.registries.ObjectHolder;
 
-@ObjectHolder(Yggdrasil.MOD_ID) 
-@Mod.EventBusSubscriber(modid = Yggdrasil.MOD_ID, bus = Bus.MOD)
 public class BlockInit {
 
-	// Blocks   --> CTRL + Leftclick for faster details of the vanilla blocks
-	
-	public static final Block yggdrasil_wood = null ;
-	public static final Block yggdrasil_planks = null ;
-	public static final Block rune_ore = null ; 
-	public static final Block vanafreintine_ore = null ; 
-	//public static final Block niflheim_nickel = null ;
-	
-	@SubscribeEvent
-	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-		event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("yggdrasil_wood"));
-		event.getRegistry().register(new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)).setRegistryName("yggdrasil_planks"));
-		event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)).setRegistryName("rune_ore"));
-		event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)).setRegistryName("vanafreintine_ore"));
-	}
+	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS,  Yggdrasil.MOD_ID) ; 	
 
-	@SubscribeEvent
-	public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
-		event.getRegistry().register(new BlockItem(yggdrasil_wood, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("yggdrasil_wood"));
-		event.getRegistry().register(new BlockItem(yggdrasil_planks, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("yggdrasil_planks"));
-		event.getRegistry().register(new BlockItem(rune_ore, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("rune_ore"));
-		event.getRegistry().register(new BlockItem(vanafreintine_ore, new Item.Properties().group(YggdrasilItemGroup.instance)).setRegistryName("vanafreintine_ore"));
-	}
+	public static final RegistryObject<Block> yggdrasil_wood = BLOCKS.register("yggdrasil_wood",
+			() -> new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> yggdrasil_planks = BLOCKS.register("yggdrasil_planks",
+			() -> new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> rune_ore = BLOCKS.register("rune_ore",
+			() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
+
+	public static final RegistryObject<Block> vanafreintine_ore = BLOCKS.register("vanafreintine_ore",
+			() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
+
 	
 }

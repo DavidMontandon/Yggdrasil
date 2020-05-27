@@ -2,9 +2,9 @@ package com.davidmontandon.yggdrasil.init.Material;
 
 import java.util.function.Supplier;
 
+
 import com.davidmontandon.yggdrasil.Yggdrasil;
 import com.davidmontandon.yggdrasil.init.ItemInit;
-
 import net.minecraft.util.SoundEvent ; 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
@@ -12,14 +12,13 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
 
 public enum ArmorMaterial implements IArmorMaterial {
-	
-	
+		
 	//Feet, leg, chest, head
 	KEWHEATRIUM(Yggdrasil.MOD_ID + ":kewheatrium", 5, new int[] {3,9,11,5}, 420, null, 6.9f, () -> {
-		return Ingredient.fromItems(ItemInit.vanafreintine_ingot) ; 			
+		return Ingredient.fromItems(ItemInit.vanafreintine_ingot.get()) ; 			
 	}), 
 	VANAFREINTINE(Yggdrasil.MOD_ID + ":vanafreintine", 5, new int[] {3,9,11,5}, 420, null, 6.9f, () -> {
-		return Ingredient.fromItems(ItemInit.vanafreintine_ingot) ; 			
+		return Ingredient.fromItems(ItemInit.vanafreintine_ingot.get()) ; 			
 	}) ; 
 	
 	private static final int[] MAX_DAMAGE_ARRAY = new int[] { 16, 16, 16, 16 };
@@ -30,6 +29,7 @@ public enum ArmorMaterial implements IArmorMaterial {
 	private final SoundEvent soundEvent ;
 	private final float toughness;
 	private final LazyValue<Ingredient> repairMaterial;
+	
 	
 	private ArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountIn,
 			int enchantabilityIn, SoundEvent soundEventIn, float toughnessIn,
