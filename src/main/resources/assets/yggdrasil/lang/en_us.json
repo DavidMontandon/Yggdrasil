@@ -23,6 +23,10 @@
 	"block.yggdrasil.yggdrasil_wood" : "Yggdrasil Wood",
 	"block.yggdrasil.yggdrasil_planks" : "Yggdrasil Planks",
 	
+	"block.yggdrasil.muspelheim_hot_rock" : "Muspelheim Hot Rock",
+	"block.yggdrasil.muspelheim_cold_rock" : "Muspelheim Cold Rock",
+	"block.yggdrasil.muspelheim_stone" : "Muspelheim Stone",
+	
 	"itemGroup.YggdrasilRuneItemGroup" : "Yggdrasil Runes",
 	"itemGroup.YggdrasilToolItemGroup" : "Yggdrasil Tools",
 	"itemGroup.YggdrasilItemGroup" : "Yggdrasil Blocks"	

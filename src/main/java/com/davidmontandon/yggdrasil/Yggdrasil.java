@@ -4,6 +4,8 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,7 +23,9 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.davidmontandon.yggdrasil.init.BiomeInit;
 import com.davidmontandon.yggdrasil.init.BlockInit;
+import com.davidmontandon.yggdrasil.init.DimensionInit;
 import com.davidmontandon.yggdrasil.init.ItemInit;
 import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
 
@@ -34,14 +38,19 @@ public class Yggdrasil
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "yggdrasil" ; 
     public static Yggdrasil instance ; 
+    public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;    
+    
+    
     
     public Yggdrasil() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus() ; 
     	modEventBus.addListener(this::setup);
     	modEventBus.addListener(this::doClientStuff);
-
+    	
     	ItemInit.ITEMS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
+    	BiomeInit.BIOMES.register(modEventBus);
+    	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	
         instance = this ; 
         MinecraftForge.EVENT_BUS.register(this);
@@ -61,6 +70,11 @@ public class Yggdrasil
 
 	}
 
+	@SubscribeEvent
+	public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
+		BiomeInit.registerBiomes();
+	}
+	
     private void setup(final FMLCommonSetupEvent event)
     {
     }
@@ -118,7 +132,7 @@ public class Yggdrasil
 
 		@Override
 		public ItemStack createIcon() {
-			return new ItemStack(BlockInit.yggdrasil_wood.get());
+			return new ItemStack(BlockInit.YGGDRASIL_WOOD.get());
 		}
     	
     }
