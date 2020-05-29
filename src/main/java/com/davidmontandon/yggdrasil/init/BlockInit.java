@@ -33,4 +33,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> MUSPELHEIM_STONE = BLOCKS.register("muspelheim_stone",
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
 
+	public static final RegistryObject<Block> MUSPELHEIM_GRASS = BLOCKS.register("muspelheim_grass",
+			() -> new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(2.0F).sound(SoundType.GROUND)));
+
+	
 }

@@ -26,6 +26,7 @@
 	"block.yggdrasil.muspelheim_hot_rock" : "Muspelheim Hot Rock",
 	"block.yggdrasil.muspelheim_cold_rock" : "Muspelheim Cold Rock",
 	"block.yggdrasil.muspelheim_stone" : "Muspelheim Stone",
+	"block.yggdrasil.muspelheim_grass" : "Muspelheim Grass",
 	
 	"itemGroup.YggdrasilRuneItemGroup" : "Yggdrasil Runes",
 	"itemGroup.YggdrasilToolItemGroup" : "Yggdrasil Tools",
