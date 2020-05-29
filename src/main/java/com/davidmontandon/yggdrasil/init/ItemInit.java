@@ -81,5 +81,5 @@ public class ItemInit {
 
 	public static final RegistryObject<Item> vanafreintine_boots = ITEMS.register("vanafreintine_boots",
 			() -> new ArmorItem(ArmorMaterial.VANAFREINTINE, EquipmentSlotType.FEET, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
-	
+
 }

@@ -27,6 +27,10 @@
 	"block.yggdrasil.muspelheim_cold_rock" : "Muspelheim Cold Rock",
 	"block.yggdrasil.muspelheim_stone" : "Muspelheim Stone",
 	"block.yggdrasil.muspelheim_grass" : "Muspelheim Grass",
+	"block.yggdrasil.muspelheim_epluphifer_log" : "Epluphifer Log",
+	"block.yggdrasil.muspelheim_epluphifer_sapling" : "Epluphifer Sapling",
+	"block.yggdrasil.muspelheim_epluphifer_planks" : "Epluphifer Planks",
+	"block.yggdrasil.muspelheim_epluphifer_leaves" : "Epluphifer Leaves",
 	
 	"itemGroup.YggdrasilRuneItemGroup" : "Yggdrasil Runes",
 	"itemGroup.YggdrasilToolItemGroup" : "Yggdrasil Tools",

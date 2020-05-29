@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "cross": "yggdrasil:blocks/muspelheim_epluphifer_sapling"
+    }
+}
