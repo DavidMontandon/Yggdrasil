@@ -2,6 +2,8 @@ package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
 import com.davidmontandon.yggdrasil.init.objects.blocks.YggdrasilSaplingBlock;
+import com.davidmontandon.yggdrasil.objects.blocks.YggdrasilCropBlock;
+import com.davidmontandon.yggdrasil.world.feature.EpluphiferTree;
 
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -50,10 +52,13 @@ public class BlockInit {
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 	
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_SAPLING = BLOCKS.register("muspelheim_epluphifer_sapling",
-			() -> new YggdrasilSaplingBlock(null, Block.Properties.from(Blocks.DARK_OAK_SAPLING)));
-
+			() -> new YggdrasilSaplingBlock(() -> new EpluphiferTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+		
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER__LEAVES = BLOCKS.register("muspelheim_epluphifer_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
+	public static final RegistryObject<Block> MUSPELHEIM_IKADAMIA_CROP = BLOCKS.register("muspelheim_ikadamia",
+			() -> new  YggdrasilCropBlock(Block.Properties.from(Blocks.WHEAT)));
+
 
 }

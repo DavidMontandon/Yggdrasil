@@ -31,7 +31,8 @@
 	"block.yggdrasil.muspelheim_epluphifer_sapling" : "Epluphifer Sapling",
 	"block.yggdrasil.muspelheim_epluphifer_planks" : "Epluphifer Planks",
 	"block.yggdrasil.muspelheim_epluphifer_leaves" : "Epluphifer Leaves",
-	
+	"block.yggdrasil.muspelheim_ikadamia" : "Ikadamia Seed",
+
 	"itemGroup.YggdrasilRuneItemGroup" : "Yggdrasil Runes",
 	"itemGroup.YggdrasilToolItemGroup" : "Yggdrasil Tools",
 	"itemGroup.YggdrasilItemGroup" : "Yggdrasil Blocks"	

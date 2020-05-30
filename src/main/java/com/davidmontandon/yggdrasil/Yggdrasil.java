@@ -1,5 +1,6 @@
 package com.davidmontandon.yggdrasil;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -27,6 +28,7 @@ import com.davidmontandon.yggdrasil.init.BiomeInit;
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.DimensionInit;
 import com.davidmontandon.yggdrasil.init.ItemInit;
+import com.davidmontandon.yggdrasil.objects.blocks.YggdrasilCropBlock;
 import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
 
 //import java.util.stream.Collectors;
@@ -61,6 +63,7 @@ public class Yggdrasil
 		final IForgeRegistry<Item> registry = event.getRegistry();
 		
 		BlockInit.BLOCKS.getEntries().stream()
+		.filter(block -> !(block.get() instanceof YggdrasilCropBlock))
 		.map(RegistryObject::get).forEach(block -> {
 			final Item.Properties properties = new Item.Properties().group(YggdrasilItemGroup.instance);
 			final BlockItem blockItem = new BlockItem(block, properties);

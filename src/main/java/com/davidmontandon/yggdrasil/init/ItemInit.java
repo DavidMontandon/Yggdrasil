@@ -7,6 +7,7 @@ import com.davidmontandon.yggdrasil.init.Material.ToolMaterial;
 import com.davidmontandon.yggdrasil.init.Material.ArmorMaterial;
 
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemTier;
@@ -82,4 +83,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> vanafreintine_boots = ITEMS.register("vanafreintine_boots",
 			() -> new ArmorItem(ArmorMaterial.VANAFREINTINE, EquipmentSlotType.FEET, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
 
+	//Seed
+	public static final RegistryObject<Item> MUSPELHEIM_IKADAMIA_SEED = ITEMS.register("muspelheim_ikadamia_seed",
+			() -> new BlockItem(BlockInit.MUSPELHEIM_IKADAMIA_CROP.get(), new Item.Properties().group(YggdrasilToolItemGroup.instance)));
+	
+	
+	
 }

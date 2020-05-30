@@ -1,5 +1,5 @@
 {
-	"variants": {
-		"" : { "model" : "yggdrasil:block/muspelheim_epluphifer_sapling" }
-	}
+    "variants": {
+        "": { "model": "yggdrasil:block/muspelheim_epluphifer_sapling" }
+    }
 }

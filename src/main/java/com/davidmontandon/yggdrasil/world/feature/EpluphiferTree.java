@@ -17,8 +17,16 @@ public class EpluphiferTree extends Tree {
 	public static final TreeFeatureConfig EPLUPHIFER_TREE_CONFIG= (new TreeFeatureConfig.Builder(
 			new SimpleBlockStateProvider(BlockInit.MUSPELHEIM_EPLUPHIFER_LOG.get().getDefaultState()),
 			new SimpleBlockStateProvider(BlockInit.MUSPELHEIM_EPLUPHIFER__LEAVES.get().getDefaultState()),
-			new BlobFoliagePlacer(2, 0))).baseHeight(14).heightRandA(8).foliageHeight(3).ignoreVines()
-					.setSapling((IPlantable) BlockInit.MUSPELHEIM_EPLUPHIFER_SAPLING.get()).build();
+			new BlobFoliagePlacer(2, 1)))
+				.baseHeight(9)
+				.heightRandA(4)
+				.trunkHeight(3)
+				.trunkHeightRandom(2)
+				.trunkTopOffsetRandom(1)
+				.foliageHeight(3)
+				.ignoreVines()
+				.setSapling((IPlantable) BlockInit.MUSPELHEIM_EPLUPHIFER_SAPLING.get())
+				.build();
 
 	@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {

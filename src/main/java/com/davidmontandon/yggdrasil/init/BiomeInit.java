@@ -44,7 +44,7 @@ public class BiomeInit {
 									.depth(0.12f)
 									.parent(null)));
 	
-	/*
+	
 	public static final RegistryObject<Biome> MUSPELHEIM_PLAINS = BIOMES
 			.register("muspelheim_plains",
 					() -> new MuspelheimPlainsBiome(
@@ -62,9 +62,9 @@ public class BiomeInit {
 							.temperature(2.0f)
 							.downfall(0.0f)
 							.parent(null)));
-	*/
 	
 	
+	/*
 	public static final RegistryObject<Biome> MUSPELHEIM_PLAINS = BIOMES
 			.register("muspelheim_plains",
 					() -> new MuspelheimPlainsBiome(
@@ -79,10 +79,11 @@ public class BiomeInit {
 							.category(Category.PLAINS)
 							.depth(0.45f)
 							.scale(0.05f)
-							.temperature(2.0f)
+							.temperature(1.0f)
 							.downfall(0.0f)
 							.parent(null)));
-
+*/
+	
 	public static final RegistryObject<Biome> MUSPELHEIM_CLIFF_BIOME = BIOMES
 			.register("muspelheim_cliff",
 					() -> new MuspelheimCliffBiome(
