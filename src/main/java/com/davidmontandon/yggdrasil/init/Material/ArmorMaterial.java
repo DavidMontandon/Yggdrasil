@@ -15,10 +15,10 @@ public enum ArmorMaterial implements IArmorMaterial {
 		
 	//Feet, leg, chest, head
 	KEWHEATRIUM(Yggdrasil.MOD_ID + ":kewheatrium", 5, new int[] {3,9,11,5}, 420, null, 6.9f, () -> {
-		return Ingredient.fromItems(ItemInit.vanafreintine_ingot.get()) ; 			
+		return Ingredient.fromItems(ItemInit.VANAFREINTINE_INGOT.get()) ; 			
 	}), 
 	VANAFREINTINE(Yggdrasil.MOD_ID + ":vanafreintine", 5, new int[] {3,9,11,5}, 420, null, 6.9f, () -> {
-		return Ingredient.fromItems(ItemInit.vanafreintine_ingot.get()) ; 			
+		return Ingredient.fromItems(ItemInit.VANAFREINTINE_INGOT.get()) ; 			
 	}) ; 
 	
 	private static final int[] MAX_DAMAGE_ARRAY = new int[] { 16, 16, 16, 16 };

@@ -32,7 +32,14 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> VANAFREINTINE_ORE = BLOCKS.register("vanafreintine_ore",
 			() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
-
+			
+	public static final RegistryObject<Block> KIMBERLITE = BLOCKS.register("kimberlite",
+			() -> new Block(Block.Properties.from(Blocks.OBSIDIAN)));
+	
+	/*
+	 *  MUSPELHEIM
+	 */		
+	
 	public static final RegistryObject<Block> MUSPELHEIM_HOT_ROCK = BLOCKS.register("muspelheim_hot_rock",
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
 	
@@ -40,6 +47,9 @@ public class BlockInit {
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> MUSPELHEIM_STONE = BLOCKS.register("muspelheim_stone",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
+
+	public static final RegistryObject<Block> MUSPELHEIM_ASH = BLOCKS.register("muspelheim_ash",
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> MUSPELHEIM_GRASS = BLOCKS.register("muspelheim_grass",
@@ -59,6 +69,8 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> MUSPELHEIM_IKADAMIA_CROP = BLOCKS.register("muspelheim_ikadamia",
 			() -> new  YggdrasilCropBlock(Block.Properties.from(Blocks.WHEAT)));
-
-
+	
+		
 }
+
+

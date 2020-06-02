@@ -54,6 +54,24 @@ public class BiomeInit {
 							.waterFogColor(0x6E5651)
 							.surfaceBuilder(SurfaceBuilder.DEFAULT, 
 									new SurfaceBuilderConfig(BlockInit.MUSPELHEIM_GRASS.get().getDefaultState(), 
+											BlockInit.MUSPELHEIM_ASH.get().getDefaultState(), 
+											Blocks.SAND.getDefaultState()))
+							.category(Category.PLAINS)
+							.depth(0.45f)
+							.scale(0.05f)
+							.temperature(1.0f)
+							.downfall(0.0f)
+							.parent(null)));
+	
+	public static final RegistryObject<Biome> MUSPELHEIM_ASH_PLAINS = BIOMES
+			.register("muspelheim_ash_plains",
+					() -> new MuspelheimPlainsBiome(
+						new Biome.Builder()		
+							.precipitation(RainType.NONE)
+							.waterColor(0x906B9F)
+							.waterFogColor(0x6E5651)
+							.surfaceBuilder(SurfaceBuilder.DEFAULT, 
+									new SurfaceBuilderConfig(BlockInit.MUSPELHEIM_ASH.get().getDefaultState(), 
 											BlockInit.MUSPELHEIM_COLD_ROCK.get().getDefaultState(), 
 											Blocks.SAND.getDefaultState()))
 							.category(Category.PLAINS)
@@ -62,28 +80,7 @@ public class BiomeInit {
 							.temperature(2.0f)
 							.downfall(0.0f)
 							.parent(null)));
-	
-	
-	/*
-	public static final RegistryObject<Biome> MUSPELHEIM_PLAINS = BIOMES
-			.register("muspelheim_plains",
-					() -> new MuspelheimPlainsBiome(
-						new Biome.Builder()		
-							.precipitation(RainType.NONE)
-							.waterColor(0x906B9F)
-							.waterFogColor(0x6E5651)
-							.surfaceBuilder(SurfaceBuilder.DEFAULT, 
-									new SurfaceBuilderConfig(Blocks.DIRT.getDefaultState(), 
-											BlockInit.MUSPELHEIM_COLD_ROCK.get().getDefaultState(), 
-											Blocks.SAND.getDefaultState()))
-							.category(Category.PLAINS)
-							.depth(0.45f)
-							.scale(0.05f)
-							.temperature(1.0f)
-							.downfall(0.0f)
-							.parent(null)));
-*/
-	
+		
 	public static final RegistryObject<Biome> MUSPELHEIM_CLIFF_BIOME = BIOMES
 			.register("muspelheim_cliff",
 					() -> new MuspelheimCliffBiome(

@@ -2,8 +2,9 @@
 	"block.yggdrasil.rune_ore" : "Rune Ore",
 	"item.yggdrasil.rune_elder_ansuz" : "Rune Ansuz",
 	"item.yggdrasil.rune_elder_berkanan" : "Rune Berkanan",
-	
+
 	"item.yggdrasil.iron_viking_sword" : "Iron Viking Sword",
+	"item.yggdrasil.sword_of_freyr" : "Sword of Freyr",
 	"item.yggdrasil.vanir_viking_sword" : "Vanafreintine Viking Sword",
 	"item.yggdrasil.vanir_pickaxe" : "Vanafreintine Pickaxe",
 	"item.yggdrasil.vanir_shovel" : "Vanafreintine Shovel",
@@ -19,6 +20,8 @@
 	"block.yggdrasil.vanafreintine_ore" : "Vanafreintine Ore",
 	"item.yggdrasil.vanafreintine_ingot" : "Vanafreintine Ingot",
 	"item.yggdrasil.kewheatrium_ingot" : "Kewheatrium Ingot",
+	"item.yggdrasil.rubrilth_ingot" : "Rubrilth Ingot",
+	"item.yggdrasil.traithil_ingot" : "Traithil Ingot",
 	
 	"block.yggdrasil.yggdrasil_wood" : "Yggdrasil Wood",
 	"block.yggdrasil.yggdrasil_planks" : "Yggdrasil Planks",

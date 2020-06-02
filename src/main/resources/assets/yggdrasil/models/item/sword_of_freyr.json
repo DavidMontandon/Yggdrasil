@@ -1,0 +1,6 @@
+{
+	"parent":"item/handheld",
+	"textures" : {
+		"layer0" : "yggdrasil:items/sword_of_freyr"
+		}
+}

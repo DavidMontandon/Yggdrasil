@@ -4,6 +4,7 @@ import com.davidmontandon.yggdrasil.Yggdrasil;
 import com.davidmontandon.yggdrasil.Yggdrasil.YggdrasilRuneItemGroup;
 import com.davidmontandon.yggdrasil.Yggdrasil.YggdrasilToolItemGroup;
 import com.davidmontandon.yggdrasil.init.Material.ToolMaterial;
+import com.davidmontandon.yggdrasil.objects.items.DimensionKey;
 import com.davidmontandon.yggdrasil.init.Material.ArmorMaterial;
 
 import net.minecraft.item.AxeItem;
@@ -27,6 +28,11 @@ public class ItemInit {
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS,  Yggdrasil.MOD_ID) ; 	
 	
 	
+	//KEY
+	public static final RegistryObject<Item> speical_item = ITEMS.register("special_item",
+			() -> new DimensionKey(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+	
+	
 	//RUNES
 	public static final RegistryObject<Item> rune_elder_ansuz = ITEMS.register("rune_elder_ansuz",
 			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
@@ -37,16 +43,24 @@ public class ItemInit {
 
 	
 	//Ores
-	public static final RegistryObject<Item> vanafreintine = ITEMS.register("vanafreintine",
+	public static final RegistryObject<Item> VANAFREINTINE = ITEMS.register("vanafreintine",
 			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 
-	public static final RegistryObject<Item> vanafreintine_ingot = ITEMS.register("vanafreintine_ingot",
+	public static final RegistryObject<Item> VANAFREINTINE_INGOT = ITEMS.register("vanafreintine_ingot",
 			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 
-	public static final RegistryObject<Item> kewheatrium_ingot = ITEMS.register("kewheatrium_ingot",
+	public static final RegistryObject<Item> KEWHEATRIUM_INGOT = ITEMS.register("kewheatrium_ingot",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUBRILTH_INGOT = ITEMS.register("rubrilth_ingot",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> TRAITHIL_INGOT = ITEMS.register("traithil_ingot",
 			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 
 
+	//Blue,yellow,purpple,green,grey
+	
 	
 	//Tools
 
@@ -58,6 +72,9 @@ public class ItemInit {
 	public static final RegistryObject<Item> vanir_viking_sword = ITEMS.register("vanir_viking_sword",
 			() -> new SwordItem(ToolMaterial.VANAFREINTINE, 6, 1.7f, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
 
+	public static final RegistryObject<Item> SWORD_OF_FREYR = ITEMS.register("sword_of_freyr",
+			() -> new SwordItem(ToolMaterial.VANAFREINTINE, 6, 1.7f, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
+	
 	public static final RegistryObject<Item> vanir_pickaxe = ITEMS.register("vanir_pickaxe",
 			() -> new PickaxeItem(ToolMaterial.VANAFREINTINE, 6, 1.7f, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
 

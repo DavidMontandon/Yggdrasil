@@ -14,7 +14,11 @@ import net.minecraft.world.biome.provider.BiomeProvider;
 public class MuspelheimBiomeProvider extends BiomeProvider {
 
 
-	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.MUSPELHEIM.get(), BiomeInit.MUSPELHEIM_CLIFF_BIOME.get(), BiomeInit.MUSPELHEIM_OCEAN_BIOME.get(), BiomeInit.MUSPELHEIM_PLAINS.get());
+	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.MUSPELHEIM.get(), 
+			BiomeInit.MUSPELHEIM_CLIFF_BIOME.get(), 
+			BiomeInit.MUSPELHEIM_OCEAN_BIOME.get(), 
+			BiomeInit.MUSPELHEIM_ASH_PLAINS.get(), 
+			BiomeInit.MUSPELHEIM_PLAINS.get());
 
 	private VoronoiGenerator biomeNoise;
 	double biomeSize = 32.0d;  
