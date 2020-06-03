@@ -6,11 +6,15 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "yggdrasil:rune_elder_ansuz"
+          "name": "yggdrasil:rune_elder_futhark_first_aitt_uruz"
         },
         {
           "type": "minecraft:item",
-          "name": "yggdrasil:rune_elder_berkanan"
+          "name": "yggdrasil:rune_elder_futhark_first_aitt_ansuz"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "yggdrasil:rune_elder_futhark_third_aitt_berkana"
         }
       ]
     }

@@ -4,7 +4,9 @@ import com.davidmontandon.yggdrasil.Yggdrasil;
 import com.davidmontandon.yggdrasil.Yggdrasil.YggdrasilRuneItemGroup;
 import com.davidmontandon.yggdrasil.Yggdrasil.YggdrasilToolItemGroup;
 import com.davidmontandon.yggdrasil.init.Material.ToolMaterial;
-import com.davidmontandon.yggdrasil.objects.items.DimensionKey;
+import com.davidmontandon.yggdrasil.objects.items.DimensionKeyItem;
+import com.davidmontandon.yggdrasil.objects.items.FehuRuneItem;
+import com.davidmontandon.yggdrasil.objects.items.UruzRuneItem;
 import com.davidmontandon.yggdrasil.init.Material.ArmorMaterial;
 
 import net.minecraft.item.AxeItem;
@@ -30,17 +32,88 @@ public class ItemInit {
 	
 	//KEY
 	public static final RegistryObject<Item> speical_item = ITEMS.register("special_item",
-			() -> new DimensionKey(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+			() -> new DimensionKeyItem(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 	
 	
-	//RUNES
-	public static final RegistryObject<Item> rune_elder_ansuz = ITEMS.register("rune_elder_ansuz",
+	//RUNES ELDER - 1st
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_FEHU = ITEMS.register("rune_elder_futhark_first_aitt_fehu",
+			() -> new FehuRuneItem(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_URUZ = ITEMS.register("rune_elder_futhark_first_aitt_uruz",
+			() -> new UruzRuneItem(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+	
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_THURISAZ = ITEMS.register("rune_elder_futhark_first_aitt_thurisaz",
 			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 
-	public static final RegistryObject<Item> rune_elder_berkanan = ITEMS.register("rune_elder_berkanan",
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_ANSUZ = ITEMS.register("rune_elder_futhark_first_aitt_ansuz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_RAIDO = ITEMS.register("rune_elder_futhark_first_aitt_raido",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_KENAZ = ITEMS.register("rune_elder_futhark_first_aitt_kenaz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_GEBO = ITEMS.register("rune_elder_futhark_first_aitt_gebo",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_WUNJO = ITEMS.register("rune_elder_futhark_first_aitt_wunjo",
 			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 	
+	//RUNES ELDER - 2nd
 
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_SECOND_AITT_HAGALAZ = ITEMS.register("rune_elder_futhark_second_aitt_hagalaz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_SECOND_AITT_NAUTHIZ = ITEMS.register("rune_elder_futhark_second_aitt_nauthiz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_SECOND_AITT_ISA = ITEMS.register("rune_elder_futhark_second_aitt_isa",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_SECOND_AITT_JERA = ITEMS.register("rune_elder_futhark_second_aitt_jera",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_SECOND_AITT_EIHWAZ = ITEMS.register("rune_elder_futhark_second_aitt_eihwaz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_SECOND_AITT_PERTHRO = ITEMS.register("rune_elder_futhark_second_aitt_perthro",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_SECOND_AITT_ALGIZ = ITEMS.register("rune_elder_futhark_second_aitt_algiz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_SECOND_AITT_SOWILO = ITEMS.register("rune_elder_futhark_second_aitt_sowilo",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+	
+	//RUNES ELDER - 3rd
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_THIRD_AITT_TIWAZ = ITEMS.register("rune_elder_futhark_third_aitt_tiwaz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_THIRD_AITT_BERKANA = ITEMS.register("rune_elder_futhark_third_aitt_berkana",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+	
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_THIRD_AITT_EHWAZ = ITEMS.register("rune_elder_futhark_third_aitt_ehwaz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+	
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_THIRD_AITT_MANNAZ = ITEMS.register("rune_elder_futhark_third_aitt_mannaz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+	
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_THIRD_AITT_LAGUZ = ITEMS.register("rune_elder_futhark_third_aitt_laguz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_THIRD_AITT_INGWAZ = ITEMS.register("rune_elder_futhark_third_aitt_ingwaz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_THIRD_AITT_OTHALA = ITEMS.register("rune_elder_futhark_third_aitt_othala",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_THIRD_AITT_DAGAZ = ITEMS.register("rune_elder_futhark_third_aitt_dagaz",
+			() -> new Item(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+
+	
+	
 	
 	//Ores
 	public static final RegistryObject<Item> VANAFREINTINE = ITEMS.register("vanafreintine",

@@ -20,9 +20,9 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IExtensibleEnum;
 
-public class DimensionKey extends Item {
+public class DimensionKeyItem extends Item {
 
-	public DimensionKey(Properties properties) {
+	public DimensionKeyItem(Properties properties) {
 		super(properties);
 	}
 

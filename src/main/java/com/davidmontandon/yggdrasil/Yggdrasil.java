@@ -105,7 +105,7 @@ public class Yggdrasil
 
 		@Override
 		public ItemStack createIcon() {
-			return new ItemStack(ItemInit.rune_elder_ansuz.get());
+			return new ItemStack(ItemInit.RUNE_ELDER_FUTHARK_FIRST_AITT_FEHU.get());
 		}
     	
     }   
