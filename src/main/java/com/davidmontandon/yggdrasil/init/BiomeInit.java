@@ -32,7 +32,6 @@ public class BiomeInit {
 					() -> new MuspelheimBiome(
 							new Biome.Builder()
 									.precipitation(RainType.NONE)
-									.scale(1.2f).temperature(0.5f)
 									.waterColor(0x906B9F)
 									.waterFogColor(0x6E5651)
 									.surfaceBuilder(SurfaceBuilder.DEFAULT, 
@@ -40,8 +39,10 @@ public class BiomeInit {
 													BlockInit.MUSPELHEIM_COLD_ROCK.get().getDefaultState(), 
 													Blocks.SAND.getDefaultState()))
 									.category(Category.EXTREME_HILLS)
-									.downfall(0.5f)
-									.depth(0.12f)
+									.downfall(0.0f)
+									.depth(0.86f)
+									.scale(1.2f).
+									temperature(0.5f)
 									.parent(null)));
 	
 	
@@ -57,8 +58,8 @@ public class BiomeInit {
 											BlockInit.MUSPELHEIM_ASH.get().getDefaultState(), 
 											Blocks.SAND.getDefaultState()))
 							.category(Category.PLAINS)
-							.depth(0.45f)
-							.scale(0.05f)
+							.depth(0.2f)
+							.scale(0.1f)
 							.temperature(1.0f)
 							.downfall(0.0f)
 							.parent(null)));
@@ -75,8 +76,8 @@ public class BiomeInit {
 											BlockInit.MUSPELHEIM_COLD_ROCK.get().getDefaultState(), 
 											Blocks.SAND.getDefaultState()))
 							.category(Category.PLAINS)
-							.depth(0.45f)
-							.scale(0.05f)
+							.depth(0.2f)
+							.scale(0.5f)
 							.temperature(2.0f)
 							.downfall(0.0f)
 							.parent(null)));
@@ -93,10 +94,10 @@ public class BiomeInit {
 											BlockInit.MUSPELHEIM_COLD_ROCK.get().getDefaultState(), 
 											Blocks.SAND.getDefaultState()))
 							.category(Category.EXTREME_HILLS)
-							.downfall(0.4f)
-							.scale(0.2f)
+							.downfall(0.0f)
+							.scale(0.6f)
 							.temperature(2.0f)
-							.depth(3.6f)
+							.depth(1.8f)
 							.parent(null)));
 	
 	public static final RegistryObject<Biome> MUSPELHEIM_OCEAN_BIOME = BIOMES
@@ -111,7 +112,7 @@ public class BiomeInit {
 											BlockInit.MUSPELHEIM_COLD_ROCK.get().getDefaultState(), 
 											Blocks.SAND.getDefaultState()))
 							.category(Category.OCEAN)
-							.downfall(0.5f)
+							.downfall(0.0f)
 							.scale(0.1f)
 							.temperature(2.0f)
 							.depth(-1.0f)
@@ -119,7 +120,9 @@ public class BiomeInit {
 	
 	public static void registerBiomes() {
 		registerBiome(MUSPELHEIM.get(), Type.PLAINS, Type.OVERWORLD);
-		registerBiome(MUSPELHEIM_CLIFF_BIOME.get(), Type.PLAINS, Type.OVERWORLD);
+		registerBiome(MUSPELHEIM_CLIFF_BIOME.get(), Type.MOUNTAIN, Type.OVERWORLD);
+		registerBiome(MUSPELHEIM_ASH_PLAINS.get(), Type.PLAINS, Type.OVERWORLD);
+		registerBiome(MUSPELHEIM_PLAINS.get(), Type.PLAINS, Type.OVERWORLD);
 	}
 
 	private static void registerBiome(Biome biome, Type... types) {

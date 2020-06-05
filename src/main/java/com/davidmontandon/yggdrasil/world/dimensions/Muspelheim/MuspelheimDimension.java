@@ -14,7 +14,7 @@ import net.minecraft.world.gen.ChunkGenerator;
 
 public class MuspelheimDimension extends Dimension {
 
-	public MuspelheimDimension(World world, DimensionType type) {
+	public MuspelheimDimension(World world, DimensionType type) {		
 		super(world, type, 0.0f);
 		
 		for (int i = 0; i <= 15; ++i) {
@@ -133,4 +133,6 @@ public class MuspelheimDimension extends Dimension {
     	return false;
     }
 	
+    
+    
 }

@@ -6,11 +6,27 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "yggdrasil:rune_elder_futhark_first_aitt_fehu"
+        },
+        {
+          "type": "minecraft:item",
           "name": "yggdrasil:rune_elder_futhark_first_aitt_uruz"
         },
         {
           "type": "minecraft:item",
+          "name": "yggdrasil:rune_elder_futhark_first_aitt_thurisaz"
+        },
+        {
+          "type": "minecraft:item",
           "name": "yggdrasil:rune_elder_futhark_first_aitt_ansuz"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "yggdrasil:rune_elder_futhark_first_aitt_raido"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "yggdrasil:rune_elder_futhark_first_aitt_kenaz"
         },
         {
           "type": "minecraft:item",

@@ -35,7 +35,10 @@ public class BlockInit {
 			
 	public static final RegistryObject<Block> KIMBERLITE = BLOCKS.register("kimberlite",
 			() -> new Block(Block.Properties.from(Blocks.OBSIDIAN)));
-	
+
+	public static final RegistryObject<Block> KIMBERLITE_ORE = BLOCKS.register("kewheatrium_ore",
+			() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
+
 	/*
 	 *  MUSPELHEIM
 	 */		
@@ -64,7 +67,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_SAPLING = BLOCKS.register("muspelheim_epluphifer_sapling",
 			() -> new YggdrasilSaplingBlock(() -> new EpluphiferTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 		
-	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER__LEAVES = BLOCKS.register("muspelheim_epluphifer_leaves",
+	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_LEAVES = BLOCKS.register("muspelheim_epluphifer_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> MUSPELHEIM_IKADAMIA_CROP = BLOCKS.register("muspelheim_ikadamia",
