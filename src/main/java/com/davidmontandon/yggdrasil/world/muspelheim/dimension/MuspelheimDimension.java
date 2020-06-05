@@ -1,4 +1,4 @@
-package com.davidmontandon.yggdrasil.world.dimensions.Muspelheim;
+package com.davidmontandon.yggdrasil.world.muspelheim.dimension;
 
 import net.minecraft.client.audio.MusicTicker;
 import net.minecraft.entity.player.PlayerEntity;

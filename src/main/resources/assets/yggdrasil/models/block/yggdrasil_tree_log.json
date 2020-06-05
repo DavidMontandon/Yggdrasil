@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "yggdrasil:blocks/yggdrasil_tree_log_top",
+        "side": "yggdrasil:blocks/yggdrasil_tree_log"
+    }
+}

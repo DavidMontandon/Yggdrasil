@@ -1,10 +1,10 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.world.biomes.Muspelheim.MuspelheimBiome;
-import com.davidmontandon.yggdrasil.world.biomes.Muspelheim.MuspelheimCliffBiome;
-import com.davidmontandon.yggdrasil.world.biomes.Muspelheim.MuspelheimOceanBiome;
-import com.davidmontandon.yggdrasil.world.biomes.Muspelheim.MuspelheimPlainsBiome;
+import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimBasicBiome;
+import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimCliffBiome;
+import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimOceanBiome;
+import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimPlainsBiome;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
@@ -29,7 +29,7 @@ public class BiomeInit {
 	
 	public static final RegistryObject<Biome> MUSPELHEIM = BIOMES
 			.register("muspelheim",
-					() -> new MuspelheimBiome(
+					() -> new MuspelheimBasicBiome(
 							new Biome.Builder()
 									.precipitation(RainType.NONE)
 									.waterColor(0x906B9F)

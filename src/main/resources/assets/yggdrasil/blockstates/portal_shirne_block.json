@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "yggdrasil:block/portal_shirne_block" },
+        "facing=south": { "model": "yggdrasil:block/portal_shirne_block", "y": 180 },
+        "facing=west":  { "model": "yggdrasil:block/portal_shirne_block", "y": 270 },
+        "facing=east":  { "model": "yggdrasil:block/portal_shirne_block", "y": 90 }
+    }
+}

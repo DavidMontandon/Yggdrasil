@@ -1,4 +1,4 @@
-package com.davidmontandon.yggdrasil.world.dimensions.Muspelheim;
+package com.davidmontandon.yggdrasil.world.muspelheim.dimension;
 
 import java.util.List;
 
@@ -21,6 +21,16 @@ import net.minecraft.world.gen.OctavesNoiseGenerator;
 //OverworldChuckGenerator
 
 public class MuspelheimChunkGenerator extends NoiseChunkGenerator<MuspelheimGenSettings> {
+	
+    public static final int SURFACE_LEVEL = 78;
+
+    public static final int MIN_CAVE_HEIGHT = 20;
+    public static final int MAX_CAVE_HEIGHT = 46;
+
+    public static final int SURFACE_CAVE_BOUNDARY = MAX_CAVE_HEIGHT + 12;
+
+    public static final int SEA_LEVEL = SURFACE_LEVEL + 2;
+	
 	private static final float[] field_222576_h = Util.make(new float[25], (p_222575_0_) -> {
 		for (int i = -2; i <= 2; ++i) {
 			for (int j = -2; j <= 2; ++j) {
@@ -134,7 +144,7 @@ public class MuspelheimChunkGenerator extends NoiseChunkGenerator<MuspelheimGenS
 		return this.world.getSeaLevel() + 1;
 	}
 
-	public int getSeaLevel() {
-		return 63;
-	}
+    public int getSeaLevel() {
+        return SEA_LEVEL;
+    }
 }

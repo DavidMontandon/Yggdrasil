@@ -1,7 +1,7 @@
-package com.davidmontandon.yggdrasil.world.biomes.Muspelheim;
+package com.davidmontandon.yggdrasil.world.muspelheim.biomes;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
-import com.davidmontandon.yggdrasil.world.feature.EpluphiferTree;
+import com.davidmontandon.yggdrasil.world.feature.tree.EpluphiferTree;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;

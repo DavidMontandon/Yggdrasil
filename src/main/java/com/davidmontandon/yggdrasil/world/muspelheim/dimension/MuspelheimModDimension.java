@@ -1,4 +1,4 @@
-package com.davidmontandon.yggdrasil.world.dimensions.Muspelheim;
+package com.davidmontandon.yggdrasil.world.muspelheim.dimension;
 
 import java.util.function.BiFunction;
 

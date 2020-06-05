@@ -1,4 +1,4 @@
-package com.davidmontandon.yggdrasil.world.feature;
+package com.davidmontandon.yggdrasil.world.feature.tree;
 
 import java.util.Random;
 
@@ -38,7 +38,7 @@ public class EpluphiferTree extends Tree {
 	public static final TreeFeatureConfig EPLUPHIFER_TREE_CONFIG2 = (new TreeFeatureConfig.Builder(
 			new SimpleBlockStateProvider(BlockInit.MUSPELHEIM_EPLUPHIFER_LOG.get().getDefaultState()),
 			new SimpleBlockStateProvider(BlockInit.MUSPELHEIM_EPLUPHIFER_LEAVES.get().getDefaultState()),
-			new BlobFoliagePlacer(2, 1)))
+			new BlobFoliagePlacer(2, 0)))
 				.baseHeight(4)
 				.heightRandA(4)
 				.trunkHeight(4)
@@ -55,12 +55,12 @@ public class EpluphiferTree extends Tree {
 				
 		switch (randomIn.nextInt(2)) {
 			case 0:
-				return Feature.NORMAL_TREE.withConfiguration(EPLUPHIFER_TREE_CONFIG);
+				return Feature.NORMAL_TREE.withConfiguration(EPLUPHIFER_TREE_CONFIG2);
 			case 1:
 				return Feature.NORMAL_TREE.withConfiguration(EPLUPHIFER_TREE_CONFIG2) ; 
 		}
 
-		return Feature.NORMAL_TREE.withConfiguration(EPLUPHIFER_TREE_CONFIG);
+		return Feature.NORMAL_TREE.withConfiguration(EPLUPHIFER_TREE_CONFIG2);
 	}
 	
 	

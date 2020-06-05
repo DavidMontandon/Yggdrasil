@@ -1,6 +1,5 @@
 package com.davidmontandon.yggdrasil;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -49,10 +48,12 @@ public class Yggdrasil
     	modEventBus.addListener(this::setup);
     	modEventBus.addListener(this::doClientStuff);
     	
+
     	ItemInit.ITEMS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
+
     	
         instance = this ; 
         MinecraftForge.EVENT_BUS.register(this);

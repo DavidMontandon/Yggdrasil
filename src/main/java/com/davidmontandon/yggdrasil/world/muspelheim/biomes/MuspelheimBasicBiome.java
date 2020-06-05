@@ -1,4 +1,4 @@
-package com.davidmontandon.yggdrasil.world.biomes.Muspelheim;
+package com.davidmontandon.yggdrasil.world.muspelheim.biomes;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
 
@@ -13,11 +13,11 @@ import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.Placement;
 
-public class MuspelheimBiome extends Biome {
+public class MuspelheimBasicBiome extends Biome {
 
 	//DefaultBiomeFeatures (CTRl+CLICK)
 	
-	public MuspelheimBiome(Builder biomeBuilder) {
+	public MuspelheimBasicBiome(Builder biomeBuilder) {
 		super(biomeBuilder);
 		
 		

@@ -1,13 +1,11 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
+import com.davidmontandon.yggdrasil.init.objects.blocks.PortalShirneBlock;
 import com.davidmontandon.yggdrasil.init.objects.blocks.YggdrasilSaplingBlock;
 import com.davidmontandon.yggdrasil.objects.blocks.YggdrasilCropBlock;
-import com.davidmontandon.yggdrasil.world.feature.EpluphiferTree;
+import com.davidmontandon.yggdrasil.world.feature.tree.EpluphiferTree;
 
-import net.minecraftforge.fml.RegistryObject;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.GrassBlock;
@@ -16,6 +14,10 @@ import net.minecraft.block.LogBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraftforge.common.ToolType;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockInit {
 
@@ -39,6 +41,28 @@ public class BlockInit {
 	public static final RegistryObject<Block> KIMBERLITE_ORE = BLOCKS.register("kewheatrium_ore",
 			() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
 
+	
+	/*
+	 * SPEICAL BLOCK
+	 */
+	
+	public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("portal_shirne_block",
+			() -> new PortalShirneBlock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 10.0f)
+					.harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.GLASS).lightValue(4)
+					.slipperiness(1.2f).speedFactor(0.7f).noDrops()));
+	
+	
+	/*
+	 * 	YGGDRASIL TREE
+	 */
+	
+	public static final RegistryObject<Block> YGGDRASIL_TREE_LOG = BLOCKS.register("yggdrasil_tree_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> YGGDRASIL_TREE_lEAVES = BLOCKS.register("yggdrasil_tree_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+
+	
 	/*
 	 *  MUSPELHEIM
 	 */		

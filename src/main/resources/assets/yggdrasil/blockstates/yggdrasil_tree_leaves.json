@@ -1,0 +1,5 @@
+{
+	"variants": {
+		"" : { "model" : "yggdrasil:block/yggdrasil_tree_leaves" }
+	}
+}

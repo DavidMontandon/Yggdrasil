@@ -1,4 +1,4 @@
-package com.davidmontandon.yggdrasil.world.biomes.Muspelheim;
+package com.davidmontandon.yggdrasil.world.muspelheim.biomes;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
 
