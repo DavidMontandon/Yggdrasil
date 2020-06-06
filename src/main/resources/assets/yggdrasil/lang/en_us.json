@@ -4,12 +4,18 @@
 	"item.yggdrasil.rune_elder_futhark_first_aitt_uruz" : "Rune Uruz",
 	"item.yggdrasil.rune_elder_futhark_first_aitt_thurisaz" : "Rune Thurisaz",
 	"item.yggdrasil.rune_elder_futhark_first_aitt_ansuz" : "Rune Ansuz",
+	"item.yggdrasil.rune_elder_futhark_first_aitt_raido" : "Rune Raido",
+	"item.yggdrasil.rune_elder_futhark_first_aitt_kenaz" : "Rune Kenaz",
+	"item.yggdrasil.rune_elder_futhark_first_aitt_gebo" : "Rune Gebo",
+	"item.yggdrasil.rune_elder_futhark_first_aitt_wunjo" : "Rune Wunjo",
 
 	"item.yggdrasil.rune_elder_futhark_third_aitt_berkana" : "Rune Berkana",
 
-	"desc.rune_elder_futhark_first_aitt_fehu_buff" : "Wealthy\n",
+	"desc.rune_elder_futhark_first_aitt_fehu" : "(FAY-hoo) equivalent of F in Frank",
+	"desc.rune_elder_futhark_first_aitt_fehu_buff" : "Wealthy",
 	"desc.rune_elder_futhark_first_aitt_fehu_debuff" : "Unwealthy",
-	"desc.rune_elder_futhark_first_aitt_uruz_buff" : "Unbridled strength or power\n",
+	"desc.rune_elder_futhark_first_aitt_uruz" : "(OO-rooz) equivalent of Oo in food",
+	"desc.rune_elder_futhark_first_aitt_uruz_buff" : "Unbridled strength or power",
 	"desc.rune_elder_futhark_first_aitt_uruz_debuff" : "Weakness, sickness, decay",
 	
 	"item.yggdrasil.iron_viking_sword" : "Iron Viking Sword",

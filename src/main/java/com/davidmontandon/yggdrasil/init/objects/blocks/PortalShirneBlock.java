@@ -27,14 +27,14 @@ public class PortalShirneBlock extends Block {
 
 	public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING ; 
 	
-	public static final VoxelShape SHAPE_N = Stream.of(
+	public static final VoxelShape SHAPE_NS = Stream.of(
 			Block.makeCuboidShape(7, 0, 5, 9, 3, 11),
 			Block.makeCuboidShape(6, 3, 2, 10, 4, 13),
 			Block.makeCuboidShape(6, 4, 12, 10, 12, 13),
 			Block.makeCuboidShape(6, 4, 2, 10, 12, 3)).reduce((v1, v2) -> {
 				return VoxelShapes.combineAndSimplify(v1, v2, IBooleanFunction.OR);}).get();
 	
-	public static final VoxelShape SHAPE_E = Stream.of(
+	public static final VoxelShape SHAPE_EW = Stream.of(
 			Block.makeCuboidShape(4, 0, 6, 10, 3, 8),
 			Block.makeCuboidShape(1, 3, 5, 12, 4, 9),
 			Block.makeCuboidShape(11, 4, 5, 12, 12, 9),
@@ -56,16 +56,16 @@ public class PortalShirneBlock extends Block {
 		switch(state.get(FACING)) {
 		case NORTH:
 		case SOUTH:
-			return SHAPE_N ;
+			return SHAPE_NS ;
 		case EAST:
 		case WEST:
-			return SHAPE_N ;
+			return SHAPE_EW ;
 		default:
-			return SHAPE_N ; 			
+			return SHAPE_NS ; 			
 		}
 	}
 	
-	/*
+	
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.with(FACING, rot.rotate(state.get(FACING)));
@@ -75,7 +75,7 @@ public class PortalShirneBlock extends Block {
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.toRotation(state.get(FACING)));
 	}
-*/
+
 
 	@Override
 	protected void fillStateContainer(Builder<Block, BlockState> builder) {

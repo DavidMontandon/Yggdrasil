@@ -22,15 +22,16 @@ public class RuneItem extends Item {
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {		
 
-		
+		/*
 		tooltip.add(new TranslationTextComponent("desc." + this.desc + "_buff").applyTextStyle(TextFormatting.DARK_GREEN)
 				.appendSibling(new StringTextComponent(""))
 				.appendSibling(new TranslationTextComponent("desc." + this.desc + "_debuff").applyTextStyle(TextFormatting.DARK_RED))) ; 
+		*/
 		
-		
+		tooltip.add(new TranslationTextComponent("desc." + this.desc).applyTextStyle(TextFormatting.YELLOW)) ;
+		tooltip.add(new StringTextComponent("Buff:")) ; 
 		tooltip.add(new TranslationTextComponent("desc." + this.desc + "_buff").applyTextStyle(TextFormatting.DARK_GREEN)) ;
-		tooltip.add(new StringTextComponent("xxx")) ; 
-		tooltip.add(new StringTextComponent("yyy")) ; 
+		tooltip.add(new StringTextComponent("Debuff:")) ; 
 		tooltip.add(new TranslationTextComponent("desc." + this.desc + "_debuff").applyTextStyle(TextFormatting.DARK_RED)) ;
 		
 		super.addInformation(stack, worldIn, tooltip, flagIn);
