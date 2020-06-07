@@ -6,6 +6,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +28,7 @@ import com.davidmontandon.yggdrasil.init.BiomeInit;
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.DimensionInit;
 import com.davidmontandon.yggdrasil.init.ItemInit;
+import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.objects.blocks.YggdrasilCropBlock;
 import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
 
@@ -39,9 +41,8 @@ public class Yggdrasil
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "yggdrasil" ; 
     public static Yggdrasil instance ; 
-    public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;    
-    
-    
+    public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
+        
     
     public Yggdrasil() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus() ; 
@@ -49,6 +50,7 @@ public class Yggdrasil
     	modEventBus.addListener(this::doClientStuff);
     	
 
+    	
     	ItemInit.ITEMS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);

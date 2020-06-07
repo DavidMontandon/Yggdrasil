@@ -1,9 +1,9 @@
 {
 	"parent": "block/cube",
 	"textures": {
-		"0": "block/gold_block",
+		"0": "yggdrasil:blocks/vanafreintine_block",
 		"1": "block/stone",
-		"particle": "block/gold_block"
+		"particle": "yggdrasil:blocks/vanafreintine_block"
 	},
 	"elements": [
 		{

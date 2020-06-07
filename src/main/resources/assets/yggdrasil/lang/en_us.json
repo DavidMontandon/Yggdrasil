@@ -1,5 +1,6 @@
 {
 	"block.yggdrasil.rune_ore" : "Rune Ore",
+
 	"item.yggdrasil.rune_elder_futhark_first_aitt_fehu" : "Rune Fehu",
 	"item.yggdrasil.rune_elder_futhark_first_aitt_uruz" : "Rune Uruz",
 	"item.yggdrasil.rune_elder_futhark_first_aitt_thurisaz" : "Rune Thurisaz",
@@ -11,13 +12,33 @@
 
 	"item.yggdrasil.rune_elder_futhark_third_aitt_berkana" : "Rune Berkana",
 
-	"desc.rune_elder_futhark_first_aitt_fehu" : "(FAY-hoo) equivalent of F in Frank",
-	"desc.rune_elder_futhark_first_aitt_fehu_buff" : "Wealthy",
-	"desc.rune_elder_futhark_first_aitt_fehu_debuff" : "Unwealthy",
-	"desc.rune_elder_futhark_first_aitt_uruz" : "(OO-rooz) equivalent of Oo in food",
-	"desc.rune_elder_futhark_first_aitt_uruz_buff" : "Unbridled strength or power",
-	"desc.rune_elder_futhark_first_aitt_uruz_debuff" : "Weakness, sickness, decay",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_fehu" : "(FAY-hoo) equivalent of F in Frank",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_fehu_buff" : "Wealthy",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_fehu_debuff" : "Unwealthy",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_fehu_link" : "",
+		
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_uruz" : "(OO-rooz) equivalent of Oo in food",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_uruz_buff" : "Unbridled strength or power",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_uruz_debuff" : "Weakness, sickness, decay",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_uruz_link" : "",
 	
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_thurisaz" : "(THOO-ree-saz) equivalent of TH in thorn",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_thurisaz_buff" : "Breaking down barriers",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_thurisaz_debuff" : "Being trapped, brutish",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_thurisaz_link" : "",
+
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_ansuz" : "(AHN-sooz) equivalent of A in father",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_ansuz_buff" : "Communication, teaching",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_ansuz_debuff" : "",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_ansuz_link" : "",
+
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_raido" : "(AHN-sooz) equivalent of A in father",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_raido_buff" : "Communication, teaching",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_raido_debuff" : "",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_raido_link" : "hero.yggdrasil.odin",
+
+	"hero.yggdrasil.odin" : "Odin Allfather",
+
 	"item.yggdrasil.iron_viking_sword" : "Iron Viking Sword",
 	"item.yggdrasil.sword_of_freyr" : "Sword of Freyr",
 	"item.yggdrasil.vanir_viking_sword" : "Vanafreintine Viking Sword",
@@ -38,6 +59,7 @@
 	"item.yggdrasil.rubrilth_ingot" : "Rubrilth Ingot",
 	"item.yggdrasil.traithil_ingot" : "Traithil Ingot",	
 
+	"block.yggdrasil.vanafreintine_block" : "Vanafreintine Block",
 	"block.yggdrasil.portal_shirne_block" : "Portal Shirne",
 
 	"block.yggdrasil.yggdrasil_wood" : "Yggdrasil Wood",

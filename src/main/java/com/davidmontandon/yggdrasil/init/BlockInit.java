@@ -23,6 +23,14 @@ public class BlockInit {
 
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS,  Yggdrasil.MOD_ID) ; 	
 
+	
+	
+	/* GLOBAL
+	 * 
+	 */
+	public static final RegistryObject<Block> VANAFREINTINE_BLOCK = BLOCKS.register("vanafreintine_block",
+			() -> new Block(Block.Properties.from(Blocks.GOLD_BLOCK)));
+	
 	public static final RegistryObject<Block> YGGDRASIL_WOOD = BLOCKS.register("yggdrasil_wood",
 			() -> new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
 
