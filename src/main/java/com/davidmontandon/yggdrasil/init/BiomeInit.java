@@ -3,6 +3,7 @@ package com.davidmontandon.yggdrasil.init;
 import com.davidmontandon.yggdrasil.Yggdrasil;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimBasicBiome;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimCliffBiome;
+import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimForest;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimOceanBiome;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimPlainsBiome;
 
@@ -10,11 +11,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.Category;
 import net.minecraft.world.biome.Biome.RainType;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,6 +28,8 @@ public class BiomeInit {
 
 	//https://www.mathsisfun.com/hexadecimal-decimal-colors.html
 	
+
+	public static final Biome MUSPELHEIM_FOREST = Biomes.DEFAULT;
 
 	
 	public static final RegistryObject<Biome> MUSPELHEIM = BIOMES
@@ -46,6 +51,7 @@ public class BiomeInit {
 									.parent(null)));
 	
 	
+	
 	public static final RegistryObject<Biome> MUSPELHEIM_PLAINS = BIOMES
 			.register("muspelheim_plains",
 					() -> new MuspelheimPlainsBiome(
@@ -63,6 +69,7 @@ public class BiomeInit {
 							.temperature(1.0f)
 							.downfall(0.0f)
 							.parent(null)));
+	
 	
 	public static final RegistryObject<Biome> MUSPELHEIM_ASH_PLAINS = BIOMES
 			.register("muspelheim_ash_plains",
@@ -117,6 +124,18 @@ public class BiomeInit {
 							.temperature(2.0f)
 							.depth(-1.0f)
 							.parent(null)));
+	
+	
+	public static void onRegisterBiomes(RegistryEvent.Register<Biome> event) {
+        RegUtil.generic(event.getRegistry())
+        	.add("muspelheim_forest", new MuspelheimForest(null))  ;  
+	}
+	
+	public static void onInit() {
+        BiomeDictionary.addTypes(MUSPELHEIM_FOREST, BiomeDictionary.Type.FOREST);
+        
+            
+	}
 	
 	public static void registerBiomes() {
 		registerBiome(MUSPELHEIM.get(), Type.PLAINS, Type.OVERWORLD);

@@ -1,6 +1,7 @@
 package com.davidmontandon.yggdrasil.world.muspelheim.biomes;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
+import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.world.feature.tree.EpluphiferTree;
 
 import net.minecraft.entity.EntityClassification;
@@ -11,11 +12,13 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
+import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 
 public class MuspelheimPlainsBiome extends Biome {
@@ -34,8 +37,11 @@ public class MuspelheimPlainsBiome extends Biome {
 						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(20, 0.1f, 1))));	
 		
 		this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
-				Feature.NORMAL_TREE.withConfiguration(EpluphiferTree.EPLUPHIFER_TREE_CONFIG2).withPlacement(
+				Feature.NORMAL_TREE.withConfiguration(EpluphiferTree.EPLUPHIFER_TREE_CONFIG).withPlacement(
 						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(20, 0.1f, 1))));	
+		
+        this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG))) ; 
+
 		
 		DefaultBiomeFeatures.addCarvers(this);
 		DefaultBiomeFeatures.addOres(this);
