@@ -13,7 +13,7 @@ import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 
 public class MuspelheimDimension extends Dimension {
-
+	
 	public MuspelheimDimension(World world, DimensionType type) {		
 		super(world, type, 0.0f);
 		
@@ -21,7 +21,7 @@ public class MuspelheimDimension extends Dimension {
 		    this.lightBrightnessTable[i] = i / 20.0F + 0.25F;
 		}
 	}
-
+	
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
 		return new MuspelheimChunkGenerator( world, new MuspelheimBiomeProvider(), new MuspelheimGenSettings() ) ;
@@ -31,7 +31,7 @@ public class MuspelheimDimension extends Dimension {
 	public BlockPos findSpawn(ChunkPos chunkPosIn, boolean checkValid) {
 		return null;
 	}
-
+	
 	@Override
 	public BlockPos findSpawn(int posX, int posZ, boolean checkValid) {
 		return null;
@@ -74,7 +74,6 @@ public class MuspelheimDimension extends Dimension {
       f3 = f3 * (f * 0.0F + 0.15F);
       return new Vec3d((double)f1, (double)f2, (double)f3);
 		
-	//return Vec3d.ZERO;
 	}
 
     @Override
@@ -124,7 +123,7 @@ public class MuspelheimDimension extends Dimension {
 	
     @Override
     public boolean canDoLightning(Chunk chunk) {
-    	return true;
+    	return false;
     }
 
 

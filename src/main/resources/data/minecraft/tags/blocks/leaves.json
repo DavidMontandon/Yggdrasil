@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"yggdrasil:muspelheim_epluphifer_leaves"
+		"yggdrasil:muspelheim_epluphifer_leaves",
+		"yggdrasil:yggdrasil_tree_leaves"
 	]
 }

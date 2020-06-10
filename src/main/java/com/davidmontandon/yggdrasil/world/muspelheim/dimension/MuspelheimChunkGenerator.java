@@ -2,8 +2,6 @@ package com.davidmontandon.yggdrasil.world.muspelheim.dimension;
 
 import java.util.List;
 
-import com.davidmontandon.yggdrasil.init.BlockInit;
-
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
@@ -22,7 +20,7 @@ import net.minecraft.world.gen.OctavesNoiseGenerator;
 
 public class MuspelheimChunkGenerator extends NoiseChunkGenerator<MuspelheimGenSettings> {
 	
-    public static final int SURFACE_LEVEL = 78;
+    public static final int SURFACE_LEVEL = 68;
 
     public static final int MIN_CAVE_HEIGHT = 20;
     public static final int MAX_CAVE_HEIGHT = 46;

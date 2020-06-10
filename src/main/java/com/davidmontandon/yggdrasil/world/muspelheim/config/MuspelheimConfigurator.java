@@ -9,6 +9,10 @@ import net.minecraft.world.gen.feature.ProbabilityConfig;
 public class MuspelheimConfigurator {
 
 	
+    public static void addStructureFeatures(ConfigurableBiome biome) {
+    	
+    }
+	
     public static void addCaves(ConfigurableBiome biome) {
     	/*
         biome.add(GenerationStage.Carving.AIR, Biome.createCarver(
@@ -20,5 +24,5 @@ public class MuspelheimConfigurator {
 	public static void addOres(ConfigurableBiome biome) {
 		
 	}
-	
+		
 }

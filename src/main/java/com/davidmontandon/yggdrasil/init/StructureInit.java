@@ -21,6 +21,9 @@ public class StructureInit {
     public static void registerStructures(IForgeRegistry<Feature<?>> event) {
         RegUtil.generic(event)
                 .add("yggdrasil_tree_structure", YGGDRASIL_TREE_STRUCTURE) ;
+        
+        Yggdrasil.LOGGER.info("YGGDRASIL_TREE_STRUCTURE REGISTRED");
+        
     }
 	
 }

@@ -3,8 +3,8 @@ package com.davidmontandon.yggdrasil.init;
 import com.davidmontandon.yggdrasil.Yggdrasil;
 import com.davidmontandon.yggdrasil.init.objects.blocks.PortalShirneBlock;
 import com.davidmontandon.yggdrasil.init.objects.blocks.YggdrasilSaplingBlock;
-import com.davidmontandon.yggdrasil.objects.blocks.MuspelheimGrass;
 import com.davidmontandon.yggdrasil.objects.blocks.YggdrasilCropBlock;
+import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimGrass;
 import com.davidmontandon.yggdrasil.world.feature.tree.EpluphiferTree;
 
 import net.minecraft.block.Block;
@@ -92,6 +92,9 @@ public class BlockInit {
 			() -> new MuspelheimGrass(Block.Properties.from(Blocks.DIRT)));
 			
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_LOG = BLOCKS.register("muspelheim_epluphifer_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_SICK_LOG = BLOCKS.register("muspelheim_epluphifer_sick_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_PLANKS = BLOCKS.register("muspelheim_epluphifer_planks",
