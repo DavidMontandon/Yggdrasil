@@ -11,6 +11,7 @@ import com.davidmontandon.yggdrasil.init.Material.ArmorMaterial;
 
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BucketItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemTier;
@@ -20,6 +21,7 @@ import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 
@@ -28,6 +30,11 @@ public class ItemInit {
 
 	
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS,  Yggdrasil.MOD_ID) ; 	
+	
+	//FLUID
+	public static final RegistryObject<Item> ACIDIC_BUCKET = ITEMS.register("acidic_bucket",
+			() -> new BucketItem(FluidInit.ACIDIC_FLUID, new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+	
 	
 	
 	//KEY

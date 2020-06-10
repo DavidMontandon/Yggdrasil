@@ -1,5 +1,7 @@
 package com.davidmontandon.yggdrasil;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -26,6 +28,7 @@ import org.apache.logging.log4j.Logger;
 import com.davidmontandon.yggdrasil.init.BiomeInit;
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.DimensionInit;
+import com.davidmontandon.yggdrasil.init.FluidInit;
 import com.davidmontandon.yggdrasil.init.ItemInit;
 import com.davidmontandon.yggdrasil.objects.blocks.YggdrasilCropBlock;
 import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
@@ -46,6 +49,7 @@ public class Yggdrasil
     	modEventBus.addListener(this::doClientStuff);
     	    	
     	ItemInit.ITEMS.register(modEventBus);
+    	FluidInit.FLUIDS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
@@ -62,7 +66,7 @@ public class Yggdrasil
 		final IForgeRegistry<Item> registry = event.getRegistry();
 		
 		BlockInit.BLOCKS.getEntries().stream()
-		.filter(block -> !(block.get() instanceof YggdrasilCropBlock))
+		.filter(block -> !(block.get() instanceof YggdrasilCropBlock) && !(block.get() instanceof FlowingFluidBlock))
 		.map(RegistryObject::get).forEach(block -> {
 			final Item.Properties properties = new Item.Properties().group(YggdrasilItemGroup.instance);
 			final BlockItem blockItem = new BlockItem(block, properties);

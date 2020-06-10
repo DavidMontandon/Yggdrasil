@@ -1,6 +1,6 @@
 package com.davidmontandon.yggdrasil.world.muspelheim.config;
 
-import com.davidmontandon.yggdrasil.util.interfaces.ConfigurableBiome;
+import com.davidmontandon.yggdrasil.world.biome.general.ConfigurableBiome;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;

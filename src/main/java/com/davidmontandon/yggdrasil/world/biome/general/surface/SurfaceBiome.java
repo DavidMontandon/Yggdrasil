@@ -2,17 +2,20 @@ package com.davidmontandon.yggdrasil.world.biome.general.surface;
 
 import javax.annotation.Nullable;
 
-import com.davidmontandon.yggdrasil.util.interfaces.ConfigurableBiome;
+import com.davidmontandon.yggdrasil.world.biome.general.ConfigurableBiome;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimBiomeGroup;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.GenerationStage.Carving;
+import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.carver.ICarverConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.ISurfaceBuilderConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
@@ -43,6 +46,21 @@ public abstract class SurfaceBiome extends Biome implements ConfigurableBiome {
         this.fogStart = properties.fogStart;
         this.fogEnd = properties.fogEnd;
     }
+    
+	@Override
+	public void add(Decoration stage, ConfiguredFeature feature) {
+		
+	}
+
+	@Override
+	public <C extends ICarverConfig> void add(Carving stage, ConfiguredCarver<C> carver) {
+		
+	}
+
+	@Override
+	public <C extends IFeatureConfig> void add(ConfiguredFeature<C, ? extends Structure<C>> structure) {
+		
+	}
     
     @Override
     public boolean doesWaterFreeze(IWorldReader world, BlockPos pos) {
@@ -197,6 +215,7 @@ public abstract class SurfaceBiome extends Biome implements ConfigurableBiome {
             super.parent(parent);
             return this;
         }
+
     }
 
 }
