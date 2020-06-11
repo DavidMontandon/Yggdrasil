@@ -34,14 +34,11 @@ public class GrowableOnBlock extends Block implements IGrowable {
 
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
-		// TODO Auto-generated method stub
-		
+	public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {		
 	}
 
     

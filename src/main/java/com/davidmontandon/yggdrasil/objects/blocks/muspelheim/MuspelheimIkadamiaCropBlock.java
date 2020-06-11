@@ -1,4 +1,4 @@
-package com.davidmontandon.yggdrasil.objects.blocks;
+package com.davidmontandon.yggdrasil.objects.blocks.muspelheim;
 
 import com.davidmontandon.yggdrasil.init.ItemInit;
 
@@ -11,7 +11,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
-public class YggdrasilCropBlock  extends CropsBlock  {
+public class MuspelheimIkadamiaCropBlock extends CropsBlock  {
 
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] {
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
@@ -23,7 +23,7 @@ public class YggdrasilCropBlock  extends CropsBlock  {
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D) };
 
-	public YggdrasilCropBlock(Properties builder) {
+	public MuspelheimIkadamiaCropBlock(Properties builder) {
 		super(builder);
 	}
 

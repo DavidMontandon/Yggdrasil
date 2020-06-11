@@ -1,6 +1,7 @@
 package com.davidmontandon.yggdrasil.world.muspelheim.dimension;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
+import com.davidmontandon.yggdrasil.init.FluidInit;
 
 import net.minecraft.fluid.Fluids;
 import net.minecraft.world.gen.GenerationSettings;
@@ -9,7 +10,8 @@ public class MuspelheimGenSettings extends GenerationSettings{
 
 	public MuspelheimGenSettings() {
 		this.setDefaultBlock( BlockInit.MUSPELHEIM_STONE.get().getDefaultState().getBlockState() );
-		this.setDefaultFluid( Fluids.LAVA.getDefaultState().getBlockState() );
+		//this.setDefaultFluid( Fluids.LAVA.getDefaultState().getBlockState() );
+		this.setDefaultFluid( FluidInit.ACIDIC_FLUID.get().getDefaultState().getBlockState() );
 	}
 	
 	public int getBiomeSize() {

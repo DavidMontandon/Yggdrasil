@@ -46,8 +46,8 @@ public class BiomeInit {
 									.category(Category.EXTREME_HILLS)
 									.downfall(0.0f)
 									.depth(0.86f)
-									.scale(1.2f).
-									temperature(0.5f)
+									.scale(1.2f)
+									.temperature(0.5f)
 									.parent(null)));
 	
 	
@@ -133,8 +133,6 @@ public class BiomeInit {
 	
 	public static void onInit() {
         BiomeDictionary.addTypes(MUSPELHEIM_FOREST, BiomeDictionary.Type.FOREST);
-        
-            
 	}
 	
 	public static void registerBiomes() {

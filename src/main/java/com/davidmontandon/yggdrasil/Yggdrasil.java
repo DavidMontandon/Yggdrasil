@@ -1,6 +1,5 @@
 package com.davidmontandon.yggdrasil;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -30,7 +29,8 @@ import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.DimensionInit;
 import com.davidmontandon.yggdrasil.init.FluidInit;
 import com.davidmontandon.yggdrasil.init.ItemInit;
-import com.davidmontandon.yggdrasil.objects.blocks.YggdrasilCropBlock;
+import com.davidmontandon.yggdrasil.init.PaintingInit;
+import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
 
 @Mod("yggdrasil")
@@ -53,7 +53,7 @@ public class Yggdrasil
     	BlockInit.BLOCKS.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
-
+    	PaintingInit.PAINTINGS.register(modEventBus);
     	
         instance = this ; 
         MinecraftForge.EVENT_BUS.register(this);
@@ -66,7 +66,7 @@ public class Yggdrasil
 		final IForgeRegistry<Item> registry = event.getRegistry();
 		
 		BlockInit.BLOCKS.getEntries().stream()
-		.filter(block -> !(block.get() instanceof YggdrasilCropBlock) && !(block.get() instanceof FlowingFluidBlock))
+		.filter(block -> !(block.get() instanceof MuspelheimIkadamiaCropBlock) && !(block.get() instanceof FlowingFluidBlock))
 		.map(RegistryObject::get).forEach(block -> {
 			final Item.Properties properties = new Item.Properties().group(YggdrasilItemGroup.instance);
 			final BlockItem blockItem = new BlockItem(block, properties);
