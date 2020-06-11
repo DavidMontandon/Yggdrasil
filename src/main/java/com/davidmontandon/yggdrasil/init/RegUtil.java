@@ -1,5 +1,7 @@
 package com.davidmontandon.yggdrasil.init;
 
+import com.davidmontandon.yggdrasil.Yggdrasil;
+
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.registries.GameData;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -11,6 +13,13 @@ public class RegUtil {
         return new Generic<>(registry);
     }
 
+	public static <T extends IForgeRegistryEntry<T>> T register(IForgeRegistry<T> registry, T entry, String registryKey)
+	{
+		entry.setRegistryName(new ResourceLocation(Yggdrasil.MOD_ID, registryKey));
+		registry.register(entry);
+		return entry;
+	}
+    
     public static class Generic<T extends IForgeRegistryEntry<T>> {
         private final IForgeRegistry<T> registry;
 

@@ -17,7 +17,9 @@ import net.minecraft.world.gen.feature.structure.Structure;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
-public class YggdrasilTreeStructure extends ScatteredStructure<NoFeatureConfig> { public YggdrasilTreeStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
+public class YggdrasilTreeStructure extends ScatteredStructure<NoFeatureConfig> { 
+	
+	public YggdrasilTreeStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
 		super(configFactoryIn);
 	}
 

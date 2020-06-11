@@ -1,5 +1,6 @@
 package com.davidmontandon.yggdrasil.world.muspelheim.biomes;
 
+import com.davidmontandon.yggdrasil.init.FeatureInit;
 import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.world.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 
@@ -25,9 +26,9 @@ public class MuspelheimCliffBiome  extends Biome {
 		MuspelheimDefaultBiomeFeatures.addSprings(this);
 		//MuspelheimDefaultBiomeFeatures.addDenseGrass(this);
 		MuspelheimDefaultBiomeFeatures.addOres(this);
-
-				
-        this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG))) ; 
+             
+		//this.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, FeatureInit.TEST_DIG.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+        //this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG))) ; 
 
 	}
 	

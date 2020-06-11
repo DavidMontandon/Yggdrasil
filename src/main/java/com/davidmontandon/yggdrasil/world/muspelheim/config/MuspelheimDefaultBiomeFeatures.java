@@ -2,6 +2,7 @@ package com.davidmontandon.yggdrasil.world.muspelheim.config;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.FluidInit;
+import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 
@@ -16,6 +17,7 @@ import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.LiquidsConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
@@ -70,6 +72,8 @@ public class MuspelheimDefaultBiomeFeatures {
         biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(GRASS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(5))));
      }
 
-    
+    public static void addStructures(Biome biomeIn) {
+    	//biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG))) ; 
+    }
 	   
 }

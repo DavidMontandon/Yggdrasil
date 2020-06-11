@@ -7,6 +7,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,9 +28,11 @@ import org.apache.logging.log4j.Logger;
 import com.davidmontandon.yggdrasil.init.BiomeInit;
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.DimensionInit;
+import com.davidmontandon.yggdrasil.init.FeatureInit;
 import com.davidmontandon.yggdrasil.init.FluidInit;
 import com.davidmontandon.yggdrasil.init.ItemInit;
 import com.davidmontandon.yggdrasil.init.PaintingInit;
+import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
 
@@ -143,7 +146,12 @@ public class Yggdrasil
     	
     }
     
-
+	@SubscribeEvent
+	public static void onRegisterFeatures(final RegistryEvent.Register<Feature<?>> event) 
+	{
+	    //FeatureInit.registerFeatures(event);
+	    //StructureInit.registerStructures(event);
+	}
     
     
 
