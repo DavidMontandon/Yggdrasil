@@ -31,6 +31,8 @@ import com.davidmontandon.yggdrasil.init.DimensionInit;
 import com.davidmontandon.yggdrasil.init.FeatureInit;
 import com.davidmontandon.yggdrasil.init.FluidInit;
 import com.davidmontandon.yggdrasil.init.ItemInit;
+import com.davidmontandon.yggdrasil.init.YggdrasilContainerTypes;
+import com.davidmontandon.yggdrasil.init.YggdrasilTileEntityTypes;
 import com.davidmontandon.yggdrasil.init.PaintingInit;
 import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
@@ -55,6 +57,8 @@ public class Yggdrasil
     	FluidInit.FLUIDS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
+		YggdrasilTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+		YggdrasilContainerTypes.CONTAINER_TYPES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);
     	

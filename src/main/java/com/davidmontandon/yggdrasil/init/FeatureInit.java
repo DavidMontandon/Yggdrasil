@@ -15,9 +15,11 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 public class FeatureInit {
 
+	/*
 	public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<Feature<?>>(ForgeRegistries.FEATURES,  Yggdrasil.MOD_ID) ; 	
 	public static final RegistryObject<TestDig> TEST_DIG = FEATURES.register("test_dig",
 			() -> new TestDig(NoFeatureConfig::deserialize));
+	*/
 
 	/*
     public static Feature<NoFeatureConfig> TEST_DIG = new TestDig(NoFeatureConfig::deserialize);

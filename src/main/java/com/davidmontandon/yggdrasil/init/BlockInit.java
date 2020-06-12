@@ -3,6 +3,7 @@ package com.davidmontandon.yggdrasil.init;
 import com.davidmontandon.yggdrasil.Yggdrasil;
 import com.davidmontandon.yggdrasil.init.objects.blocks.PortalShirneBlock;
 import com.davidmontandon.yggdrasil.init.objects.blocks.YggdrasilSaplingBlock;
+import com.davidmontandon.yggdrasil.objects.blocks.ItemPedestalBlock;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimGrass;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.davidmontandon.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
@@ -60,6 +61,9 @@ public class BlockInit {
 					.harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.GLASS).lightValue(4)
 					.slipperiness(1.2f).speedFactor(0.7f).noDrops()));
 	
+	public static final RegistryObject<Block> ITEM_PEDESTAL = BLOCKS.register("item_pedestal",
+			() -> new ItemPedestalBlock(Block.Properties.from(Blocks.ANVIL)));
+
 	
 	/*
 	 * 	YGGDRASIL TREE

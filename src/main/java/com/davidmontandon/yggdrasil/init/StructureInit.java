@@ -1,7 +1,6 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.world.feature.TestDig;
 import com.davidmontandon.yggdrasil.world.feature.structure.YggdrasilTreeStructure;
 
 import net.minecraft.block.Block;

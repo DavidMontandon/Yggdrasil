@@ -1,41 +1,55 @@
 {
 	"block.yggdrasil.rune_ore" : "Rune Ore",
 
-	"item.yggdrasil.rune_elder_futhark_first_aitt_fehu" : "Rune Fehu",
-	"item.yggdrasil.rune_elder_futhark_first_aitt_uruz" : "Rune Uruz",
-	"item.yggdrasil.rune_elder_futhark_first_aitt_thurisaz" : "Rune Thurisaz",
-	"item.yggdrasil.rune_elder_futhark_first_aitt_ansuz" : "Rune Ansuz",
-	"item.yggdrasil.rune_elder_futhark_first_aitt_raido" : "Rune Raido",
-	"item.yggdrasil.rune_elder_futhark_first_aitt_kenaz" : "Rune Kenaz",
-	"item.yggdrasil.rune_elder_futhark_first_aitt_gebo" : "Rune Gebo",
-	"item.yggdrasil.rune_elder_futhark_first_aitt_wunjo" : "Rune Wunjo",
-
 	"item.yggdrasil.rune_elder_futhark_third_aitt_berkana" : "Rune Berkana",
 
+	"item.yggdrasil.rune_elder_futhark_first_aitt_fehu" : "Rune Fehu",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_fehu" : "(FAY-hoo) equivalent of F in Frank",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_fehu_buff" : "Wealthy",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_fehu_debuff" : "Unwealthy",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_fehu_link" : "",
 		
+	"item.yggdrasil.rune_elder_futhark_first_aitt_uruz" : "Rune Uruz",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_uruz" : "(OO-rooz) equivalent of Oo in food",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_uruz_buff" : "Unbridled strength or power",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_uruz_debuff" : "Weakness, sickness, decay",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_uruz_link" : "",
 	
+	"item.yggdrasil.rune_elder_futhark_first_aitt_thurisaz" : "Rune Thurisaz",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_thurisaz" : "(THOO-ree-saz) equivalent of TH in thorn",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_thurisaz_buff" : "Breaking down barriers",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_thurisaz_debuff" : "Being trapped, brutish",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_thurisaz_link" : "",
 
+	"item.yggdrasil.rune_elder_futhark_first_aitt_ansuz" : "Rune Ansuz",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_ansuz" : "(AHN-sooz) equivalent of A in father",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_ansuz_buff" : "Communication, teaching",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_ansuz_debuff" : "",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_ansuz_link" : "",
 
+	"item.yggdrasil.rune_elder_futhark_first_aitt_raido" : "Rune Raido",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_raido" : "(AHN-sooz) equivalent of A in father",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_raido_buff" : "Communication, teaching",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_raido_debuff" : "",
 	"desc.yggdrasil.rune_elder_futhark_first_aitt_raido_link" : "hero.yggdrasil.odin",
+
+	"item.yggdrasil.rune_elder_futhark_first_aitt_kenaz" : "Rune Kenaz",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_kenaz" : "(KAY-nahz) equivalent of c/k in kick",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_kenaz_buff" : "Torch, beacon",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_kenaz_debuff" : "Incuriousness, illogic",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_kenaz_link" : "",
+
+	"item.yggdrasil.rune_elder_futhark_first_aitt_gebo" : "Rune Gebo",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_gebo" : "(GAY-bow) equivalent of g in girl",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_gebo_buff" : "Exchange of gift",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_gebo_debuff" : "",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_gebo_link" : "",
+
+	"item.yggdrasil.rune_elder_futhark_first_aitt_wunjo" : "Rune Wunjo",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_wunjo" : "(WUHN-joe) equivalent of w in wild",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_wunjo_buff" : "Joy, celebration",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_wunjo_debuff" : "Isolation, betrayal",
+	"desc.yggdrasil.rune_elder_futhark_first_aitt_wunjo_link" : "",
 
 	"hero.yggdrasil.odin" : "Odin Allfather",
 
@@ -75,8 +89,13 @@
 	"block.yggdrasil.muspelheim_epluphifer_leaves" : "Epluphifer Leaves",
 	"block.yggdrasil.muspelheim_ikadamia" : "Ikadamia Seed",
 
+
+	"container.yggdrasil.item_pedestal": "Item Pedestal",
+	"block.yggdrasil.item_pedestal": "Item Pedestal",
+
 	"itemGroup.YggdrasilRuneItemGroup" : "Yggdrasil Runes",
 	"itemGroup.YggdrasilToolItemGroup" : "Yggdrasil Tools",
 	"itemGroup.YggdrasilItemGroup" : "Yggdrasil Blocks"	
+
 
 }
