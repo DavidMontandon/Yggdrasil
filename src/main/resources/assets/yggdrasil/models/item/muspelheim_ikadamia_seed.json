@@ -1,7 +1,0 @@
-{
-	"parent": "item/generated",
-	"textures": {
-		"layer0": "yggdrasil:items/muspelheim_ikadamia_seed"
-		"layer1": "yggdrasil:items/muspelheim_ikadamia_seed"
-	}
-}

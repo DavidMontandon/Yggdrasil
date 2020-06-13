@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.davidmontandon.yggdrasil.init.BiomeInit;
-import com.davidmontandon.yggdrasil.util.VoronoiGenerator;
+import com.davidmontandon.yggdrasil.util.noise.VoronoiGenerator;
 import com.google.common.collect.ImmutableSet;
 
 import net.minecraft.world.biome.Biome;

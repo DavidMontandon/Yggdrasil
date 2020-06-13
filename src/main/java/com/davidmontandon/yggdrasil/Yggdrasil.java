@@ -19,7 +19,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.IForgeRegistry;
-
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,10 +34,12 @@ import com.davidmontandon.yggdrasil.init.YggdrasilTileEntityTypes;
 import com.davidmontandon.yggdrasil.init.PaintingInit;
 import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
+import com.davidmontandon.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
 import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
 
 
 @Mod("yggdrasil")
+@Mod.EventBusSubscriber(modid = Yggdrasil.MOD_ID, bus = Bus.MOD)
 public class Yggdrasil
 {
     public static final Logger LOGGER = LogManager.getLogger();
@@ -55,7 +57,7 @@ public class Yggdrasil
     	BlockInit.BLOCKS.register(modEventBus);
 		YggdrasilTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		YggdrasilContainerTypes.CONTAINER_TYPES.register(modEventBus);
-		//StructureInit.STRUCTURES.register(modEventBus);
+		StructureInit.STRUCTURES.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);
@@ -71,7 +73,10 @@ public class Yggdrasil
 		final IForgeRegistry<Item> registry = event.getRegistry();
 		
 		BlockInit.BLOCKS.getEntries().stream()
-		.filter(block -> !(block.get() instanceof MuspelheimIkadamiaCropBlock) && !(block.get() instanceof FlowingFluidBlock))
+		.filter(block -> 
+			!(block.get() instanceof MuspelheimIkadamiaCropBlock) && 
+			!(block.get() instanceof MuspelheimAshCarambola) && 
+			!(block.get() instanceof FlowingFluidBlock))
 		.map(RegistryObject::get).forEach(block -> {
 			final Item.Properties properties = new Item.Properties().group(YggdrasilItemGroup.instance);
 			final BlockItem blockItem = new BlockItem(block, properties);

@@ -136,10 +136,12 @@ public class BiomeInit {
 	}
 	
 	public static void registerBiomes() {
+		/*
 		registerBiome(MUSPELHEIM.get(), Type.PLAINS, Type.OVERWORLD);
 		registerBiome(MUSPELHEIM_CLIFF_BIOME.get(), Type.MOUNTAIN, Type.OVERWORLD);
 		registerBiome(MUSPELHEIM_ASH_PLAINS.get(), Type.PLAINS, Type.OVERWORLD);
 		registerBiome(MUSPELHEIM_PLAINS.get(), Type.PLAINS, Type.OVERWORLD);
+		*/
 	}
 
 	private static void registerBiome(Biome biome, Type... types) {

@@ -1,4 +1,4 @@
-package com.davidmontandon.yggdrasil.util;
+package com.davidmontandon.yggdrasil.util.noise;
 
 
 /*

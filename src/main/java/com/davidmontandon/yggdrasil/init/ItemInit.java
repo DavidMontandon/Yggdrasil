@@ -185,6 +185,8 @@ public class ItemInit {
 	public static final RegistryObject<Item> MUSPELHEIM_IKADAMIA_SEED = ITEMS.register("muspelheim_ikadamia_seed",
 			() -> new BlockItem(BlockInit.MUSPELHEIM_IKADAMIA_CROP.get(), new Item.Properties().group(YggdrasilToolItemGroup.instance)));
 	
+	public static final RegistryObject<Item> MUSPELHEIM_ASH_CARAMBOLA_BERRY = ITEMS.register("muspelheim_ash_carambola_bush", 
+			() -> new BlockItem(BlockInit.MUSPELHEIM_ASH_CARAMBOLA_BUSH.get(), new Item.Properties().group(YggdrasilToolItemGroup.instance)));
 	
 	
 }

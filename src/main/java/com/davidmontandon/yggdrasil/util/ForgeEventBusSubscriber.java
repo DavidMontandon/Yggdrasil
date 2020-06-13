@@ -1,6 +1,5 @@
 package com.davidmontandon.yggdrasil.util;
 
-
 import com.davidmontandon.yggdrasil.Yggdrasil;
 import com.davidmontandon.yggdrasil.init.DimensionInit;
 
@@ -16,12 +15,8 @@ public class ForgeEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void registerDimensions(final RegisterDimensionsEvent event) {
-		if (DimensionType.byName(Yggdrasil.YGGDRASIL_DIM_TYPE) == null) {
-			
-			DimensionManager.registerDimension(Yggdrasil.YGGDRASIL_DIM_TYPE, DimensionInit.MUSPELHEIM.get(), null,
-					true);
+		if (DimensionType.byName(Yggdrasil.YGGDRASIL_DIM_TYPE) == null) 
+			DimensionManager.registerDimension(Yggdrasil.YGGDRASIL_DIM_TYPE, DimensionInit.MUSPELHEIM.get(), null, true);
 					
-		}
-		Yggdrasil.LOGGER.info("Dimensions Registered!");
 	}
 }

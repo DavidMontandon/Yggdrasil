@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "yggdrasil:blocks/muspelheim_ash_carambola_bush_stage0"
+    }
+}

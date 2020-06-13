@@ -31,7 +31,7 @@ import net.minecraft.world.gen.placement.Placement;
 
 public class MuspelheimDefaultBiomeFeatures {
 	
-	//public static final LiquidsConfig ACIDIC_SPRING_CONFIG = new LiquidsConfig(FluidInit.ACIDIC_FLUID.get().getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get()));
+	//public static final LiquidsConfig ACIDIC_SPRING_CONFIG = new LiquidsConfig(FluidInit.ACIDIC_FLOWING.get().getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get()));
 	public static final LiquidsConfig WATER_SPRING_CONFIG = new LiquidsConfig(Fluids.WATER.getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get()));
 	public static final LiquidsConfig LAVA_SPRING_CONFIG = new LiquidsConfig(Fluids.LAVA.getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get(), BlockInit.MUSPELHEIM_COLD_ROCK.get(), BlockInit.MUSPELHEIM_HOT_ROCK.get()));
 	private static final BlockState DEAD_BUSH = Blocks.DEAD_BUSH.getDefaultState();

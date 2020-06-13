@@ -18,6 +18,10 @@ public class ClientEventBusSubscriber {
 	public static void clientSetup(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_EPLUPHIFER_SAPLING.get(), RenderType.getCutout());		
 		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_IKADAMIA_CROP.get(), RenderType.getCutout());
+		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_ASH_CARAMBOLA_BUSH.get(), RenderType.getCutout());		
+		
+		Yggdrasil.LOGGER.info("Render Registered! ");
+		
 	}
 	
 }

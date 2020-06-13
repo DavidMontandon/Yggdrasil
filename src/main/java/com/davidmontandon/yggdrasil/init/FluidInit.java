@@ -34,7 +34,7 @@ public class FluidInit {
 
 	public static final ForgeFlowingFluid.Properties ACIDIC_PROPERTIES = new ForgeFlowingFluid.Properties(
 			() -> ACIDIC_FLUID.get(), () -> ACIDIC_FLOWING.get(),
-			FluidAttributes.builder(ACIDIC_STILL_RL, ACIDIC_FLOWING_RL).density(5).luminosity(10).rarity(Rarity.RARE)
+			FluidAttributes.builder(ACIDIC_STILL_RL, ACIDIC_FLOWING_RL).density(5).luminosity(5).rarity(Rarity.RARE)
 					.sound(SoundEvents.ITEM_HONEY_BOTTLE_DRINK).overlay(ACIDIC_OVERLAY_RL))
 							.block(() -> FluidInit.ACIDIC_BLOCK.get());
 
