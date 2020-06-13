@@ -9,10 +9,11 @@ import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 
 public class StructurePiecesInit {
 
+
     public static final IStructurePieceType YGGDRASIL_TREE_PIECES = register("yggdrasil_tree_pieces", YggdrasilTreePieces.Piece::new);
     
     private static IStructurePieceType register(String key, IStructurePieceType type) {
-        return Registry.register(Registry.STRUCTURE_PIECE, new ResourceLocation( Yggdrasil.MOD_ID, key), type);
+        return Registry.register(Registry.STRUCTURE_PIECE, new ResourceLocation(Yggdrasil.MOD_ID, key), type);
     }
-	
+    	
 }

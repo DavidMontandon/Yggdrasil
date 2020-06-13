@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"tutorialmod:acidic_flowing",
-		"tutorialmod:acidic_fluid"
+		"yggdrasil:acidic_flowing",
+		"yggdrasil:acidic_fluid"
 	]
 }

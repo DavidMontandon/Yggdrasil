@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "yggdrasil:block/milk" }
+		"": { "model": "forge:block/milk" }
 	}
 }

@@ -25,9 +25,9 @@ import net.minecraft.world.gen.feature.template.TemplateManager;
 import java.util.List;
 
 public class YggdrasilTreePieces {
-    private static final ResourceLocation LOCATION = new ResourceLocation(Yggdrasil.MOD_ID, "treetest");
+    private static final ResourceLocation LOCATION = new ResourceLocation(Yggdrasil.MOD_ID, "yggdrasil_tree");
 
-    public static void addTowerPieces(TemplateManager templateManager, BlockPos origin, Rotation rotation, List<StructurePiece> pieces) {
+    public static void addTreePieces(TemplateManager templateManager, BlockPos origin, Rotation rotation, List<StructurePiece> pieces) {
     	pieces.add(new YggdrasilTreePieces.Piece(templateManager, LOCATION, origin, rotation));
     }
     

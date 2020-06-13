@@ -35,7 +35,7 @@ public class YggdrasilTreeStructure extends ScatteredStructure<NoFeatureConfig> 
 	
 	@Override
 	public String getStructureName() {
-		return Yggdrasil.MOD_ID + ":treetest";
+		return Yggdrasil.MOD_ID + ":yggdrasil_tree";
 	}
 	
 	@Override
@@ -67,7 +67,7 @@ public class YggdrasilTreeStructure extends ScatteredStructure<NoFeatureConfig> 
             int j = chunkZ * 16;
             BlockPos blockpos = new BlockPos(i, 90, j);
             Rotation rotation = Rotation.values()[this.rand.nextInt(Rotation.values().length)];
-            YggdrasilTreePieces.addTowerPieces(templateManagerIn, blockpos, rotation, this.components);
+            YggdrasilTreePieces.addTreePieces(templateManagerIn, blockpos, rotation, this.components);
             this.recalculateStructureSize();
         }
 
