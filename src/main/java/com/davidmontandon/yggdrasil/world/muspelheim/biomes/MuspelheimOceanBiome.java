@@ -8,11 +8,13 @@ public class MuspelheimOceanBiome extends Biome {
 
 	public MuspelheimOceanBiome(Builder biomeBuilder) {
 		super(biomeBuilder);
-		
+				
 		MuspelheimDefaultBiomeFeatures.addCarver(this);
 		MuspelheimDefaultBiomeFeatures.addLakes(this);
 		MuspelheimDefaultBiomeFeatures.addSprings(this);
-		MuspelheimDefaultBiomeFeatures.addOres(this);		
+		MuspelheimDefaultBiomeFeatures.addOres(this);
+		MuspelheimDefaultBiomeFeatures.addSedimentDisks(this);
+		
 	}
 	
 }

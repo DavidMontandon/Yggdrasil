@@ -1,6 +1,7 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
+import com.davidmontandon.yggdrasil.init.objects.blocks.IronWoodSaplingBlock;
 import com.davidmontandon.yggdrasil.init.objects.blocks.PortalShirneBlock;
 import com.davidmontandon.yggdrasil.init.objects.blocks.YggdrasilSaplingBlock;
 import com.davidmontandon.yggdrasil.objects.blocks.ItemPedestalBlock;
@@ -8,6 +9,7 @@ import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimGrass;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.davidmontandon.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
 import com.davidmontandon.yggdrasil.world.feature.tree.EpluphiferTree;
+import com.davidmontandon.yggdrasil.world.feature.tree.IronWoodTree;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -75,8 +77,17 @@ public class BlockInit {
 	public static final RegistryObject<Block> YGGDRASIL_TREE_LOG = BLOCKS.register("yggdrasil_tree_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
-	public static final RegistryObject<Block> YGGDRASIL_TREE_lEAVES = BLOCKS.register("yggdrasil_tree_leaves",
+	public static final RegistryObject<Block> YGGDRASIL_TREE_LEAVES = BLOCKS.register("yggdrasil_tree_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+
+	public static final RegistryObject<Block> IRON_WOOD_LOG = BLOCKS.register("iron_wood_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> IRON_WOOD_LEAVES = BLOCKS.register("iron_wood_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+
+	public static final RegistryObject<Block> IRON_WOOD_SAPLING = BLOCKS.register("iron_wood_sapling",
+			() -> new IronWoodSaplingBlock(() -> new IronWoodTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 
 	
 	/*

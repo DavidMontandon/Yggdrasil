@@ -1,6 +1,7 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
+import com.davidmontandon.yggdrasil.world.biome.IronWoodBiome;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimBasicBiome;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimCliffBiome;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimForest;
@@ -126,6 +127,11 @@ public class BiomeInit {
 							.parent(null)));
 	
 	
+	
+	public static final RegistryObject<Biome> IRON_WOOD_BIOME = BIOMES
+			.register("iron_wood",
+					() -> new IronWoodBiome(null));
+	
 	public static void onRegisterBiomes(RegistryEvent.Register<Biome> event) {
         RegUtil.generic(event.getRegistry())
         	.add("muspelheim_forest", new MuspelheimForest(null))  ;  
@@ -136,6 +142,9 @@ public class BiomeInit {
 	}
 	
 	public static void registerBiomes() {
+		registerBiome(IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);
+		
+		
 		/*
 		registerBiome(MUSPELHEIM.get(), Type.PLAINS, Type.OVERWORLD);
 		registerBiome(MUSPELHEIM_CLIFF_BIOME.get(), Type.MOUNTAIN, Type.OVERWORLD);

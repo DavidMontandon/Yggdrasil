@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
+		"yggdrasil:iron_wood_log",
 		"yggdrasil:muspelheim_epluphifer_log",
 		"yggdrasil:muspelheim_epluphifer_sick_log"
 	]

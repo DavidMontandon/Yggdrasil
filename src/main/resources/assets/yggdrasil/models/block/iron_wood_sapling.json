@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "yggdrasil:blocks/iron_wood_sapling"
+    }
+}

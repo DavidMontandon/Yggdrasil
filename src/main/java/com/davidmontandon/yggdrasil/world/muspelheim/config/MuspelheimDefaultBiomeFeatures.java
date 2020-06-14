@@ -4,6 +4,7 @@ import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.FluidInit;
 import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.world.feature.tree.EpluphiferTree;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 
@@ -20,6 +21,7 @@ import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.LiquidsConfig;
+import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
 import net.minecraft.world.gen.feature.SphereReplaceConfig;
@@ -86,7 +88,7 @@ public class MuspelheimDefaultBiomeFeatures {
     	biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
 				Feature.NORMAL_TREE.withConfiguration(EpluphiferTree.EPLUPHIFER_TREE_NORMAL).withPlacement(
 						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1f, 1))));	
-    	
+      	
     }
     
     public static void addStructures(Biome biomeIn) {    	
