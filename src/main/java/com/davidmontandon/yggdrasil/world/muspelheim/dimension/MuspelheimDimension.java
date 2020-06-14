@@ -1,6 +1,10 @@
 package com.davidmontandon.yggdrasil.world.muspelheim.dimension;
 
+import com.davidmontandon.yggdrasil.init.BlockInit;
+import com.davidmontandon.yggdrasil.init.FluidInit;
+
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.audio.MusicTicker;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tags.BlockTags;
@@ -10,11 +14,20 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
+import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.biome.provider.BiomeProviderType;
+import net.minecraft.world.biome.provider.OverworldBiomeProvider;
+import net.minecraft.world.biome.provider.OverworldBiomeProviderSettings;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
+import net.minecraft.world.gen.ChunkGeneratorType;
 import net.minecraft.world.gen.Heightmap;
+import net.minecraft.world.gen.NetherGenSettings;
+import net.minecraft.world.gen.OverworldChunkGenerator;
+import net.minecraft.world.gen.OverworldGenSettings;
 
 public class MuspelheimDimension extends Dimension {
 	
@@ -28,6 +41,7 @@ public class MuspelheimDimension extends Dimension {
 	
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
+		
 		return new MuspelheimChunkGenerator( world, new MuspelheimBiomeProvider(), new MuspelheimGenSettings() ) ;
 	}
 

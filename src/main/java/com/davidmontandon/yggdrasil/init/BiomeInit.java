@@ -7,6 +7,7 @@ import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimCliffBiome
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimForest;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimOceanBiome;
 import com.davidmontandon.yggdrasil.world.muspelheim.biomes.MuspelheimPlainsBiome;
+import com.davidmontandon.yggdrasil.world.svartalvheim.biomes.SvartalvheimCavernBiome;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
@@ -132,6 +133,11 @@ public class BiomeInit {
 			.register("iron_wood",
 					() -> new IronWoodBiome(null));
 	
+	
+	public static final RegistryObject<Biome> SVARTALVHEIM_CAVERN_BIOME = BIOMES
+			.register("svartalvheim_cavern_biome",
+					() -> new SvartalvheimCavernBiome(null));
+		
 	public static void onRegisterBiomes(RegistryEvent.Register<Biome> event) {
         RegUtil.generic(event.getRegistry())
         	.add("muspelheim_forest", new MuspelheimForest(null))  ;  

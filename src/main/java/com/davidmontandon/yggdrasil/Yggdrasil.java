@@ -35,6 +35,7 @@ import com.davidmontandon.yggdrasil.init.PaintingInit;
 import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.davidmontandon.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
+import com.davidmontandon.yggdrasil.util.holder.DimensionsHolder;
 import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
 
 
@@ -45,13 +46,20 @@ public class Yggdrasil
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "yggdrasil" ; 
     public static Yggdrasil instance ; 
+    
+    public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
+    
     public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
+    public static final ResourceLocation SVARTALVHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "svartalvheim") ;  
             
     public Yggdrasil() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus() ; 
     	modEventBus.addListener(this::setup);
     	modEventBus.addListener(this::doClientStuff);
     	    	
+        dh.addDimension("muspelheim") ;
+        dh.addDimension("nivlheim") ;
+    	
     	ItemInit.ITEMS.register(modEventBus);
     	FluidInit.FLUIDS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
