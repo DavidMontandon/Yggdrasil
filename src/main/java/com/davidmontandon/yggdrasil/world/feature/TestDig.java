@@ -3,7 +3,7 @@ package com.davidmontandon.yggdrasil.world.feature;
 import java.util.Random;
 import java.util.function.Function;
 
-import com.davidmontandon.yggdrasil.util.noise.OpenSimplexNoise;
+import com.davidmontandon.yggdrasil.world.gen.noise.OpenSimplexNoise;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;

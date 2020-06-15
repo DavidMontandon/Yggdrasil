@@ -1,8 +1,8 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.world.muspelheim.dimension.MuspelheimModDimension;
-import com.davidmontandon.yggdrasil.world.svartalvheim.dimension.SvartalvheimModDimension;
+import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.dimension.MuspelheimModDimension;
+import com.davidmontandon.yggdrasil.world.dimensions.svartalvheim.dimension.SvartalvheimModDimension;
 
 import net.minecraftforge.common.ModDimension;
 import net.minecraftforge.fml.RegistryObject;

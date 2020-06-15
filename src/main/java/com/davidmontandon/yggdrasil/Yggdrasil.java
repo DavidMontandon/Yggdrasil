@@ -36,7 +36,7 @@ import com.davidmontandon.yggdrasil.init.StructureInit;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.davidmontandon.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
 import com.davidmontandon.yggdrasil.util.holder.DimensionsHolder;
-import com.davidmontandon.yggdrasil.world.gen.OverworldOreGen;
+import com.davidmontandon.yggdrasil.world.gen.OverworldAddFeatures;
 
 
 @Mod("yggdrasil")
@@ -112,7 +112,7 @@ public class Yggdrasil
 
     @SubscribeEvent
     public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
-    	OverworldOreGen.generateOre() ; 
+    	//OverworldAddFeatures.generateOre() ; 
     }
     
     public static class YggdrasilRuneItemGroup extends ItemGroup {
