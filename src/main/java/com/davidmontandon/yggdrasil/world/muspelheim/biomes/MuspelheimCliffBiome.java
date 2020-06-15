@@ -11,8 +11,6 @@ public class MuspelheimCliffBiome  extends Biome {
 	public MuspelheimCliffBiome(Builder biomeBuilder) {
 		super(biomeBuilder);
 		
-		this.addSpawn(EntityClassification.CREATURE, new SpawnListEntry(EntityType.BEE, 20, 2, 10)) ; 
-
 		MuspelheimDefaultBiomeFeatures.addCarver(this);
 		MuspelheimDefaultBiomeFeatures.addLakes(this);
 		MuspelheimDefaultBiomeFeatures.addSprings(this);

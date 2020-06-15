@@ -6,6 +6,7 @@ import java.util.Set;
 
 import com.davidmontandon.yggdrasil.init.BiomeInit;
 import com.davidmontandon.yggdrasil.util.noise.VoronoiGenerator;
+import com.davidmontandon.yggdrasil.world.biome.general.BiomeLayers;
 import com.google.common.collect.ImmutableSet;
 
 import net.minecraft.world.biome.Biome;
@@ -13,23 +14,40 @@ import net.minecraft.world.biome.provider.BiomeProvider;
 
 public class SvartalvheimBiomeProvider extends BiomeProvider {
 
-	private static final Set<Biome> biomeList = ImmutableSet.of(
+    private final BiomeLayers<Biome> layers;
+    private static final Set<Biome> biomeList = ImmutableSet.of(
 			BiomeInit.SVARTALVHEIM_CAVERN_BIOME.get())  ;
 	
-	private VoronoiGenerator biomeNoise;
+	private VoronoiGenerator biomeNoise = new VoronoiGenerator() ;
+	
 	double biomeSize = 32.0d;  
+	int seed = 548317 ; 
+	
 	
 	public SvartalvheimBiomeProvider() {
 		super(biomeList);
-		this.biomeNoise = new VoronoiGenerator();
-		this.biomeNoise.setSeed((int) 122121 );
+		
+		this.biomeNoise.setSeed( seed );
+		this.layers = null  ;
 	}
 
+    public SvartalvheimBiomeProvider(BiomeLayers<Biome> layers) {
+        super(biomeList);
 
+        this.biomeNoise.setSeed( seed );
+        this.layers = layers;
+    }
+	
 	@Override
 	public Biome getNoiseBiome(int x, int y, int z) {		
-		return getBiome(new LinkedList<Biome>(biomeList),
-				biomeNoise.getValue((double) x / biomeSize, (double) y / biomeSize, (double) z / biomeSize));
+		
+		if(this.layers != null) {
+			return this.layers.noise.sample(x, z);
+		} else {
+			return getBiome(new LinkedList<Biome>(biomeList),
+					this.biomeNoise.getValue((double) x / this.biomeSize, (double) y / this.biomeSize, (double) z / this.biomeSize));			
+		}
+		
 
 	}
 	
