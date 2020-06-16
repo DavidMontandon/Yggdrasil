@@ -1,16 +1,16 @@
 package com.davidmontandon.yggdrasil.world.dimensions.svartalvheim.biomes;
 
+import com.davidmontandon.yggdrasil.world.dimensions.svartalvheim.generator.SvartalvheimSurfaceBuilder;
 import com.davidmontandon.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class SvartalvheimGrassCavernBiome extends Biome {
 
 	public SvartalvheimGrassCavernBiome(Builder biomeBuilder) {
 		
 	      super((new Biome.Builder())
-	    		  .surfaceBuilder(SurfaceBuilder.MOUNTAIN, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_HOTROCK_COLDROCK_SAND)
+	    		  .surfaceBuilder(SvartalvheimSurfaceBuilder.SVARTALVHEIM_CAVERN, YggdrasilSurfaceBuilderConfigLists.STONE_STONE_STONE)	    		  
 	    		  .precipitation(Biome.RainType.NONE)
 	    		  .category(Biome.Category.PLAINS)
 	    		  .depth(0.1F)
@@ -20,5 +20,6 @@ public class SvartalvheimGrassCavernBiome extends Biome {
 	    		  .waterColor(0xE8D8ED)
 	    		  .waterFogColor(0xEABAF9)
 	    		  .parent((String)null));
+	      	      
 	}
 }

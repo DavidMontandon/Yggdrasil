@@ -1,18 +1,23 @@
 package com.davidmontandon.yggdrasil.world.dimensions.svartalvheim.biomes;
 
+import com.davidmontandon.yggdrasil.world.dimensions.svartalvheim.generator.SvartalvheimSurfaceBuilder;
 import com.davidmontandon.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.surfacebuilders.NetherSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class SvartalvheimCavernBiome extends Biome {
 
+
+	
 	public SvartalvheimCavernBiome(Builder biomeBuilder) {
 		
 	      super((new Biome.Builder())
-	    		  .surfaceBuilder(SurfaceBuilder.MOUNTAIN, YggdrasilSurfaceBuilderConfigLists.STONE_STONE_STONE)
+	    		  .surfaceBuilder(SvartalvheimSurfaceBuilder.SVARTALVHEIM_CAVERN, YggdrasilSurfaceBuilderConfigLists.STONE_STONE_STONE)	    		  
 	    		  .precipitation(Biome.RainType.NONE)
-	    		  .category(Biome.Category.NETHER)
+	    		  .category(Biome.Category.PLAINS)
 	    		  .depth(0.3F)
 	    		  .scale(0.2F)
 	    		  .temperature(1.0F)

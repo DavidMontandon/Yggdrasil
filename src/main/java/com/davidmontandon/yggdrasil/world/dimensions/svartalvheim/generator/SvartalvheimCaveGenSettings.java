@@ -8,6 +8,6 @@ public class SvartalvheimCaveGenSettings extends GenerationSettings {
    }
 
    public int getBedrockRoofHeight() {
-      return 127;
+      return 255; //127
    }
 }
