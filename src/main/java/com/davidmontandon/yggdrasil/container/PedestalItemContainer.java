@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.YggdrasilContainerTypes;
-import com.davidmontandon.yggdrasil.objects.tileentities.ItemPedestalTileEntity;
+import com.davidmontandon.yggdrasil.objects.tileentities.PedestalItemTileEntity;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -15,9 +15,9 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
 
-public class ItemPedestalContainer extends Container {
+public class PedestalItemContainer extends Container {
 
-	public final ItemPedestalTileEntity tileEntity;
+	public final PedestalItemTileEntity tileEntity;
 	private final IWorldPosCallable canInteractWithCallable;
 
 	/*
@@ -45,8 +45,8 @@ public class ItemPedestalContainer extends Container {
 	 * Then we can just hardcode the Y position as 142 as that doesn't change in the
 	 * hotbar.
 	 */
-	public ItemPedestalContainer(final int windowId, final PlayerInventory playerInv,
-			final ItemPedestalTileEntity tileEntityIn) {
+	public PedestalItemContainer(final int windowId, final PlayerInventory playerInv,
+			final PedestalItemTileEntity tileEntityIn) {
 		super(YggdrasilContainerTypes.ITEM_PEDESTAL.get(), windowId);
 		this.tileEntity = tileEntityIn;
 		this.canInteractWithCallable = IWorldPosCallable.of(tileEntityIn.getWorld(), tileEntityIn.getPos());
@@ -70,7 +70,7 @@ public class ItemPedestalContainer extends Container {
 		}
 	}
 
-	public ItemPedestalContainer(final int windowId, final PlayerInventory playerInv, final PacketBuffer data) {
+	public PedestalItemContainer(final int windowId, final PlayerInventory playerInv, final PacketBuffer data) {
 		this(windowId, playerInv, getTileEntity(playerInv, data));
 	}
 
@@ -81,12 +81,12 @@ public class ItemPedestalContainer extends Container {
 	 * instance of ours. If its not we want to throw an exception as that shouldnt
 	 * happen.
 	 */
-	private static ItemPedestalTileEntity getTileEntity(final PlayerInventory playerInv, final PacketBuffer data) {
+	private static PedestalItemTileEntity getTileEntity(final PlayerInventory playerInv, final PacketBuffer data) {
 		Objects.requireNonNull(playerInv, "playerInv cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
 		final TileEntity tileAtPos = playerInv.player.world.getTileEntity(data.readBlockPos());
-		if (tileAtPos instanceof ItemPedestalTileEntity) {
-			return (ItemPedestalTileEntity) tileAtPos;
+		if (tileAtPos instanceof PedestalItemTileEntity) {
+			return (PedestalItemTileEntity) tileAtPos;
 		}
 		throw new IllegalStateException("TileEntity is not correct " + tileAtPos);
 	}
@@ -97,7 +97,7 @@ public class ItemPedestalContainer extends Container {
 	 */
 	@Override
 	public boolean canInteractWith(PlayerEntity playerIn) {
-		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.ITEM_PEDESTAL.get());
+		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.PEDESTAL_ITEM.get());
 	}
 
 	/*

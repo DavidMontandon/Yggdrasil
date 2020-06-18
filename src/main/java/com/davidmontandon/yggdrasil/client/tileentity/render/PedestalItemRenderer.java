@@ -1,6 +1,6 @@
 package com.davidmontandon.yggdrasil.client.tileentity.render;
 
-import com.davidmontandon.yggdrasil.objects.tileentities.ItemPedestalTileEntity;
+import com.davidmontandon.yggdrasil.objects.tileentities.PedestalItemTileEntity;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 
@@ -18,11 +18,11 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @SuppressWarnings("deprecation")
 @OnlyIn(Dist.CLIENT)
-public class ItemPedestalRenderer extends TileEntityRenderer<ItemPedestalTileEntity> {
+public class PedestalItemRenderer extends TileEntityRenderer<PedestalItemTileEntity> {
 
 	private float degrees;
 
-	public ItemPedestalRenderer(TileEntityRendererDispatcher rendererDispatcherIn) {
+	public PedestalItemRenderer(TileEntityRendererDispatcher rendererDispatcherIn) {
 		super(rendererDispatcherIn);
 		degrees = 0.0f;
 	}
@@ -56,7 +56,7 @@ public class ItemPedestalRenderer extends TileEntityRenderer<ItemPedestalTileEnt
 	 * rendering and doesn't cause any overflows or anything.
 	 */
 	@Override
-	public void render(ItemPedestalTileEntity tileEntityIn, float partialTicks, MatrixStack matrixStackIn,
+	public void render(PedestalItemTileEntity tileEntityIn, float partialTicks, MatrixStack matrixStackIn,
 			IRenderTypeBuffer bufferIn, int combinedLightIn, int combinedOverlayIn) {
 		NonNullList<ItemStack> items = tileEntityIn.getItems();
 		for (ItemStack stack : items) {

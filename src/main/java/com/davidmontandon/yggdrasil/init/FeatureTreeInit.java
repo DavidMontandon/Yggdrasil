@@ -4,16 +4,18 @@ import com.davidmontandon.yggdrasil.world.feature.tree.YggdrasilBigTree;
 
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
 
 
 public class FeatureTreeInit {
 
-	
-	public static final Feature<BaseTreeFeatureConfig> ORIGIN_TREE = new YggdrasilBigTree.Builder()
+	/*
+	public static final Feature<HugeTreeFeatureConfig> BIG_IRON_WOOD_TREE = new YggdrasilBigTree.Builder()
+			.log(BlockInit.IRON_WOOD_LOG.get().getDefaultState())
 			.leaves(BlockInit.IRON_WOOD_LEAVES.get().getDefaultState())
-			.minHeight(5)
-			.maxHeight(8)
 			.create();
+	*/
+	
 	
 	
 	/*

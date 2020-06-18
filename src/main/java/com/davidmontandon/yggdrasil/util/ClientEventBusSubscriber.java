@@ -1,8 +1,8 @@
 package com.davidmontandon.yggdrasil.util;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.client.gui.ItemPedestalScreen;
-import com.davidmontandon.yggdrasil.client.tileentity.render.ItemPedestalRenderer;
+import com.davidmontandon.yggdrasil.client.gui.PedestalItemScreen;
+import com.davidmontandon.yggdrasil.client.tileentity.render.PedestalItemRenderer;
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.YggdrasilContainerTypes;
 import com.davidmontandon.yggdrasil.init.YggdrasilTileEntityTypes;
@@ -27,9 +27,9 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_IKADAMIA_CROP.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_ASH_CARAMBOLA_BUSH.get(), RenderType.getCutout());		
 		
-		ScreenManager.registerFactory(YggdrasilContainerTypes.ITEM_PEDESTAL.get(), ItemPedestalScreen::new);
+		ScreenManager.registerFactory(YggdrasilContainerTypes.ITEM_PEDESTAL.get(), PedestalItemScreen::new);
 
-		ClientRegistry.bindTileEntityRenderer(YggdrasilTileEntityTypes.ITEM_PEDESTAL.get(), ItemPedestalRenderer::new);
+		ClientRegistry.bindTileEntityRenderer(YggdrasilTileEntityTypes.ITEM_PEDESTAL.get(), PedestalItemRenderer::new);
 		
 		Yggdrasil.LOGGER.info("Render Registered! ");
 		

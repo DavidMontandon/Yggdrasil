@@ -97,8 +97,8 @@
 	"block.yggdrasil.muspelheim_ikadamia" : "Ikadamia Seed",
 
 
-	"container.yggdrasil.item_pedestal": "Item Pedestal",
-	"block.yggdrasil.item_pedestal": "Item Pedestal",
+	"container.yggdrasil.pedestal_item": "Pedestal",
+	"block.yggdrasil.pedestal_item": "Pedestal",
 
 	"itemGroup.YggdrasilRuneItemGroup" : "Yggdrasil Runes",
 	"itemGroup.YggdrasilToolItemGroup" : "Yggdrasil Tools",

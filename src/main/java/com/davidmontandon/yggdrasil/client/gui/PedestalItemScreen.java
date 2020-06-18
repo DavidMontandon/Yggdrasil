@@ -1,7 +1,7 @@
 package com.davidmontandon.yggdrasil.client.gui;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.container.ItemPedestalContainer;
+import com.davidmontandon.yggdrasil.container.PedestalItemContainer;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
@@ -9,17 +9,17 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class ItemPedestalScreen extends ContainerScreen<ItemPedestalContainer> {
+public class PedestalItemScreen extends ContainerScreen<PedestalItemContainer> {
 
 	private static final ResourceLocation BACKGROUND_TEXTURE = new ResourceLocation(Yggdrasil.MOD_ID,
-			"textures/gui/item_pedestal.png");
+			"textures/gui/pedestal_item.png");
 
 	/*
 	 * In this constructor we set the gui's top left position to (0, 0); where we
 	 * want to start drawing the GUI from. Then we set the X size and Y size to the
 	 * size of the GUI that we want to be drawn.
 	 */
-	public ItemPedestalScreen(ItemPedestalContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
+	public PedestalItemScreen(PedestalItemContainer screenContainer, PlayerInventory inv, ITextComponent titleIn) {
 		super(screenContainer, inv, titleIn);
 		this.guiLeft = 0;
 		this.guiTop = 0;

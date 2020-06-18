@@ -11,9 +11,11 @@ import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 
+
+
 public class YggdrasilTreeBase extends AbstractTreeFeature<BaseTreeFeatureConfig> {
 
-	protected static abstract class BuilderBase<T extends BuilderBase, F extends YggdrasilTreeBase> {	 
+	protected static abstract class BuilderBase<T extends BuilderBase<?, ?>, F extends YggdrasilTreeBase> {	 
 		
         protected BlockState log;
         protected BlockState leaves;
@@ -25,10 +27,14 @@ public class YggdrasilTreeBase extends AbstractTreeFeature<BaseTreeFeatureConfig
         	this.leaves = Blocks.OAK_LOG.getDefaultState();
         }
         
-        public T log(BlockState log) {this.log = log; return (T)this;}
-        public T leaves(BlockState leaves) {this.leaves = leaves; return (T)this;}
-        public T minHeight(int height) {this.minHeight = height; return (T)this;}
-        public T maxHeight(int height) {this.maxHeight = height; return (T)this;}
+        @SuppressWarnings("unchecked")
+		public T log(BlockState log) {this.log = log; return (T)this;}
+        @SuppressWarnings("unchecked")
+		public T leaves(BlockState leaves) {this.leaves = leaves; return (T)this;}
+        @SuppressWarnings("unchecked")
+		public T minHeight(int height) {this.minHeight = height; return (T)this;}
+        @SuppressWarnings("unchecked")
+		public T maxHeight(int height) {this.maxHeight = height; return (T)this;}
 		
         abstract F create();
         

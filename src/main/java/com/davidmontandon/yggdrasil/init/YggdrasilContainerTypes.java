@@ -1,7 +1,7 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.container.ItemPedestalContainer;
+import com.davidmontandon.yggdrasil.container.PedestalItemContainer;
 
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraftforge.common.extensions.IForgeContainerType;
@@ -14,7 +14,7 @@ public class YggdrasilContainerTypes {
 	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = new DeferredRegister<>(
 			ForgeRegistries.CONTAINERS, Yggdrasil.MOD_ID);
 	
-	public static final RegistryObject<ContainerType<ItemPedestalContainer>> ITEM_PEDESTAL = CONTAINER_TYPES
-			.register("item_pedestal", () -> IForgeContainerType.create(ItemPedestalContainer::new));
+	public static final RegistryObject<ContainerType<PedestalItemContainer>> ITEM_PEDESTAL = CONTAINER_TYPES
+			.register("pedestal_item", () -> IForgeContainerType.create(PedestalItemContainer::new));
 	
 }

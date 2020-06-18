@@ -1,26 +1,51 @@
 package com.davidmontandon.yggdrasil.world.biome;
 
 import com.davidmontandon.yggdrasil.init.BlockInit;
-import com.davidmontandon.yggdrasil.world.feature.tree.IronWoodTree;
+import com.google.common.collect.ImmutableList;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
 import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
+import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
+import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.common.IPlantable;
 
 public class IronWoodBiome extends Biome {
 
-	public IronWoodBiome(Builder biomeBuilder) {
+    public static final HugeTreeFeatureConfig HUGE_IRON_WOOD_TREE_CONFIG = (new HugeTreeFeatureConfig.Builder(
+    		new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LOG.get().getDefaultState()), 
+    		new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LEAVES.get().getDefaultState())))
+    			.baseHeight(6)
+    			.setSapling((net.minecraftforge.common.IPlantable)BlockInit.IRON_WOOD_SAPLING.get())
+    			.build();
+    
+    public static final TreeFeatureConfig NORMAL_IRON_WOOD_TREE_CONFIG = (new TreeFeatureConfig.Builder(
+			new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LOG.get().getDefaultState()), 
+			new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LEAVES.get().getDefaultState()), 
+			new BlobFoliagePlacer(2, 0)))
+				.baseHeight(4)
+				.heightRandA(2)
+				.foliageHeight(3)
+				.ignoreVines()
+				.setSapling((IPlantable) BlockInit.IRON_WOOD_SAPLING.get())
+				.build();
+    
+    public IronWoodBiome(Builder biomeBuilder) {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.7F).downfall(0.8F).waterColor(4159204).waterFogColor(329011).parent("dark_forest"));
 		
 	      this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
@@ -29,11 +54,28 @@ public class IronWoodBiome extends Biome {
 	      DefaultBiomeFeatures.addStructures(this);
 	      DefaultBiomeFeatures.addLakes(this);
 	      DefaultBiomeFeatures.addMonsterRooms(this);
+	      	      
+	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+	    		 Feature.MEGA_SPRUCE_TREE.withConfiguration(HUGE_IRON_WOOD_TREE_CONFIG)
+	    		  .withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(6, 0.1F, 1))));
+	      
 	      
 	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
-				Feature.NORMAL_TREE.withConfiguration(IronWoodTree.IRON_WOOD_TREE_CONFIG).withPlacement(
-						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(16, 0.2f, 1))));	
+				Feature.NORMAL_TREE.withConfiguration(NORMAL_IRON_WOOD_TREE_CONFIG).withPlacement(
+						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(4, 0.1f, 1))));	
 
+	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, 
+	    		  Feature.RANDOM_SELECTOR.withConfiguration(
+	    				  new MultipleRandomFeatureConfig(ImmutableList.of(
+	    						  Feature.HUGE_BROWN_MUSHROOM.withConfiguration(DefaultBiomeFeatures.BIG_BROWN_MUSHROOM).withChance(0.0125F), 
+	    						  Feature.HUGE_RED_MUSHROOM.withConfiguration(DefaultBiomeFeatures.BIG_RED_MUSHROOM).withChance(0.025F), 
+	    						  Feature.DARK_OAK_TREE.withConfiguration(DefaultBiomeFeatures.DARK_OAK_TREE_CONFIG).withChance(0.333334F), 
+	    						  Feature.NORMAL_TREE.withConfiguration(DefaultBiomeFeatures.BIRCH_TREE_CONFIG).withChance(0.1F), 
+	    						  Feature.FANCY_TREE.withConfiguration(DefaultBiomeFeatures.FANCY_TREE_CONFIG).withChance(0.05F)), 
+	    						  Feature.NORMAL_TREE.withConfiguration(DefaultBiomeFeatures.OAK_TREE_CONFIG))).withPlacement(Placement.DARK_OAK_TREE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+
+	      
+	      
 	      DefaultBiomeFeatures.addDoubleFlowers(this);
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      

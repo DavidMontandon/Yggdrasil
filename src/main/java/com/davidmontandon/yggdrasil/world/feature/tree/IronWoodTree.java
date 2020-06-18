@@ -28,7 +28,6 @@ public class IronWoodTree extends Tree {
 				.ignoreVines()
 				.setSapling((IPlantable) BlockInit.IRON_WOOD_SAPLING.get())
 				.build();
-
 	
 	@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {

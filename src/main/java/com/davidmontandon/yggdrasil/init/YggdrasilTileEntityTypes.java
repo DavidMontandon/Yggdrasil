@@ -1,7 +1,7 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.objects.tileentities.ItemPedestalTileEntity;
+import com.davidmontandon.yggdrasil.objects.tileentities.PedestalItemTileEntity;
 
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
@@ -13,8 +13,8 @@ public class YggdrasilTileEntityTypes {
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(
 			ForgeRegistries.TILE_ENTITIES, Yggdrasil.MOD_ID);
 	
-	public static final RegistryObject<TileEntityType<ItemPedestalTileEntity>> ITEM_PEDESTAL = TILE_ENTITY_TYPES
-			.register("item_pedestal", () -> TileEntityType.Builder
-					.create(ItemPedestalTileEntity::new, BlockInit.ITEM_PEDESTAL.get()).build(null));
+	public static final RegistryObject<TileEntityType<PedestalItemTileEntity>> ITEM_PEDESTAL = TILE_ENTITY_TYPES
+			.register("pedestal_item", () -> TileEntityType.Builder
+					.create(PedestalItemTileEntity::new, BlockInit.PEDESTAL_ITEM.get()).build(null));
 	
 }

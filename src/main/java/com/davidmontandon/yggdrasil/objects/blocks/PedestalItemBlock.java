@@ -3,7 +3,7 @@ package com.davidmontandon.yggdrasil.objects.blocks;
 import java.util.stream.Stream;
 
 import com.davidmontandon.yggdrasil.init.YggdrasilTileEntityTypes;
-import com.davidmontandon.yggdrasil.objects.tileentities.ItemPedestalTileEntity;
+import com.davidmontandon.yggdrasil.objects.tileentities.PedestalItemTileEntity;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -23,9 +23,9 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-public class ItemPedestalBlock extends Block {
+public class PedestalItemBlock extends Block {
 
-	public ItemPedestalBlock(Block.Properties properties) {
+	public PedestalItemBlock(Block.Properties properties) {
 		super(properties);
 	}
 
@@ -61,8 +61,8 @@ public class ItemPedestalBlock extends Block {
 			Hand handIn, BlockRayTraceResult hit) {
 		if (!worldIn.isRemote) {
 			final TileEntity tile = worldIn.getTileEntity(pos);
-			if (tile instanceof ItemPedestalTileEntity) {
-				NetworkHooks.openGui((ServerPlayerEntity) player, (ItemPedestalTileEntity) tile, pos);
+			if (tile instanceof PedestalItemTileEntity) {
+				NetworkHooks.openGui((ServerPlayerEntity) player, (PedestalItemTileEntity) tile, pos);
 				return ActionResultType.SUCCESS;
 			}
 		}
@@ -80,8 +80,8 @@ public class ItemPedestalBlock extends Block {
 	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		if (state.getBlock() != newState.getBlock()) {
 			TileEntity tile = worldIn.getTileEntity(pos);
-			if (tile instanceof ItemPedestalTileEntity) {
-				InventoryHelper.dropItems(worldIn, pos, ((ItemPedestalTileEntity) tile).getItems());
+			if (tile instanceof PedestalItemTileEntity) {
+				InventoryHelper.dropItems(worldIn, pos, ((PedestalItemTileEntity) tile).getItems());
 			}
 		}
 	}

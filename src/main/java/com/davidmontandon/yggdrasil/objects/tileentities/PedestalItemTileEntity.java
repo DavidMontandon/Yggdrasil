@@ -1,7 +1,7 @@
 package com.davidmontandon.yggdrasil.objects.tileentities;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.container.ItemPedestalContainer;
+import com.davidmontandon.yggdrasil.container.PedestalItemContainer;
 import com.davidmontandon.yggdrasil.init.YggdrasilTileEntityTypes;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,7 +21,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.util.Constants;
 
-public class ItemPedestalTileEntity extends LockableLootTileEntity implements IClearable, INamedContainerProvider {
+public class PedestalItemTileEntity extends LockableLootTileEntity implements IClearable, INamedContainerProvider {
 
 	/*
 	 * This is the list of items that is non null. We tell it to have a size of 1
@@ -29,11 +29,11 @@ public class ItemPedestalTileEntity extends LockableLootTileEntity implements IC
 	 */
 	protected NonNullList<ItemStack> items = NonNullList.withSize(1, ItemStack.EMPTY);
 
-	public ItemPedestalTileEntity(TileEntityType<?> tileEntityTypeIn) {
+	public PedestalItemTileEntity(TileEntityType<?> tileEntityTypeIn) {
 		super(tileEntityTypeIn);
 	}
 
-	public ItemPedestalTileEntity() {
+	public PedestalItemTileEntity() {
 		this(YggdrasilTileEntityTypes.ITEM_PEDESTAL.get());
 	}
 
@@ -102,13 +102,13 @@ public class ItemPedestalTileEntity extends LockableLootTileEntity implements IC
 	 */
 	@Override
 	protected ITextComponent getDefaultName() {
-		return new TranslationTextComponent("container." + Yggdrasil.MOD_ID + ".item_pedestal");
+		return new TranslationTextComponent("container." + Yggdrasil.MOD_ID + ".pedestal_item");
 	}
 
 	/* This method creates the container for this tile entity */
 	@Override
 	protected Container createMenu(int id, PlayerInventory player) {
-		return new ItemPedestalContainer(id, player, this);
+		return new PedestalItemContainer(id, player, this);
 	}
 
 	/*
