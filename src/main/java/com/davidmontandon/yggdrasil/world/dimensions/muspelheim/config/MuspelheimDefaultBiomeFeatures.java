@@ -3,6 +3,8 @@ package com.davidmontandon.yggdrasil.world.dimensions.muspelheim.config;
 import com.davidmontandon.yggdrasil.init.BlockInit;
 import com.davidmontandon.yggdrasil.init.FluidInit;
 import com.davidmontandon.yggdrasil.init.StructureInit;
+import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.generator.MuspelheimVolcanoSurfaceBuilder;
+import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.generator.MuspelheimVolcanoTopLayerSurfaceBuilder;
 import com.davidmontandon.yggdrasil.world.feature.tree.EpluphiferTree;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
@@ -30,19 +32,31 @@ import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class MuspelheimDefaultBiomeFeatures {
 	
 	//public static final LiquidsConfig ACIDIC_SPRING_CONFIG = new LiquidsConfig(FluidInit.ACIDIC_FLOWING.get().getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get()));
 	public static final LiquidsConfig WATER_SPRING_CONFIG = new LiquidsConfig(Fluids.WATER.getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get()));
 	public static final LiquidsConfig LAVA_SPRING_CONFIG = new LiquidsConfig(Fluids.LAVA.getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get(), BlockInit.MUSPELHEIM_COLD_ROCK.get(), BlockInit.MUSPELHEIM_HOT_ROCK.get()));
-	private static final BlockState DEAD_BUSH = Blocks.DEAD_BUSH.getDefaultState();
-	public static final BlockClusterFeatureConfig DEAD_BUSH_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(DEAD_BUSH), new SimpleBlockPlacer())).tries(4).build();
+
 	private static final BlockState GRAVEL = Blocks.GRAVEL.getDefaultState();
 	private static final BlockState SULFUR = BlockInit.SULFUR_BLOCK.get().getDefaultState() ; 
+	private static final BlockState DEAD_BUSH = Blocks.DEAD_BUSH.getDefaultState();
+	private static final BlockState HOT_ROCK = BlockInit.MUSPELHEIM_HOT_ROCK.get().getDefaultState();
+	private static final BlockState ASH = BlockInit.MUSPELHEIM_ASH.get().getDefaultState();
+	
 	public static final BlockClusterFeatureConfig GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.MUSPELHEIM_GRASS.get().getDefaultState()), new SimpleBlockPlacer())).tries(32).build();
-
+	public static final BlockClusterFeatureConfig DEAD_BUSH_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(DEAD_BUSH), new SimpleBlockPlacer())).tries(4).build();
+	
+	public static final SurfaceBuilder<SurfaceBuilderConfig> VOLCANO_SURFACE_BUILDER = new MuspelheimVolcanoSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> VOLCANO_TOP_LAYER_SURFACE_BUILDER = new MuspelheimVolcanoTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	
+	public static final SurfaceBuilderConfig MAGMA_SURFACE = new SurfaceBuilderConfig(HOT_ROCK, HOT_ROCK, ASH);
+	public static final SurfaceBuilderConfig MAGMA_SURFACE2 = new SurfaceBuilderConfig(Blocks.DIAMOND_BLOCK.getDefaultState(), Blocks.BEDROCK.getDefaultState(), Blocks.BRICKS.getDefaultState());
 		
+	
 	
 	public static void addLakes(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(Blocks.LAVA.getDefaultState())).withPlacement(Placement.LAVA_LAKE.configure(new ChanceConfig(80))));

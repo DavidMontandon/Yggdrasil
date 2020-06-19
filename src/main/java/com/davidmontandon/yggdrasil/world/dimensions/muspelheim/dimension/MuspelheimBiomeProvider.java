@@ -18,6 +18,7 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 			BiomeInit.MUSPELHEIM_CLIFF_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_OCEAN_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_ASH_PLAINS.get(), 
+			BiomeInit.MUSPELHEIM_VOLCANO_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_PLAINS.get());
 
 	private VoronoiGenerator biomeNoise;

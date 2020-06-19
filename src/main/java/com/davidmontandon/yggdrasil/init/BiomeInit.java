@@ -1,14 +1,9 @@
 package com.davidmontandon.yggdrasil.init;
 
 import com.davidmontandon.yggdrasil.Yggdrasil;
-import com.davidmontandon.yggdrasil.world.biome.IronWoodBiome;
-import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.biomes.MuspelheimAshPlainsBiome;
-import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.biomes.MuspelheimCliffBiome;
-import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.biomes.MuspelheimExtremeHillBiome;
-import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.biomes.MuspelheimOceanBiome;
-import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.biomes.MuspelheimPlainsBiome;
-import com.davidmontandon.yggdrasil.world.dimensions.svartalvheim.biomes.SvartalvheimCavernBiome;
-import com.davidmontandon.yggdrasil.world.dimensions.svartalvheim.biomes.SvartalvheimGrassCavernBiome;
+import com.davidmontandon.yggdrasil.world.biome.* ;
+import com.davidmontandon.yggdrasil.world.dimensions.muspelheim.biomes.* ;
+import com.davidmontandon.yggdrasil.world.dimensions.svartalvheim.biomes.* ;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
@@ -60,6 +55,9 @@ public class BiomeInit {
 			.register("muspelheim_ocean",
 					() -> new MuspelheimOceanBiome(null));
 
+	public static final RegistryObject<Biome> MUSPELHEIM_VOLCANO_BIOME = BIOMES
+			.register("muspelheim_volcano",
+					() -> new MuspelheimVolcanoBiome(null));
 	
 	
 /*

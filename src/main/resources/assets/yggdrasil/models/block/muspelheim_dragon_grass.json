@@ -1,0 +1,6 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "yggdrasil:blocks/muspelheim_dragon_grass"
+  }
+}

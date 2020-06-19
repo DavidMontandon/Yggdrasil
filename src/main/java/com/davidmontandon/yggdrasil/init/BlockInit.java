@@ -5,6 +5,7 @@ import com.davidmontandon.yggdrasil.init.objects.blocks.IronWoodSaplingBlock;
 import com.davidmontandon.yggdrasil.init.objects.blocks.PortalShirneBlock;
 import com.davidmontandon.yggdrasil.init.objects.blocks.YggdrasilSaplingBlock;
 import com.davidmontandon.yggdrasil.objects.blocks.PedestalItemBlock;
+import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimDragonGrassBlock;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimGrass;
 import com.davidmontandon.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.davidmontandon.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
@@ -123,13 +124,15 @@ public class BlockInit {
 		
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_LEAVES = BLOCKS.register("muspelheim_epluphifer_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	
+
 	public static final RegistryObject<Block> MUSPELHEIM_IKADAMIA_CROP = BLOCKS.register("muspelheim_ikadamia",
 			() -> new  MuspelheimIkadamiaCropBlock(Block.Properties.from(Blocks.WHEAT)));
 	
 	public static final RegistryObject<Block> MUSPELHEIM_ASH_CARAMBOLA_BUSH = BLOCKS.register("muspelheim_ash_carambola_bush",
 			() -> new MuspelheimAshCarambola(Block.Properties.from(Blocks.SWEET_BERRY_BUSH))) ; 
 	
+	public static final RegistryObject<Block> MUSPELHEIM_DRAGON_GRAS = BLOCKS.register("muspelheim_dragon_grass",
+			() -> new MuspelheimDragonGrassBlock(Block.Properties.from(Blocks.TALL_GRASS))) ; 
 		
 }
 

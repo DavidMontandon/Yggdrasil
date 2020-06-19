@@ -18,7 +18,7 @@
                   }
                 }
               ],
-              "name": "yggdrasil:muspelheim_ikadamia_seed"
+              "name": "yggdrasil:muspelheim_ikadamia"
             },
             {
               "type": "minecraft:item",
@@ -50,7 +50,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "yggdrasil:muspelheim_ikadamia_seed",
+          "block": "yggdrasil:muspelheim_ikadamia",
           "properties": {
             "age": "7"
           }
