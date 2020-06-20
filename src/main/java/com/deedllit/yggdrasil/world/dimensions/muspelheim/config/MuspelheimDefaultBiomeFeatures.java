@@ -15,6 +15,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.blockplacer.DoublePlantBlockPlacer;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.carver.WorldCarver;
@@ -31,6 +32,7 @@ import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
+import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
@@ -46,9 +48,14 @@ public class MuspelheimDefaultBiomeFeatures {
 	private static final BlockState DEAD_BUSH = Blocks.DEAD_BUSH.getDefaultState();
 	private static final BlockState HOT_ROCK = BlockInit.MUSPELHEIM_HOT_ROCK.get().getDefaultState();
 	private static final BlockState ASH = BlockInit.MUSPELHEIM_ASH.get().getDefaultState();
+	private static final BlockState DRAGON_GRASS = BlockInit.MUSPELHEIM_DRAGON_GRASS.get().getDefaultState();
+	private static final BlockState SLIM_GRASS = BlockInit.MUSPELHEIM_SLIM_GRASS.get().getDefaultState();
 	
 	public static final BlockClusterFeatureConfig GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.MUSPELHEIM_GRASS.get().getDefaultState()), new SimpleBlockPlacer())).tries(32).build();
 	public static final BlockClusterFeatureConfig DEAD_BUSH_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(DEAD_BUSH), new SimpleBlockPlacer())).tries(4).build();
+	public static final BlockClusterFeatureConfig DRAGON_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(DRAGON_GRASS), new SimpleBlockPlacer())).tries(32).build();
+	public static final BlockClusterFeatureConfig SLIM_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(SLIM_GRASS), new SimpleBlockPlacer())).tries(32).build();
+	   
 	
 	public static final SurfaceBuilder<SurfaceBuilderConfig> VOLCANO_SURFACE_BUILDER = new MuspelheimVolcanoSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> VOLCANO_TOP_LAYER_SURFACE_BUILDER = new MuspelheimVolcanoTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
@@ -57,6 +64,10 @@ public class MuspelheimDefaultBiomeFeatures {
 	public static final SurfaceBuilderConfig MAGMA_SURFACE2 = new SurfaceBuilderConfig(Blocks.DIAMOND_BLOCK.getDefaultState(), Blocks.BEDROCK.getDefaultState(), Blocks.BRICKS.getDefaultState());
 		
 	
+	public static void addPlants(Biome biomeIn) {
+	     biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(SLIM_GRASS_CONFIG).withPlacement(Placement.NOISE_HEIGHTMAP_32.configure(new NoiseDependant(-0.8D, 1, 2))));
+	     biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DRAGON_GRASS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
+	}
 	
 	public static void addLakes(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(Blocks.LAVA.getDefaultState())).withPlacement(Placement.LAVA_LAKE.configure(new ChanceConfig(80))));

@@ -2,6 +2,7 @@ package com.deedllit.yggdrasil.world.dimensions.svartalvheim.dimension;
 
 import javax.annotation.Nullable;
 
+import com.deedllit.yggdrasil.init.BlockInit;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.SvartalvheimBiomeProvider;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.generator.SvartalvheimCaveGenSettings;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.generator.SvartalvheimChunkGenerator;
@@ -35,7 +36,7 @@ public class SvartalvheimDimension extends Dimension {
 	   public ChunkGenerator<?> createChunkGenerator() {
 		 
 		  SvartalvheimCaveGenSettings genSettings = new SvartalvheimCaveGenSettings() ;
-		  genSettings.setDefaultBlock(Blocks.STONE.getDefaultState());
+		  genSettings.setDefaultBlock(BlockInit.SVARTALVHEIM_STONE.get().getDefaultState());
 		  genSettings.setDefaultFluid(Blocks.WATER.getDefaultState());
 		  
 		  return new SvartalvheimChunkGenerator( world, new SvartalvheimBiomeProvider(), genSettings ) ;

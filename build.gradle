@@ -29,7 +29,8 @@ minecraft {
    
    	//mappings channel: 'snapshot', version: '20200525-1.15.1'
    	//mappings channel: 'snapshot', version: '20200530-1.15.1'
-   	mappings channel: 'snapshot', version: '20200610-1.15.1'
+   	//mappings channel: 'snapshot', version: '20200610-1.15.1'
+   	mappings channel: 'snapshot', version: '20200619-1.15.1'
 
     
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.

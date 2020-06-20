@@ -28,6 +28,7 @@ public class MuspelheimPlainsBiome extends Biome {
 		MuspelheimDefaultBiomeFeatures.addSedimentDisks(this);
 		MuspelheimDefaultBiomeFeatures.addStructures(this);
 		MuspelheimDefaultBiomeFeatures.addSickTrees(this); 
+		MuspelheimDefaultBiomeFeatures.addPlants(this) ; 
 		MuspelheimDefaultBiomeFeatures.addDeadBushes(this) ; 
 
 	}

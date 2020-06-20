@@ -1,6 +1,10 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.dimension;
 
 
+import javax.annotation.Nullable;
+
+import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimSkyRender;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.client.audio.MusicTicker;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,6 +20,7 @@ import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap;
+import net.minecraftforge.client.IRenderHandler;
 
 public class MuspelheimDimension extends Dimension {
 	
@@ -175,5 +180,10 @@ public class MuspelheimDimension extends Dimension {
     }
 	
     
+    @Nullable
+    @Override
+    public IRenderHandler getSkyRenderer() {
+        return MuspelheimSkyRender.INSTANCE;
+    }
     
 }

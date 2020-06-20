@@ -1,10 +1,9 @@
 package com.deedllit.yggdrasil.world.dimensions.svartalvheim.generator;
 
-import java.io.Console;
 import java.util.Random;
 import java.util.function.Function;
 
-import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.init.BlockInit;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.BlockState;
@@ -19,7 +18,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
 public class SvartalvheimCavernBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 	   private static final BlockState CAVE_AIR = Blocks.CAVE_AIR.getDefaultState();
-	   private static final BlockState LAYER1 = Blocks.STONE.getDefaultState();
+	   private static final BlockState LAYER1 = BlockInit.SVARTALVHEIM_STONE.get().getDefaultState() ;
 	   private static final BlockState LAYER2 = Blocks.ACACIA_PLANKS.getDefaultState();
 	   private static final BlockState LAYER3 = Blocks.IRON_BLOCK.getDefaultState();
 	   private static final BlockState LAYER4 = Blocks.DIAMOND_BLOCK.getDefaultState();

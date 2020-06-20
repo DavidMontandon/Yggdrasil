@@ -1,7 +1,6 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.objects.fluids.Acidic;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.FlowingFluidBlock;
@@ -41,5 +40,9 @@ public class FluidInit {
 	public static final RegistryObject<FlowingFluidBlock> ACIDIC_BLOCK = BlockInit.BLOCKS.register("acidic",
 			() -> new FlowingFluidBlock(() -> FluidInit.ACIDIC_FLUID.get(), Block.Properties.create(Material.WATER)
 					.doesNotBlockMovement().hardnessAndResistance(100.0f).noDrops()));
+	
+	
+	
+	
 	
 }

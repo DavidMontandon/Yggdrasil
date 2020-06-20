@@ -1,16 +1,11 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.init.objects.blocks.IronWoodSaplingBlock;
-import com.deedllit.yggdrasil.init.objects.blocks.PortalShirneBlock;
-import com.deedllit.yggdrasil.init.objects.blocks.YggdrasilSaplingBlock;
+import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
-import com.deedllit.yggdrasil.objects.blocks.muspelheim.MuspelheimDragonGrassBlock;
-import com.deedllit.yggdrasil.objects.blocks.muspelheim.MuspelheimGrass;
-import com.deedllit.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
-import com.deedllit.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
-import com.deedllit.yggdrasil.world.feature.tree.EpluphiferTree;
-import com.deedllit.yggdrasil.world.feature.tree.IronWoodTree;
+import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
+import com.deedllit.yggdrasil.objects.bushes.muspelheim.* ; 
+import com.deedllit.yggdrasil.world.feature.tree.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -131,9 +126,20 @@ public class BlockInit {
 	public static final RegistryObject<Block> MUSPELHEIM_ASH_CARAMBOLA_BUSH = BLOCKS.register("muspelheim_ash_carambola_bush",
 			() -> new MuspelheimAshCarambola(Block.Properties.from(Blocks.SWEET_BERRY_BUSH))) ; 
 	
-	public static final RegistryObject<Block> MUSPELHEIM_DRAGON_GRAS = BLOCKS.register("muspelheim_dragon_grass",
+	public static final RegistryObject<Block> MUSPELHEIM_DRAGON_GRASS = BLOCKS.register("muspelheim_dragon_grass",
 			() -> new MuspelheimDragonGrassBlock(Block.Properties.from(Blocks.TALL_GRASS))) ; 
 		
+	public static final RegistryObject<Block> MUSPELHEIM_SLIM_GRASS = BLOCKS.register("muspelheim_slim_grass",
+			() -> new MuspelheimSlimGrass(Block.Properties.from(Blocks.TALL_GRASS))) ; 
+
+	/*
+	 * SVARTALVHEIM
+	 */
+	
+	public static final RegistryObject<Block> SVARTALVHEIM_STONE = BLOCKS.register("svartalvheim_stone",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
+
+	
 }
 
 

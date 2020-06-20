@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "forge:block/milk" }
+		"": { "model": "yggdrasil:block/acidic" }
 	}
 }

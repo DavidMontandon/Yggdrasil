@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "yggdrasil:blocks/fingered_grass"
+    "layer0": "yggdrasil:blocks/muspelheim_dragon_grass"
   }
 }

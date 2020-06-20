@@ -13,7 +13,7 @@ import net.minecraft.world.server.ServerWorld;
 public class MuspelheimGrass extends GrowableOnBlock {
 
 	public MuspelheimGrass(Properties builder) {
-		super(builder, true);
+		super(builder, false);
 	}
 
    public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
