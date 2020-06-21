@@ -25,6 +25,14 @@ public class ForgeEventBusSubscriber {
 		
 		if (DimensionType.byName(Yggdrasil.SVARTALVHEIM_DIM_TYPE) == null) 
 			DimensionManager.registerDimension(Yggdrasil.SVARTALVHEIM_DIM_TYPE, DimensionInit.SVARTALVHEIM.get(), null, true);
-					
+
+		if (DimensionType.byName(Yggdrasil.SVARTALVHEIM_DIM_TYPE) == null) 
+			DimensionManager.registerDimension(Yggdrasil.SVARTALVHEIM_DIM_TYPE, DimensionInit.SVARTALVHEIM.get(), null, true);
+	
+		if (DimensionType.byName(Yggdrasil.NIFELHEIM_DIM_TYPE) == null) 
+			DimensionManager.registerDimension(Yggdrasil.NIFELHEIM_DIM_TYPE, DimensionInit.NIFELHEIM.get(), null, true);
+		
+		
+		
 	}
 }

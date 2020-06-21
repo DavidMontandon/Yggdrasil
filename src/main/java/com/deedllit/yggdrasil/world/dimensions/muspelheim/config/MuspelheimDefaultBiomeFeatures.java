@@ -1,6 +1,7 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.config;
 
 import com.deedllit.yggdrasil.init.BlockInit;
+import com.deedllit.yggdrasil.init.CarverInit;
 import com.deedllit.yggdrasil.init.FluidInit;
 import com.deedllit.yggdrasil.init.StructureInit;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.generator.MuspelheimVolcanoSurfaceBuilder;
@@ -18,6 +19,7 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.blockplacer.DoublePlantBlockPlacer;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.carver.WorldCarver;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
 import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
@@ -63,6 +65,24 @@ public class MuspelheimDefaultBiomeFeatures {
 	public static final SurfaceBuilderConfig MAGMA_SURFACE = new SurfaceBuilderConfig(HOT_ROCK, HOT_ROCK, ASH);
 	public static final SurfaceBuilderConfig MAGMA_SURFACE2 = new SurfaceBuilderConfig(Blocks.DIAMOND_BLOCK.getDefaultState(), Blocks.BEDROCK.getDefaultState(), Blocks.BRICKS.getDefaultState());
 		
+	
+	
+	public static void addCavern(Biome biomeIn) {
+
+		
+		float probability ; 
+
+		
+		probability = MuspelheimCavernConfig.INSTANCE.canyon.get().floatValue();
+
+		
+		if (probability > 0.0F)
+		{
+			biomeIn.addCarver(GenerationStage.Carving.AIR, new ConfiguredCarver<>(CarverInit.CAVERN_CANYON.get(), new ProbabilityConfig(probability)));
+		}
+
+		
+	}
 	
 	public static void addPlants(Biome biomeIn) {
 	     biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(SLIM_GRASS_CONFIG).withPlacement(Placement.NOISE_HEIGHTMAP_32.configure(new NoiseDependant(-0.8D, 1, 2))));

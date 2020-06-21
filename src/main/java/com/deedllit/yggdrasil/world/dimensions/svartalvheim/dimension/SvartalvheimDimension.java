@@ -2,6 +2,8 @@ package com.deedllit.yggdrasil.world.dimensions.svartalvheim.dimension;
 
 import javax.annotation.Nullable;
 
+import com.deedllit.yggdrasil.common.world.YggdrasilCavernDimension;
+import com.deedllit.yggdrasil.common.world.YggdrasilDimension;
 import com.deedllit.yggdrasil.init.BlockInit;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.SvartalvheimBiomeProvider;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.generator.SvartalvheimCaveGenSettings;
@@ -13,21 +15,19 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.border.WorldBorder;
-import net.minecraft.world.dimension.Dimension;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class SvartalvheimDimension extends Dimension {
+public class SvartalvheimDimension extends YggdrasilCavernDimension {
 	   private static final Vec3d field_227177_f_ = new Vec3d((double)0.2F, (double)0.03F, (double)0.03F);
 
 	   public SvartalvheimDimension(World worldIn, DimensionType typeIn) {
 	      super(worldIn, typeIn, 0.1F);
 	      this.doesWaterVaporize = false;
-	      this.nether = true;
 	   }
-
+	   
 	   @OnlyIn(Dist.CLIENT)
 	   public Vec3d getFogColor(float celestialAngle, float partialTicks) {
 	      return field_227177_f_;

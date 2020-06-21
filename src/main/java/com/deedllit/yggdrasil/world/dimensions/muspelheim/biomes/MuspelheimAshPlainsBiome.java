@@ -1,12 +1,16 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes;
 
+import com.deedllit.yggdrasil.common.biome.YggdrasilBiome;
+import com.deedllit.yggdrasil.init.CarverInit;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraft.world.gen.GenerationStage;
 
-public class MuspelheimAshPlainsBiome extends Biome {
+public class MuspelheimAshPlainsBiome extends YggdrasilBiome {
 
 	public MuspelheimAshPlainsBiome(Builder biomeBuilder) {
 		super(new Biome.Builder()		
@@ -20,7 +24,11 @@ public class MuspelheimAshPlainsBiome extends Biome {
 				.temperature(2.0f)
 				.downfall(0.0f)
 				.parent(null));
-				
+		
+		
+		//this.addCarver(GenerationStage.Carving.AIR, new ConfiguredCarver<>(CarverInit.CAVERN_CANYON.get(), new ProbabilityConfig(probability
+
+		//MuspelheimDefaultBiomeFeatures.addCavern(this); 
 		MuspelheimDefaultBiomeFeatures.addCarver(this);
 		MuspelheimDefaultBiomeFeatures.addLakes(this);
 		MuspelheimDefaultBiomeFeatures.addSprings(this);

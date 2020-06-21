@@ -26,6 +26,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.deedllit.yggdrasil.init.BiomeInit;
 import com.deedllit.yggdrasil.init.BlockInit;
+import com.deedllit.yggdrasil.init.CarverInit;
 import com.deedllit.yggdrasil.init.DimensionInit;
 import com.deedllit.yggdrasil.init.FluidInit;
 import com.deedllit.yggdrasil.init.ItemInit;
@@ -51,6 +52,7 @@ public class Yggdrasil
     
     public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
     public static final ResourceLocation SVARTALVHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "svartalvheim") ;  
+    public static final ResourceLocation NIFELHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "nifelheim") ;  
             
     public Yggdrasil() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus() ; 
@@ -59,6 +61,7 @@ public class Yggdrasil
     	    	
         dh.addDimension("muspelheim") ;
         dh.addDimension("nivlheim") ;
+        dh.addDimension("nifelheim");
     	
     	ItemInit.ITEMS.register(modEventBus);
     	FluidInit.FLUIDS.register(modEventBus);
@@ -69,6 +72,7 @@ public class Yggdrasil
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);
+    	CarverInit.CAVERS.register(modEventBus);
     	
         instance = this ; 
         MinecraftForge.EVENT_BUS.register(this);
