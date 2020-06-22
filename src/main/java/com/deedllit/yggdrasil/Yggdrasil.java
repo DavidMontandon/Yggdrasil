@@ -24,6 +24,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.deedllit.yggdrasil.common.config.YggdrasilHolder;
 import com.deedllit.yggdrasil.init.BiomeInit;
 import com.deedllit.yggdrasil.init.BlockInit;
 import com.deedllit.yggdrasil.init.CarverInit;
@@ -46,6 +47,7 @@ public class Yggdrasil
 {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "yggdrasil" ; 
+    public static final YggdrasilHolder YGGDRASIL_HOLDER = new YggdrasilHolder() ; 
     public static Yggdrasil instance ; 
     
     public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
@@ -54,6 +56,7 @@ public class Yggdrasil
     public static final ResourceLocation SVARTALVHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "svartalvheim") ;  
     public static final ResourceLocation NIFELHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "nifelheim") ;  
             
+    
     public Yggdrasil() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus() ; 
     	modEventBus.addListener(this::setup);

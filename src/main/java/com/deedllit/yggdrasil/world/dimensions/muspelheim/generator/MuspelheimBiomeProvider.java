@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.dimensions.muspelheim.dimension;
+package com.deedllit.yggdrasil.world.dimensions.muspelheim.generator;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -16,7 +16,9 @@ import net.minecraft.world.gen.layer.LayerUtil;
 public class NifelheimBiomeProvider extends BiomeProvider {
 
 	private static final Set<Biome> biomeList = ImmutableSet.of(
-			BiomeInit.NIFELHEIM_FROZEN_PLAIN_BIOME.get() );
+			BiomeInit.NIFELHEIM_FROZEN_OCEAN_BIOME.get(),
+			BiomeInit.NIFELHEIM_FROZEN_PLAIN_BIOME.get(),
+			BiomeInit.NIFELHEIM_FROZEN_FOREST_BIOME.get() );
 
 	private VoronoiGenerator biomeNoise;
 	double biomeSize = 32.0d;  

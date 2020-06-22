@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 
 import com.deedllit.yggdrasil.common.world.YggdrasilSurfaceDimension;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimSkyRender;
+import com.deedllit.yggdrasil.world.dimensions.muspelheim.generator.MuspelheimBiomeProvider;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.audio.MusicTicker;

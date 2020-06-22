@@ -16,6 +16,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.Yggdrasil.YggdrasilRuneItemGroup;
 import com.deedllit.yggdrasil.Yggdrasil.YggdrasilToolItemGroup;
+import com.deedllit.yggdrasil.common.item.VanafreintineHoe;
 import com.deedllit.yggdrasil.init.Material.ArmorMaterial;
 import com.deedllit.yggdrasil.init.Material.ToolMaterial;
 import com.deedllit.yggdrasil.objects.items.DimensionKeyItem;
@@ -166,8 +167,9 @@ public class ItemInit {
 			() -> new AxeItem(ToolMaterial.VANAFREINTINE, 6, 1.7f, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
 
 	public static final RegistryObject<Item> vanir_hoe = ITEMS.register("vanir_hoe",
-			() -> new HoeItem(ToolMaterial.VANAFREINTINE, 5.0f, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
-
+			() -> new VanafreintineHoe(ToolMaterial.VANAFREINTINE, 5.0f, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
+	
+	
 	//Armor
 	public static final RegistryObject<Item> vanafreintine_helmet = ITEMS.register("vanafreintine_helmet",
 			() -> new ArmorItem(ArmorMaterial.VANAFREINTINE, EquipmentSlotType.HEAD, new Item.Properties().group(YggdrasilToolItemGroup.instance)));

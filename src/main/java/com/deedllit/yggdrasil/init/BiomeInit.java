@@ -81,6 +81,16 @@ public class BiomeInit {
 	public static final RegistryObject<Biome> NIFELHEIM_FROZEN_PLAIN_BIOME = BIOMES
 			.register("nifelheim_frozen_plain_biome",
 					() -> new NifelheimForzenPlainBiome(null));
+
+	public static final RegistryObject<Biome> NIFELHEIM_FROZEN_FOREST_BIOME = BIOMES
+			.register("nifelheim_frozen_forest_biome",
+					() -> new NifelheimForzenForestBiome(null));
+	
+	public static final RegistryObject<Biome> NIFELHEIM_FROZEN_OCEAN_BIOME = BIOMES
+			.register("nifelheim_frozen_ocean_biome",
+					() -> new NifelheimForzenOceanBiome(null));
+	
+	
 	
 	
 	public static void onRegisterBiomes(RegistryEvent.Register<Biome> event) {
