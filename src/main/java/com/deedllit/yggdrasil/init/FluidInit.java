@@ -18,8 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class FluidInit {
 
-	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<Fluid>(ForgeRegistries.FLUIDS,
-			Yggdrasil.MOD_ID);
+	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<Fluid>(ForgeRegistries.FLUIDS, Yggdrasil.MOD_ID);
 
 	public static final ResourceLocation ACIDIC_STILL_RL = new ResourceLocation(Yggdrasil.MOD_ID, "blocks/acidic_still");
 	public static final ResourceLocation ACIDIC_FLOWING_RL = new ResourceLocation(Yggdrasil.MOD_ID,"blocks/acidic_flowing");
@@ -38,8 +37,11 @@ public class FluidInit {
 							.block(() -> FluidInit.ACIDIC_BLOCK.get());
 
 	public static final RegistryObject<FlowingFluidBlock> ACIDIC_BLOCK = BlockInit.BLOCKS.register("acidic",
-			() -> new FlowingFluidBlock(() -> FluidInit.ACIDIC_FLUID.get(), Block.Properties.create(Material.WATER)
-					.doesNotBlockMovement().hardnessAndResistance(100.0f).noDrops()));
+			() -> new FlowingFluidBlock(() -> FluidInit.ACIDIC_FLUID.get(),
+					Block.Properties.create(Material.WATER)
+						.doesNotBlockMovement()
+						.hardnessAndResistance(100.0f)
+						.noDrops()));
 	
 	
 	

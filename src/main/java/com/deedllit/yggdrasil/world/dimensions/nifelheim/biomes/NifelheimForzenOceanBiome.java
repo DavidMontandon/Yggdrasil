@@ -2,6 +2,7 @@ package com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes;
 
 import com.deedllit.yggdrasil.common.biome.YggdrasilBiome;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.config.NifelheimDefaultBiomeFeatures;
+import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
@@ -22,7 +23,7 @@ public class NifelheimForzenOceanBiome extends YggdrasilBiome {
 				.downfall(0.5f)
 				.parent(null));
 			DefaultBiomeFeatures.addOceanCarvers(this);
-			DefaultBiomeFeatures.addIcebergs(this);
+			//DefaultBiomeFeatures.addIcebergs(this);
 			//NifelheimDefaultBiomeFeatures.addCarvers(this);
 			NifelheimDefaultBiomeFeatures.addLakes(this);
 			DefaultBiomeFeatures.addBlueIce(this);

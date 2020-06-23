@@ -1,17 +1,27 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.dimension;
 
+import java.util.BitSet;
 import java.util.List;
+import java.util.ListIterator;
+
+import com.deedllit.yggdrasil.world.dimensions.nifelheim.config.NifelheimGenSettings;
 
 import net.minecraft.entity.EntityClassification;
+import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.NoiseChunkGenerator;
 import net.minecraft.world.gen.OctavesNoiseGenerator;
+import net.minecraft.world.gen.carver.ConfiguredCarver;
 
 //CTRL SHIFT + T for original setting
 //EndChunkGenerator
@@ -20,10 +30,10 @@ import net.minecraft.world.gen.OctavesNoiseGenerator;
 
 public class MuspelheimChunkGenerator extends NoiseChunkGenerator<MuspelheimGenSettings> {
 	
-    public static final int SURFACE_LEVEL = 68;
+    public static final int SURFACE_LEVEL = 50;
 
     public static final int MIN_CAVE_HEIGHT = 20;
-    public static final int MAX_CAVE_HEIGHT = 46;
+    public static final int MAX_CAVE_HEIGHT = 40;
 
     public static final int SURFACE_CAVE_BOUNDARY = MAX_CAVE_HEIGHT + 12;
 

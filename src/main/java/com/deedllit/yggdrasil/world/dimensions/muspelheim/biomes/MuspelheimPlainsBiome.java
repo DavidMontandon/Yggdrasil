@@ -5,6 +5,7 @@ import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MuspelheimPlainsBiome extends Biome {
 

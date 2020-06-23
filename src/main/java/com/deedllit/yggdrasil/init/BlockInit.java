@@ -1,6 +1,7 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
@@ -90,6 +91,9 @@ public class BlockInit {
 	 *  MUSPELHEIM
 	 */		
 	
+	public static final RegistryObject<Block> MUSPELHEIM_FARMLAND_BLOCK = BLOCKS.register("muspelheim_farmland",
+			() -> new MuspelheimFarmlandBlock(Block.Properties.from(Blocks.FARMLAND))) ;
+	
 	public static final RegistryObject<Block> MUSPELHEIM_HOT_ROCK = BLOCKS.register("muspelheim_hot_rock",
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
 	
@@ -103,7 +107,7 @@ public class BlockInit {
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
 
 	public static final RegistryObject<Block> MUSPELHEIM_GRASS = BLOCKS.register("muspelheim_grass",
-			() -> new MuspelheimGrass(Block.Properties.from(Blocks.DIRT)));
+			() -> new MuspelheimGrass(Block.Properties.from(Blocks.GRASS_BLOCK)));
 			
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_LOG = BLOCKS.register("muspelheim_epluphifer_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));

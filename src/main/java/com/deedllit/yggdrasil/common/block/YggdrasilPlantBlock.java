@@ -2,10 +2,12 @@ package com.deedllit.yggdrasil.common.block;
 
 import java.util.Random;
 
+import com.deedllit.yggdrasil.init.BlockInit;
 import com.deedllit.yggdrasil.util.interfaces.IYggdrasilPlantable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.BushBlock;
 import net.minecraft.block.IGrowable;
 import net.minecraft.util.math.BlockPos;
@@ -30,6 +32,8 @@ public class YggdrasilPlantBlock extends BushBlock implements IGrowable, IYggdra
 		
 		
 	}
+	
+
 	
 	public void cantBurn() {
 		this.flammability = 0 ;		
