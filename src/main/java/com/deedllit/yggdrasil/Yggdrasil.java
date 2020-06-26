@@ -7,10 +7,17 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.feature.structure.IStructurePieceType;
+import net.minecraft.world.gen.feature.structure.Structure;
+import net.minecraft.world.gen.placement.IPlacementConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -18,8 +25,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+
+import java.util.Iterator;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -38,8 +49,7 @@ import com.deedllit.yggdrasil.init.YggdrasilTileEntityTypes;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.deedllit.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
 import com.deedllit.yggdrasil.util.holder.DimensionsHolder;
-import com.deedllit.yggdrasil.world.gen.OverworldAddFeatures;
-
+import net.minecraft.world.gen.GenerationStage;
 
 @Mod("yggdrasil")
 @Mod.EventBusSubscriber(modid = Yggdrasil.MOD_ID, bus = Bus.MOD)
@@ -50,6 +60,11 @@ public class Yggdrasil
     public static final YggdrasilHolder YGGDRASIL_HOLDER = new YggdrasilHolder() ; 
     public static Yggdrasil instance ; 
     
+    public static final ResourceLocation HOUSE_LOC = new ResourceLocation(Yggdrasil.MOD_ID, "yggdrasil_tree");
+    public static IStructurePieceType BRICK_HOUSE_PIECE = null;
+	@ObjectHolder(MOD_ID+":yggdrasil_tree")
+	public static Structure<NoFeatureConfig> BRICK_HOUSE; 
+	
     public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
     
     public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
@@ -71,7 +86,7 @@ public class Yggdrasil
     	BlockInit.BLOCKS.register(modEventBus);
 		YggdrasilTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		YggdrasilContainerTypes.CONTAINER_TYPES.register(modEventBus);
-		StructureInit.STRUCTURES.register(modEventBus);
+		//StructureInit.STRUCTURES.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);
@@ -81,6 +96,15 @@ public class Yggdrasil
         MinecraftForge.EVENT_BUS.register(this);
     }
     
+	public void commonSetup(FMLCommonSetupEvent args) {
+		DeferredWorkQueue.runLater(() -> {
+			Iterator<Biome> biomes = ForgeRegistries.BIOMES.iterator();
+			biomes.forEachRemaining((biome) -> {
+				biome.addStructure(BRICK_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+				biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, BRICK_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+			});
+		});
+	}
     
     
 	@SubscribeEvent
@@ -100,7 +124,7 @@ public class Yggdrasil
 		});
 
 	}
-
+	
 	@SubscribeEvent
 	public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
 		BiomeInit.registerBiomes();

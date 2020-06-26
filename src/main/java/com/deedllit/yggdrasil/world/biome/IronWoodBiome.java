@@ -1,6 +1,8 @@
 package com.deedllit.yggdrasil.world.biome;
 
+import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.BlockInit;
+import com.deedllit.yggdrasil.init.StructureInit;
 import com.google.common.collect.ImmutableList;
 
 import net.minecraft.entity.EntityClassification;
@@ -48,6 +50,34 @@ public class IronWoodBiome extends Biome {
     public IronWoodBiome(Builder biomeBuilder) {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.7F).downfall(0.8F).waterColor(4159204).waterFogColor(329011).parent("dark_forest"));
 		
+	      
+	      
+	      if(Yggdrasil.BRICK_HOUSE == null) {
+	    	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : BRICK_HOUSE null");
+	      }
+	      
+	      if(Yggdrasil.BRICK_HOUSE_PIECE == null) {
+	    	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : BRICK_HOUSE_PIECE null");
+	      }
+	      
+	      
+	      //if (StructureInit.BRICK_HOUSE == null) {
+	    //	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : BRICK_HOUSE null");	    	  
+	     // }
+	      
+	     
+	      //if (StructureInit.BRICK_HOUSE == null) {
+	    //	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : BRICK_HOUSE null");	    	  
+	     // }
+	      if (StructureInit.YGGDRASIL_TREE_STRUCTURE == null) {
+	    	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : YGGDRASIL_TREE_STRUCTURE null");	    	  
+	      }
+	      
+	      if(Yggdrasil.BRICK_HOUSE != null) {
+		      this.addStructure(Yggdrasil.BRICK_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+		      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Yggdrasil.BRICK_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+	      }
+	      
 	      this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
 	      this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 	      DefaultBiomeFeatures.addCarvers(this);
