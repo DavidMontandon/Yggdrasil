@@ -29,7 +29,7 @@ public class NifelheimForzenPlainBiome extends YggdrasilBiome {
 		NifelheimDefaultBiomeFeatures.addSprings(this);
 		NifelheimDefaultBiomeFeatures.addFreezeTopLayer(this);
 
-		this.setSpwanWeight(2);
+		//this.setSpwanWeight(2);
 		
 	}
 	

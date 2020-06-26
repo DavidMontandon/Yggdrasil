@@ -1,0 +1,6 @@
+{
+	"parent":"item/generated",
+	"textures" : {
+		"layer0" : "yggdrasil:items/muspelheim_fire_poppy"
+		}
+}
