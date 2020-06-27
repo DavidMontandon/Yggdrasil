@@ -65,7 +65,8 @@ public class Yggdrasil
 	@ObjectHolder(MOD_ID+":yggdrasil_tree")
 	public static Structure<NoFeatureConfig> BRICK_HOUSE; 
 	
-    public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
+	
+    //public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
     
     public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
     public static final ResourceLocation SVARTALVHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "svartalvheim") ;  
@@ -77,9 +78,9 @@ public class Yggdrasil
     	modEventBus.addListener(this::setup);
     	modEventBus.addListener(this::doClientStuff);
     	    	
-        dh.addDimension("muspelheim") ;
-        dh.addDimension("nivlheim") ;
-        dh.addDimension("nifelheim");
+        //dh.addDimension("muspelheim") ;
+        //dh.addDimension("nivlheim") ;
+        //dh.addDimension("nifelheim");
     	
     	ItemInit.ITEMS.register(modEventBus);
     	FluidInit.FLUIDS.register(modEventBus);

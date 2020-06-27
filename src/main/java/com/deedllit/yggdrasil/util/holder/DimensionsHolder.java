@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.deedllit.yggdrasil.init.DimensionInit;
+import com.deedllit.yggdrasil.world.dimensions.muspelheim.dimension.MuspelheimModDimension;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.dimension.DimensionType;
@@ -21,9 +22,8 @@ public class DimensionsHolder {
 		this.modId = modId ;
 	}
 	
-	public void addDimension(String name) {
+	public void addDimension(String name, ModDimension dim) {
 		ressources.put(name, new ResourceLocation(this.modId, name)) ; 
-		//modDim.put(name, new ResourceLocation(this.modId, dim)) ; 
 	}
 	
 	public ResourceLocation getResourceLocation(String name) {
