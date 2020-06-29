@@ -95,8 +95,8 @@ public class Yggdrasil
     	BlockInit.BLOCKS.register(modEventBus);
 		YggdrasilTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		YggdrasilContainerTypes.CONTAINER_TYPES.register(modEventBus);
-		FeatureInit.FEATURES.register(modEventBus);
-		//StructureInit.STRUCTURES.register(modEventBus);
+		//FeatureInit.FEATURES.register(modEventBus);
+		StructureInit.STRUCTURES.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);

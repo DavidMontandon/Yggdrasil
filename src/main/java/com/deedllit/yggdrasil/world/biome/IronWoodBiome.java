@@ -52,36 +52,9 @@ public class IronWoodBiome extends Biome {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.7F).downfall(0.8F).waterColor(4159204).waterFogColor(329011).parent("dark_forest"));
 		
 	      
-	      /*
-	      if(Yggdrasil.BRICK_HOUSE == null) {
-	    	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : BRICK_HOUSE null");
-	      }
-	      
-	      if(Yggdrasil.BRICK_HOUSE_PIECE == null) {
-	    	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : BRICK_HOUSE_PIECE null");
-	      }
-	      */
-	      
-	      //if (StructureInit.BRICK_HOUSE == null) {
-	    //	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : BRICK_HOUSE null");	    	  
-	     // }
-	      
-	     
-	      //if (StructureInit.BRICK_HOUSE == null) {
-	    //	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : BRICK_HOUSE null");	    	  
-	     // }
-	      if (StructureInit.YGGDRASIL_TREE_STRUCTURE == null) {
-	    	  Yggdrasil.LOGGER.info("DEBUG Bimome INIT : YGGDRASIL_TREE_STRUCTURE null");	    	  
-	      }
+	      this.addStructure(StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 	      
 	      /*
-	      if(Yggdrasil.BRICK_HOUSE != null) {
-		      this.addStructure(Yggdrasil.BRICK_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-		      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, Yggdrasil.BRICK_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
-	      }
-	      */
-	      
-	      
 	      this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
 	      this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 	      DefaultBiomeFeatures.addCarvers(this);
@@ -124,6 +97,7 @@ public class IronWoodBiome extends Biome {
 	      DefaultBiomeFeatures.addSprings(this);
 	      DefaultBiomeFeatures.addFreezeTopLayer(this);
 	      DefaultBiomeFeatures.addMonsterRooms(this);
+	      */
 	      
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
