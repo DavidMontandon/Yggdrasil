@@ -22,7 +22,7 @@ import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public class BrickHousePiece {
-	
+	/*
 	public static class Piece extends TemplateStructurePiece {
 		
 		public Piece(TemplateManager templateMgr, CompoundNBT nbt) {
@@ -68,6 +68,6 @@ public class BrickHousePiece {
 			// empty, don't think I needed this for such a simple example? 
 		}
 	}
-
+*/
 }
 

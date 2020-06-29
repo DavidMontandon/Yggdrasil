@@ -13,8 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.ObjectHolder;
 
 public class StructureInit {
-
-	
+		
 	public static final DeferredRegister<Feature<?>> STRUCTURES = new DeferredRegister<>(ForgeRegistries.FEATURES, Yggdrasil.MOD_ID);	
 	
     @ObjectHolder(Yggdrasil.MOD_ID + ":yggdrasil_tree_structure")

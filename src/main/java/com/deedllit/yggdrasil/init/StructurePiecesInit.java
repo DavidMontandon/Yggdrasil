@@ -1,7 +1,7 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.test.BrickHousePiece;
+import com.deedllit.yggdrasil.world.feature.structure.YggdrasilTreeStructure;
 import com.deedllit.yggdrasil.world.feature.structure.piece.YggdrasilTreePieces;
 
 import net.minecraft.util.ResourceLocation;
@@ -11,14 +11,17 @@ import net.minecraft.world.gen.feature.structure.IStructurePieceType;
 public class StructurePiecesInit {
 
 
-    public static final IStructurePieceType YGGDRASIL_TREE_PIECES = register("yggdrasil_tree_pieces", YggdrasilTreePieces.Piece::new);
-    public static final IStructurePieceType BRICK_HOUSE_PIECE = register("brick_house", BrickHousePiece.Piece::new);
+	public static final IStructurePieceType YGGDRASIL_TREE = YggdrasilTreePieces.YggdrasilTreePiece::new;
     
-    private static IStructurePieceType register(String key, IStructurePieceType type) {
-        return Registry.register(Registry.STRUCTURE_PIECE, new ResourceLocation(Yggdrasil.MOD_ID, key), type);
+	public static void registerPieces() {
+		YggdrasilTreePieces.register();
+		
+		register(YggdrasilTreeStructure.SHORT_NAME, YGGDRASIL_TREE);
+		
+	}
+	
+    private static void register(String key, IStructurePieceType type) {
+        Registry.register(Registry.STRUCTURE_PIECE, new ResourceLocation(Yggdrasil.MOD_ID, key), type);
     }
- 
-    
-    //public static IStructurePieceType BRICK_HOUSE_PIECE 
-    
+	
 }

@@ -1,31 +1,24 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.world.feature.structure.YggdrasilTreeStructure;
 
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
+import net.minecraft.world.gen.feature.structure.Structure;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+//@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class FeatureInit {
 
+    public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<>(ForgeRegistries.FEATURES, Yggdrasil.MOD_ID);
 
-    @SubscribeEvent
-    public static void registerFeatures(RegistryEvent.Register<Feature<?>> event)
-    {
-    	
+    public static final RegistryObject<Structure<NoFeatureConfig>> YGGDRASIL_TREE_STRUCTURE = register("yggdrasil_tree_structure", new YggdrasilTreeStructure(NoFeatureConfig::deserialize));
+
+    private static <T extends Feature<?>> RegistryObject<T> register(String name, T feature) {
+        return FEATURES.register(name, () -> feature);
     }
-	
-	
-	public static Feature<?> registerFeatures(Feature<?> entry, String name)
-    {
-        entry.setRegistryName(new ResourceLocation(Yggdrasil.MOD_ID, name));
-        ForgeRegistries.FEATURES.register(entry);
-        return entry;
-    }	
-	
-	
+
 }

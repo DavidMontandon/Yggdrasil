@@ -1,5 +1,8 @@
 package com.deedllit.yggdrasil;
 
+import com.deedllit.mythologycraft.config.Config;
+import com.deedllit.mythologycraft.config.MCConfig ; 
+import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -40,10 +43,12 @@ import com.deedllit.yggdrasil.init.BiomeInit;
 import com.deedllit.yggdrasil.init.BlockInit;
 import com.deedllit.yggdrasil.init.CarverInit;
 import com.deedllit.yggdrasil.init.DimensionInit;
+import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.init.FluidInit;
 import com.deedllit.yggdrasil.init.ItemInit;
 import com.deedllit.yggdrasil.init.PaintingInit;
 import com.deedllit.yggdrasil.init.StructureInit;
+import com.deedllit.yggdrasil.init.StructurePiecesInit;
 import com.deedllit.yggdrasil.init.YggdrasilContainerTypes;
 import com.deedllit.yggdrasil.init.YggdrasilTileEntityTypes;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
@@ -60,10 +65,10 @@ public class Yggdrasil
     public static final YggdrasilHolder YGGDRASIL_HOLDER = new YggdrasilHolder() ; 
     public static Yggdrasil instance ; 
     
-    public static final ResourceLocation HOUSE_LOC = new ResourceLocation(Yggdrasil.MOD_ID, "yggdrasil_tree");
-    public static IStructurePieceType BRICK_HOUSE_PIECE = null;
-	@ObjectHolder(MOD_ID+":yggdrasil_tree")
-	public static Structure<NoFeatureConfig> BRICK_HOUSE; 
+    //public static final ResourceLocation HOUSE_LOC = new ResourceLocation(Yggdrasil.MOD_ID, "yggdrasil_tree");
+    //public static IStructurePieceType BRICK_HOUSE_PIECE = null;
+	//@ObjectHolder(MOD_ID+":yggdrasil_tree")
+	//public static Structure<NoFeatureConfig> BRICK_HOUSE; 
 	
 	
     //public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
@@ -82,11 +87,15 @@ public class Yggdrasil
         //dh.addDimension("nivlheim") ;
         //dh.addDimension("nifelheim");
     	
+    	Config.loadConfig(Config.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-client.toml").toString());
+    	Config.loadConfig(Config.SERVER_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-server.toml").toString());
+
     	ItemInit.ITEMS.register(modEventBus);
     	FluidInit.FLUIDS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
 		YggdrasilTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		YggdrasilContainerTypes.CONTAINER_TYPES.register(modEventBus);
+		FeatureInit.FEATURES.register(modEventBus);
 		//StructureInit.STRUCTURES.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
@@ -97,17 +106,7 @@ public class Yggdrasil
         MinecraftForge.EVENT_BUS.register(this);
     }
     
-	public void commonSetup(FMLCommonSetupEvent args) {
-		DeferredWorkQueue.runLater(() -> {
-			Iterator<Biome> biomes = ForgeRegistries.BIOMES.iterator();
-			biomes.forEachRemaining((biome) -> {
-				biome.addStructure(BRICK_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-				biome.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, BRICK_HOUSE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
-			});
-		});
-	}
-    
-    
+
 	@SubscribeEvent
 	public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
 		final IForgeRegistry<Item> registry = event.getRegistry();
@@ -132,7 +131,11 @@ public class Yggdrasil
 	}
 	
 	private void setup(final FMLCommonSetupEvent event) {
+        DeferredWorkQueue.runLater(() -> {
+        	StructurePiecesInit.registerPieces();
+        });
     }
+
 
     private void doClientStuff(final FMLClientSetupEvent event) {
     }

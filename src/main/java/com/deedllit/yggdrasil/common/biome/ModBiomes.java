@@ -32,9 +32,9 @@ public class ModBiomes {
     	Yggdrasil.LOGGER.info("DEBUG : registerBiomes in");	
     	
     	
-    	if(config_yggdrasil_world) {
+    	if(YGGDRASIL_WORLD.get()) {
     		
-    		if(config_yggdrasil_muspelheim_dimension) {
+    		if(YGGDRASIL_MUSPELHEIM_DIMENSION.get()) {
     			//registerBiome(new MuspelheimFirePoppyField(), "muspelheim_fire_poppy_field");
     			
     		}
@@ -49,9 +49,9 @@ public class ModBiomes {
     
     private static void registerBiomeDictionaryTags() {
     	
-    	if(config_yggdrasil_world) {
+    	if(YGGDRASIL_WORLD.get()) {
     
-    		if(config_yggdrasil_muspelheim_dimension) {
+    		if(YGGDRASIL_MUSPELHEIM_DIMENSION.get()) {
     			//registerBiomeToDictionary(muspelheim_fire_poppy_field, Type.HOT) ;
     		}
     		

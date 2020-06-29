@@ -21,17 +21,17 @@ public class MCDimensionInit {
     public void onRegister() {
     	
     	
-    	if(config_yggdrasil_world) {
+    	if(YGGDRASIL_WORLD.get()) {
     		
-    		if(config_yggdrasil_muspelheim_dimension) {
+    		if(YGGDRASIL_MUSPELHEIM_DIMENSION.get()) {
     	        dh.addDimension("muspelheim", new MuspelheimModDimension()) ;    			
     		}
 
-    		if(config_yggdrasil_nifelheim_dimension) {
+    		if(YGGDRASIL_NIFELHEIM_DIMENSION.get()) {
     	        dh.addDimension("nivlheim", new NifelheimModDimension()) ;    			
     		}
 
-    		if(config_yggdrasil_svartalfheim_dimension) {
+    		if(YGGDRASIL_SVARTALFHEIM_DIMENSION.get()) {
     	        dh.addDimension("nifelheim", new SvartalvheimModDimension()) ;    			
     		}
 

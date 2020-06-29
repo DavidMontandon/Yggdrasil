@@ -20,6 +20,11 @@ public class BrickHouse extends ScatteredStructure<NoFeatureConfig> {
 
 	public BrickHouse(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
 		super(configFactoryIn);
+		// TODO Auto-generated constructor stub
+	}
+	/*
+	public BrickHouse(Function<Dynamic<?>, ? extends NoFeatureConfig> configFactoryIn) {
+		super(configFactoryIn);
 	}
 	
 	@Override
@@ -58,5 +63,29 @@ public class BrickHouse extends ScatteredStructure<NoFeatureConfig> {
 		}
 		
 	}
+	*/
 
+	@Override
+	protected int getSeedModifier() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public IStartFactory getStartFactory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getStructureName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
