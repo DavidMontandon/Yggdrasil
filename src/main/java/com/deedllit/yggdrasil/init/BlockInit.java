@@ -8,11 +8,12 @@ import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
 import com.deedllit.yggdrasil.objects.bushes.muspelheim.* ; 
 import com.deedllit.yggdrasil.world.feature.tree.*;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
-import net.minecraft.block.LogBlock;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -24,10 +25,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockInit {
 
-	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS,  Yggdrasil.MOD_ID) ; 	
-
-	
-	
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,  Yggdrasil.MOD_ID) ; 	
 	/* GLOBAL
 	 * 
 	 */
@@ -60,10 +58,17 @@ public class BlockInit {
 	 * SPEICAL BLOCK
 	 */
 	
+	
 	public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("portal_shirne_block",
-			() -> new PortalShirneBlock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 10.0f)
-					.harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.GLASS).lightValue(4)
-					.slipperiness(1.2f).speedFactor(0.7f).noDrops()));
+			() -> new PortalShirneBlock(Block.Properties.create(Material.IRON)
+					.hardnessAndResistance(2.0f, 10.0f)
+					.harvestLevel(2)
+					.harvestTool(ToolType.PICKAXE)
+					.sound(SoundType.GLASS)
+					//.lightValue(4)
+					.slipperiness(1.2f)
+					.speedFactor(0.7f)
+					.noDrops()));
 	
 	public static final RegistryObject<Block> PEDESTAL_ITEM = BLOCKS.register("pedestal_item",
 			() -> new PedestalItemBlock(Block.Properties.from(Blocks.ANVIL)));
@@ -74,14 +79,20 @@ public class BlockInit {
 	 */
 	
 	public static final RegistryObject<Block> YGGDRASIL_TREE_LOG = BLOCKS.register("yggdrasil_tree_log",
-			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+			() ->  new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD)
+					.hardnessAndResistance(2.0F)
+					.sound(SoundType.WOOD)));
 
+	
 	public static final RegistryObject<Block> YGGDRASIL_TREE_LEAVES = BLOCKS.register("yggdrasil_tree_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 
-	public static final RegistryObject<Block> IRON_WOOD_LOG = BLOCKS.register("iron_wood_log",
-			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
+	public static final RegistryObject<Block> IRON_WOOD_LOG = BLOCKS.register("iron_wood_log",
+			() ->  new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD)
+					.hardnessAndResistance(2.0F)
+					.sound(SoundType.WOOD)));
+	
 	public static final RegistryObject<Block> IRON_WOOD_LEAVES = BLOCKS.register("iron_wood_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 
@@ -115,10 +126,14 @@ public class BlockInit {
 			() -> new MuspelheimGrass(Block.Properties.from(Blocks.GRASS_BLOCK)));
 			
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_LOG = BLOCKS.register("muspelheim_epluphifer_log",
-			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+			() ->  new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD)
+					.hardnessAndResistance(2.0F)
+					.sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_SICK_LOG = BLOCKS.register("muspelheim_epluphifer_sick_log",
-			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+			() ->  new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD)
+					.hardnessAndResistance(2.0F)
+					.sound(SoundType.WOOD)));
 
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_PLANKS = BLOCKS.register("muspelheim_epluphifer_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
@@ -148,7 +163,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> SVARTALVHEIM_STONE = BLOCKS.register("svartalvheim_stone",
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
 
-	
+
 }
 
 
