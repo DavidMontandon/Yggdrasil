@@ -11,8 +11,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class CarverInit {
 	
-	public static final DeferredRegister<WorldCarver<?>> CAVERS = new DeferredRegister<>(ForgeRegistries.WORLD_CARVERS, Yggdrasil.MOD_ID);
+	public static final DeferredRegister<WorldCarver<?>> CAVERS = DeferredRegister.create(ForgeRegistries.WORLD_CARVERS, Yggdrasil.MOD_ID);
 
-	public static final RegistryObject<WorldCarver<ProbabilityConfig>> CAVERN_CANYON = CAVERS.register("cavern_canyon", () -> new CavernCanyonWorldCarver(ProbabilityConfig::deserialize));
+	//public static final RegistryObject<WorldCarver<ProbabilityConfig>> CAVERN_CANYON = CAVERS.register("cavern_canyon", () -> new CavernCanyonWorldCarver(ProbabilityConfig::deserialize));
 	
 }

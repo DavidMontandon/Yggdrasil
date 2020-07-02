@@ -1,7 +1,6 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.test.BrickHouse;
 import com.deedllit.yggdrasil.world.feature.structure.YggdrasilTreeStructure;
 
 import net.minecraft.world.gen.feature.Feature;
@@ -14,8 +13,9 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class StructureInit {
 		
-	public static final DeferredRegister<Feature<?>> STRUCTURES = new DeferredRegister<>(ForgeRegistries.FEATURES, Yggdrasil.MOD_ID);	
+	public static final DeferredRegister<Feature<?>> STRUCTURES = DeferredRegister.create(ForgeRegistries.FEATURES, Yggdrasil.MOD_ID);	
 	
+	/*
     @ObjectHolder(Yggdrasil.MOD_ID + ":yggdrasil_tree_structure")
     public static final Structure<NoFeatureConfig> YGGDRASIL_TREE_STRUCTURE = registerStructure(new YggdrasilTreeStructure(NoFeatureConfig::deserialize), "yggdrasil_tree_structure");
 
@@ -26,6 +26,6 @@ public class StructureInit {
         STRUCTURES.register(registryName, () -> new YggdrasilTreeStructure(NoFeatureConfig::deserialize));
         return structure;
     }
-    
+    */
     
 }

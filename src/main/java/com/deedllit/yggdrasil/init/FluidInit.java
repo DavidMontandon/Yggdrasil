@@ -18,7 +18,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class FluidInit {
 
-	public static final DeferredRegister<Fluid> FLUIDS = new DeferredRegister<Fluid>(ForgeRegistries.FLUIDS, Yggdrasil.MOD_ID);
+	public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, Yggdrasil.MOD_ID);
 
 	public static final ResourceLocation ACIDIC_STILL_RL = new ResourceLocation(Yggdrasil.MOD_ID, "blocks/acidic_still");
 	public static final ResourceLocation ACIDIC_FLOWING_RL = new ResourceLocation(Yggdrasil.MOD_ID,"blocks/acidic_flowing");

@@ -26,6 +26,7 @@ public class RuneItem extends Item {
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {		
 
+		/*
 		String pathDesc = "desc." + Yggdrasil.MOD_ID + "." + this.desc; 
 			
 		tooltip.add(new TranslationTextComponent( pathDesc ).applyTextStyle(TextFormatting.YELLOW)) ;
@@ -47,6 +48,8 @@ public class RuneItem extends Item {
 		}
 	
 		super.addInformation(stack, worldIn, tooltip, flagIn);
+		*/
+		
 	}
 
 }

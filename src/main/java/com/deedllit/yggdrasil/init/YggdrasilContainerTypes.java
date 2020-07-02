@@ -11,7 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class YggdrasilContainerTypes {
 
-	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = new DeferredRegister<>(
+	public static final DeferredRegister<ContainerType<?>> CONTAINER_TYPES = DeferredRegister.create(
 			ForgeRegistries.CONTAINERS, Yggdrasil.MOD_ID);
 	
 	public static final RegistryObject<ContainerType<PedestalItemContainer>> ITEM_PEDESTAL = CONTAINER_TYPES

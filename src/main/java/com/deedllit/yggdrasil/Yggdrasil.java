@@ -98,7 +98,7 @@ public class Yggdrasil
 		//FeatureInit.FEATURES.register(modEventBus);
 		StructureInit.STRUCTURES.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
-    	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
+    	//DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);
     	CarverInit.CAVERS.register(modEventBus);
     	

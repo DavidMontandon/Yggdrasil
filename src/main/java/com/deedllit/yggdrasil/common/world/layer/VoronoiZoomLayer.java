@@ -46,13 +46,21 @@ public enum VoronoiZoomLayer implements IAreaTransformer1 {
         }
     }
 
-    @Override
     public int getOffsetX(int p_215721_1_) {
         return p_215721_1_ >> 2;
     }
 
-    @Override
     public int getOffsetZ(int p_215722_1_) {
         return p_215722_1_ >> 2;
     }
+
+	@Override
+	public int func_215721_a(int p_215721_1_) {
+ 		return getOffsetX(p_215721_1_) ; 
+	}
+
+	@Override
+	public int func_215722_b(int p_215722_1_) {
+ 		return getOffsetZ(p_215722_1_);
+	}
 }

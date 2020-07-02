@@ -107,8 +107,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> MUSPELHEIM_FIRE_POPPY = BLOCKS.register("muspelheim_fire_poppy",
 			() -> new FlowerBlock(Effects.FIRE_RESISTANCE, 20, Block.Properties.from(Blocks.ALLIUM))) ;
 
+	/*
 	public static final RegistryObject<Block> MUSPELHEIM_FARMLAND_BLOCK = BLOCKS.register("muspelheim_farmland",
 			() -> new MuspelheimFarmlandBlock(Block.Properties.from(Blocks.FARMLAND))) ;
+	*/
 	
 	public static final RegistryObject<Block> MUSPELHEIM_HOT_ROCK = BLOCKS.register("muspelheim_hot_rock",
 			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));

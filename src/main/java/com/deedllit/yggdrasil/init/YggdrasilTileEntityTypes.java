@@ -10,11 +10,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class YggdrasilTileEntityTypes {
 
-	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = new DeferredRegister<>(
+	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = DeferredRegister.create(
 			ForgeRegistries.TILE_ENTITIES, Yggdrasil.MOD_ID);
 	
+	/*
 	public static final RegistryObject<TileEntityType<PedestalItemTileEntity>> ITEM_PEDESTAL = TILE_ENTITY_TYPES
 			.register("pedestal_item", () -> TileEntityType.Builder
 					.create(PedestalItemTileEntity::new, BlockInit.PEDESTAL_ITEM.get()).build(null));
+	*/
 	
 }

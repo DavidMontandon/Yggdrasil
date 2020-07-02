@@ -70,6 +70,11 @@ public enum ArmorMaterial implements IArmorMaterial {
 		return this.toughness;
 	}
 
+	@Override
+	public float func_230304_f_() {
+		return this.toughness;
+	}
+
 
 	 
 }

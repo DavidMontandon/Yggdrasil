@@ -48,6 +48,7 @@ public class IronWoodSaplingBlock extends BushBlock implements IGrowable {
 	}
 	
 	public void grow(ServerWorld serverWorld, BlockPos pos, BlockState state, Random rand) {
+		/*
 		if (state.get(STAGE) == 0) {
 			serverWorld.setBlockState(pos, state.cycle(STAGE), 4);
 		} else {
@@ -56,8 +57,9 @@ public class IronWoodSaplingBlock extends BushBlock implements IGrowable {
 			this.tree.get().place(serverWorld, serverWorld.getChunkProvider().getChunkGenerator(), pos, state,
 					rand);
 		}
+*/
 	}
-
+	
 	@Override
 	public void grow(ServerWorld serverWorld, Random rand, BlockPos pos, BlockState state) {
 		this.grow(serverWorld, pos, state, rand);

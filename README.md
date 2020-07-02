@@ -1,6 +1,6 @@
 ![Yggdrasil](https://raw.githubusercontent.com/DavidMontandon/Yggdrasil/master/help/screenshots/muspelheim.png)
 
-# Yggdrasil Minecraft Mod 1.15.2
+# Yggdrasil Minecraft Mod 1.16.1
 *Yggdrasil* is a mod that add 8 news dimensions that represent the 9 worlds of Norse mythology.
 
 ## Runes

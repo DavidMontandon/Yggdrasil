@@ -30,7 +30,7 @@ import net.minecraft.item.ArmorItem;
 public class ItemInit {
 
 	
-	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS,  Yggdrasil.MOD_ID) ; 	
+	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,  Yggdrasil.MOD_ID) ; 	
 	
 	//FLUID
 	public static final RegistryObject<Item> ACIDIC_BUCKET = ITEMS.register("acidic_bucket",
@@ -165,9 +165,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> vanir_axe = ITEMS.register("vanir_axe",
 			() -> new AxeItem(ToolMaterial.VANAFREINTINE, 6, 1.7f, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
 
+	/*
 	public static final RegistryObject<Item> vanir_hoe = ITEMS.register("vanir_hoe",
 			() -> new VanafreintineHoe(ToolMaterial.VANAFREINTINE, 5.0f, new Item.Properties().group(YggdrasilToolItemGroup.instance)));
-	
+	*/
 	
 	//Armor
 	public static final RegistryObject<Item> vanafreintine_helmet = ITEMS.register("vanafreintine_helmet",

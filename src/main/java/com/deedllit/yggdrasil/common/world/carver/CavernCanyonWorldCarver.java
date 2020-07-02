@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
 
-import com.mojang.datafixers.Dynamic;
+import com.mojang.serialization.Codec;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
@@ -22,12 +22,18 @@ import net.minecraft.world.gen.feature.ProbabilityConfig;
 
 public class CavernCanyonWorldCarver extends CanyonWorldCarver
 {
+	public CavernCanyonWorldCarver(Codec<ProbabilityConfig> config) {
+		super(config);
+	}
+
 	private final float[] parabolic = new float[1024];
 
+	/*
 	public CavernCanyonWorldCarver(Function<Dynamic<?>, ? extends ProbabilityConfig> config)
 	{
 		super(config);
 	}
+	*/
 
 	public boolean func_225555_a_(IChunk chunk, Function<BlockPos, Biome> biomes, Random rand, int seaLevel, int chunkX, int chunkZ, int globalX, int globalZ, BitSet carvingMask, ProbabilityConfig config)
 	{

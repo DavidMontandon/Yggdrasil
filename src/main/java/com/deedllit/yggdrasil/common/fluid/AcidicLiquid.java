@@ -5,7 +5,7 @@ import com.deedllit.yggdrasil.util.interfaces.IYggdrasilReactiveFluid;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.IFluidState;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.LavaFluid;
 import net.minecraft.item.Item;
 import net.minecraft.state.StateContainer;
@@ -56,12 +56,12 @@ public class AcidicLiquid extends LavaFluid implements IYggdrasilReactiveFluid {
     
     public static class Source extends AcidicLiquid {
         @Override
-        public int getLevel(IFluidState state) {
+        public int getLevel(FluidState state) {
             return 8;
         }
 
         @Override
-        public boolean isSource(IFluidState state) {
+        public boolean isSource(FluidState state) {
             return true;
         }
     }
@@ -71,30 +71,31 @@ public class AcidicLiquid extends LavaFluid implements IYggdrasilReactiveFluid {
         }
 
         @Override
-        protected void fillStateContainer(StateContainer.Builder<Fluid, IFluidState> container) {
+        protected void fillStateContainer(StateContainer.Builder<Fluid, FluidState> container) {
             super.fillStateContainer(container);
             container.add(LEVEL_1_8);
         }
 
         @Override
-        public int getLevel(IFluidState state) {
+        public int getLevel(FluidState state) {
             return state.get(LEVEL_1_8);
         }
 
         @Override
-        public boolean isSource(IFluidState state) {
+        public boolean isSource(FluidState state) {
             return false;
         }
     }
 
+
 	@Override
-	public boolean isSource(IFluidState state) {
+	public boolean isSource(FluidState state) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public int getLevel(IFluidState p_207192_1_) {
+	public int getLevel(FluidState p_207192_1_) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

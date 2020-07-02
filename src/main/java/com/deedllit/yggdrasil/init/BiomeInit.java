@@ -6,6 +6,7 @@ import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
 
+import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraftforge.common.BiomeDictionary;
@@ -18,7 +19,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BiomeInit {
 
-	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, Yggdrasil.MOD_ID) ; 	
+	public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES, Yggdrasil.MOD_ID) ; 	
 
 	//https://www.mathsisfun.com/hexadecimal-decimal-colors.html
 	

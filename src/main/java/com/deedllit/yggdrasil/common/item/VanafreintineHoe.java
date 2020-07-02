@@ -21,13 +21,18 @@ import net.minecraft.world.World;
 
 public class VanafreintineHoe extends HoeItem {
 	
+	/*
+	public VanafreintineHoe(IItemTier tier, float attackSpeedIn, Properties builder) {
+		//super(tier, attackSpeedIn, builder);
+	}
+	*/
+	public VanafreintineHoe(IItemTier p_i231595_1_, int p_i231595_2_, float p_i231595_3_, Properties p_i231595_4_) {
+		super(p_i231595_1_, p_i231595_2_, p_i231595_3_, p_i231595_4_);
+	}
+
 	protected static final Map<Block, BlockState> HOE_LOOKUP = Maps.newHashMap(ImmutableMap.of(
 			BlockInit.MUSPELHEIM_GRASS.get(), BlockInit.MUSPELHEIM_FARMLAND_BLOCK.get().getDefaultState()
 			));
-	   
-	public VanafreintineHoe(IItemTier tier, float attackSpeedIn, Properties builder) {
-		super(tier, attackSpeedIn, builder);
-	}
 	
 	public ActionResultType onItemUse(ItemUseContext context) {
 		World world = context.getWorld();

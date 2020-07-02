@@ -13,9 +13,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 //@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class FeatureInit {
 
-    public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<>(ForgeRegistries.FEATURES, Yggdrasil.MOD_ID);
+    public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, Yggdrasil.MOD_ID);
 
-    public static final RegistryObject<Structure<NoFeatureConfig>> YGGDRASIL_TREE_STRUCTURE = register("yggdrasil_tree_structure", new YggdrasilTreeStructure(NoFeatureConfig::deserialize));
+    
+    //public static final RegistryObject<Structure<NoFeatureConfig>> YGGDRASIL_TREE_STRUCTURE = register("yggdrasil_tree_structure", new YggdrasilTreeStructure(NoFeatureConfig::deserialize));
 
     private static <T extends Feature<?>> RegistryObject<T> register(String name, T feature) {
         return FEATURES.register(name, () -> feature);

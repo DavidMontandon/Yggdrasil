@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 @Mod.EventBusSubscriber(modid = Yggdrasil.MOD_ID, bus = Bus.FORGE)
 public class TestJumpEvent {
 
+	/*
 	//@SubscribeEvent
 	public static void testJumpEvent(LivingJumpEvent event)  {
 		Yggdrasil.LOGGER.info("Test jump event fire");
@@ -26,5 +27,5 @@ public class TestJumpEvent {
 		livingEntity.setGlowing( true );
 		
 	}
-	
+	*/
 }

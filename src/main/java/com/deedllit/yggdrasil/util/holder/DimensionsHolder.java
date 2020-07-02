@@ -7,13 +7,12 @@ import com.deedllit.yggdrasil.init.DimensionInit;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.dimension.MuspelheimModDimension;
 
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.dimension.DimensionType;
-import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.common.ModDimension;
+
 
 
 public class DimensionsHolder {
 
+	/*
 	private String modId ;
 	public Map<String, ResourceLocation> ressources = new HashMap<>();
 	public Map<String, ModDimension> modDim = new HashMap<>();
@@ -44,7 +43,7 @@ public class DimensionsHolder {
 	
 	
     //public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
-
+	 */
 	
 	
 }

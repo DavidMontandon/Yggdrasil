@@ -59,8 +59,8 @@ public class MuspelheimDefaultBiomeFeatures {
 	public static final BlockClusterFeatureConfig SLIM_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(SLIM_GRASS), new SimpleBlockPlacer())).tries(32).build();
 	   
 	
-	public static final SurfaceBuilder<SurfaceBuilderConfig> VOLCANO_SURFACE_BUILDER = new MuspelheimVolcanoSurfaceBuilder(SurfaceBuilderConfig::deserialize);
-	public static final SurfaceBuilder<SurfaceBuilderConfig> VOLCANO_TOP_LAYER_SURFACE_BUILDER = new MuspelheimVolcanoTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	//public static final SurfaceBuilder<SurfaceBuilderConfig> VOLCANO_SURFACE_BUILDER = new MuspelheimVolcanoSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	//public static final SurfaceBuilder<SurfaceBuilderConfig> VOLCANO_TOP_LAYER_SURFACE_BUILDER = new MuspelheimVolcanoTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	
 	public static final SurfaceBuilderConfig MAGMA_SURFACE = new SurfaceBuilderConfig(HOT_ROCK, HOT_ROCK, ASH);
 	public static final SurfaceBuilderConfig MAGMA_SURFACE2 = new SurfaceBuilderConfig(Blocks.DIAMOND_BLOCK.getDefaultState(), Blocks.BEDROCK.getDefaultState(), Blocks.BRICKS.getDefaultState());
@@ -127,6 +127,7 @@ public class MuspelheimDefaultBiomeFeatures {
     
     public static void addSickTrees(Biome biomeIn) {
     	
+    	/*
     	biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
 				Feature.NORMAL_TREE.withConfiguration(EpluphiferTree.EPLUPHIFER_TREE_SICK).withPlacement(
 						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.2f, 1))));	
@@ -134,11 +135,11 @@ public class MuspelheimDefaultBiomeFeatures {
     	biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION,
 				Feature.NORMAL_TREE.withConfiguration(EpluphiferTree.EPLUPHIFER_TREE_NORMAL).withPlacement(
 						Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1f, 1))));	
-      	
+      	*/
     }
     
     public static void addStructures(Biome biomeIn) {    	
-    	biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.2f, 1)))) ; 
+    	//biomeIn.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(2, 0.2f, 1)))) ; 
     }
 	   
 }

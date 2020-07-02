@@ -52,10 +52,12 @@ public class MuspelheimChunkGenerator extends NoiseChunkGenerator<MuspelheimGenS
 	private final boolean isAmplified;
 
 	public MuspelheimChunkGenerator(IWorld worldIn, BiomeProvider provider, MuspelheimGenSettings settingsIn) {
+		/*
 		super(worldIn, provider, 4, 8, 256, settingsIn, true);
 		this.randomSeed.skip(2620);
 		this.depthNoise = new OctavesNoiseGenerator(this.randomSeed, 15, 0);
 		this.isAmplified = worldIn.getWorldInfo().getGenerator() == WorldType.AMPLIFIED;
+		*/
 	}
 
 	@SuppressWarnings("unused")

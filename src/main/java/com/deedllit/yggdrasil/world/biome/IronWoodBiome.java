@@ -9,15 +9,15 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
-import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
@@ -30,12 +30,14 @@ import net.minecraftforge.common.IPlantable;
 
 public class IronWoodBiome extends Biome {
 
+	/*
     public static final HugeTreeFeatureConfig HUGE_IRON_WOOD_TREE_CONFIG = (new HugeTreeFeatureConfig.Builder(
     		new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LOG.get().getDefaultState()), 
     		new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LEAVES.get().getDefaultState())))
     			.baseHeight(6)
     			.setSapling((net.minecraftforge.common.IPlantable)BlockInit.IRON_WOOD_SAPLING.get())
     			.build();
+    
     
     public static final TreeFeatureConfig NORMAL_IRON_WOOD_TREE_CONFIG = (new TreeFeatureConfig.Builder(
 			new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LOG.get().getDefaultState()), 
@@ -47,12 +49,26 @@ public class IronWoodBiome extends Biome {
 				.ignoreVines()
 				.setSapling((IPlantable) BlockInit.IRON_WOOD_SAPLING.get())
 				.build();
-    
+    */
+	
     public IronWoodBiome(Builder biomeBuilder) {
-	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.7F).downfall(0.8F).waterColor(4159204).waterFogColor(329011).parent("dark_forest"));
-		
+    	
+        super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.6F).downfall(0.6F).func_235097_a_((new BiomeAmbience.Builder()).func_235246_b_(4159204).func_235248_c_(329011).func_235239_a_(12638463).func_235243_a_(MoodSoundAmbience.field_235027_b_).func_235238_a_()).parent((String)null).func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.1F, 0.2F, 0.0F, 0.0F, 1.0F))));
+
+    	/*
+	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
+	    		  .precipitation(Biome.RainType.RAIN)
+	    		  .category(Biome.Category.FOREST)
+	    		  .depth(0.1F)
+	    		  .scale(0.2F)
+	    		  .temperature(0.7F)
+	    		  .downfall(0.8F)
+	    		  .func_235246_b_(4159204)//.waterColor(4159204)
+	    		  .waterFogColor(329011)
+	    		  .parent("dark_forest"));
+		/*
 	      
-	      this.addStructure(StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+	      //this.addStructure(StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 	      
 	      /*
 	      this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));

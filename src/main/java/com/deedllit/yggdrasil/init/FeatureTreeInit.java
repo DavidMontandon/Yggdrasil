@@ -6,7 +6,6 @@ import com.deedllit.yggdrasil.world.feature.tree.YggdrasilBigTree;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
 import net.minecraftforge.registries.ForgeRegistries;
 
 
