@@ -48,8 +48,8 @@ public class FruityLeavesBlock extends LeavesBlock implements IGrowable {
             if (worldIn instanceof ServerWorld) {
                 // 10% chance of a sapling dropping
                 if (random.nextInt(10) == 0) {
-                    ItemStack saplings = new ItemStack(BlockInit.MUSPELHEIM_EPLUPHIFER_SAPLING.get(), 1);
-                    spawnAsEntity(worldIn, pos, saplings);
+                    //ItemStack saplings = new ItemStack(BlockInit.MUSPELHEIM_EPLUPHIFER_SAPLING.get(), 1);
+                    //spawnAsEntity(worldIn, pos, saplings);
                 }
             }
             worldIn.removeBlock(pos, false);

@@ -2,6 +2,7 @@ package com.deedllit.yggdrasil.client.gui;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.container.PedestalItemContainer;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
@@ -27,24 +28,32 @@ public class PedestalItemScreen extends ContainerScreen<PedestalItemContainer> {
 		this.ySize = 166;
 	}
 
+	@Override
+	protected void func_230450_a_(MatrixStack p_230450_1_, float p_230450_2_, int p_230450_3_, int p_230450_4_) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	/*
 	 * This method is called every tick and does the basic rendering of the GUI,
 	 * rendering the background, and rendering any hovering tool tips, if the user
 	 * does happen to have their mouse over it.
 	 */
+	/*
 	@Override
 	public void render(final int mouseX, final int mouseY, final float partialTicks) {
 		this.renderBackground();
 		super.render(mouseX, mouseY, partialTicks);
 		this.renderHoveredToolTip(mouseX, mouseY);
 	}
-
+*/
 	/*
 	 * This method is called every tick and is for drawing everything in front of
 	 * the background, that being slots, tooltips, and anything that is infront. In
 	 * here we draw the 2 strings for the name of this screen and the name of the
 	 * player inventory.
 	 */
+	/*
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
@@ -52,7 +61,8 @@ public class PedestalItemScreen extends ContainerScreen<PedestalItemContainer> {
 		this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F,
 				(float) (this.ySize - 96 + 2), 4210752);
 	}
-
+	 */
+	
 	/*
 	 * This method is called every tick and is for drawing everything in the
 	 * background(behind the slots and any popups). In here we first use
@@ -66,6 +76,7 @@ public class PedestalItemScreen extends ContainerScreen<PedestalItemContainer> {
 	 * case the top left(0, 0). Then the width and height that we are drawing(which
 	 * is our X and Y size).
 	 */
+	/*
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.color4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -74,4 +85,5 @@ public class PedestalItemScreen extends ContainerScreen<PedestalItemContainer> {
 		int y = (this.height - this.ySize) / 2;
 		this.blit(x, y, 0, 0, this.xSize, this.ySize);
 	}
+	*/
 }

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.deedllit.yggdrasil.init.DimensionInit;
-import com.deedllit.yggdrasil.world.dimensions.muspelheim.dimension.MuspelheimModDimension;
+//import com.deedllit.yggdrasil.world.dimensions.muspelheim.dimension.MuspelheimModDimension;
 
 import net.minecraft.util.ResourceLocation;
 

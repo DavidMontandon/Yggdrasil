@@ -2,9 +2,9 @@ package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.biome.*;
-import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
-import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
-import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
+//import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
+//import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
+//import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
@@ -37,6 +37,7 @@ public class BiomeInit {
 
 	public static final Biome MUSPELHEIM_FOREST = Biomes.DEFAULT;
 	
+	/*
 	public static final RegistryObject<Biome> MUSPELHEIM = BIOMES
 			.register("muspelheim_extreme_hill",
 					() -> new MuspelheimExtremeHillBiome(null));
@@ -60,12 +61,13 @@ public class BiomeInit {
 	public static final RegistryObject<Biome> MUSPELHEIM_VOLCANO_BIOME = BIOMES
 			.register("muspelheim_volcano",
 					() -> new MuspelheimVolcanoBiome(null));
-	
+	*/
 	
 /*
  * SVARTALVHEIM
  */
 
+	/*
 	public static final RegistryObject<Biome> SVARTALVHEIM_GRASS_CAVERN_BIOME = BIOMES
 			.register("svartalvheim_grass_cavern_biome",
 					() -> new SvartalvheimGrassCavernBiome(null));
@@ -73,12 +75,13 @@ public class BiomeInit {
 	public static final RegistryObject<Biome> SVARTALVHEIM_CAVERN_BIOME = BIOMES
 			.register("svartalvheim_cavern_biome",
 					() -> new SvartalvheimCavernBiome(null));
-		
+		*/
 	
 	/*
 	 * NIFELHEIM
 	 */	
 	
+	/*
 	public static final RegistryObject<Biome> NIFELHEIM_FROZEN_PLAIN_BIOME = BIOMES
 			.register("nifelheim_frozen_plain_biome",
 					() -> new NifelheimForzenPlainBiome(null));
@@ -90,7 +93,7 @@ public class BiomeInit {
 	public static final RegistryObject<Biome> NIFELHEIM_FROZEN_OCEAN_BIOME = BIOMES
 			.register("nifelheim_frozen_ocean_biome",
 					() -> new NifelheimForzenOceanBiome(null));
-	
+	*/
 	
 	
 	

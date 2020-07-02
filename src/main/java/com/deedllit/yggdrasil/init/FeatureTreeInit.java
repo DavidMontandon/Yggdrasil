@@ -1,7 +1,7 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.world.feature.tree.YggdrasilBigTree;
+//import com.deedllit.yggdrasil.world.feature.tree.YggdrasilBigTree;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;

@@ -1,7 +1,7 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.world.feature.structure.YggdrasilTreeStructure;
+//import com.deedllit.yggdrasil.world.feature.structure.YggdrasilTreeStructure;
 
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
@@ -18,8 +18,10 @@ public class FeatureInit {
     
     //public static final RegistryObject<Structure<NoFeatureConfig>> YGGDRASIL_TREE_STRUCTURE = register("yggdrasil_tree_structure", new YggdrasilTreeStructure(NoFeatureConfig::deserialize));
 
+    /*
     private static <T extends Feature<?>> RegistryObject<T> register(String name, T feature) {
         return FEATURES.register(name, () -> feature);
     }
+    */
 
 }

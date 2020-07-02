@@ -30,9 +30,11 @@ public class VanafreintineHoe extends HoeItem {
 		super(p_i231595_1_, p_i231595_2_, p_i231595_3_, p_i231595_4_);
 	}
 
+	/*
 	protected static final Map<Block, BlockState> HOE_LOOKUP = Maps.newHashMap(ImmutableMap.of(
 			BlockInit.MUSPELHEIM_GRASS.get(), BlockInit.MUSPELHEIM_FARMLAND_BLOCK.get().getDefaultState()
 			));
+	*/
 	
 	public ActionResultType onItemUse(ItemUseContext context) {
 		World world = context.getWorld();

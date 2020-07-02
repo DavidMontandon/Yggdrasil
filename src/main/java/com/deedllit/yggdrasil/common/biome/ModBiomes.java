@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import com.deedllit.mythologycraft.common.BiomeRegistry;
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
+//import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;

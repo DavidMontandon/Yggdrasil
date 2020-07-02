@@ -35,7 +35,7 @@ public class PedestalItemTileEntity extends LockableLootTileEntity implements IC
 	}
 
 	@Override
-	protected NonNullList<ItemStack> getItems() {
+	public NonNullList<ItemStack> getItems() {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -130,10 +130,13 @@ public class Yggdrasil
 		BiomeInit.registerBiomes();
 	}
 	
+	
 	private void setup(final FMLCommonSetupEvent event) {
+		/*
         DeferredWorkQueue.runLater(() -> {
         	StructurePiecesInit.registerPieces();
         });
+        */
     }
 
 
