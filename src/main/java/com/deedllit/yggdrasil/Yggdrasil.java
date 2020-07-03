@@ -8,7 +8,11 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
+import net.minecraft.world.Dimension;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
@@ -33,6 +37,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
+
+
 import java.util.Iterator;
 
 import org.apache.logging.log4j.LogManager;
@@ -54,6 +60,8 @@ import com.deedllit.yggdrasil.init.YggdrasilTileEntityTypes;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.deedllit.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
 import com.deedllit.yggdrasil.util.holder.DimensionsHolder;
+import com.mojang.serialization.Codec;
+
 import net.minecraft.world.gen.GenerationStage;
 
 @Mod("yggdrasil")
@@ -73,10 +81,14 @@ public class Yggdrasil
 	
     //public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
     
-    public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
-    public static final ResourceLocation SVARTALVHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "svartalvheim") ;  
-    public static final ResourceLocation NIFELHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "nifelheim") ;  
+    //public static final Codec<RegistryKey<World>> field_234917_f_ = ResourceLocation.field_240908_a_.xmap(RegistryKey.func_240902_a_(Registry.field_239699_ae_), RegistryKey::func_240901_a_);
+    //public static final ResourceLocation YGGDRASIL_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
+    //public static final RegistryKey<World> DIMENSION_MUSPELHEIM = RegistryKey.func_240903_a_(Registry.field_239699_ae_, new ResourceLocation("muspelheim"));
+    
+    //public static final ResourceLocation SVARTALVHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "svartalvheim") ;  
+    //public static final ResourceLocation NIFELHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "nifelheim") ;  
             
+
     
     public Yggdrasil() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus() ; 
