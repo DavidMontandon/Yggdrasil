@@ -2,7 +2,7 @@ package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.biome.*;
-//import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
+import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 //import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
 //import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
 
@@ -35,9 +35,9 @@ public class BiomeInit {
  * MUSPELHEIM
  */
 
-	public static final Biome MUSPELHEIM_FOREST = Biomes.DEFAULT;
+	//public static final Biome MUSPELHEIM_FOREST = Biomes.DEFAULT;
 	
-	/*
+	
 	public static final RegistryObject<Biome> MUSPELHEIM = BIOMES
 			.register("muspelheim_extreme_hill",
 					() -> new MuspelheimExtremeHillBiome(null));
@@ -54,10 +54,16 @@ public class BiomeInit {
 			.register("muspelheim_cliff",
 					() -> new MuspelheimCliffBiome(null));
 
+	public static final RegistryObject<Biome> MUSPELHEIM_POPPY_FIELD_BIOME = BIOMES
+			.register("muspelheim_poppy_field",
+					() -> new MuspelheimFirePoppyField(null));
+
+	
 	public static final RegistryObject<Biome> MUSPELHEIM_OCEAN_BIOME = BIOMES
 			.register("muspelheim_ocean",
 					() -> new MuspelheimOceanBiome(null));
 
+	/*
 	public static final RegistryObject<Biome> MUSPELHEIM_VOLCANO_BIOME = BIOMES
 			.register("muspelheim_volcano",
 					() -> new MuspelheimVolcanoBiome(null));
@@ -101,7 +107,7 @@ public class BiomeInit {
 	}
 	
 	public static void onInit() {
-        BiomeDictionary.addTypes(MUSPELHEIM_FOREST, BiomeDictionary.Type.FOREST);
+        //BiomeDictionary.addTypes(MUSPELHEIM_FOREST, BiomeDictionary.Type.FOREST);
 	}
 	
 	

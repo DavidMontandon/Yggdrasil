@@ -9,18 +9,17 @@ import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class MuspelheimAshPlainsBiome extends Biome {
+public class MuspelheimPlainsBiome extends Biome {
 
-	public MuspelheimAshPlainsBiome(Builder biomeBuilder) {
-				
+	public MuspelheimPlainsBiome(Builder biomeBuilder) {
 	      super((new Biome.Builder())
-	    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_COLDROCK_SAND)
+	    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_GRASS_ASH_SAND)
 	    		  .precipitation(Biome.RainType.NONE)
 	    		  .category(Biome.Category.PLAINS)
 	    		  .depth(0.125F)
 	    		  .scale(0.05F)
 	    		  .temperature(2.0F)
-	    		  .downfall(0.1F)
+	    		  .downfall(0.05F)
 	    		  .func_235097_a_(
 	    				  (new BiomeAmbience.Builder())
 	    				  	.func_235246_b_(4159204)
@@ -31,10 +30,7 @@ public class MuspelheimAshPlainsBiome extends Biome {
 	    		  .parent((String)null)
 	    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.0F, 0.0F, 0.0F, 0.0F, 1.0F))));
 
-	
-	      
-	      MuspelheimDefaultBiomeFeatures.addPlants(this);
-	      
+			MuspelheimDefaultBiomeFeatures.addPlants(this) ; 
 	}
 
 }

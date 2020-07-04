@@ -24,6 +24,9 @@ public class MuspelheimDefaultBiomeFeatures {
 	public static final LiquidsConfig WATER_SPRING_CONFIG = new LiquidsConfig(Fluids.WATER.getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get()));
 	public static final LiquidsConfig LAVA_SPRING_CONFIG = new LiquidsConfig(Fluids.LAVA.getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, BlockInit.MUSPELHEIM_ASH.get(), BlockInit.MUSPELHEIM_GRASS.get(), BlockInit.MUSPELHEIM_COLD_ROCK.get(), BlockInit.MUSPELHEIM_HOT_ROCK.get()));
 
+	public static int SKY_COLOR = 6684672 ; 
+	
+	
 	private static final BlockState GRAVEL = Blocks.GRAVEL.getDefaultState();
 	private static final BlockState SULFUR = BlockInit.SULFUR_BLOCK.get().getDefaultState() ; 
 	private static final BlockState DEAD_BUSH = Blocks.DEAD_BUSH.getDefaultState();
@@ -31,12 +34,17 @@ public class MuspelheimDefaultBiomeFeatures {
 	private static final BlockState ASH = BlockInit.MUSPELHEIM_ASH.get().getDefaultState();
 	private static final BlockState DRAGON_GRASS = BlockInit.MUSPELHEIM_DRAGON_GRASS.get().getDefaultState();
 	private static final BlockState SLIM_GRASS = BlockInit.MUSPELHEIM_SLIM_GRASS.get().getDefaultState();
+	private static final BlockState FIRE_POPPY = BlockInit.MUSPELHEIM_FIRE_POPPY.get().getDefaultState() ;  
+	private static final BlockState MUSPELHEIM_GRASS = BlockInit.MUSPELHEIM_GRASS.get().getDefaultState() ; 
 	
 	public static final BlockClusterFeatureConfig GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.MUSPELHEIM_GRASS.get().getDefaultState()), new SimpleBlockPlacer())).tries(32).build();
 	public static final BlockClusterFeatureConfig DEAD_BUSH_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(DEAD_BUSH), new SimpleBlockPlacer())).tries(4).build();
 	public static final BlockClusterFeatureConfig DRAGON_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(DRAGON_GRASS), new SimpleBlockPlacer())).tries(32).build();
 	public static final BlockClusterFeatureConfig SLIM_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(SLIM_GRASS), new SimpleBlockPlacer())).tries(32).build();
-	 
+	public static final BlockClusterFeatureConfig FIRE_POPPY_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(FIRE_POPPY), new SimpleBlockPlacer())).tries(32).build();
+ 
+	
+	
 	public static final SurfaceBuilderConfig MAGMA_SURFACE = new SurfaceBuilderConfig(HOT_ROCK, HOT_ROCK, ASH);
 	public static final SurfaceBuilderConfig MAGMA_SURFACE2 = new SurfaceBuilderConfig(Blocks.DIAMOND_BLOCK.getDefaultState(), Blocks.BEDROCK.getDefaultState(), Blocks.BRICKS.getDefaultState());
 		
@@ -61,6 +69,11 @@ public class MuspelheimDefaultBiomeFeatures {
 	public static void addPlants(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(SLIM_GRASS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(DRAGON_GRASS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(FIRE_POPPY_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
+	}
+
+	public static void addExtraPoppy(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(FIRE_POPPY_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(5))));		
 	}
 	
 	/*

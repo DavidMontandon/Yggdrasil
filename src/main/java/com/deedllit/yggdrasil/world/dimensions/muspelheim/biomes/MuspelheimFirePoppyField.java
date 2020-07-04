@@ -8,19 +8,20 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class MuspelheimAshPlainsBiome extends Biome {
+public class MuspelheimFirePoppyField extends Biome {
 
-	public MuspelheimAshPlainsBiome(Builder biomeBuilder) {
-				
+	public MuspelheimFirePoppyField(Builder biomeBuilder) {
 	      super((new Biome.Builder())
-	    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_COLDROCK_SAND)
+	    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_GRASS_ASH_SAND)
 	    		  .precipitation(Biome.RainType.NONE)
 	    		  .category(Biome.Category.PLAINS)
-	    		  .depth(0.125F)
-	    		  .scale(0.05F)
+	    		  .depth(0.2F)
+	    		  .scale(0.1F)
 	    		  .temperature(2.0F)
-	    		  .downfall(0.1F)
+	    		  .downfall(0.5F)
 	    		  .func_235097_a_(
 	    				  (new BiomeAmbience.Builder())
 	    				  	.func_235246_b_(4159204)
@@ -31,10 +32,13 @@ public class MuspelheimAshPlainsBiome extends Biome {
 	    		  .parent((String)null)
 	    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.0F, 0.0F, 0.0F, 0.0F, 1.0F))));
 
-	
-	      
-	      MuspelheimDefaultBiomeFeatures.addPlants(this);
-	      
+			MuspelheimDefaultBiomeFeatures.addPlants(this) ; 
+			MuspelheimDefaultBiomeFeatures.addExtraPoppy(this) ; 
 	}
 
+	   @OnlyIn(Dist.CLIENT)
+	   public int getSkyColor() {
+	      return MuspelheimDefaultBiomeFeatures.SKY_COLOR;
+	   }
+	
 }

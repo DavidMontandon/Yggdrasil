@@ -1,6 +1,5 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes;
 
-import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 import com.google.common.collect.ImmutableList;
 
@@ -9,18 +8,17 @@ import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class MuspelheimAshPlainsBiome extends Biome {
+public class MuspelheimOceanBiome extends Biome {
 
-	public MuspelheimAshPlainsBiome(Builder biomeBuilder) {
-				
+	public MuspelheimOceanBiome(Builder biomeBuilder) {
 	      super((new Biome.Builder())
-	    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_COLDROCK_SAND)
+	    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_HOTROCK_COLDROCK_SAND)
 	    		  .precipitation(Biome.RainType.NONE)
-	    		  .category(Biome.Category.PLAINS)
-	    		  .depth(0.125F)
-	    		  .scale(0.05F)
+	    		  .category(Biome.Category.OCEAN)
+	    		  .depth(-1.125F)
+	    		  .scale(0.1F)
 	    		  .temperature(2.0F)
-	    		  .downfall(0.1F)
+	    		  .downfall(0.5F)
 	    		  .func_235097_a_(
 	    				  (new BiomeAmbience.Builder())
 	    				  	.func_235246_b_(4159204)
@@ -29,12 +27,7 @@ public class MuspelheimAshPlainsBiome extends Biome {
 	    				  	.func_235243_a_(MoodSoundAmbience.field_235027_b_)
 	    				  	.func_235238_a_())
 	    		  .parent((String)null)
-	    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.0F, 0.0F, 0.0F, 0.0F, 1.0F))));
-
-	
-	      
-	      MuspelheimDefaultBiomeFeatures.addPlants(this);
-	      
+	    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.0F, 0.0F, -0.5F, 0.0F, 1.0F))));
 	}
 
 }
