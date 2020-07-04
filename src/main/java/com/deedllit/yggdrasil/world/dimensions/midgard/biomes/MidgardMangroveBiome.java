@@ -23,7 +23,7 @@ public class MidgardMangroveBiome extends Biome {
 //SurfaceBuilderInit
 	public MidgardMangroveBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(
-	    		  new ConfiguredSurfaceBuilder(SurfaceBuilderInit.MANGROVE, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG))
+	    		  new ConfiguredSurfaceBuilder(SurfaceBuilderInit.MANGROVE, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG))
 	    		  .precipitation(Biome.RainType.RAIN)
 	    		  .category(Biome.Category.SWAMP)
 	    		  .depth(-0.25F)
@@ -42,6 +42,7 @@ public class MidgardMangroveBiome extends Biome {
 	      this.func_235063_a_(DefaultBiomeFeatures.field_235172_j_);
 	      this.func_235063_a_(DefaultBiomeFeatures.field_235150_b_);
 	      this.func_235063_a_(DefaultBiomeFeatures.field_235130_B_);
+	      
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.func_235191_ai_(this);
 	      DefaultBiomeFeatures.addLakes(this);
@@ -53,13 +54,23 @@ public class MidgardMangroveBiome extends Biome {
 	      DefaultBiomeFeatures.addMushrooms(this);
 	      DefaultBiomeFeatures.addExtraReedsAndPumpkins(this);
 	      DefaultBiomeFeatures.addSprings(this);
+	      
 	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SEAGRASS.withConfiguration(new SeaGrassConfig(64, 0.6D)).withPlacement(Placement.TOP_SOLID_HEIGHTMAP.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
-	      DefaultBiomeFeatures.addFreezeTopLayer(this);
-	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
-	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
+	      
+	      //this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
+	      //this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.CHICKEN, 10, 4, 4));
-	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.COW, 8, 4, 4));
+	      //this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.COW, 8, 4, 4));
+	      
+	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.COD, 15, 3, 6));
+	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.SQUID, 10, 4, 4));
+	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.PUFFERFISH, 15, 1, 3));
+	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.TROPICAL_FISH, 25, 8, 8));
+
+	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PARROT, 40, 1, 2));
+	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PANDA, 1, 1, 2));
 	      this.addSpawn(EntityClassification.AMBIENT, new Biome.SpawnListEntry(EntityType.BAT, 10, 8, 8));
+	      
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SPIDER, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIE, 95, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIE_VILLAGER, 5, 1, 1));
@@ -69,6 +80,7 @@ public class MidgardMangroveBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 1, 1, 1));
+	      
 	   }
 
 	   @OnlyIn(Dist.CLIENT)

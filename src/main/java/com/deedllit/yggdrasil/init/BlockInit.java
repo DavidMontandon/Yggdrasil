@@ -101,6 +101,23 @@ public class BlockInit {
 			() -> new IronWoodSaplingBlock(() -> new IronWoodTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 */
 	
+	
+	/*
+	 * MIDGARD
+	 */
+	
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_LOG = BLOCKS.register("midgard_mangrove_log",
+			() ->  new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD)
+					.hardnessAndResistance(2.0F)
+					.sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_PLANKS = BLOCKS.register("midgard_mangrove_planks",
+			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
+	
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_LEAVES = BLOCKS.register("midgard_mangrove_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+
+	
 	/*
 	 *  MUSPELHEIM
 	 */		

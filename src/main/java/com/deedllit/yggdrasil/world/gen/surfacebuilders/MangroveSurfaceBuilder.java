@@ -25,7 +25,7 @@ public class MangroveSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig>
 		//double d = noise * random.nextDouble() ; 
 		double d = biomeIn.INFO_NOISE.noiseAt(x * 0.225D, z * 0.225D, false);
 		
-		if (d > 0.05D) {
+		if (d <= 0.0D) {
 			int i = x & 15 ; 
 			int j = z & 15 ; 
 			
