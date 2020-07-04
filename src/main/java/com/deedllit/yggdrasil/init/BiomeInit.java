@@ -2,13 +2,10 @@ package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.biome.*;
+import com.deedllit.yggdrasil.world.dimensions.midgard.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
-//import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
-//import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
 
-import net.minecraft.block.Block;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.Biomes;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import net.minecraftforge.common.BiomeManager;
@@ -32,6 +29,16 @@ public class BiomeInit {
 					() -> new IronWoodBiome(null));
 
 /*
+ * MIDGARD
+ */
+	
+	
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE = BIOMES
+			.register("midgard_mangrove",
+					() -> new MidgardMangroveBiome());
+	//
+	
+/*
  * MUSPELHEIM
  */
 
@@ -40,29 +47,41 @@ public class BiomeInit {
 	
 	public static final RegistryObject<Biome> MUSPELHEIM = BIOMES
 			.register("muspelheim_extreme_hill",
-					() -> new MuspelheimExtremeHillBiome(null));
+					() -> new MuspelheimExtremeHillBiome());
 
 	public static final RegistryObject<Biome> MUSPELHEIM_PLAINS = BIOMES
 			.register("muspelheim_plains",
-					() -> new MuspelheimPlainsBiome(null));
+					() -> new MuspelheimPlainsBiome());
 	
 	public static final RegistryObject<Biome> MUSPELHEIM_ASH_PLAINS = BIOMES
 			.register("muspelheim_ash_plains",
-					() -> new MuspelheimAshPlainsBiome(null));
+					() -> new MuspelheimAshPlainsBiome());
 		
 	public static final RegistryObject<Biome> MUSPELHEIM_CLIFF_BIOME = BIOMES
 			.register("muspelheim_cliff",
-					() -> new MuspelheimCliffBiome(null));
+					() -> new MuspelheimCliffBiome());
 
 	public static final RegistryObject<Biome> MUSPELHEIM_POPPY_FIELD_BIOME = BIOMES
 			.register("muspelheim_poppy_field",
-					() -> new MuspelheimFirePoppyField(null));
+					() -> new MuspelheimFirePoppyField());
 
-	
 	public static final RegistryObject<Biome> MUSPELHEIM_OCEAN_BIOME = BIOMES
 			.register("muspelheim_ocean",
-					() -> new MuspelheimOceanBiome(null));
+					() -> new MuspelheimOceanBiome());
 
+	public static final RegistryObject<Biome> MUSPELHEIM_RIVER_BIOME = BIOMES
+			.register("muspelheim_river",
+					() -> new MuspelheimRiverBiome());
+
+	public static final RegistryObject<Biome> MUSPELHEIM_BEACH_BIOME = BIOMES
+			.register("muspelheim_beach",
+					() -> new MuspelheimBeachBiome());
+	
+	public static final RegistryObject<Biome> MUSPELHEIM_FOREST_BIOME = BIOMES
+			.register("muspelheim_forest",
+					() -> new MuspelheimEpluphierForestBiome());
+	
+	
 	/*
 	public static final RegistryObject<Biome> MUSPELHEIM_VOLCANO_BIOME = BIOMES
 			.register("muspelheim_volcano",

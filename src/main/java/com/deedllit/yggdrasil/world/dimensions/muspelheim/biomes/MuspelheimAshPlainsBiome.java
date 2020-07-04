@@ -8,10 +8,12 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MuspelheimAshPlainsBiome extends Biome {
 
-	public MuspelheimAshPlainsBiome(Builder biomeBuilder) {
+	public MuspelheimAshPlainsBiome() {
 				
 	      super((new Biome.Builder())
 	    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_COLDROCK_SAND)
@@ -33,8 +35,20 @@ public class MuspelheimAshPlainsBiome extends Biome {
 
 	
 	      
-	      MuspelheimDefaultBiomeFeatures.addPlants(this);
+	      MuspelheimDefaultBiomeFeatures.addCarvers(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addLakes(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addOres(this);
+	      MuspelheimDefaultBiomeFeatures.addVanillaOres(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addPlants(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addTrees(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addSprings(this) ; 
 	      
 	}
+	
+	@OnlyIn(Dist.CLIENT)
+	public int getSkyColor() {
+		return MuspelheimDefaultBiomeFeatures.SKY_COLOR;
+	}
+	
 
 }

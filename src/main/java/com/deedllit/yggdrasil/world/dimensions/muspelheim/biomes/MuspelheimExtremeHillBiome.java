@@ -7,10 +7,12 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeAmbience;
 import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MuspelheimExtremeHillBiome extends Biome {
 
-	public MuspelheimExtremeHillBiome(Builder biomeBuilder) {
+	public MuspelheimExtremeHillBiome() {
 		
 	    super((new Biome.Builder())
 	    		  .surfaceBuilder(SurfaceBuilder.MOUNTAIN, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_HOTROCK_COLDROCK_SAND)
@@ -29,7 +31,18 @@ public class MuspelheimExtremeHillBiome extends Biome {
 	    				  	.func_235238_a_())
 	    		  .parent((String)null)) ;
 
-	      MuspelheimDefaultBiomeFeatures.addPlants(this);
+	      MuspelheimDefaultBiomeFeatures.addCarvers(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addLakes(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addOres(this);
+	      MuspelheimDefaultBiomeFeatures.addVanillaOres(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addPlants(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addTrees(this) ; 
+	      MuspelheimDefaultBiomeFeatures.addSprings(this) ; 
 	}
-
+	
+	@OnlyIn(Dist.CLIENT)
+	public int getSkyColor() {
+		return MuspelheimDefaultBiomeFeatures.SKY_COLOR;
+	}
+	
 }

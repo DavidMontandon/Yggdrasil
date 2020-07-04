@@ -2,27 +2,25 @@ package com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes;
 
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
-import com.google.common.collect.ImmutableList;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeAmbience;
-import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class MuspelheimFirePoppyField extends Biome {
+public class MuspelheimEpluphierForestBiome extends Biome {
 
-	public MuspelheimFirePoppyField() {
+	public MuspelheimEpluphierForestBiome() {
 	      super((new Biome.Builder())
 	    		  .surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_GRASS_ASH_SAND)
 	    		  .precipitation(Biome.RainType.NONE)
-	    		  .category(Biome.Category.PLAINS)
-	    		  .depth(0.2F)
-	    		  .scale(0.1F)
+	    		  .category(Biome.Category.FOREST)
+	    		  .depth(0.1F)
+	    		  .scale(0.2F)
 	    		  .temperature(2.0F)
-	    		  .downfall(0.5F)
+	    		  .downfall(0.8F)
 	    		  .func_235097_a_(
 	    				  (new BiomeAmbience.Builder())
 	    				  	.func_235246_b_(4159204)
@@ -30,8 +28,7 @@ public class MuspelheimFirePoppyField extends Biome {
 	    				  	.func_235239_a_(12638463)
 	    				  	.func_235243_a_(MoodSoundAmbience.field_235027_b_)
 	    				  	.func_235238_a_())
-	    		  .parent((String)null)
-	    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.0F, 0.0F, 0.0F, 0.0F, 1.0F))));
+	    		  .parent((String)null)) ;
 
 	      
 	      MuspelheimDefaultBiomeFeatures.addCarvers(this) ; 
