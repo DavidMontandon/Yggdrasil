@@ -71,6 +71,7 @@ public class Yggdrasil
 {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "yggdrasil" ; 
+    public static final boolean PRINT_DEBUG = true ; 
     public static final YggdrasilHolder YGGDRASIL_HOLDER = new YggdrasilHolder() ; 
     public static Yggdrasil instance ; 
     

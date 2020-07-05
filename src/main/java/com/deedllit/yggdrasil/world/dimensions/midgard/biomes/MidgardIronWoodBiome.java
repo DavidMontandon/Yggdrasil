@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.biome;
+package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.BlockInit;
@@ -28,7 +28,7 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.common.IPlantable;
 
-public class IronWoodBiome extends Biome {
+public class MidgardIronWoodBiome extends Biome {
 
 	/*
     public static final HugeTreeFeatureConfig HUGE_IRON_WOOD_TREE_CONFIG = (new HugeTreeFeatureConfig.Builder(
@@ -51,7 +51,7 @@ public class IronWoodBiome extends Biome {
 				.build();
     */
 	
-    public IronWoodBiome(Builder biomeBuilder) {
+    public MidgardIronWoodBiome(Builder biomeBuilder) {
     	
         super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.6F).downfall(0.6F).func_235097_a_((new BiomeAmbience.Builder()).func_235246_b_(4159204).func_235248_c_(329011).func_235239_a_(12638463).func_235243_a_(MoodSoundAmbience.field_235027_b_).func_235238_a_()).parent((String)null).func_235098_a_(ImmutableList.of(new Biome.Attributes(-0.1F, 0.2F, 0.0F, 0.0F, 1.0F))));
 

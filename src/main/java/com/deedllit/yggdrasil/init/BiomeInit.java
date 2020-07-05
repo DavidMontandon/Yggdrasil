@@ -1,7 +1,7 @@
 package com.deedllit.yggdrasil.init;
 
+import com.deedllit.mythologycraft.common.BiomeRegistry;
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.world.biome.*;
 import com.deedllit.yggdrasil.world.dimensions.midgard.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 
@@ -21,21 +21,23 @@ public class BiomeInit {
 	//https://www.mathsisfun.com/hexadecimal-decimal-colors.html
 	
 
-/*
- * OVERWORLD
- */
-	public static final RegistryObject<Biome> IRON_WOOD_BIOME = BIOMES
-			.register("iron_wood",
-					() -> new IronWoodBiome(null));
 
 /*
  * MIDGARD
  */
+	public static final RegistryObject<Biome> IRON_WOOD_BIOME = BIOMES
+			.register("iron_wood",
+					() -> new MidgardIronWoodBiome(null));
 	
 	
 	public static final RegistryObject<Biome> MIDGARD_MANGROVE = BIOMES
 			.register("midgard_mangrove",
 					() -> new MidgardMangroveBiome());
+	
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE_RIVER = BIOMES
+			.register("midgard_mangrove_river",
+					() -> new MidgardMangroveRiverBiome());
+
 	//
 	
 /*
@@ -135,14 +137,18 @@ public class BiomeInit {
 	 */
 	public static void registerBiomes() {
 		registerBiome(IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
+		registerBiome(MIDGARD_MANGROVE.get(), Type.SWAMP, Type.OVERWORLD);		
 	}
 
+	
 	private static void registerBiome(Biome biome, Type... types) {
-		// the line below will make it spawn in the overworld
 		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, 100));
 		BiomeDictionary.addTypes(biome, types);
 		BiomeManager.addSpawnBiome(biome);
+				
+		if(Yggdrasil.PRINT_DEBUG) 			
+			Yggdrasil.LOGGER.info("YGGDRASIL DEBUG : BiomeInit.registerBiome - " + biome.getDisplayName());
 	}
-
+	 
 
 }

@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import com.deedllit.mythologycraft.common.BiomeRegistry;
 import com.deedllit.yggdrasil.Yggdrasil;
-//import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
+import com.deedllit.yggdrasil.world.dimensions.midgard.biomes.MidgardIronWoodBiome;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
@@ -25,7 +25,7 @@ import static com.deedllit.mythologycraft.config.MCConfig.* ;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBiomes {
 
-
+	
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event)
     {
@@ -40,6 +40,9 @@ public class ModBiomes {
     		}
     		
     	}
+    	
+    	    	
+    	
     	
     	registerBiomeDictionaryTags() ; 
     	
