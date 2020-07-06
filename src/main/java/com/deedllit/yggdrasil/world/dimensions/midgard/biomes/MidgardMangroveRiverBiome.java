@@ -51,8 +51,9 @@ public class MidgardMangroveRiverBiome extends Biome {
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addOres(this);
 	      DefaultBiomeFeatures.addSwampClayDisks(this);
+	      MidgardDefaultBiomeFeatures.addTropicalVegetation(this);
 	      MidgardDefaultBiomeFeatures.addMangroveVegetation(this);
-	      MidgardDefaultBiomeFeatures.addMangroveExtraPomelias(this);
+	      MidgardDefaultBiomeFeatures.addExtraPomelias(this);
 	      DefaultBiomeFeatures.addMushrooms(this);
 	      DefaultBiomeFeatures.addExtraReedsAndPumpkins(this);
 	      DefaultBiomeFeatures.addSprings(this);

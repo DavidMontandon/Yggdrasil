@@ -11,9 +11,9 @@ import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
-public class MangroveSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
+public class MangroveBorderSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 
-	public MangroveSurfaceBuilder(Codec<SurfaceBuilderConfig> p_i232136_1_) {
+	public MangroveBorderSurfaceBuilder(Codec<SurfaceBuilderConfig> p_i232136_1_) {
 		super(p_i232136_1_);
 	}
 
@@ -23,9 +23,10 @@ public class MangroveSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig>
 		
 		int floor = 62 ; 
 		
+		double r = random.nextDouble() ; 
 		double d = biomeIn.INFO_NOISE.noiseAt(x * 0.225D, z * 0.225D, false);
 		
-		if (d <= 0.0D) {
+		if (d >= 0.2D && r > 0.5D) {
 			int i = x & 15 ; 
 			int j = z & 15 ; 
 			

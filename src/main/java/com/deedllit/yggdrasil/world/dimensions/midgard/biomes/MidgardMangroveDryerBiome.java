@@ -20,11 +20,11 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class MidgardMangroveBiome extends Biome {
+public class MidgardMangroveDryerBiome extends Biome {
 //SurfaceBuilderInit
-	public MidgardMangroveBiome() {
+	public MidgardMangroveDryerBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(
-	    		  new ConfiguredSurfaceBuilder(SurfaceBuilderInit.MANGROVE, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG))
+	    		  new ConfiguredSurfaceBuilder(SurfaceBuilderInit.MANGROVE_MIX, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG))
 	    		  .precipitation(Biome.RainType.RAIN)
 	    		  .category(Biome.Category.SWAMP)
 	    		  .depth(-0.25F)
@@ -37,7 +37,7 @@ public class MidgardMangroveBiome extends Biome {
 	    				  .func_235239_a_(12638463)
 	    				  .func_235243_a_(MoodSoundAmbience.field_235027_b_)
 	    				  .func_235238_a_())
-	    		  .parent((String)null)
+	    		  .parent("midgard_mangrove")
 	    		  .func_235098_a_(ImmutableList.of(new Biome.Attributes(0.5F, 0.5F, 0.0F, 0.0F, 1.0F))));
 	      
 	      this.func_235063_a_(DefaultBiomeFeatures.field_235172_j_);
@@ -51,7 +51,9 @@ public class MidgardMangroveBiome extends Biome {
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addOres(this);
 	      DefaultBiomeFeatures.addSwampClayDisks(this);
+	      MidgardDefaultBiomeFeatures.addTropicalVegetation(this);
 	      MidgardDefaultBiomeFeatures.addMangroveVegetation(this);
+	      MidgardDefaultBiomeFeatures.addExtraPomelias(this);
 	      DefaultBiomeFeatures.addMushrooms(this);
 	      DefaultBiomeFeatures.addExtraReedsAndPumpkins(this);
 	      DefaultBiomeFeatures.addSprings(this);
@@ -63,11 +65,6 @@ public class MidgardMangroveBiome extends Biome {
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.CHICKEN, 10, 4, 4));
 	      //this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.COW, 8, 4, 4));
 	      
-	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.COD, 15, 3, 6));
-	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.SQUID, 10, 4, 4));
-	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.PUFFERFISH, 15, 1, 3));
-	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.TROPICAL_FISH, 25, 8, 8));
-
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PARROT, 40, 1, 2));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PANDA, 1, 1, 2));
 	      this.addSpawn(EntityClassification.AMBIENT, new Biome.SpawnListEntry(EntityType.BAT, 10, 8, 8));
@@ -87,12 +84,12 @@ public class MidgardMangroveBiome extends Biome {
 	   @OnlyIn(Dist.CLIENT)
 	   public int getGrassColor(double posX, double posZ) {
 	      double d0 = INFO_NOISE.noiseAt(posX * 0.0225D, posZ * 0.0225D, false);
-	      return d0 < -0.1D ? 5011004 : 6975545;
+	      return d0 < -0.1D ? 6975545 : 7893049;
 	   }
 
 	   @OnlyIn(Dist.CLIENT)
 	   public int getFoliageColor() {
-	      return 6975545;
+	      return 7893049;
 	   }
 
 }

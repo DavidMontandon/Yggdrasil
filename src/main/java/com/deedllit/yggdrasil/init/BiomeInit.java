@@ -1,6 +1,5 @@
 package com.deedllit.yggdrasil.init;
 
-import com.deedllit.mythologycraft.common.BiomeRegistry;
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.dimensions.midgard.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
@@ -36,9 +35,15 @@ public class BiomeInit {
 	
 	public static final RegistryObject<Biome> MIDGARD_MANGROVE_RIVER = BIOMES
 			.register("midgard_mangrove_river",
-					() -> new MidgardMangroveRiverBiome());
-
-	//
+					() -> new MidgardMangroveRiverBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE_DRYER = BIOMES
+			.register("midgard_mangrove_dryer",
+					() -> new MidgardMangroveDryerBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_TROPICAL = BIOMES
+			.register("midgard_charparral_tropical",
+					() -> new MidgardChaparralTropicalBiome());	
 	
 /*
  * MUSPELHEIM
@@ -136,13 +141,15 @@ public class BiomeInit {
 	 * REGISTER IN OVERWORLD
 	 */
 	public static void registerBiomes() {
-		registerBiome(IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
-		registerBiome(MIDGARD_MANGROVE.get(), Type.SWAMP, Type.OVERWORLD);		
+		registerBiome(100, IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
+		registerBiome(100, MIDGARD_MANGROVE.get(), Type.SWAMP, Type.OVERWORLD);		
+		registerBiome(100, MIDGARD_MANGROVE_RIVER.get(), Type.SWAMP, Type.OVERWORLD);		
+		registerBiome(5, MIDGARD_MANGROVE_DRYER.get(), Type.SWAMP, Type.OVERWORLD);		
 	}
 
 	
-	private static void registerBiome(Biome biome, Type... types) {
-		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, 100));
+	private static void registerBiome(int height, Biome biome, Type... types) {
+		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, height));
 		BiomeDictionary.addTypes(biome, types);
 		BiomeManager.addSpawnBiome(biome);
 				

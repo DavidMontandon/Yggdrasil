@@ -9,7 +9,7 @@ issueTrackerURL="http://my.issue.tracker/"
 modId="yggdrasil"
 
 #version="${file.jarVersion}"
-version="Dev 0.1"
+version="0.1"
 
 displayName="Yggdrasil"
 
@@ -60,3 +60,13 @@ You can read more about it on wikipedia : https://en.wikipedia.org/wiki/Yggdrasi
     versionRange="[1.16.1]"
     ordering="NONE"
     side="BOTH"
+    
+#[[dependencies.biologycraft]]
+#    modId="biologycraft"
+#    mandatory=true
+#    versionRange="[0.1]"
+#    ordering="NONE"
+#    side="BOTH"
+
+    
+    
