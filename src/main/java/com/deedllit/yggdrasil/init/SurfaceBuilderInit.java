@@ -16,6 +16,6 @@ public class SurfaceBuilderInit {
 	public static final SurfaceBuilder<SurfaceBuilderConfig> MANGROVE_BORDER = new MangroveBorderSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> MANGROVE_MIX = new MangroveMixedSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> CHAPARRAL = new ChaparralSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
-	
+	public static final SurfaceBuilder<SurfaceBuilderConfig> FYNBOS = new FynbosSurfaceBuilder(SurfaceBuilderConfig.field_237203_a_);
 	
 }

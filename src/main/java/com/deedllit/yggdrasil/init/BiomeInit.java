@@ -45,6 +45,16 @@ public class BiomeInit {
 			.register("midgard_charparral_tropical",
 					() -> new MidgardChaparralTropicalBiome());	
 	
+	public static final RegistryObject<Biome> MIDGARD_FYNBOS = BIOMES
+			.register("midgard_fynbos",
+					() -> new MidgardFynbos());	
+				
+	public static final RegistryObject<Biome> MIDGARD_VOLCANIC = BIOMES
+			.register("midgard_volcanic",
+					() -> new MidgardVolcanicBiome());	
+	
+	
+	
 /*
  * MUSPELHEIM
  */
