@@ -53,6 +53,9 @@ public class BiomeInit {
 			.register("midgard_volcanic",
 					() -> new MidgardVolcanicBiome());	
 	
+	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_DESERT = BIOMES
+			.register("midgard_charparral_desert",
+					() -> new MidgardChaparralDesertBiome());	
 	
 	
 /*

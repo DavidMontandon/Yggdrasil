@@ -35,6 +35,7 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.GUZMANIA_RED.get(), RenderType.getCutout());		
 		RenderTypeLookup.setRenderLayer(BlockInit.GUZMANIA_PINK.get(), RenderType.getCutout());		
 		RenderTypeLookup.setRenderLayer(BlockInit.FISH_HOOK.get(), RenderType.getCutout());		
+		//RenderTypeLookup.setRenderLayer(BlockInit.DESERT_GRASS, RenderType.getCutout());		
 
 		
 		/*

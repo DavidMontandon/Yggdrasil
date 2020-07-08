@@ -42,6 +42,7 @@ public class MidgardChaparralTropicalBiome extends Biome {
 	      DefaultBiomeFeatures.addSedimentDisks(this);
 	      MidgardDefaultBiomeFeatures.addJungleTrees(this);
 	      MidgardDefaultBiomeFeatures.addTropicalVegetation(this);
+	      MidgardDefaultBiomeFeatures.addDesertFlowers(this); 
 	      MidgardDefaultBiomeFeatures.addExtraPomelias(this);
 	      
 	      MidgardDefaultBiomeFeatures.addCactus(this);

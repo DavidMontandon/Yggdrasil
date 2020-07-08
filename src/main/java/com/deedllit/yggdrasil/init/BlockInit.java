@@ -1,8 +1,9 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.common.block.YggdrasilFlowerBlock;
+import com.deedllit.yggdrasil.common.block.YggdrasilTallGrassBlock;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
-import com.deedllit.yggdrasil.common.features.BaseBasedFlowerBlock;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
@@ -17,9 +18,11 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.TallFlowerBlock;
+import net.minecraft.block.TallGrassBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.potion.Effects;
+import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -132,14 +135,19 @@ public class BlockInit {
 			() -> new TallFlowerBlock(AbstractBlock.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.PLANT)));
 	
 	public static final RegistryObject<Block> GUZMANIA_RED = BLOCKS.register("guzmania_red",
-			() -> new FlowerBlock(Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+			() -> new YggdrasilFlowerBlock(PlantType.DESERT, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
 
 	public static final RegistryObject<Block> GUZMANIA_PINK = BLOCKS.register("guzmania_pink",
-			() -> new FlowerBlock(Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+			() -> new YggdrasilFlowerBlock(PlantType.DESERT, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
 
 	public static final RegistryObject<Block> FISH_HOOK = BLOCKS.register("fish_hook",
-			() -> new BaseBasedFlowerBlock(Blocks.SAND.getDefaultState(), Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+			() -> new YggdrasilFlowerBlock(PlantType.DESERT, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
 
+	public static final RegistryObject<Block> DESERT_GRASS = BLOCKS.register("desert_grass",
+			() -> new YggdrasilTallGrassBlock(PlantType.DESERT, Blocks.SAND, Block.Properties.from(Blocks.GRASS))) ;
+	
+	
+	
 	/*
 	 *  MUSPELHEIM
 	 */		
