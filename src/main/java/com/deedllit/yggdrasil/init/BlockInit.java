@@ -2,6 +2,7 @@ package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
+import com.deedllit.yggdrasil.common.features.BaseBasedFlowerBlock;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
@@ -130,7 +131,15 @@ public class BlockInit {
 	public static final RegistryObject<Block> IXIA_VIRIDIFLORA_TEAL_BUSH = BLOCKS.register("ixia_viridiflora_teal_bush", 
 			() -> new TallFlowerBlock(AbstractBlock.Properties.create(Material.TALL_PLANTS).doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.PLANT)));
 	
-	
+	public static final RegistryObject<Block> GUZMANIA_RED = BLOCKS.register("guzmania_red",
+			() -> new FlowerBlock(Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+
+	public static final RegistryObject<Block> GUZMANIA_PINK = BLOCKS.register("guzmania_pink",
+			() -> new FlowerBlock(Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+
+	public static final RegistryObject<Block> FISH_HOOK = BLOCKS.register("fish_hook",
+			() -> new BaseBasedFlowerBlock(Blocks.SAND.getDefaultState(), Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+
 	/*
 	 *  MUSPELHEIM
 	 */		
