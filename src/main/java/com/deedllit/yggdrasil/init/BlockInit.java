@@ -2,7 +2,7 @@ package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.common.block.YggdrasilFlowerBlock;
-import com.deedllit.yggdrasil.common.block.YggdrasilTallGrassBlock;
+import com.deedllit.yggdrasil.common.block.midgard.*;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
@@ -18,7 +18,6 @@ import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.TallFlowerBlock;
-import net.minecraft.block.TallGrassBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.potion.Effects;
@@ -144,7 +143,7 @@ public class BlockInit {
 			() -> new YggdrasilFlowerBlock(PlantType.DESERT, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
 
 	public static final RegistryObject<Block> DESERT_GRASS = BLOCKS.register("desert_grass",
-			() -> new YggdrasilTallGrassBlock(PlantType.DESERT, Blocks.SAND, Block.Properties.from(Blocks.GRASS))) ;
+			() -> new DesertGrass(PlantType.DESERT, new Block[] {Blocks.SAND, Blocks.RED_SAND} , Block.Properties.from(Blocks.GRASS))) ;
 	
 	
 	

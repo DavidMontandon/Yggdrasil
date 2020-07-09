@@ -57,6 +57,9 @@ public class BiomeInit {
 			.register("midgard_charparral_desert",
 					() -> new MidgardChaparralDesertBiome());	
 	
+	public static final RegistryObject<Biome> MIDGARD_SPOOKY = BIOMES
+			.register("midgard_spooky",
+					() -> new MidgardSpookyBiome());	
 	
 /*
  * MUSPELHEIM

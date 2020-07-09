@@ -10,6 +10,8 @@ import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.biome.MoodSoundAmbience;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class MidgardChaparralDesertBiome extends Biome  {
 	
@@ -36,6 +38,15 @@ public class MidgardChaparralDesertBiome extends Biome  {
 	      DefaultBiomeFeatures.addDesertLakes(this);	      
 	      MidgardDefaultBiomeFeatures.addDesertFlowers(this);
 	      MidgardDefaultBiomeFeatures.addCactus(this);
+	 
+	      //10066176
 	      
 	}
+	
+	@OnlyIn(Dist.CLIENT)
+	public int getGrassColor(double posX, double posZ) {
+		double d0 = INFO_NOISE.noiseAt(posX * 0.0225D, posZ * 0.0225D, false);
+	    return d0 < -0.1D ? 11842580 : 12171550;
+	}
+
 }

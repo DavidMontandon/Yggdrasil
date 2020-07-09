@@ -42,7 +42,7 @@ public class MuspelheimAshCarambola extends BushBlock implements IGrowable {
 	      return new ItemStack(BlockInit.MUSPELHEIM_ASH_CARAMBOLA_BUSH.get());
 	   }
 
-	   @SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation")
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
 	      if (state.get(AGE) == 0) {
 	         return field_220126_b;
@@ -51,7 +51,7 @@ public class MuspelheimAshCarambola extends BushBlock implements IGrowable {
 	      }
 	   }
 	   
-	   @SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation")
 	public void tick(BlockState p_225534_1_, ServerWorld p_225534_2_, BlockPos p_225534_3_, Random p_225534_4_) {
 	      super.tick(p_225534_1_, p_225534_2_, p_225534_3_, p_225534_4_);
 	      int i = p_225534_1_.get(AGE);
@@ -62,7 +62,7 @@ public class MuspelheimAshCarambola extends BushBlock implements IGrowable {
 
 	   }
 
-	   @SuppressWarnings("deprecation")
+	@SuppressWarnings("deprecation")
 	public ActionResultType onBlockActivated(BlockState p_225533_1_, World p_225533_2_, BlockPos p_225533_3_, PlayerEntity p_225533_4_, Hand p_225533_5_, BlockRayTraceResult p_225533_6_) {
 	      int i = p_225533_1_.get(AGE);
 	      boolean flag = i == 3;
