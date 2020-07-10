@@ -2,10 +2,12 @@ package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.common.block.YggdrasilFlowerBlock;
+import com.deedllit.yggdrasil.common.block.YggdrasilWaterCropsBlock;
 import com.deedllit.yggdrasil.common.block.midgard.*;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
+import com.deedllit.yggdrasil.objects.blocks.crops.RiceBlock;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
 import com.deedllit.yggdrasil.objects.bushes.muspelheim.* ; 
 //import com.deedllit.yggdrasil.world.feature.tree.*;
@@ -109,6 +111,9 @@ public class BlockInit {
 	/*
 	 * MIDGARD
 	 */
+	
+	public static final RegistryObject<Block> MIDGARD_RICE = BLOCKS.register("midgard_rice_crop",
+			() -> new RiceBlock(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 	
 	public static final RegistryObject<Block> MIDGARD_MANGROVE_LOG = BLOCKS.register("midgard_mangrove_log",
 			() ->  new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD)
