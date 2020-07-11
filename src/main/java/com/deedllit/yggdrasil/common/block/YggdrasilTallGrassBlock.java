@@ -35,5 +35,5 @@ public abstract class YggdrasilTallGrassBlock extends TallGrassBlock {
 	public void addAllowedBlock(Block allowedOn) {
 		this.allowedOn.add(allowedOn) ; 
 	}
-	
+		
 }
