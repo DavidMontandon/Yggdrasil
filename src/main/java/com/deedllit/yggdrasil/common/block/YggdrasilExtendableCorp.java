@@ -23,7 +23,7 @@ import net.minecraftforge.common.IPlantable;
 public abstract class YggdrasilExtendableCorp extends CropsBlock implements IGrowable {
 
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_0_7;
-	public Block topBlock ;
+	private Block topBlock ;
 	private List<Block> canBePlacedOn ; 
 	
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
@@ -36,17 +36,29 @@ public abstract class YggdrasilExtendableCorp extends CropsBlock implements IGro
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
 	
-	public YggdrasilExtendableCorp(Properties properties, List<Block> canBePlacedOn) {
+	public YggdrasilExtendableCorp(Properties properties, List<Block> canBePlacedOn, Block topBlock) {
 		super(properties);		
 		this.canBePlacedOn = canBePlacedOn ; 
+		this.topBlock = topBlock  ; 
 	}
 	
-	public YggdrasilExtendableCorp(Properties properties, Block [] canBePlacedOn) {
-		this(properties, Arrays.asList(canBePlacedOn));		
+	public YggdrasilExtendableCorp(Properties properties, Block [] canBePlacedOn, Block topBlock) {
+		this(properties, Arrays.asList(canBePlacedOn), topBlock);		
 	}
 	
 	public void addAllowedBlock(Block allowedOn) {
 		this.canBePlacedOn.add(allowedOn) ; 
+	}
+	
+	public boolean hasTopBlock() {
+		if( this.topBlock != null)
+			return true ; 
+		
+		return false ; 
+	}
+	
+	public Block getTopBlock() {
+		return this.topBlock ; 
 	}
 
 	public List<Block> getPlacableOn() {

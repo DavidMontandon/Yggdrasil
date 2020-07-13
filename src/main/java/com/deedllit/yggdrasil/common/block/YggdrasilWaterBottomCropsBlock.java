@@ -70,8 +70,6 @@ public abstract class YggdrasilWaterBottomCropsBlock extends YggdrasilExtendable
 	
 	@Override
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
-		Yggdrasil.LOGGER.info("Check getStateForPlacement");
-
 		int thisDeep = PlacementHelper.blocksDeep(context) ;
 		if(thisDeep >= this.minDeep && thisDeep <= this.maxDeep) 
 			return super.getStateForPlacement(context) ;
@@ -92,10 +90,7 @@ public abstract class YggdrasilWaterBottomCropsBlock extends YggdrasilExtendable
 	
 	
 	@Override
-	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {	
-		Yggdrasil.LOGGER.info("Check isValidPosition");
-
-		
+	public boolean isValidPosition(BlockState state, IWorldReader worldIn, BlockPos pos) {			
 		BlockPos.Mutable blockpos$mutableblockpos = new BlockPos.Mutable();
 				
 		/*
@@ -120,7 +115,6 @@ public abstract class YggdrasilWaterBottomCropsBlock extends YggdrasilExtendable
 		return true ; 
 		
 	}
-	
 	
 	@Override
 	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, BlockState state) {

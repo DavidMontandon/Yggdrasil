@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "yggdrasil:block/pistia_water_lettuce" },
+            { "model": "yggdrasil:block/pistia_water_lettuce", "y": 90 },
+            { "model": "yggdrasil:block/pistia_water_lettuce", "y": 180 },
+            { "model": "yggdrasil:block/pistia_water_lettuce", "y": 270 }
+        ]
+    }
+}

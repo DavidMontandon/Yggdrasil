@@ -1,6 +1,0 @@
-{
-	"parent" : "block/crop",
-	"textures" : {
-		"crop" : "yggdrasil:blocks/muspelheim_ikadamia_stage3"
-	}
-}

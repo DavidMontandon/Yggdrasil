@@ -7,7 +7,8 @@ import com.deedllit.yggdrasil.common.block.midgard.*;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
-import com.deedllit.yggdrasil.objects.blocks.crops.RiceBlock;
+import com.deedllit.yggdrasil.objects.blocks.crops.RiceBottomCropBlock;
+import com.deedllit.yggdrasil.objects.blocks.crops.RiceTopCropBlock;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
 import com.deedllit.yggdrasil.objects.bushes.muspelheim.* ; 
 //import com.deedllit.yggdrasil.world.feature.tree.*;
@@ -111,11 +112,22 @@ public class BlockInit {
 	/*
 	 * MIDGARD
 	 */
-	
 
-	public static final RegistryObject<Block> MIDGARD_RICE = BLOCKS.register("midgard_rice_crop",
-			() -> new RiceBlock(Block.Properties.from(Blocks.KELP)));
 	
+	public static final RegistryObject<Block> PISTIA_WATER_LETTUCE = BLOCKS.register("pistia_water_lettuce",
+			() -> new WaterLettuce(Block.Properties.from(Blocks.LILY_PAD)));
+		
+	public static final RegistryObject<Block> MIDGARD_RICE_TOP_CROP = BLOCKS.register("rice_top_crop",
+			() -> new RiceTopCropBlock(Block.Properties.from(Blocks.WHEAT), new Block[] {Blocks.SAND} ));
+		
+	//MIDGARD_RICE_TOP_CROP.get()
+	public static final RegistryObject<Block> MIDGARD_RICE_BOTTOM_CROP = BLOCKS.register("rice_bottom_crop",
+			() -> new RiceBottomCropBlock(Block.Properties.from(Blocks.KELP), 
+					1, 1, 2, 2,
+					new Block[] {Blocks.SAND, Blocks.DIRT, Blocks.CLAY, Blocks.GRAVEL},
+					MIDGARD_RICE_TOP_CROP.get() )
+			);
+
 	public static final RegistryObject<Block> MIDGARD_MANGROVE_LOG = BLOCKS.register("midgard_mangrove_log",
 			() ->  new RotatedPillarBlock(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.WOOD)
 					.hardnessAndResistance(2.0F)

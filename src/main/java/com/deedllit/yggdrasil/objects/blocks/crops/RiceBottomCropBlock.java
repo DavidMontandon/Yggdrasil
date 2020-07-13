@@ -11,10 +11,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 
-public class RiceBlock extends YggdrasilWaterBottomCropsBlock {
+public class RiceBottomCropBlock extends YggdrasilWaterBottomCropsBlock {
 
-	public RiceBlock(Properties properties) {
-		super(1, 1, 2, 3, properties, new Block[] {Blocks.SAND, Blocks.DIRT, Blocks.CLAY, Blocks.GRAVEL}, null);
+	public RiceBottomCropBlock(Properties properties, int minDeep, int maxDeep, int minSize, int maxSize, Block[] blocks, Block topBlock) {
+		super(minDeep, maxDeep, minSize, maxSize, properties, blocks, topBlock);
 	}
 
 	@Override
