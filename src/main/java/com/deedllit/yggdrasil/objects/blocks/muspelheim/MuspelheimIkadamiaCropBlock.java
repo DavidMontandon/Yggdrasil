@@ -1,6 +1,7 @@
 package com.deedllit.yggdrasil.objects.blocks.muspelheim;
 
 import com.deedllit.yggdrasil.init.ItemInit;
+import com.deedllit.yggdrasil.util.interfaces.DoNotCreateItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,7 +12,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 
-public class MuspelheimIkadamiaCropBlock extends CropsBlock  {
+public class MuspelheimIkadamiaCropBlock extends CropsBlock implements DoNotCreateItem {
 
 	private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] {
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),

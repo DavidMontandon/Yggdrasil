@@ -6,6 +6,7 @@ import net.minecraft.block.IGrowable;
 import java.util.Random;
 
 import com.deedllit.yggdrasil.init.BlockInit;
+import com.deedllit.yggdrasil.util.interfaces.DoNotCreateItem;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -27,7 +28,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
-public class MuspelheimAshCarambola extends BushBlock implements IGrowable {
+public class MuspelheimAshCarambola extends BushBlock implements IGrowable, DoNotCreateItem {
 	
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_0_3;
 	   private static final VoxelShape field_220126_b = Block.makeCuboidShape(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);

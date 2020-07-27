@@ -4,7 +4,9 @@ import net.minecraft.item.AxeItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemTier;
+import net.minecraft.item.LilyPadItem;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
@@ -13,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 
 import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.Yggdrasil.YggdrasilItemGroup;
 import com.deedllit.yggdrasil.Yggdrasil.YggdrasilRuneItemGroup;
 import com.deedllit.yggdrasil.Yggdrasil.YggdrasilToolItemGroup;
 import com.deedllit.yggdrasil.common.item.VanafreintineHoe;
@@ -35,7 +38,6 @@ public class ItemInit {
 	//FLUID
 	public static final RegistryObject<Item> ACIDIC_BUCKET = ITEMS.register("acidic_bucket",
 			() -> new BucketItem(FluidInit.ACIDIC_FLUID, new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
-	
 	
 	
 	//KEY
@@ -189,6 +191,11 @@ public class ItemInit {
 	
 	public static final RegistryObject<Item> MUSPELHEIM_ASH_CARAMBOLA_BERRY = ITEMS.register("muspelheim_ash_carambola_bush", 
 			() -> new BlockItem(BlockInit.MUSPELHEIM_ASH_CARAMBOLA_BUSH.get(), new Item.Properties().group(YggdrasilToolItemGroup.instance)));
+	
+
+	//LILY PAD STYLE	
+	public static final RegistryObject<Item> PISTIA_WATER_LETTUCE = ITEMS.register("pistia_water_lettuce", 
+			() -> new LilyPadItem(BlockInit.PISTIA_WATER_LETTUCE.get(), new Item.Properties().group(YggdrasilItemGroup.instance)));
 	
 	
 }

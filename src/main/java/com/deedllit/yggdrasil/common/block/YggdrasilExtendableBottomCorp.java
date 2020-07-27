@@ -19,8 +19,8 @@ public abstract class YggdrasilExtendableBottomCorp extends YggdrasilExtendableC
 	public int minSize ; 
 	public int maxSize ; 
 	
-	public YggdrasilExtendableBottomCorp(int minSize, int maxSize, Properties builder, List<Block> canBePlacedOn, Block topBlock) {
-		super(builder, canBePlacedOn, topBlock);
+	public YggdrasilExtendableBottomCorp(int minSize, int maxSize, Properties builder, List<Block> canBePlacedOn) {
+		super(builder, canBePlacedOn);
 	}
 	
 	

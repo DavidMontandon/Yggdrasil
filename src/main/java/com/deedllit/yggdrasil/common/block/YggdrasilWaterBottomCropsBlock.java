@@ -29,19 +29,19 @@ public abstract class YggdrasilWaterBottomCropsBlock extends YggdrasilExtendable
 	private int maxDeep ; 
 	private Block liquid = Blocks.WATER ; 
 	
-	public YggdrasilWaterBottomCropsBlock(int minDeep, int maxDeep, int minSize, int maxSize, Properties properties, List<Block> canBePlacedOn, Block topBlock) {
-		super(minSize, maxSize, properties.notSolid(), canBePlacedOn, topBlock);		
+	public YggdrasilWaterBottomCropsBlock(int minDeep, int maxDeep, int minSize, int maxSize, Properties properties, List<Block> canBePlacedOn) {
+		super(minSize, maxSize, properties.notSolid(), canBePlacedOn);		
 
 		this.minDeep = minDeep ; 
 		this.maxDeep = maxDeep ; 
 	}
 	
-	public YggdrasilWaterBottomCropsBlock(int minDeep, int maxDeep, int minSize, int maxSize, Properties properties, Block [] canBePlacedOn, Block topBlock) {
-		this(minDeep, maxDeep, minSize, maxSize, properties, Arrays.asList(canBePlacedOn), topBlock);		
+	public YggdrasilWaterBottomCropsBlock(int minDeep, int maxDeep, int minSize, int maxSize, Properties properties, Block [] canBePlacedOn) {
+		this(minDeep, maxDeep, minSize, maxSize, properties, Arrays.asList(canBePlacedOn));		
 	}
 	
 	public YggdrasilWaterBottomCropsBlock(Properties properties) {
-		this(1, 1, 1, 1, properties, new Block[] {Blocks.SAND, Blocks.DIRT}, null);
+		this(1, 1, 1, 1, properties, new Block[] {Blocks.SAND, Blocks.DIRT});
 	}
 
 	public int getMinDeep() {

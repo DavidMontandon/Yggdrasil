@@ -3,6 +3,7 @@ package com.deedllit.yggdrasil;
 import com.deedllit.mythologycraft.config.Config;
 import com.deedllit.mythologycraft.config.MCConfig ; 
 import net.minecraftforge.fml.loading.FMLPaths;
+import net.minecraft.block.Block;
 import net.minecraft.block.FlowingFluidBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -61,6 +62,7 @@ import com.deedllit.yggdrasil.init.YggdrasilTileEntityTypes;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
 import com.deedllit.yggdrasil.objects.bushes.muspelheim.MuspelheimAshCarambola;
 import com.deedllit.yggdrasil.util.holder.DimensionsHolder;
+import com.deedllit.yggdrasil.util.interfaces.DoNotCreateItem;
 import com.mojang.serialization.Codec;
 
 import net.minecraft.world.gen.GenerationStage;
@@ -128,8 +130,7 @@ public class Yggdrasil
 		
 		BlockInit.BLOCKS.getEntries().stream()
 		.filter(block -> 
-			!(block.get() instanceof MuspelheimIkadamiaCropBlock) && 
-			!(block.get() instanceof MuspelheimAshCarambola) && 
+			!(block.get() instanceof DoNotCreateItem) && 
 			!(block.get() instanceof FlowingFluidBlock))
 		.map(RegistryObject::get).forEach(block -> {
 			final Item.Properties properties = new Item.Properties().group(YggdrasilItemGroup.instance);

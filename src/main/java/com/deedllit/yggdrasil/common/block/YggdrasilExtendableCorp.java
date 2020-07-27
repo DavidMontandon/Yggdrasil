@@ -36,14 +36,13 @@ public abstract class YggdrasilExtendableCorp extends CropsBlock implements IGro
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
 			Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)};
 	
-	public YggdrasilExtendableCorp(Properties properties, List<Block> canBePlacedOn, Block topBlock) {
+	public YggdrasilExtendableCorp(Properties properties, List<Block> canBePlacedOn) {
 		super(properties);		
 		this.canBePlacedOn = canBePlacedOn ; 
-		this.topBlock = topBlock  ; 
 	}
 	
-	public YggdrasilExtendableCorp(Properties properties, Block [] canBePlacedOn, Block topBlock) {
-		this(properties, Arrays.asList(canBePlacedOn), topBlock);		
+	public YggdrasilExtendableCorp(Properties properties, Block [] canBePlacedOn) {
+		this(properties, Arrays.asList(canBePlacedOn));		
 	}
 	
 	public void addAllowedBlock(Block allowedOn) {

@@ -18,6 +18,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
+import net.minecraft.block.LilyPadBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.TallFlowerBlock;
@@ -112,11 +113,12 @@ public class BlockInit {
 	/*
 	 * MIDGARD
 	 */
-
+	
+	
 	
 	public static final RegistryObject<Block> PISTIA_WATER_LETTUCE = BLOCKS.register("pistia_water_lettuce",
-			() -> new WaterLettuce(Block.Properties.from(Blocks.LILY_PAD)));
-		
+			() -> new WaterLettucePadBlock(AbstractBlock.Properties.create(Material.PLANTS).tickRandomly().zeroHardnessAndResistance().sound(SoundType.field_235600_d_).notSolid()));
+	
 	public static final RegistryObject<Block> MIDGARD_RICE_TOP_CROP = BLOCKS.register("rice_top_crop",
 			() -> new RiceTopCropBlock(Block.Properties.from(Blocks.WHEAT), new Block[] {Blocks.SAND} ));
 		
@@ -124,8 +126,7 @@ public class BlockInit {
 	public static final RegistryObject<Block> MIDGARD_RICE_BOTTOM_CROP = BLOCKS.register("rice_bottom_crop",
 			() -> new RiceBottomCropBlock(Block.Properties.from(Blocks.KELP), 
 					1, 1, 2, 2,
-					new Block[] {Blocks.SAND, Blocks.DIRT, Blocks.CLAY, Blocks.GRAVEL},
-					MIDGARD_RICE_TOP_CROP.get() )
+					new Block[] {Blocks.SAND, Blocks.DIRT, Blocks.CLAY, Blocks.GRAVEL})
 			);
 
 	public static final RegistryObject<Block> MIDGARD_MANGROVE_LOG = BLOCKS.register("midgard_mangrove_log",

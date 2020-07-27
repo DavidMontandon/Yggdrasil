@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "yggdrasil:block/pistia_water_lettuce"
+        "layer0": "yggdrasil:blocks/pistia_water_lettuce"
     }
 }

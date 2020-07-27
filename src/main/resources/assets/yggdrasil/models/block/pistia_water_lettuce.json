@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "yggdrasil:block/pistia_water_lettuce",
-        "texture": "yggdrasil:block/pistia_water_lettuce"
+        "particle": "yggdrasil:blocks/pistia_water_lettuce",
+        "texture": "yggdrasil:blocks/pistia_water_lettuce"
     },
     "elements": [
         {   "from": [ 0, 0.25, 0 ],
