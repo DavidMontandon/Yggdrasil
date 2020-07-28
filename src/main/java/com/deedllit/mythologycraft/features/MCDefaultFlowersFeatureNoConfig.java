@@ -25,9 +25,10 @@ public abstract class MCDefaultFlowersFeatureNoConfig extends FlowersFeature<NoF
     }
     
     
+    /*
     @Override
     public int func_225560_a_(NoFeatureConfig p_225560_1_) {
         return 64;
     }
-
+	*/
 }

@@ -136,10 +136,10 @@ public abstract class MCAbstractStructure extends ScatteredStructure<NoFeatureCo
         int xStart = (chunkX << 4);
         int zStart = (chunkZ << 4);
 
-        int i1 = generator.func_222531_c(xStart, zStart, Heightmap.Type.WORLD_SURFACE_WG);
-        int j1 = generator.func_222531_c(xStart, zStart + offset, Heightmap.Type.WORLD_SURFACE_WG);
-        int k1 = generator.func_222531_c(xStart + offset, zStart, Heightmap.Type.WORLD_SURFACE_WG);
-        int l1 = generator.func_222531_c(xStart + offset, zStart + offset, Heightmap.Type.WORLD_SURFACE_WG);
+        int i1 = generator.getNoiseHeight(xStart, zStart, Heightmap.Type.WORLD_SURFACE_WG);
+        int j1 = generator.getNoiseHeight(xStart, zStart + offset, Heightmap.Type.WORLD_SURFACE_WG);
+        int k1 = generator.getNoiseHeight(xStart + offset, zStart, Heightmap.Type.WORLD_SURFACE_WG);
+        int l1 = generator.getNoiseHeight(xStart + offset, zStart + offset, Heightmap.Type.WORLD_SURFACE_WG);
         int minHeight = Math.min(Math.min(i1, j1), Math.min(k1, l1));
         int maxHeight = Math.max(Math.max(i1, j1), Math.max(k1, l1));
 

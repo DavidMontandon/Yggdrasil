@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "yggdrasil:block/rice_bottom_crop0" },
+        "age=1": { "model": "yggdrasil:block/rice_bottom_crop1" },
+        "age=2": { "model": "yggdrasil:block/rice_bottom_crop2" },
+        "age=3": { "model": "yggdrasil:block/rice_bottom_crop3" },
+        "age=4": { "model": "yggdrasil:block/rice_bottom_crop4" },
+        "age=5": { "model": "yggdrasil:block/rice_bottom_crop5" },
+        "age=6": { "model": "yggdrasil:block/rice_bottom_crop6" },
+        "age=7": { "model": "yggdrasil:block/rice_bottom_crop7" }
+    }
+}

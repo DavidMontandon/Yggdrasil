@@ -1,6 +1,8 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.common.block.YggdrasilFlowerBlock;
+import com.deedllit.yggdrasil.common.block.midgard.YggdrasilGrass;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
@@ -13,10 +15,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.TallFlowerBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.potion.Effects;
+import net.minecraftforge.common.PlantType;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
@@ -61,9 +66,15 @@ public class BlockInit {
 	 */
 	
 	public static final RegistryObject<Block> SPECAL_BLOCK = BLOCKS.register("portal_shirne_block",
-			() -> new PortalShirneBlock(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 10.0f)
-					.harvestLevel(2).harvestTool(ToolType.PICKAXE).sound(SoundType.GLASS).lightValue(4)
-					.slipperiness(1.2f).speedFactor(0.7f).noDrops()));
+			() -> new PortalShirneBlock(Block.Properties.create(Material.IRON)
+					.hardnessAndResistance(2.0f, 10.0f)
+					.harvestLevel(2)
+					.harvestTool(ToolType.PICKAXE)
+					.sound(SoundType.GLASS)
+					.lightValue(4)
+					.slipperiness(1.2f)
+					.speedFactor(0.7f)
+					.noDrops()));
 	
 	public static final RegistryObject<Block> PEDESTAL_ITEM = BLOCKS.register("pedestal_item",
 			() -> new PedestalItemBlock(Block.Properties.from(Blocks.ANVIL)));
@@ -75,7 +86,7 @@ public class BlockInit {
 	
 	public static final RegistryObject<Block> YGGDRASIL_TREE_LOG = BLOCKS.register("yggdrasil_tree_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
-
+	
 	public static final RegistryObject<Block> YGGDRASIL_TREE_LEAVES = BLOCKS.register("yggdrasil_tree_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 
@@ -89,6 +100,44 @@ public class BlockInit {
 			() -> new IronWoodSaplingBlock(() -> new IronWoodTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 
 	
+	/*
+	 * MIDGARD
+	 */
+	
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_LOG = BLOCKS.register("midgard_mangrove_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_PLANKS = BLOCKS.register("midgard_mangrove_planks",
+			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
+
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_LEAVES = BLOCKS.register("midgard_mangrove_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+
+	public static final RegistryObject<Block> MIDGARD_PINK_POMELIA_BUSH = BLOCKS.register("midgard_pink_pomelia_bush", 
+			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
+
+	public static final RegistryObject<Block> MIDGARD_ORANGE_POMELIA_BUSH = BLOCKS.register("midgard_orange_pomelia_bush", 
+			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
+
+	public static final RegistryObject<Block> MIDGARD_WHITE_POMELIA_BUSH = BLOCKS.register("midgard_white_pomelia_bush", 
+			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
+	
+	public static final RegistryObject<Block> IXIA_VIRIDIFLORA_TEAL_BUSH = BLOCKS.register("ixia_viridiflora_teal_bush", 
+			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
+
+	public static final RegistryObject<Block> GUZMANIA_RED = BLOCKS.register("guzmania_red",
+			() -> new YggdrasilFlowerBlock(PlantType.Desert, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+
+	public static final RegistryObject<Block> GUZMANIA_PINK = BLOCKS.register("guzmania_pink",
+			() -> new YggdrasilFlowerBlock(PlantType.Desert, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+
+	public static final RegistryObject<Block> FISH_HOOK = BLOCKS.register("fish_hook",
+			() -> new YggdrasilFlowerBlock(PlantType.Desert, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+	
+	public static final RegistryObject<Block> DESERT_GRASS = BLOCKS.register("desert_grass",
+			() -> new YggdrasilGrass(PlantType.Desert, new Block[] {Blocks.SAND, Blocks.RED_SAND} , Block.Properties.from(Blocks.GRASS))) ;
+
 	/*
 	 *  MUSPELHEIM
 	 */		

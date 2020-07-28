@@ -23,16 +23,43 @@ public class ClientEventBusSubscriber {
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
-		RenderTypeLookup.setRenderLayer(BlockInit.IRON_WOOD_SAPLING.get(), RenderType.getCutout());	
 		
-		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_FIRE_POPPY.get(), RenderType.getCutout());		
-		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_FARMLAND_BLOCK.get(), RenderType.getCutout());		
-		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_EPLUPHIFER_SAPLING.get(), RenderType.getCutout());		
-		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_IKADAMIA_CROP.get(), RenderType.getCutout());
-		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_ASH_CARAMBOLA_BUSH.get(), RenderType.getCutout());		
-		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_DRAGON_GRASS.get(), RenderType.getCutout());		
-		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_SLIM_GRASS.get(), RenderType.getCutout());		
+		RenderType basicRender =  RenderType.getCutout();
 
+		
+		/*
+		 * MIDGARD
+		 */
+		RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_PINK_POMELIA_BUSH.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_WHITE_POMELIA_BUSH.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_ORANGE_POMELIA_BUSH.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.IXIA_VIRIDIFLORA_TEAL_BUSH.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.GUZMANIA_RED.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.GUZMANIA_PINK.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.FISH_HOOK.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.DESERT_GRASS.get(), basicRender);		
+		
+		
+		
+		//RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_RICE_BOTTOM_CROP.get(), basicRender);		
+		//RenderTypeLookup.setRenderLayer(BlockInit.PISTIA_WATER_LETTUCE.get(), basicRender);		
+		//RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_RICE_TOP_CROP.get(), basicRender);		
+
+		/*
+		 * MUSPELHEIM
+		 */
+		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_FIRE_POPPY.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_FARMLAND_BLOCK.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_EPLUPHIFER_SAPLING.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_IKADAMIA_CROP.get(), basicRender);
+		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_ASH_CARAMBOLA_BUSH.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_DRAGON_GRASS.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MUSPELHEIM_SLIM_GRASS.get(), basicRender);		
+
+		/*
+		 * COMMON 
+		 */		
+		
 		ScreenManager.registerFactory(YggdrasilContainerTypes.ITEM_PEDESTAL.get(), PedestalItemScreen::new);
 
 		ClientRegistry.bindTileEntityRenderer(YggdrasilTileEntityTypes.ITEM_PEDESTAL.get(), PedestalItemRenderer::new);

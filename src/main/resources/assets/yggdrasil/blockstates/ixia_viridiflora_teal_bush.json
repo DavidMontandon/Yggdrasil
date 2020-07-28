@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "yggdrasil:block/ixia_viridiflora_teal_bottom"
+    },
+    "half=upper": {
+      "model": "yggdrasil:block/ixia_viridiflora_teal_top"
+    }
+  }
+}

@@ -24,7 +24,7 @@ public class MuspelheimFlowersFeatures extends MCDefaultFlowersFeatureNoConfig {
 			BlockInit.MUSPELHEIM_DRAGON_GRASS.get()};
 	
 	@Override
-	public boolean func_225559_a_(IWorld p_225559_1_, BlockPos p_225559_2_, NoFeatureConfig p_225559_3_) {
+	public boolean isValidPosition(IWorld worldIn, BlockPos pos, NoFeatureConfig config) {
 		return false;
 	}
 
@@ -40,6 +40,13 @@ public class MuspelheimFlowersFeatures extends MCDefaultFlowersFeatureNoConfig {
 		i = 0 ;
 		
 		return FLOWERS[i].getDefaultState();
+	}
+
+
+	@Override
+	public int getFlowerCount(NoFeatureConfig config) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

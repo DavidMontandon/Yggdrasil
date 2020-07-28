@@ -12,7 +12,7 @@ public enum VoronoiZoomLayer implements IAreaTransformer1 {
     INSTANCE;
 
     @Override
-    public int func_215728_a(IExtendedNoiseRandom<?> p_215728_1_, IArea p_215728_2_, int p_215728_3_, int p_215728_4_) {
+    public int apply(IExtendedNoiseRandom<?> p_215728_1_, IArea p_215728_2_, int p_215728_3_, int p_215728_4_) {
         int i = p_215728_3_ - 2;
         int j = p_215728_4_ - 2;
         int k = i >> 2;
@@ -55,4 +55,6 @@ public enum VoronoiZoomLayer implements IAreaTransformer1 {
     public int getOffsetZ(int p_215722_1_) {
         return p_215722_1_ >> 2;
     }
+
+
 }
