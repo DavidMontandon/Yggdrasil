@@ -1,7 +1,7 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.world.biome.*;
+import com.deedllit.yggdrasil.world.dimensions.midgard.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
@@ -28,8 +28,45 @@ public class BiomeInit {
  */
 	public static final RegistryObject<Biome> IRON_WOOD_BIOME = BIOMES
 			.register("iron_wood",
-					() -> new IronWoodBiome(null));
+					() -> new IronWoodBiome());
 
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE = BIOMES
+			.register("midgard_mangrove",
+					() -> new MidgardMangroveBiome());
+	
+	/*
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE_RIVER = BIOMES
+			.register("midgard_mangrove_river",
+					() -> new MidgardMangroveRiverBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE_DRYER = BIOMES
+			.register("midgard_mangrove_dryer",
+					() -> new MidgardMangroveDryerBiome());	
+	
+	*/
+	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_TROPICAL = BIOMES
+			.register("midgard_charparral_tropical",
+					() -> new MidgardChaparralTropicalBiome());	
+	
+	/*
+	public static final RegistryObject<Biome> MIDGARD_FYNBOS = BIOMES
+			.register("midgard_fynbos",
+					() -> new MidgardFynbos());	
+				
+	public static final RegistryObject<Biome> MIDGARD_VOLCANIC = BIOMES
+			.register("midgard_volcanic",
+					() -> new MidgardVolcanicBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_DESERT = BIOMES
+			.register("midgard_charparral_desert",
+					() -> new MidgardChaparralDesertBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_SPOOKY = BIOMES
+			.register("midgard_spooky",
+					() -> new MidgardSpookyBiome());	
+	
+	*/
+	
 /*
  * MUSPELHEIM
  */
@@ -105,12 +142,20 @@ public class BiomeInit {
 	 * REGISTER IN OVERWORLD
 	 */
 	public static void registerBiomes() {
-		registerBiome(IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
+		registerBiome(100, IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
+		registerBiome(100, MIDGARD_MANGROVE.get(), Type.SWAMP, Type.OVERWORLD);		
+		registerBiome(100, MIDGARD_CHARPARRAL_TROPICAL.get(), Type.SWAMP, Type.OVERWORLD);		
+		
+		
+		
+		//registerBiome(100, MIDGARD_MANGROVE_RIVER.get(), Type.SWAMP, Type.OVERWORLD);		
+		//registerBiome(5, MIDGARD_MANGROVE_DRYER.get(), Type.SWAMP, Type.OVERWORLD);		
+	
 	}
 
-	private static void registerBiome(Biome biome, Type... types) {
+	private static void registerBiome(int height, Biome biome, Type... types) {
 		// the line below will make it spawn in the overworld
-		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, 100));
+		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, height));
 		BiomeDictionary.addTypes(biome, types);
 		BiomeManager.addSpawnBiome(biome);
 	}

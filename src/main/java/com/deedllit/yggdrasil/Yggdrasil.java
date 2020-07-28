@@ -49,6 +49,7 @@ import com.deedllit.yggdrasil.init.ItemInit;
 import com.deedllit.yggdrasil.init.PaintingInit;
 import com.deedllit.yggdrasil.init.StructureInit;
 import com.deedllit.yggdrasil.init.StructurePiecesInit;
+import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 import com.deedllit.yggdrasil.init.YggdrasilContainerTypes;
 import com.deedllit.yggdrasil.init.YggdrasilTileEntityTypes;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.MuspelheimIkadamiaCropBlock;
@@ -96,6 +97,7 @@ public class Yggdrasil
 		YggdrasilTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
 		YggdrasilContainerTypes.CONTAINER_TYPES.register(modEventBus);
 		//FeatureInit.FEATURES.register(modEventBus);
+		SurfaceBuilderInit.SURFACE_BUILDERS.register(modEventBus);
 		StructureInit.STRUCTURES.register(modEventBus);
     	BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);

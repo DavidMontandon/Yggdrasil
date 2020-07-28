@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.biome;
+package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.BlockInit;
@@ -48,8 +48,17 @@ public class IronWoodBiome extends Biome {
 				.setSapling((IPlantable) BlockInit.IRON_WOOD_SAPLING.get())
 				.build();
     
-    public IronWoodBiome(Builder biomeBuilder) {
-	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG).precipitation(Biome.RainType.RAIN).category(Biome.Category.FOREST).depth(0.1F).scale(0.2F).temperature(0.7F).downfall(0.8F).waterColor(4159204).waterFogColor(329011).parent("dark_forest"));
+    public IronWoodBiome() {
+	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
+	    		  .precipitation(Biome.RainType.RAIN)
+	    		  .category(Biome.Category.FOREST)
+	    		  .depth(0.1F)
+	    		  .scale(0.2F)
+	    		  .temperature(0.7F)
+	    		  .downfall(0.8F)
+	    		  .waterColor(4159204)
+	    		  .waterFogColor(329011)
+	    		  .parent("dark_forest"));
 		
 	      
 	      this.addStructure(StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
