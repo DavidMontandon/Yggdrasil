@@ -5,6 +5,7 @@ import java.util.OptionalInt;
 import com.deedllit.yggdrasil.init.BlockInit;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -24,12 +25,17 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
 import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.feature.MultipleWithChanceRandomFeatureConfig;
+import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.ProbabilityConfig;
+import net.minecraft.world.gen.feature.SphereReplaceConfig;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.PineFoliagePlacer;
+import net.minecraft.world.gen.foliageplacer.SpruceFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.HeightWithChanceConfig;
+import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
@@ -46,13 +52,15 @@ public class MidgardDefaultBiomeFeatures {
 	private static final BlockState WHITE_POMELIA_BLOCK = BlockInit.MIDGARD_WHITE_POMELIA_BUSH.get().getDefaultState();
 	private static final BlockState PINK_POMELIA_BLOCK = BlockInit.MIDGARD_PINK_POMELIA_BUSH.get().getDefaultState();
 	private static final BlockState ORANGE_POMELIA_BLOCK = BlockInit.MIDGARD_ORANGE_POMELIA_BUSH.get().getDefaultState();
-	private static final BlockState TALL_GRASS = Blocks.TALL_GRASS.getDefaultState() ; 
+	private static final BlockState EDELWEISS = BlockInit.EDELWEISS.get().getDefaultState() ; 
     //private static final BlockState RICE = BlockInit.MIDGARD_RICE_TOP_CROP.get().getDefaultState();
 
+	private static final BlockState TALL_GRASS = Blocks.TALL_GRASS.getDefaultState() ; 
 	private static final BlockState LILY_OF_THE_VALLEY = Blocks.LILY_OF_THE_VALLEY.getDefaultState();
     private static final BlockState LILY_PAD = Blocks.LILY_PAD.getDefaultState();
     private static final BlockState BLUE_ORCHID = Blocks.BLUE_ORCHID.getDefaultState();
     private static final BlockState GRASS = Blocks.GRASS.getDefaultState() ; 
+    private static final BlockState GRASS_BLOCK = Blocks.GRASS_BLOCK.getDefaultState() ; 
     private static final BlockState SAND = Blocks.SAND.getDefaultState() ; 
     private static final BlockState STONE = Blocks.STONE.getDefaultState() ; 
     private static final BlockState DEAD_BUSH = Blocks.DEAD_BUSH.getDefaultState() ; 
@@ -66,6 +74,8 @@ public class MidgardDefaultBiomeFeatures {
     private static final BlockState FERN = Blocks.FERN.getDefaultState();
     private static final BlockState LARGE_FERN = Blocks.LARGE_FERN.getDefaultState();
     private static final BlockState PODZOL = Blocks.PODZOL.getDefaultState();
+    private static final BlockState SPRUCE_LOG = Blocks.SPRUCE_LOG.getDefaultState() ; 
+    private static final BlockState SPRUCE_LEAVES = Blocks.SPRUCE_LEAVES.getDefaultState() ; 
 
     
     public static final SurfaceBuilderConfig TROPICAL_SURFACE_CONFIG = new SurfaceBuilderConfig(GRASS,SAND,STONE)  ;
@@ -77,7 +87,9 @@ public class MidgardDefaultBiomeFeatures {
     public static final BaseTreeFeatureConfig JUNGLE_GROUND_BUSH_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(JUNGLE_LOG), new SimpleBlockStateProvider(OAK_LEAVES))).baseHeight(4).setSapling((net.minecraftforge.common.IPlantable)Blocks.JUNGLE_SAPLING).build();
     public static final TreeFeatureConfig JUNGLE_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(JUNGLE_LOG), new SimpleBlockStateProvider(JUNGLE_LEAVES), new BlobFoliagePlacer(2, 0))).baseHeight(4).heightRandA(8).foliageHeight(3).decorators(ImmutableList.of(new CocoaTreeDecorator(0.2F), new TrunkVineTreeDecorator(), new LeaveVineTreeDecorator())).ignoreVines().setSapling((net.minecraftforge.common.IPlantable)Blocks.JUNGLE_SAPLING).build();
     public static final TreeFeatureConfig SWAMP_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(OAK_LOG), new SimpleBlockStateProvider(OAK_LEAVES), new BlobFoliagePlacer(3, 0))).baseHeight(5).heightRandA(3).foliageHeight(3).maxWaterDepth(1).decorators(ImmutableList.of(new LeaveVineTreeDecorator())).setSapling((net.minecraftforge.common.IPlantable)Blocks.OAK_SAPLING).build();
-   
+	public static final TreeFeatureConfig PINE_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(SPRUCE_LOG), new SimpleBlockStateProvider(SPRUCE_LEAVES), new PineFoliagePlacer(1, 0))).baseHeight(7).heightRandA(4).trunkTopOffset(1).foliageHeight(3).foliageHeightRandom(1).ignoreVines().setSapling((net.minecraftforge.common.IPlantable)Blocks.SPRUCE_SAPLING).build();
+	public static final TreeFeatureConfig SPRUCE_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(SPRUCE_LOG), new SimpleBlockStateProvider(SPRUCE_LEAVES), new SpruceFoliagePlacer(2, 1))).baseHeight(6).heightRandA(3).trunkHeight(1).trunkHeightRandom(1).trunkTopOffsetRandom(2).ignoreVines().setSapling((net.minecraftforge.common.IPlantable)Blocks.SPRUCE_SAPLING).build();
+
 	//public static final BlockClusterFeatureConfig RICE_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(RICE), SimpleBlockPlacer.field_236447_c_)).tries(1).build();
 
     
@@ -90,6 +102,7 @@ public class MidgardDefaultBiomeFeatures {
 	public static final BlockClusterFeatureConfig GUZMANIA_PINK_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GUZMANIA_PINK), new SimpleBlockPlacer())).tries(1).build();
 	public static final BlockClusterFeatureConfig GUZMANIA_RED_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GUZMANIA_RED), new SimpleBlockPlacer())).tries(1).build();
 	public static final BlockClusterFeatureConfig FISH_HOOK_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(FISH_HOOK), new SimpleBlockPlacer())).tries(4).build();
+	public static final BlockClusterFeatureConfig EDELWEISS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(EDELWEISS), new SimpleBlockPlacer())).tries(2).build();
 
 	
 	//public static final BlockClusterFeatureConfig TALL_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(TALL_GRASS), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
@@ -133,6 +146,24 @@ public class MidgardDefaultBiomeFeatures {
 						.configure(new FrequencyConfig(1))));		
 	}
 	
+	
+	public static void addDenseGrass(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(GRASS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(25))));
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(TALL_GRASS_CONFIG).withPlacement(Placement.NOISE_HEIGHTMAP_32.configure(new NoiseDependant(-0.1D, 25, 35))));
+	}
+	
+	public static void addFewConifers(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(Feature.NORMAL_TREE.withConfiguration(PINE_TREE_CONFIG).withChance(0.33333334F)), Feature.NORMAL_TREE.withConfiguration(SPRUCE_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.01F, 0))));
+	}
+	
+	public static void addSurfaceStones(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.DISK.withConfiguration(new SphereReplaceConfig(GRASS_BLOCK, 7, 2, Lists.newArrayList(STONE))).withPlacement(Placement.COUNT_TOP_SOLID.configure(new FrequencyConfig(3))));
+	}
+	
+	public static void addEdelweiss(Biome biomeIn) {
+	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(EDELWEISS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
+	}
+
 	
 	public static void addRice(Biome biomeIn) {
 	    //biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(RICE_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
