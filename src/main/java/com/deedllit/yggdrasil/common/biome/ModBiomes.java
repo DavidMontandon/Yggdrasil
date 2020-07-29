@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import com.deedllit.mythologycraft.common.BiomeRegistry;
 import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.init.BiomeInit;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 
 import net.minecraft.world.biome.Biome;
@@ -22,7 +23,7 @@ import static com.deedllit.mythologycraft.config.MCConfig.* ;
  */
 
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+//@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBiomes {
 
 
@@ -30,7 +31,7 @@ public class ModBiomes {
     public static void registerBiomes(RegistryEvent.Register<Biome> event)
     {
     	Yggdrasil.LOGGER.info("DEBUG : registerBiomes in");	
-    	
+    	BiomeInit.registerBiomes();
     	
     	if(YGGDRASIL_WORLD.get()) {
     		

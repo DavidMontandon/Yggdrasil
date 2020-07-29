@@ -16,10 +16,10 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class MidgardMangroveBiome extends Biome {
+public class MidgardMangroveDryerBiome extends Biome {
 
-	public MidgardMangroveBiome() {
-	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.MANGROVE, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG)
+	public MidgardMangroveDryerBiome() {
+	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.MANGROVE_MIX, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG)
 	    		  .precipitation(Biome.RainType.RAIN)
 	    		  .category(Biome.Category.SWAMP)
 	    		  .depth(-0.25F)
@@ -28,7 +28,7 @@ public class MidgardMangroveBiome extends Biome {
 	    		  .downfall(0.7F)
 	    		  .waterColor(6388580)
 	    		  .waterFogColor(2302743)
-	    		  .parent((String)null));
+	    		  .parent("midgard_mangrove"));
 	      
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);

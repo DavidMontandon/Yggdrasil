@@ -127,10 +127,15 @@ public class Yggdrasil
 
 	}
 	
+	
+	
 	@SubscribeEvent
 	public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
+		LOGGER.info("onRegisterBiomes - Start");
 		BiomeInit.registerBiomes();
+		LOGGER.info("onRegisterBiomes - Done");
 	}
+	
 	
 	private void setup(final FMLCommonSetupEvent event) {
         DeferredWorkQueue.runLater(() -> {

@@ -28,7 +28,7 @@ public class BiomeInit {
  */
 	public static final RegistryObject<Biome> IRON_WOOD_BIOME = BIOMES
 			.register("iron_wood",
-					() -> new IronWoodBiome());
+					() -> new MidgardIronWoodBiome());
 
 	public static final RegistryObject<Biome> MIDGARD_MANGROVE = BIOMES
 			.register("midgard_mangrove",
@@ -39,14 +39,21 @@ public class BiomeInit {
 			.register("midgard_mangrove_river",
 					() -> new MidgardMangroveRiverBiome());	
 	
+	
+	*/
 	public static final RegistryObject<Biome> MIDGARD_MANGROVE_DRYER = BIOMES
 			.register("midgard_mangrove_dryer",
 					() -> new MidgardMangroveDryerBiome());	
-	
-	*/
+
 	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_TROPICAL = BIOMES
 			.register("midgard_charparral_tropical",
 					() -> new MidgardChaparralTropicalBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_ALPINE_TUNDRA = BIOMES
+			.register("midgard_alpine_tundra",
+					() -> new MidgardAlpineTundra());	
+	
+
 	
 	/*
 	public static final RegistryObject<Biome> MIDGARD_FYNBOS = BIOMES
@@ -98,6 +105,7 @@ public class BiomeInit {
 					() -> new MuspelheimVolcanoBiome(null));
 	
 	
+	
 /*
  * SVARTALVHEIM
  */
@@ -142,20 +150,17 @@ public class BiomeInit {
 	 * REGISTER IN OVERWORLD
 	 */
 	public static void registerBiomes() {
-		registerBiome(100, IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
-		registerBiome(100, MIDGARD_MANGROVE.get(), Type.SWAMP, Type.OVERWORLD);		
-		registerBiome(100, MIDGARD_CHARPARRAL_TROPICAL.get(), Type.SWAMP, Type.OVERWORLD);		
-		
-		
-		
-		//registerBiome(100, MIDGARD_MANGROVE_RIVER.get(), Type.SWAMP, Type.OVERWORLD);		
-		//registerBiome(5, MIDGARD_MANGROVE_DRYER.get(), Type.SWAMP, Type.OVERWORLD);		
-	
+		registerBiome(1000, IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
+		registerBiome(1000, MIDGARD_MANGROVE.get(), Type.SWAMP, Type.WET, Type.OVERWORLD);		
+		registerBiome(1000, MIDGARD_CHARPARRAL_TROPICAL.get(), Type.SWAMP, Type.OVERWORLD);		
+		registerBiome(500, MIDGARD_MANGROVE_DRYER.get(), Type.SWAMP, Type.WET, Type.OVERWORLD);				
+		registerBiome(1000, MIDGARD_ALPINE_TUNDRA.get(), Type.HILLS, Type.MOUNTAIN, Type.OVERWORLD);				
+					
 	}
 
-	private static void registerBiome(int height, Biome biome, Type... types) {
+	private static void registerBiome(int weight, Biome biome, Type... types) {
 		// the line below will make it spawn in the overworld
-		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, height));
+		BiomeManager.addBiome(BiomeManager.BiomeType.COOL, new BiomeManager.BiomeEntry(biome, weight));
 		BiomeDictionary.addTypes(biome, types);
 		BiomeManager.addSpawnBiome(biome);
 	}

@@ -28,7 +28,7 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.common.IPlantable;
 
-public class IronWoodBiome extends Biome {
+public class MidgardIronWoodBiome extends Biome {
 
     public static final HugeTreeFeatureConfig HUGE_IRON_WOOD_TREE_CONFIG = (new HugeTreeFeatureConfig.Builder(
     		new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LOG.get().getDefaultState()), 
@@ -48,7 +48,7 @@ public class IronWoodBiome extends Biome {
 				.setSapling((IPlantable) BlockInit.IRON_WOOD_SAPLING.get())
 				.build();
     
-    public IronWoodBiome() {
+    public MidgardIronWoodBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
 	    		  .precipitation(Biome.RainType.RAIN)
 	    		  .category(Biome.Category.FOREST)
