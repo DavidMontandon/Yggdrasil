@@ -55,8 +55,8 @@ You can read more about it on wikipedia : https://en.wikipedia.org/wiki/Yggdrasi
     
 # Here's another dependency
 [[dependencies.yggdrasil]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.15.2]"
-    ordering="NONE"
+    modId="midgard"
+    mandatory=false
+    versionRange="[0.1]"
+    ordering="BEFORE"
     side="BOTH"

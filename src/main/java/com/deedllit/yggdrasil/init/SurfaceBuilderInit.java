@@ -18,6 +18,8 @@ public class SurfaceBuilderInit {
 	public static final SurfaceBuilder<SurfaceBuilderConfig> CHAPARRAL = new ChaparralSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> FYNBOS = new FynbosSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> SNOWTOP = new SnowTopSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> TROPICAL = new TropicalWhiteSandSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> RAINBOW = new RaibowsMoutainSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	//public static final SurfaceBuilder<SurfaceBuilderConfig> SPOOKY = new SpookySurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	
 }

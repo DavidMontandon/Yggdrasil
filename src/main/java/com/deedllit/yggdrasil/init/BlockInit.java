@@ -16,6 +16,7 @@ import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.RotatedPillarBlock;
+import net.minecraft.block.SandBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.TallFlowerBlock;
 import net.minecraft.block.material.Material;
@@ -90,6 +91,10 @@ public class BlockInit {
 	public static final RegistryObject<Block> YGGDRASIL_TREE_LEAVES = BLOCKS.register("yggdrasil_tree_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 
+	/*
+	 * MIDGARD
+	 */
+
 	public static final RegistryObject<Block> IRON_WOOD_LOG = BLOCKS.register("iron_wood_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
@@ -99,14 +104,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> IRON_WOOD_SAPLING = BLOCKS.register("iron_wood_sapling",
 			() -> new IronWoodSaplingBlock(() -> new IronWoodTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 
-	
-	/*
-	 * MIDGARD
-	 */
+	public static final RegistryObject<Block> HIBICUS_TREE_LEAVES = BLOCKS.register("hibiscus_tree_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> MIDGARD_MANGROVE_LOG = BLOCKS.register("midgard_mangrove_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
-
 	
 	public static final RegistryObject<Block> MIDGARD_MANGROVE_PLANKS = BLOCKS.register("midgard_mangrove_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
@@ -141,6 +143,15 @@ public class BlockInit {
 	public static final RegistryObject<Block> EDELWEISS = BLOCKS.register("edelweiss",
 			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.REGENERATION, 2, Block.Properties.from(Blocks.POPPY))) ;
 
+	public static final RegistryObject<Block> WHITE_SAND = BLOCKS.register("white_sand", 
+			() -> new SandBlock(15527400, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)));
+
+	public static final RegistryObject<Block> BLACK_SAND = BLOCKS.register("black_sand", 
+			() -> new SandBlock(1710618, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)));
+
+	public static final RegistryObject<Block> TEAK_WOOD_LOG = BLOCKS.register("teak_wood_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+	
 	/*
 	 *  MUSPELHEIM
 	 */		

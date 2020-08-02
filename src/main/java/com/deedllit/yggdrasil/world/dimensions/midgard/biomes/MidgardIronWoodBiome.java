@@ -61,9 +61,9 @@ public class MidgardIronWoodBiome extends Biome {
 	    		  .parent("dark_forest"));
 		
 	      
-	      this.addStructure(StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+	      //this.addStructure(StructureInit.YGGDRASIL_TREE_STRUCTURE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 	      
-	      /*
+	      
 	      this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
 	      this.addStructure(Feature.STRONGHOLD.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
 	      DefaultBiomeFeatures.addCarvers(this);
@@ -106,7 +106,7 @@ public class MidgardIronWoodBiome extends Biome {
 	      DefaultBiomeFeatures.addSprings(this);
 	      DefaultBiomeFeatures.addFreezeTopLayer(this);
 	      DefaultBiomeFeatures.addMonsterRooms(this);
-	      */
+	      
 	      
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "yggdrasil:block/teak_wood_log" },
+        "axis=z":   { "model": "yggdrasil:block/teak_wood_log", "x": 90 },
+        "axis=x":   { "model": "yggdrasil:block/teak_wood_log", "x": 90, "y": 90 }
+    }
+}
