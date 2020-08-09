@@ -120,15 +120,7 @@ public class DeepTopLayerSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderCon
 	        				int hx = i2 + i1;
 	        				
 	        	            blockpos$mutableblockpos.setPos(k, i2 + i1, l);    
-	        	            
-
-	        	            if(i2 == h)
-		                		chunkIn.setBlockState(blockpos$mutableblockpos, Blocks.GRASS_BLOCK.getDefaultState(), false);        				
-	        	            else 
-		                		chunkIn.setBlockState(blockpos$mutableblockpos, stone, false);        				
-	        	            
-	        	            if(hx >= 100) 
-		                		chunkIn.setBlockState(blockpos$mutableblockpos, stone, false);        				
+		                	chunkIn.setBlockState(blockpos$mutableblockpos, stone, false);        				
 	        				
 	        			}
 	        			
