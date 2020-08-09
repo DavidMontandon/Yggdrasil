@@ -5,9 +5,9 @@ import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class RainbowMoutainBiome extends Biome {
+public class MidgardRainbowMoutainBiome extends Biome {
 
-	public RainbowMoutainBiome() {
+	public MidgardRainbowMoutainBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.RAINBOW, SurfaceBuilder.RED_SAND_WHITE_TERRACOTTA_GRAVEL_CONFIG)
 	    		  .precipitation(Biome.RainType.RAIN)
 	    		  .category(Biome.Category.DESERT)

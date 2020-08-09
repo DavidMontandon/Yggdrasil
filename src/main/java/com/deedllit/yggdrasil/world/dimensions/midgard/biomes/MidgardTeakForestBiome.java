@@ -7,9 +7,9 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class TeakForestBiome extends Biome {
+public class MidgardTeakForestBiome extends Biome {
 
-	public TeakForestBiome() {
+	public MidgardTeakForestBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
 		  	.precipitation(Biome.RainType.RAIN)
 		  	.category(Biome.Category.FOREST)

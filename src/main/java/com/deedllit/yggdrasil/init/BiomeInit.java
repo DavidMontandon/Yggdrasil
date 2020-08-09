@@ -59,11 +59,19 @@ public class BiomeInit {
 
 	public static final RegistryObject<Biome> MIDGARD_RAINBOW_MOUTAIN = BIOMES
 			.register("midgard_rainbow_moutain",
-					() -> new RainbowMoutainBiome());	
+					() -> new MidgardRainbowMoutainBiome());	
 
 	public static final RegistryObject<Biome> MIDGARD_TEAK_FOREST = BIOMES
 			.register("midgard_teak_forest",
-					() -> new TeakForestBiome());	
+					() -> new MidgardTeakForestBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_THOUSAND_LAKES = BIOMES
+			.register("midgard_thousand_lakes",
+					() -> new MidgardThousandLakes());	
+
+	public static final RegistryObject<Biome> MIDGARD_HIGH_ROCK = BIOMES
+			.register("midgard_high_rock",
+					() -> new HighRockBiome());	
 	
 	/*
 	public static final RegistryObject<Biome> MIDGARD_FYNBOS = BIOMES
@@ -168,6 +176,8 @@ public class BiomeInit {
 		registerBiome(1000, MIDGARD_TROPICAL_BEACH.get(), Type.BEACH, Type.SANDY, Type.HILLS, Type.OVERWORLD) ; 
 		registerBiome(10000, MIDGARD_RAINBOW_MOUTAIN.get(), Type.SANDY, Type.MESA, Type.HILLS, Type.OVERWORLD) ; 
 		registerBiome(1000, MIDGARD_TEAK_FOREST.get(), Type.FOREST, Type.HOT, Type.OVERWORLD) ; 
+		registerBiome(1000, MIDGARD_THOUSAND_LAKES.get(), Type.PLAINS, Type.WATER, Type.OVERWORLD) ; 
+		registerBiome(1000, MIDGARD_HIGH_ROCK.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 
 					
 	}
 
