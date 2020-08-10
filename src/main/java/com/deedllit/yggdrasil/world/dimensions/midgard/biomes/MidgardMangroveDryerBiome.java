@@ -28,7 +28,8 @@ public class MidgardMangroveDryerBiome extends Biome {
 	    		  .downfall(0.7F)
 	    		  .waterColor(6388580)
 	    		  .waterFogColor(2302743)
-	    		  .parent("midgard_mangrove"));
+	    		  .parent((String) null));
+	    		  //.parent("midgard_mangrove"));
 	      
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);

@@ -171,7 +171,7 @@ public class BiomeInit {
 		registerBiome(1000, IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
 		registerBiome(1000, MIDGARD_MANGROVE.get(), Type.SWAMP, Type.WET, Type.OVERWORLD);		
 		registerBiome(1000, MIDGARD_CHARPARRAL_TROPICAL.get(), Type.SWAMP, Type.OVERWORLD);		
-		registerBiome(500, MIDGARD_MANGROVE_DRYER.get(), Type.SWAMP, Type.WET, Type.OVERWORLD);				
+		registerBiome(1000, MIDGARD_MANGROVE_DRYER.get(), Type.SWAMP, Type.WET, Type.OVERWORLD);				
 		registerBiome(1000, MIDGARD_ALPINE_TUNDRA.get(), Type.HILLS, Type.MOUNTAIN, Type.OVERWORLD);		
 		registerBiome(1000, MIDGARD_TROPICAL_BEACH.get(), Type.BEACH, Type.SANDY, Type.HILLS, Type.OVERWORLD) ; 
 		registerBiome(10000, MIDGARD_RAINBOW_MOUTAIN.get(), Type.SANDY, Type.MESA, Type.HILLS, Type.OVERWORLD) ; 
