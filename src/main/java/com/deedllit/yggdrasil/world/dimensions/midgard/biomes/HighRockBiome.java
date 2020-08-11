@@ -2,13 +2,27 @@ package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 import com.deedllit.yggdrasil.world.dimensions.midgard.config.MidgardDefaultBiomeFeatures;
+import com.google.common.collect.ImmutableList;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraft.world.gen.feature.SingleRandomFeature;
+import net.minecraft.world.gen.feature.structure.MineshaftConfig;
+import net.minecraft.world.gen.feature.structure.MineshaftStructure;
+import net.minecraft.world.gen.feature.structure.OceanRuinConfig;
+import net.minecraft.world.gen.feature.structure.OceanRuinStructure;
+import net.minecraft.world.gen.feature.structure.ShipwreckConfig;
 import net.minecraft.world.gen.feature.structure.VillageConfig;
+import net.minecraft.world.gen.placement.ChanceConfig;
+import net.minecraft.world.gen.placement.CountConfig;
+import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class HighRockBiome extends Biome {
@@ -22,8 +36,12 @@ public class HighRockBiome extends Biome {
 	    		  .temperature(0.80F)
 	    		  .downfall(0.3F)
 	    		  .waterColor(9428950)
-	    		  .waterFogColor(2302743)
+	    		  .waterFogColor(270131)
 	    		  .parent((String) null));
+	      
+	      this.addStructure(Feature.OCEAN_RUIN.withConfiguration(new OceanRuinConfig(OceanRuinStructure.Type.WARM, 0.3F, 0.9F)));
+	      this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
+	      this.addStructure(Feature.SHIPWRECK.withConfiguration(new ShipwreckConfig(false)));
 	      
 	      DefaultBiomeFeatures.addOceanCarvers(this);
 	      DefaultBiomeFeatures.addCarvers(this);
@@ -35,7 +53,6 @@ public class HighRockBiome extends Biome {
 	      MidgardDefaultBiomeFeatures.addExtraTropicalVegetation(this);
 
 	      DefaultBiomeFeatures.addStructures(this);
-	      DefaultBiomeFeatures.addStructures(this);
 	      DefaultBiomeFeatures.addPlainsTallGrass(this);
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addOres(this);
@@ -44,9 +61,18 @@ public class HighRockBiome extends Biome {
 	      DefaultBiomeFeatures.addMushrooms(this);
 	      DefaultBiomeFeatures.addReedsAndPumpkins(this);
 	      DefaultBiomeFeatures.addSprings(this);
+	      
+	      //Underwater
+	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SIMPLE_RANDOM_SELECTOR.withConfiguration(new SingleRandomFeature(ImmutableList.of(Feature.CORAL_TREE.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG), Feature.CORAL_CLAW.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG), Feature.CORAL_MUSHROOM.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)))).withPlacement(Placement.TOP_SOLID_HEIGHTMAP_NOISE_BIASED.configure(new TopSolidWithNoiseConfig(20, 400.0D, 0.0D, Heightmap.Type.OCEAN_FLOOR_WG))));
 	      DefaultBiomeFeatures.addTallSeagrassLush(this);
-	      DefaultBiomeFeatures.addSeagrass(this);
+	      //DefaultBiomeFeatures.addSeagrass(this);
+	      this.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SEA_PICKLE.withConfiguration(new CountConfig(20)).withPlacement(Placement.CHANCE_TOP_SOLID_HEIGHTMAP.configure(new ChanceConfig(16))));
+
+	      
 	      DefaultBiomeFeatures.addFreezeTopLayer(this);
+	      
+	      
+	      
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.SQUID, 5, 1, 4));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.TROPICAL_FISH, 25, 8, 8));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.DOLPHIN, 2, 1, 2));	      
