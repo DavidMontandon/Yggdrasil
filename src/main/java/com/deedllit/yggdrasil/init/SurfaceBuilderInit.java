@@ -21,7 +21,8 @@ public class SurfaceBuilderInit {
 	public static final SurfaceBuilder<SurfaceBuilderConfig> TROPICAL = new TropicalWhiteSandSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> RAINBOW = new RaibowsMoutainSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> HOLES = new HolesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
-	public static final SurfaceBuilder<SurfaceBuilderConfig> DEEP_TOP = new DeepTopLayerSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> WHITE_SAND_ISLAND = new WhiteSandIsland(SurfaceBuilderConfig::deserialize);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> BLACK_SAND_ISLAND = new BlackSandIsland(SurfaceBuilderConfig::deserialize);
 	
 	//public static final SurfaceBuilder<SurfaceBuilderConfig> SPOOKY = new SpookySurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	

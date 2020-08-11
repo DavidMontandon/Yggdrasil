@@ -18,9 +18,9 @@ import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
-public class DeepTopLayerSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
+public class WhiteSandIsland extends SurfaceBuilder<SurfaceBuilderConfig> {
 
-	public DeepTopLayerSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> p_i51305_1_) {
+	public WhiteSandIsland(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> p_i51305_1_) {
 		super(p_i51305_1_);
 	}
 

@@ -25,10 +25,10 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class HighRockBiome extends Biome {
+public class MidgardTropicalIslandBiome extends Biome {
 
-	public HighRockBiome() {
-	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.DEEP_TOP, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG)
+	public MidgardTropicalIslandBiome() {
+	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.WHITE_SAND_ISLAND, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG)
 	    		  .precipitation(Biome.RainType.RAIN)
 	    		  .category(Biome.Category.OCEAN)
 	    		  .depth(-1.8F)
@@ -76,6 +76,7 @@ public class HighRockBiome extends Biome {
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.SQUID, 5, 1, 4));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.TROPICAL_FISH, 25, 8, 8));
 	      this.addSpawn(EntityClassification.WATER_CREATURE, new Biome.SpawnListEntry(EntityType.DOLPHIN, 2, 1, 2));	      
+	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.TURTLE, 3, 2, 2));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.CHICKEN, 10, 4, 4));

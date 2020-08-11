@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
@@ -16,6 +17,7 @@ public class TropicalIsland {
 	private BlockState stone ; 
 	private BlockState defaultFluid ; 
 	private BlockState sand ; 
+	private BlockState top ;
 	private int sandLevelBottom ; 
 	private int sandLevelTop ; 
 	private int moutainLevelBottom ; 
@@ -144,6 +146,12 @@ public class TropicalIsland {
         	            blockpos$mutableblockpos.setPos(k, i2 + i1, l);    
 	                	chunkIn.setBlockState(blockpos$mutableblockpos, blockstate, false);        				
         				
+	                	/*
+	                	if( i2 + i1 > 100) {
+		                	chunkIn.setBlockState(blockpos$mutableblockpos.up(), Fluids.LAVA.getDefaultState().getBlockState(), false);  
+	                	}
+	                	*/
+	                	
 	                	if(hx < seaLevel) {
 	        				if(setBottom && random.nextInt(5) == 0) {
         						int nx = random.nextInt(h - i2 + 1)  ; 
