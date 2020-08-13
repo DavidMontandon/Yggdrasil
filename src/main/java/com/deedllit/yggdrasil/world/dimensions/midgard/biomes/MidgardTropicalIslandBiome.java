@@ -13,6 +13,7 @@ import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.SingleRandomFeature;
+import net.minecraft.world.gen.feature.structure.BuriedTreasureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.feature.structure.OceanRuinConfig;
@@ -42,6 +43,8 @@ public class MidgardTropicalIslandBiome extends Biome {
 	      this.addStructure(Feature.OCEAN_RUIN.withConfiguration(new OceanRuinConfig(OceanRuinStructure.Type.WARM, 0.3F, 0.9F)));
 	      this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
 	      this.addStructure(Feature.SHIPWRECK.withConfiguration(new ShipwreckConfig(false)));
+	      this.addStructure(Feature.BURIED_TREASURE.withConfiguration(new BuriedTreasureConfig(0.01F)));
+
 	      
 	      DefaultBiomeFeatures.addOceanCarvers(this);
 	      DefaultBiomeFeatures.addCarvers(this);
