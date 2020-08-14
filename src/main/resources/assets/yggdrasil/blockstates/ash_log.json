@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "yggdrasil:block/ash_log" },
+        "axis=z":   { "model": "yggdrasil:block/ash_log", "x": 90 },
+        "axis=x":   { "model": "yggdrasil:block/ash_log", "x": 90, "y": 90 }
+    }
+}

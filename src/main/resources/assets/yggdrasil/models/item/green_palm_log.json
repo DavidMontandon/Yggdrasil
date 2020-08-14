@@ -1,0 +1,6 @@
+{
+	"parent" : "block/cube_all",
+	"textures" : {
+		"all" : "yggdrasil:blocks/green_palm_log"
+	}
+}

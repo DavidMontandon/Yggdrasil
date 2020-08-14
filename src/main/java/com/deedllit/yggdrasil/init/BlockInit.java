@@ -95,8 +95,20 @@ public class BlockInit {
 	 * MIDGARD
 	 */
 
+	public static final RegistryObject<Block> ELM_LOG = BLOCKS.register("elm_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> ASH_LOG = BLOCKS.register("ash_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
 	public static final RegistryObject<Block> PALM_LOG = BLOCKS.register("palm_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> GREEN_PALM_LOG = BLOCKS.register("green_palm_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> PALM_LEAVES = BLOCKS.register("palm_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 
 	public static final RegistryObject<Block> IRON_WOOD_LOG = BLOCKS.register("iron_wood_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
