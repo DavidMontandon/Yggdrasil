@@ -1,6 +1,10 @@
 {
 	"replace": false,
 	"values": [
+		"yggdrasil:ash_log",
+		"yggdrasil:elm_log",
+		"yggdrasil:green_palm_log",
+		"yggdrasil:palm_log",
 		"yggdrasil:iron_wood_log",
 		"yggdrasil:muspelheim_epluphifer_log",
 		"yggdrasil:muspelheim_epluphifer_sick_log"

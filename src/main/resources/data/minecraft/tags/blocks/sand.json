@@ -1,7 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"yggdrasil:white_sand",
-		"yggdrasil:black_sand"
+		"yggdrasil:black_sand",
+		"yggdrasil:white_sand"
 	]
 }

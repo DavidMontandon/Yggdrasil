@@ -2,6 +2,8 @@ package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.common.block.YggdrasilFlowerBlock;
+import com.deedllit.yggdrasil.common.block.YggdrasilPressurePlateBlock;
+import com.deedllit.yggdrasil.common.block.YggdrasilWoodButtonBlock;
 import com.deedllit.yggdrasil.common.block.midgard.YggdrasilGrass;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
@@ -10,14 +12,17 @@ import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
 import com.deedllit.yggdrasil.objects.bushes.muspelheim.* ; 
 import com.deedllit.yggdrasil.world.feature.tree.*;
 
+import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.block.TallFlowerBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -98,8 +103,28 @@ public class BlockInit {
 	public static final RegistryObject<Block> ELM_LOG = BLOCKS.register("elm_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
+	public static final RegistryObject<Block> ELM_PLANKS = BLOCKS.register("elm_planks",
+			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
+
+	public static final RegistryObject<Block> ELM_STAIRS = BLOCKS.register("elm_stairs",
+			() -> new StairsBlock(() -> BlockInit.ELM_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> ELM_FENCE = BLOCKS.register("elm_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> ELM_BUTTON = BLOCKS.register("elm_button",
+			() -> new YggdrasilWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> ELM_PRESSURE_PLATE = BLOCKS.register("elm_pressure_plate",
+			() -> new YggdrasilPressurePlateBlock(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
 	public static final RegistryObject<Block> ASH_LOG = BLOCKS.register("ash_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+	
+	public static final RegistryObject<Block> ASH_PLANKS = BLOCKS.register("ash_planks",
+			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 
 	public static final RegistryObject<Block> PALM_LOG = BLOCKS.register("palm_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
