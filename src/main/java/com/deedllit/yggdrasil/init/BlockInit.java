@@ -176,6 +176,12 @@ public class BlockInit {
 	public static final RegistryObject<Block> MIDGARD_MANGROVE_LEAVES = BLOCKS.register("midgard_mangrove_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 
+	public static final RegistryObject<Block> MIDGARD_BLUE_POMELIA_BUSH = BLOCKS.register("midgard_blue_pomelia_bush", 
+			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
+
+	public static final RegistryObject<Block> MIDGARD_TEAL_POMELIA_BUSH = BLOCKS.register("midgard_teal_pomelia_bush", 
+			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
+
 	public static final RegistryObject<Block> MIDGARD_PINK_POMELIA_BUSH = BLOCKS.register("midgard_pink_pomelia_bush", 
 			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
 
@@ -188,6 +194,12 @@ public class BlockInit {
 	public static final RegistryObject<Block> IXIA_VIRIDIFLORA_TEAL_BUSH = BLOCKS.register("ixia_viridiflora_teal_bush", 
 			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
 
+	public static final RegistryObject<Block> SWEET_PEA = BLOCKS.register("sweet_pea",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.FIRE_RESISTANCE, 20, Block.Properties.from(Blocks.ALLIUM))) ;
+
+	public static final RegistryObject<Block> CHARDON = BLOCKS.register("chardon",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.REGENERATION, 1, Block.Properties.from(Blocks.POPPY))) ;
+	
 	public static final RegistryObject<Block> GUZMANIA_RED = BLOCKS.register("guzmania_red",
 			() -> new YggdrasilFlowerBlock(PlantType.Desert, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
 

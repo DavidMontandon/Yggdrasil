@@ -42,7 +42,7 @@ public class MidgardAlpineTundra  extends Biome {
 	      DefaultBiomeFeatures.addLakes(this);
 	      DefaultBiomeFeatures.addMonsterRooms(this);
 	      MidgardDefaultBiomeFeatures.addSurfaceStones(this);
-	      MidgardDefaultBiomeFeatures.addEdelweiss(this);
+	      MidgardDefaultBiomeFeatures.addAlpinaFlowers(this);
 	      MidgardDefaultBiomeFeatures.addDenseGrass(this);
 	      //MidgardDefaultBiomeFeatures.addFewConifers(this);
 	      DefaultBiomeFeatures.addStoneVariants(this);

@@ -1,0 +1,6 @@
+{
+	"parent" : "block/cross",
+	"textures" : {
+		"cross" : "yggdrasil:blocks/midgard_teal_pomelia_bush_bottom"
+	}
+}

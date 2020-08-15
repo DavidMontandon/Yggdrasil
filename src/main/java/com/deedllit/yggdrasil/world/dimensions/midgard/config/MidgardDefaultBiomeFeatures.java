@@ -49,10 +49,13 @@ public class MidgardDefaultBiomeFeatures {
 	private static final BlockState GUZMANIA_PINK = BlockInit.GUZMANIA_PINK.get().getDefaultState();
 	private static final BlockState GUZMANIA_RED = BlockInit.GUZMANIA_RED.get().getDefaultState();
 	private static final BlockState FISH_HOOK = BlockInit.FISH_HOOK.get().getDefaultState();
+	private static final BlockState TEAL_POMELIA_BLOCK = BlockInit.MIDGARD_TEAL_POMELIA_BUSH.get().getDefaultState();
+	private static final BlockState BLUE_POMELIA_BLOCK = BlockInit.MIDGARD_BLUE_POMELIA_BUSH.get().getDefaultState();
 	private static final BlockState WHITE_POMELIA_BLOCK = BlockInit.MIDGARD_WHITE_POMELIA_BUSH.get().getDefaultState();
 	private static final BlockState PINK_POMELIA_BLOCK = BlockInit.MIDGARD_PINK_POMELIA_BUSH.get().getDefaultState();
 	private static final BlockState ORANGE_POMELIA_BLOCK = BlockInit.MIDGARD_ORANGE_POMELIA_BUSH.get().getDefaultState();
 	private static final BlockState EDELWEISS = BlockInit.EDELWEISS.get().getDefaultState() ; 
+	private static final BlockState CHARDON = BlockInit.CHARDON.get().getDefaultState() ; 
     //private static final BlockState RICE = BlockInit.MIDGARD_RICE_TOP_CROP.get().getDefaultState();
 
 	private static final BlockState TALL_GRASS = Blocks.TALL_GRASS.getDefaultState() ; 
@@ -103,6 +106,7 @@ public class MidgardDefaultBiomeFeatures {
 	public static final BlockClusterFeatureConfig GUZMANIA_RED_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GUZMANIA_RED), new SimpleBlockPlacer())).tries(1).build();
 	public static final BlockClusterFeatureConfig FISH_HOOK_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(FISH_HOOK), new SimpleBlockPlacer())).tries(4).build();
 	public static final BlockClusterFeatureConfig EDELWEISS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(EDELWEISS), new SimpleBlockPlacer())).tries(2).build();
+	public static final BlockClusterFeatureConfig CHARDON_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(CHARDON), new SimpleBlockPlacer())).tries(4).build();
 
 	
 	//public static final BlockClusterFeatureConfig TALL_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(TALL_GRASS), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
@@ -115,6 +119,8 @@ public class MidgardDefaultBiomeFeatures {
     public static final BlockClusterFeatureConfig CACTUS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(CACTUS), new ColumnBlockPlacer(1, 2))).tries(10).func_227317_b_().build();
 	public static final BlockClusterFeatureConfig WHITE_POMELIA_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(WHITE_POMELIA_BLOCK), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
 	public static final BlockClusterFeatureConfig PINK_POMELIA_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(PINK_POMELIA_BLOCK), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
+	public static final BlockClusterFeatureConfig BLUE_POMELIA_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BLUE_POMELIA_BLOCK), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
+	public static final BlockClusterFeatureConfig TEAL_POMELIA_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(TEAL_POMELIA_BLOCK), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
 	public static final BlockClusterFeatureConfig ORANGE_POMELIA_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ORANGE_POMELIA_BLOCK), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
 	public static final BlockClusterFeatureConfig LILY_OF_THE_VALLEY_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(LILY_OF_THE_VALLEY), new SimpleBlockPlacer())).tries(64).build();
 	public static final BlockClusterFeatureConfig GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GRASS), new SimpleBlockPlacer())).tries(32).build();
@@ -159,6 +165,16 @@ public class MidgardDefaultBiomeFeatures {
 	public static void addSurfaceStones(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.DISK.withConfiguration(new SphereReplaceConfig(GRASS_BLOCK, 7, 2, Lists.newArrayList(STONE))).withPlacement(Placement.COUNT_TOP_SOLID.configure(new FrequencyConfig(3))));
 	}
+	
+	public static void addAlpinaFlowers(Biome biomeIn) {
+		MidgardDefaultBiomeFeatures.addChardon(biomeIn) ; 
+		MidgardDefaultBiomeFeatures.addEdelweiss(biomeIn) ; 
+	}
+
+	public static void addChardon(Biome biomeIn) {
+	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(CHARDON_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
+	}
+
 	
 	public static void addEdelweiss(Biome biomeIn) {
 	    biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(EDELWEISS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(1))));
@@ -209,6 +225,8 @@ public class MidgardDefaultBiomeFeatures {
 				Feature.RANDOM_RANDOM_SELECTOR.withConfiguration(new MultipleWithChanceRandomFeatureConfig(ImmutableList.of(
 						Feature.RANDOM_PATCH.withConfiguration(ORANGE_POMELIA_CONFIG), 
 						Feature.RANDOM_PATCH.withConfiguration(PINK_POMELIA_CONFIG), 
+						Feature.RANDOM_PATCH.withConfiguration(BLUE_POMELIA_CONFIG), 
+						Feature.RANDOM_PATCH.withConfiguration(TEAL_POMELIA_CONFIG), 
 						Feature.RANDOM_PATCH.withConfiguration(WHITE_POMELIA_CONFIG), 
 						Feature.FLOWER.withConfiguration(LILY_OF_THE_VALLEY_CONFIG)), 0))
 				.withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(5))));		

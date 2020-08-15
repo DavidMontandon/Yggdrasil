@@ -30,13 +30,17 @@ public class ClientEventBusSubscriber {
 		/*
 		 * MIDGARD
 		 */
+		RenderTypeLookup.setRenderLayer(BlockInit.CHARDON.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_PINK_POMELIA_BUSH.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_WHITE_POMELIA_BUSH.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_ORANGE_POMELIA_BUSH.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_BLUE_POMELIA_BUSH.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_TEAL_POMELIA_BUSH.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.IXIA_VIRIDIFLORA_TEAL_BUSH.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.GUZMANIA_RED.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.GUZMANIA_PINK.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.FISH_HOOK.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.SWEET_PEA.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.DESERT_GRASS.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.EDELWEISS.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.HIBICUS_TREE_LEAVES.get(), basicRender);		
