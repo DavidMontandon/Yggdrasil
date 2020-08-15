@@ -100,6 +100,8 @@ public class BlockInit {
 	 * MIDGARD
 	 */
 
+	//ELM TREE
+	
 	public static final RegistryObject<Block> ELM_LOG = BLOCKS.register("elm_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
@@ -119,12 +121,30 @@ public class BlockInit {
 	public static final RegistryObject<Block> ELM_PRESSURE_PLATE = BLOCKS.register("elm_pressure_plate",
 			() -> new YggdrasilPressurePlateBlock(Sensitivity.EVERYTHING,
 					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
-	
+		
+	//ASH TREE
+
 	public static final RegistryObject<Block> ASH_LOG = BLOCKS.register("ash_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 	
 	public static final RegistryObject<Block> ASH_PLANKS = BLOCKS.register("ash_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
+
+	public static final RegistryObject<Block> ASH_STAIRS = BLOCKS.register("ash_stairs",
+			() -> new StairsBlock(() -> BlockInit.ASH_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+
+	
+	//COCO NUT
+	
+	public static final RegistryObject<Block> COCO_NUT_PLANKS = BLOCKS.register("coco_nut_planks",
+			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
+
+	
+	public static final RegistryObject<Block> COCO_NUT_STAIRS = BLOCKS.register("coco_nut_stairs",
+			() -> new StairsBlock(() -> BlockInit.COCO_NUT_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
 
 	public static final RegistryObject<Block> PALM_LOG = BLOCKS.register("palm_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));

@@ -1,8 +1,8 @@
 {
     "parent": "block/outer_stairs",
     "textures": {
-        "bottom": "yggdrasil:block/elm_planks",
-        "top": "yggdrasil:block/elm_planks",
-        "side": "yggdrasil:block/elm_planks"
+        "bottom": "yggdrasil:blocks/elm_planks",
+        "top": "yggdrasil:blocks/elm_planks",
+        "side": "yggdrasil:blocks/elm_planks"
     }
 }
