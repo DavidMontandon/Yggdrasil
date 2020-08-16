@@ -194,6 +194,12 @@ public class BlockInit {
 	public static final RegistryObject<Block> IXIA_VIRIDIFLORA_TEAL_BUSH = BLOCKS.register("ixia_viridiflora_teal_bush", 
 			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
 
+	public static final RegistryObject<Block> RED_SUNFLOWER = BLOCKS.register("red_sunflower", 
+			() -> new TallFlowerBlock(Block.Properties.from(Blocks.SUNFLOWER)));
+	
+	public static final RegistryObject<Block> PURPLE_SUNFLOWER = BLOCKS.register("purple_sunflower", 
+			() -> new TallFlowerBlock(Block.Properties.from(Blocks.SUNFLOWER)));
+
 	public static final RegistryObject<Block> SWEET_PEA = BLOCKS.register("sweet_pea",
 			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.FIRE_RESISTANCE, 20, Block.Properties.from(Blocks.ALLIUM))) ;
 

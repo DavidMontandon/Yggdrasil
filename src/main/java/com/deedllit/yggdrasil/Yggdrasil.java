@@ -65,6 +65,7 @@ public class Yggdrasil
     public static final String MOD_ID = "yggdrasil" ; 
     public static final YggdrasilHolder YGGDRASIL_HOLDER = new YggdrasilHolder() ; 
     public static Yggdrasil instance ; 
+    public static boolean isAprilFools = false ; 
     
     //public static final ResourceLocation HOUSE_LOC = new ResourceLocation(Yggdrasil.MOD_ID, "yggdrasil_tree");
     //public static IStructurePieceType BRICK_HOUSE_PIECE = null;
@@ -103,7 +104,7 @@ public class Yggdrasil
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);
     	CarverInit.CAVERS.register(modEventBus);
-    	
+    	    	
         instance = this ; 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -131,9 +132,7 @@ public class Yggdrasil
 	
 	@SubscribeEvent
 	public static void onRegisterBiomes(final RegistryEvent.Register<Biome> event) {
-		LOGGER.info("onRegisterBiomes - Start");
 		BiomeInit.registerBiomes();
-		LOGGER.info("onRegisterBiomes - Done");
 	}
 	
 	

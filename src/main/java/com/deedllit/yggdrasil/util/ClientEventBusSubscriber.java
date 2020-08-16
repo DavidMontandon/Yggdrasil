@@ -45,6 +45,8 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.EDELWEISS.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.HIBICUS_TREE_LEAVES.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.PALM_LEAVES.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.RED_SUNFLOWER.get(), basicRender);		
+		RenderTypeLookup.setRenderLayer(BlockInit.PURPLE_SUNFLOWER.get(), basicRender);		
 			
 		//RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_RICE_BOTTOM_CROP.get(), basicRender);		
 		//RenderTypeLookup.setRenderLayer(BlockInit.PISTIA_WATER_LETTUCE.get(), basicRender);		
