@@ -5,6 +5,7 @@ import com.deedllit.yggdrasil.world.dimensions.midgard.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
+import com.deedllit.yggdrasil.world.dimensions.vanilla.biomes.*;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
@@ -25,6 +26,15 @@ public class BiomeInit {
 
 /*
  * OVERWORLD
+ */
+
+	public static final RegistryObject<Biome> SUNFLOWER_PLAINS_BIOME = BIOMES
+	.register("vanilla_sunflower_plains_biome",
+			() -> new SunflowerPlainsBiome());
+
+	
+/*
+ * MIDGARD
  */
 	public static final RegistryObject<Biome> IRON_WOOD_BIOME = BIOMES
 			.register("iron_wood",
@@ -185,6 +195,9 @@ public class BiomeInit {
 		registerBiome(1000, MIDGARD_THOUSAND_LAKES.get(), Type.PLAINS, Type.WATER, Type.OVERWORLD) ; 
 		registerBiome(1000, MIGARD_TROPICAL_ISLAND.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 
 		registerBiome(1000, MIGARD_VOLCANIC_ISLAND.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 			
+		registerBiome(10000, SUNFLOWER_PLAINS_BIOME.get(), Type.PLAINS, Type.OVERWORLD) ; 			
+		
+		
 	}
 
 	
