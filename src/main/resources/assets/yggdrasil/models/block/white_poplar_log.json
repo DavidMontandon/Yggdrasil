@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "yggdrasil:blocks/white_poplar_log_top",
+        "side": "yggdrasil:blocks/white_poplar_log"
+    }
+}

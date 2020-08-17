@@ -12,9 +12,9 @@ import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class MidgardThousandLakes extends Biome {
+public class MidgardThousandLakesBiome extends Biome {
 
-	public MidgardThousandLakes() {
+	public MidgardThousandLakesBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.HOLES, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG)
 	    		  .precipitation(Biome.RainType.RAIN)
 	    		  .category(Biome.Category.PLAINS)

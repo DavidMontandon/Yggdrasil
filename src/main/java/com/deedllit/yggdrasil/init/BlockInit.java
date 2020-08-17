@@ -146,6 +146,25 @@ public class BlockInit {
 					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
 
+	//WHITE POPLAR
+	public static final RegistryObject<Block> WHITE_POPLAR_LOG = BLOCKS.register("white_poplar_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> WHITE_POPLAR_PLANKS = BLOCKS.register("white_poplar_planks",
+			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
+
+	
+	//BLACK POPLAR
+	public static final RegistryObject<Block> BLACK_POPLAR_LOG = BLOCKS.register("black_poplar_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+	
+	public static final RegistryObject<Block> BLACK_POPLAR_PLANKS = BLOCKS.register("black_poplar_planks",
+			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
+
+	
+	
+	
+	
 	public static final RegistryObject<Block> PALM_LOG = BLOCKS.register("palm_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 

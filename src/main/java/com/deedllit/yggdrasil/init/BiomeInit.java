@@ -30,8 +30,11 @@ public class BiomeInit {
 
 	public static final RegistryObject<Biome> SUNFLOWER_PLAINS_BIOME = BIOMES
 	.register("vanilla_sunflower_plains_biome",
-			() -> new SunflowerPlainsBiome());
+			() -> new VanillaSunflowerPlainsBiome());
 
+	public static final RegistryObject<Biome> BADLANDS_BIOME = BIOMES
+	.register("vanilla_badlands_biome",
+			() -> new VanillaBadlandsBiome());
 	
 /*
  * MIDGARD
@@ -61,7 +64,7 @@ public class BiomeInit {
 	
 	public static final RegistryObject<Biome> MIDGARD_ALPINE_TUNDRA = BIOMES
 			.register("midgard_alpine_tundra",
-					() -> new MidgardAlpineTundra());	
+					() -> new MidgardAlpineTundraBiome());	
 	
 	public static final RegistryObject<Biome> MIDGARD_TROPICAL_BEACH = BIOMES
 			.register("midgard_tropical_beach",
@@ -77,7 +80,7 @@ public class BiomeInit {
 	
 	public static final RegistryObject<Biome> MIDGARD_THOUSAND_LAKES = BIOMES
 			.register("midgard_thousand_lakes",
-					() -> new MidgardThousandLakes());	
+					() -> new MidgardThousandLakesBiome());	
 
 	public static final RegistryObject<Biome> MIGARD_TROPICAL_ISLAND = BIOMES
 			.register("midgard_tropical_island",
@@ -196,8 +199,7 @@ public class BiomeInit {
 		registerBiome(1000, MIGARD_TROPICAL_ISLAND.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 
 		registerBiome(1000, MIGARD_VOLCANIC_ISLAND.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 			
 		registerBiome(10000, SUNFLOWER_PLAINS_BIOME.get(), Type.PLAINS, Type.OVERWORLD) ; 			
-		
-		
+		registerBiome(10000, BADLANDS_BIOME.get(), Type.MESA, Type.OVERWORLD) ; 			
 	}
 
 	
