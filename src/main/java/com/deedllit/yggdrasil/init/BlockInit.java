@@ -226,13 +226,13 @@ public class BlockInit {
 			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.REGENERATION, 1, Block.Properties.from(Blocks.POPPY))) ;
 	
 	public static final RegistryObject<Block> GUZMANIA_RED = BLOCKS.register("guzmania_red",
-			() -> new YggdrasilFlowerBlock(PlantType.Desert, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+			() -> new YggdrasilFlowerBlock(PlantType.Desert, new Block[] {Blocks.SAND, Blocks.RED_SAND}, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
 
 	public static final RegistryObject<Block> GUZMANIA_PINK = BLOCKS.register("guzmania_pink",
-			() -> new YggdrasilFlowerBlock(PlantType.Desert, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+			() -> new YggdrasilFlowerBlock(PlantType.Desert,new Block[] {Blocks.SAND, Blocks.RED_SAND}, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
 	
 	public static final RegistryObject<Block> FISH_HOOK = BLOCKS.register("fish_hook",
-			() -> new YggdrasilFlowerBlock(PlantType.Desert, Blocks.SAND, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
+			() -> new YggdrasilFlowerBlock(PlantType.Desert, new Block[] {Blocks.SAND, Blocks.RED_SAND}, Effects.REGENERATION, 1, Block.Properties.from(Blocks.ALLIUM))) ;
 	
 	public static final RegistryObject<Block> DESERT_GRASS = BLOCKS.register("desert_grass",
 			() -> new YggdrasilGrass(PlantType.Desert, new Block[] {Blocks.SAND, Blocks.RED_SAND} , Block.Properties.from(Blocks.GRASS))) ;

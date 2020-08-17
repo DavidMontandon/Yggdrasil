@@ -51,7 +51,6 @@ public abstract class YggdrasilTallGrassBlock extends TallGrassBlock {
 	
 	public boolean isAllowed(BlockState state, IBlockReader worldIn, BlockPos pos) {
 			
-		
 		if (worldIn.getBlockState(pos.up()).getBlock() != Blocks.AIR)
 			return false ; 
 		

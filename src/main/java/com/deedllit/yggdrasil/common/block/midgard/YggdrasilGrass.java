@@ -17,8 +17,6 @@ public class YggdrasilGrass extends YggdrasilTallGrassBlock {
 	
 	@Override
 	public boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
-		
 		return isAllowed(state, worldIn, pos) ; 
-		
 	}
 }
