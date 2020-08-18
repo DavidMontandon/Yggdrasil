@@ -19,9 +19,7 @@ import com.deedllit.yggdrasil.common.item.VanafreintineHoe;
 import com.deedllit.yggdrasil.init.Material.ArmorMaterial;
 import com.deedllit.yggdrasil.init.Material.ToolMaterial;
 import com.deedllit.yggdrasil.objects.items.DimensionKeyItem;
-import com.deedllit.yggdrasil.objects.items.FehuRuneItem;
 import com.deedllit.yggdrasil.objects.items.RuneItem;
-import com.deedllit.yggdrasil.objects.items.UruzRuneItem;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -45,10 +43,10 @@ public class ItemInit {
 	
 	//RUNES ELDER - 1st
 	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_FEHU = ITEMS.register("rune_elder_futhark_first_aitt_fehu",
-			() -> new FehuRuneItem(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+			() -> new RuneItem("rune_elder_futhark_first_aitt_fehu", new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 
 	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_URUZ = ITEMS.register("rune_elder_futhark_first_aitt_uruz",
-			() -> new UruzRuneItem(new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+			() -> new RuneItem("rune_elder_futhark_first_aitt_uruz", new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 	
 	public static final RegistryObject<Item> RUNE_ELDER_FUTHARK_FIRST_AITT_THURISAZ = ITEMS.register("rune_elder_futhark_first_aitt_thurisaz",
 			() -> new RuneItem("rune_elder_futhark_first_aitt_thurisaz", new Item.Properties().group(YggdrasilRuneItemGroup.instance)));

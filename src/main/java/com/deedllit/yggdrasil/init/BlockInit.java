@@ -16,6 +16,7 @@ import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FenceBlock;
+import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
@@ -115,6 +116,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> ELM_FENCE = BLOCKS.register("elm_fence",
 			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
+	public static final RegistryObject<Block> ELM_FENCE_GATE = BLOCKS.register("elm_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+
 	public static final RegistryObject<Block> ELM_BUTTON = BLOCKS.register("elm_button",
 			() -> new YggdrasilWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
@@ -134,6 +138,18 @@ public class BlockInit {
 			() -> new StairsBlock(() -> BlockInit.ASH_PLANKS.get().getDefaultState(),
 					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 
+	public static final RegistryObject<Block> ASH_FENCE = BLOCKS.register("ash_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> ASH_FENCE_GATE = BLOCKS.register("ash_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+
+	public static final RegistryObject<Block> ASH_BUTTON = BLOCKS.register("ash_button",
+			() -> new YggdrasilWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> ASH_PRESSURE_PLATE = BLOCKS.register("ash_pressure_plate",
+			() -> new YggdrasilPressurePlateBlock(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
 	//COCO NUT
 	
@@ -153,6 +169,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> WHITE_POPLAR_PLANKS = BLOCKS.register("white_poplar_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 
+	public static final RegistryObject<Block> WHITE_POPLAR_STAIRS = BLOCKS.register("white_poplar_stairs",
+			() -> new StairsBlock(() -> BlockInit.WHITE_POPLAR_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
 	//BLACK POPLAR
 	public static final RegistryObject<Block> BLACK_POPLAR_LOG = BLOCKS.register("black_poplar_log",
@@ -161,6 +180,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> BLACK_POPLAR_PLANKS = BLOCKS.register("black_poplar_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 
+	public static final RegistryObject<Block> BLACK_POPLAR_STAIRS = BLOCKS.register("black_poplar_stairs",
+			() -> new StairsBlock(() -> BlockInit.BLACK_POPLAR_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
 	
 	

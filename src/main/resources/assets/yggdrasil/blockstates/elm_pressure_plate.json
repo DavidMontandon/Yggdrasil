@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "yggdrasil:block/elm_pressure_plate" },
+        "powered=true": { "model": "yggdrasil:block/elm_pressure_plate_down" }
+    }
+}
