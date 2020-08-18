@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "yggdrasil:blocks/black_poplar_planks",
+        "top": "yggdrasil:blocks/black_poplar_planks",
+        "side": "yggdrasil:blocks/black_poplar_planks"
+    }
+}

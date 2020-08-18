@@ -156,7 +156,6 @@ public class BlockInit {
 	public static final RegistryObject<Block> COCO_NUT_PLANKS = BLOCKS.register("coco_nut_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 
-	
 	public static final RegistryObject<Block> COCO_NUT_STAIRS = BLOCKS.register("coco_nut_stairs",
 			() -> new StairsBlock(() -> BlockInit.COCO_NUT_PLANKS.get().getDefaultState(),
 					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
@@ -173,6 +172,19 @@ public class BlockInit {
 			() -> new StairsBlock(() -> BlockInit.WHITE_POPLAR_PLANKS.get().getDefaultState(),
 					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
+	public static final RegistryObject<Block> WHITE_POPLAR_FENCE = BLOCKS.register("white_poplar_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> WHITE_POPLAR_FENCE_GATE = BLOCKS.register("white_poplar_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+
+	public static final RegistryObject<Block> WHITE_POPLAR_BUTTON = BLOCKS.register("white_poplar_button",
+			() -> new YggdrasilWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> WHITE_POPLAR_PRESSURE_PLATE = BLOCKS.register("white_poplar_pressure_plate",
+			() -> new YggdrasilPressurePlateBlock(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
 	//BLACK POPLAR
 	public static final RegistryObject<Block> BLACK_POPLAR_LOG = BLOCKS.register("black_poplar_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
@@ -184,6 +196,18 @@ public class BlockInit {
 			() -> new StairsBlock(() -> BlockInit.BLACK_POPLAR_PLANKS.get().getDefaultState(),
 					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
+	public static final RegistryObject<Block> BLACK_POPLAR_FENCE = BLOCKS.register("black_poplar_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> BLACK_POPLAR_FENCE_GATE = BLOCKS.register("black_poplar_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+
+	public static final RegistryObject<Block> BLACK_POPLAR_BUTTON = BLOCKS.register("black_poplar_button",
+			() -> new YggdrasilWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> BLACK_POPLAR_PRESSURE_PLATE = BLOCKS.register("black_poplar_pressure_plate",
+			() -> new YggdrasilPressurePlateBlock(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
 	
 	
@@ -295,7 +319,10 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> MUSPELHEIM_GRASS = BLOCKS.register("muspelheim_grass",
 			() -> new MuspelheimGrass(Block.Properties.from(Blocks.GRASS_BLOCK)));
-			
+
+	
+	// EPLUPHIFER
+	
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_LOG = BLOCKS.register("muspelheim_epluphifer_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
@@ -311,6 +338,27 @@ public class BlockInit {
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_LEAVES = BLOCKS.register("muspelheim_epluphifer_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 
+	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_STAIRS = BLOCKS.register("muspelheim_epluphifer_stairs",
+			() -> new StairsBlock(() -> BlockInit.BLACK_POPLAR_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_FENCE = BLOCKS.register("muspelheim_epluphifer_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_FENCE_GATE = BLOCKS.register("muspelheim_epluphifer_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+
+	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_BUTTON = BLOCKS.register("muspelheim_epluphifer_button",
+			() -> new YggdrasilWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_PRESSURE_PLATE = BLOCKS.register("muspelheim_epluphifer_pressure_plate",
+			() -> new YggdrasilPressurePlateBlock(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	
+	
+	
+	
 	public static final RegistryObject<Block> MUSPELHEIM_IKADAMIA_CROP = BLOCKS.register("muspelheim_ikadamia",
 			() -> new  MuspelheimIkadamiaCropBlock(Block.Properties.from(Blocks.WHEAT)));
 	

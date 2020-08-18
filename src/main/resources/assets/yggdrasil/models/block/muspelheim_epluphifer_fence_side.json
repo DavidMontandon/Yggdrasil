@@ -1,0 +1,6 @@
+{
+    "parent": "block/fence_side",
+    "textures": {
+        "texture": "yggdrasil:blocks/muspelheim_epluphifer_planks"
+    }
+}
