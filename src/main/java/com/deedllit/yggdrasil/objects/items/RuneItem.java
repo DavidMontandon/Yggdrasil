@@ -17,11 +17,13 @@ import net.minecraft.world.World;
 public class RuneItem extends Item {
 
 	private String desc ; 	
-	
+		
 	public RuneItem(String desc, Properties properties) {
 		super(properties);
-		this.desc = desc ; 
+		this.desc = desc ;
 	}
+	
+	
 	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {		

@@ -68,6 +68,11 @@ public class MidgardMangroveBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 1, 1, 1));	      
 	}
 
+	@Override
+	public int getSkyColor() {
+		return 6975545;
+	}
+	
 	@OnlyIn(Dist.CLIENT)
 	public int getGrassColor(double posX, double posZ) {
 		double d0 = INFO_NOISE.noiseAt(posX * 0.0225D, posZ * 0.0225D, false);
