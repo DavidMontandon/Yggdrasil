@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y": { "model": "yggdrasil:block/white_poplar_wood" },
+        "axis=z": { "model": "yggdrasil:block/white_poplar_wood", "x": 90 },
+        "axis=x": { "model": "yggdrasil:block/white_poplar_wood", "x": 90, "y": 90 }
+    }
+}

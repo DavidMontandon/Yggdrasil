@@ -22,7 +22,6 @@ public class PhilosopherWardItem extends Item {
 
 	@Override
 	public ActionResultType onItemUse(ItemUseContext context) {
-		Yggdrasil.LOGGER.info("CLICK");
 		
 		
 		World worldIn = context.getWorld() ; 
@@ -64,8 +63,6 @@ public class PhilosopherWardItem extends Item {
          }			
 		
 		
-	      
-
         return super.onItemUse(context);
 	}
 	

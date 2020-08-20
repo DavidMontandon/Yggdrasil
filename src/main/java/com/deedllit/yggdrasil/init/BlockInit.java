@@ -106,6 +106,15 @@ public class BlockInit {
 	public static final RegistryObject<Block> ELM_LOG = BLOCKS.register("elm_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
+	public static final RegistryObject<Block> STRIPPED_ELM_LOG = BLOCKS.register("stripped_elm_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> ELM_WOOD = BLOCKS.register("elm_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> STRIPPED_ELM_WOOD = BLOCKS.register("stripped_elm_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
 	public static final RegistryObject<Block> ELM_PLANKS = BLOCKS.register("elm_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 
@@ -130,6 +139,15 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> ASH_LOG = BLOCKS.register("ash_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+	
+	public static final RegistryObject<Block> STRIPPED_ASH_LOG = BLOCKS.register("stripped_ash_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> ASH_WOOD = BLOCKS.register("ash_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> STRIPPED_ASH_WOOD = BLOCKS.register("stripped_ash_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
 	
 	public static final RegistryObject<Block> ASH_PLANKS = BLOCKS.register("ash_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
@@ -165,6 +183,15 @@ public class BlockInit {
 	public static final RegistryObject<Block> WHITE_POPLAR_LOG = BLOCKS.register("white_poplar_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
+	public static final RegistryObject<Block> STRIPPED_WHITE_POPLAR_LOG = BLOCKS.register("stripped_white_poplar_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> WHITE_POPLAR_WOOD = BLOCKS.register("white_poplar_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> STRIPPED_WHITE_POPLAR_WOOD = BLOCKS.register("stripped_white_poplar_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+	
 	public static final RegistryObject<Block> WHITE_POPLAR_PLANKS = BLOCKS.register("white_poplar_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 
@@ -188,6 +215,15 @@ public class BlockInit {
 	//BLACK POPLAR
 	public static final RegistryObject<Block> BLACK_POPLAR_LOG = BLOCKS.register("black_poplar_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+	
+	public static final RegistryObject<Block> STRIPPED_BLACK_POPLAR_LOG = BLOCKS.register("stripped_black_poplar_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> BLACK_POPLAR_WOOD = BLOCKS.register("black_poplar_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> STRIPPED_BLACK_POPLAR_WOOD = BLOCKS.register("stripped_black_poplar_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
 	
 	public static final RegistryObject<Block> BLACK_POPLAR_PLANKS = BLOCKS.register("black_poplar_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
@@ -329,6 +365,15 @@ public class BlockInit {
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_SICK_LOG = BLOCKS.register("muspelheim_epluphifer_sick_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 
+	public static final RegistryObject<Block> STRIPPED_MUSPELHEIM_EPLUPHIFER_LOG = BLOCKS.register("stripped_muspelheim_epluphifer_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_WOOD = BLOCKS.register("muspelheim_epluphifer_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> STRIPPED_MUSPELHEIM_EPLUPHIFER_WOOD = BLOCKS.register("stripped_muspelheim_epluphifer_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+	
 	public static final RegistryObject<Block> MUSPELHEIM_EPLUPHIFER_PLANKS = BLOCKS.register("muspelheim_epluphifer_planks",
 			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
 	

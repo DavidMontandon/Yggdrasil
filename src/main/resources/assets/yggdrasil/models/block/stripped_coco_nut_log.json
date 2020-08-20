@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "yggdrasil:blocks/stripped_coco_nut_log_top",
+        "side": "yggdrasil:blocks/stripped_coco_nut_log"
+    }
+}

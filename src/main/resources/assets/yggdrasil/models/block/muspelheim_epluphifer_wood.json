@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "yggdrasil:blocks/muspelheim_epluphifer_log",
+        "side": "yggdrasil:blocks/muspelheim_epluphifer_log"
+    }
+}
