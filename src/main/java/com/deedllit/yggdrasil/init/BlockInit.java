@@ -1,10 +1,8 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.common.block.YggdrasilFlowerBlock;
-import com.deedllit.yggdrasil.common.block.YggdrasilPressurePlateBlock;
-import com.deedllit.yggdrasil.common.block.YggdrasilWoodButtonBlock;
-import com.deedllit.yggdrasil.common.block.midgard.YggdrasilGrass;
+import com.deedllit.yggdrasil.common.block.*;
+import com.deedllit.yggdrasil.common.block.midgard.*;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
@@ -54,6 +52,18 @@ public class BlockInit {
 
 	public static final RegistryObject<Block> YGGDRASIL_PLANKS = BLOCKS.register("yggdrasil_planks",
 			() -> new Block(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> LEAD_ORE = BLOCKS.register("lead_ore",
+			() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
+	
+	public static final RegistryObject<Block> COPPER_ORE = BLOCKS.register("copper_ore",
+			() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
+
+	public static final RegistryObject<Block> COPPER_BARS = BLOCKS.register("copper_bars",
+			() -> new YggdrasilBaneBlock(Block.Properties.create(Material.IRON, MaterialColor.AIR).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL).notSolid()));
+	
+	public static final RegistryObject<Block> LEAD_BARS = BLOCKS.register("lead_bars",
+			() -> new YggdrasilBaneBlock(Block.Properties.create(Material.IRON, MaterialColor.AIR).hardnessAndResistance(5.0F, 6.0F).sound(SoundType.METAL).notSolid()));
 
 	public static final RegistryObject<Block> RUNE_ORE = BLOCKS.register("rune_ore",
 			() -> new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(2.0F).sound(SoundType.STONE)));

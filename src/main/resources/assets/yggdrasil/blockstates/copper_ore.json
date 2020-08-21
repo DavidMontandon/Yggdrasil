@@ -1,0 +1,5 @@
+{
+	"variants": {
+		"" : { "model" : "yggdrasil:block/copper_ore" }
+	}
+}

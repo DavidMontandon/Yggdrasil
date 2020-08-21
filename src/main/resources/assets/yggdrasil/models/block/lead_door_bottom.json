@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "yggdrasil:blocks/lead_door_bottom",
+        "top": "yggdrasil:blocks/lead_door_top"
+    }
+}
