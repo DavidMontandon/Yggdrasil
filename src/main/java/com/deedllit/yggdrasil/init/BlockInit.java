@@ -256,6 +256,43 @@ public class BlockInit {
 					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
 	
 	
+	//MIDGARD_MANGROVE TREE
+
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_LOG = BLOCKS.register("midgard_mangrove_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+	
+	public static final RegistryObject<Block> STRIPPED_MIDGARD_MANGROVE_LOG = BLOCKS.register("stripped_midgard_mangrove_log",
+			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
+
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_WOOD = BLOCKS.register("midgard_mangrove_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> STRIPPED_MIDGARD_MANGROVE_WOOD = BLOCKS.register("stripped_midgard_mangrove_wood",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.0F).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_PLANKS = BLOCKS.register("midgard_mangrove_planks",
+			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
+
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_STAIRS = BLOCKS.register("midgard_mangrove_stairs",
+			() -> new StairsBlock(() -> BlockInit.MIDGARD_MANGROVE_PLANKS.get().getDefaultState(),
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_FENCE = BLOCKS.register("midgard_mangrove_fence",
+			() -> new FenceBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_FENCE_GATE = BLOCKS.register("midgard_mangrove_fence_gate",
+			() -> new FenceGateBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_BUTTON = BLOCKS.register("midgard_mangrove_button",
+			() -> new YggdrasilWoodButtonBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_PRESSURE_PLATE = BLOCKS.register("midgard_mangrove_pressure_plate",
+			() -> new YggdrasilPressurePlateBlock(Sensitivity.EVERYTHING,
+					Block.Properties.create(Material.WOOD, MaterialColor.WOOD)));
+	
+	public static final RegistryObject<Block> MIDGARD_MANGROVE_LEAVES = BLOCKS.register("midgard_mangrove_leaves",
+			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
+	
 	
 	public static final RegistryObject<Block> PALM_LOG = BLOCKS.register("palm_log",
 			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
@@ -278,15 +315,8 @@ public class BlockInit {
 	public static final RegistryObject<Block> HIBICUS_TREE_LEAVES = BLOCKS.register("hibiscus_tree_leaves",
 			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
-	public static final RegistryObject<Block> MIDGARD_MANGROVE_LOG = BLOCKS.register("midgard_mangrove_log",
-			() -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.DARK_OAK_LOG)));
 	
-	public static final RegistryObject<Block> MIDGARD_MANGROVE_PLANKS = BLOCKS.register("midgard_mangrove_planks",
-			() -> new Block(Block.Properties.from(Blocks.DARK_OAK_PLANKS)));
-
-	public static final RegistryObject<Block> MIDGARD_MANGROVE_LEAVES = BLOCKS.register("midgard_mangrove_leaves",
-			() -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-
+	
 	public static final RegistryObject<Block> MIDGARD_BLUE_POMELIA_BUSH = BLOCKS.register("midgard_blue_pomelia_bush", 
 			() -> new TallFlowerBlock(Block.Properties.from(Blocks.ROSE_BUSH)));
 

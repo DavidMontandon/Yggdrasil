@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "yggdrasil:blocks/midgard_mangrove_door_bottom",
+        "top": "yggdrasil:blocks/midgard_mangrove_door_top"
+    }
+}

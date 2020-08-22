@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "yggdrasil:blocks/midgard_mangrove_planks",
+        "top": "yggdrasil:blocks/midgard_mangrove_planks",
+        "side": "yggdrasil:blocks/midgard_mangrove_planks"
+    }
+}
