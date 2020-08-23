@@ -1,5 +1,6 @@
 package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
+import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 import com.deedllit.yggdrasil.world.dimensions.midgard.config.MidgardDefaultBiomeFeatures;
 
@@ -9,6 +10,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.SeaGrassConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
@@ -32,7 +34,12 @@ public class MidgardMangroveBiome extends Biome {
 	      
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);
-	      DefaultBiomeFeatures.addLakes(this);
+	      
+			this.addStructure(FeatureInit.MANGROVE_WITCH.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
+			this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, FeatureInit.MANGROVE_WITCH.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG)
+					.withPlacement(Placement.NOPE.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+
+		  DefaultBiomeFeatures.addLakes(this);
 	      DefaultBiomeFeatures.addMonsterRooms(this);
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addOres(this);

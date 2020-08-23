@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemTier;
 import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ShieldItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
@@ -36,6 +37,9 @@ public class ItemInit {
 	public static final RegistryObject<Item> ACIDIC_BUCKET = ITEMS.register("acidic_bucket",
 			() -> new BucketItem(FluidInit.ACIDIC_FLUID, new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
 	
+	
+	public static final RegistryObject<Item> VIKING_SHIELD = ITEMS.register("viking_shield",
+			() -> new ShieldItem((new Item.Properties()).maxDamage(336).group(ItemGroup.COMBAT)));
 	
 	
 	//KEY

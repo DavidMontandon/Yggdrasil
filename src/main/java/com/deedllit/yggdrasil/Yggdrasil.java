@@ -10,6 +10,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.IStructurePieceType;
@@ -30,11 +31,13 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 
 import java.util.Iterator;
 
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -135,6 +138,24 @@ public class Yggdrasil
 		BiomeInit.registerBiomes();
 	}
 	
+	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+	public static class RegistryEvents
+	{
+
+		@SubscribeEvent
+		public static void onRegisterFeatures(final RegistryEvent.Register<Feature<?>> event)
+		{
+			FeatureInit.registerFeatures(event);
+
+			LOGGER.log(Level.INFO, "features/structures registered.");
+		}
+	}
+	
+	public static <T extends IForgeRegistryEntry<T>> T register(IForgeRegistry<T> registry, T entry, String registryKey) {
+		entry.setRegistryName(new ResourceLocation(Yggdrasil.MOD_ID, registryKey));
+		registry.register(entry);
+		return entry;
+	}
 	
 	private void setup(final FMLCommonSetupEvent event) {
         DeferredWorkQueue.runLater(() -> {
