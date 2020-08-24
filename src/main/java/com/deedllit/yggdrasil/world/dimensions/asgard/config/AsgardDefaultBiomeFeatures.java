@@ -42,8 +42,8 @@ public class AsgardDefaultBiomeFeatures {
     private static final BlockState DIAMOND_ORE = Blocks.DIAMOND_ORE.getDefaultState() ; 
     private static final BlockState OAK_LOG = Blocks.OAK_LOG.getDefaultState() ; 
     private static final BlockState OAK_LEAVES = Blocks.OAK_LEAVES.getDefaultState() ; 
-    private static final BlockState BIRCH_LOG = Blocks.OAK_LOG.getDefaultState() ; 
-    private static final BlockState BIRCH_LEAVES = Blocks.OAK_LEAVES.getDefaultState() ; 
+    private static final BlockState BIRCH_LOG = Blocks.BIRCH_LOG.getDefaultState() ; 
+    private static final BlockState BIRCH_LEAVES = Blocks.BIRCH_LEAVES.getDefaultState() ; 
     private static final BlockState SPRUCE_LOG = Blocks.SPRUCE_LOG.getDefaultState() ; 
     private static final BlockState SPRUCE_LEAVES = Blocks.SPRUCE_LEAVES.getDefaultState() ; 
     private static final BlockState PODZOL = Blocks.PODZOL.getDefaultState() ; 
@@ -67,6 +67,8 @@ public class AsgardDefaultBiomeFeatures {
 		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, COAL_ORE, 17)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 0, 0, 128))));
 		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, IRON_ORE, 9)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 0, 0, 64))));
 		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, GOLD_ORE, 9)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(2, 0, 0, 32))));
+		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, GOLD_ORE, 9)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(2, 0, 0, 32))));
+		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, GOLD_ORE, 9)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(2, 0, 0, 32))));
 	}
 	
 	public static void addSparseAshTrees(Biome biomeIn) {
@@ -86,7 +88,8 @@ public class AsgardDefaultBiomeFeatures {
 	}
 
 	public static void addGiantBirchTrees(Biome biomeIn) {
-		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(Feature.MEGA_SPRUCE_TREE.withConfiguration(MEGA_BIRCH_TREE_CONFIG).withChance(0.33333334F), Feature.NORMAL_TREE.withConfiguration(BIRCH_TREE_CONFIG).withChance(0.33333334F)), Feature.NORMAL_TREE.withConfiguration(BIRCH_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
+		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(LARGE_FERN_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(7))));
+		//biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(new MultipleRandomFeatureConfig(ImmutableList.of(Feature.MEGA_SPRUCE_TREE.withConfiguration(MEGA_BIRCH_TREE_CONFIG).withChance(0.33333334F), Feature.NORMAL_TREE.withConfiguration(BIRCH_TREE_CONFIG).withChance(0.33333334F)), Feature.NORMAL_TREE.withConfiguration(BIRCH_TREE_CONFIG))).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
 	}
 
 	public static void addGiantOakTrees(Biome biomeIn) {
