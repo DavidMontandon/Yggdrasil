@@ -1,6 +1,7 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.world.dimensions.asgard.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.midgard.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
@@ -36,9 +37,35 @@ public class BiomeInit {
 	.register("vanilla_badlands_biome",
 			() -> new VanillaBadlandsBiome());
 	
-/*
+	
+	/*
+	 * ASGARD
+	 */
+
+	public static final RegistryObject<Biome> ASGARD_PLAINS_BIOME = BIOMES
+			.register("asgard_plains_biome",
+					() -> new AsgardPlainsBiome());
+
+	public static final RegistryObject<Biome> ASGARD_SUNFLOWER_PLAINS_BIOME = BIOMES
+			.register("asgard_sunflower_plains_biome",
+					() -> new AsgardSunflowerPlainsBiome());
+
+	public static final RegistryObject<Biome> ASGARD_FOREST_PLAINS_BIOME = BIOMES
+			.register("asgard_forest_plains_biome",
+					() -> new AsgardForestPlainsBiome());
+
+	public static final RegistryObject<Biome> ASGARD_OAK_FOREST_BIOME = BIOMES
+			.register("asgard_oak_forest_biome",
+					() -> new AsgardOakForestBiome());
+	
+	public static final RegistryObject<Biome> ASGARD_BIRCH_FOREST_BIOME = BIOMES
+			.register("asgard_birch_forest_biome",
+					() -> new AsgardBirchForestBiome());
+
+	/*
  * MIDGARD
  */
+
 	public static final RegistryObject<Biome> IRON_WOOD_BIOME = BIOMES
 			.register("iron_wood",
 					() -> new MidgardIronWoodBiome());
