@@ -11,7 +11,7 @@ import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
-public class TropicalIsland {
+public class TropicalIslandSubBuilder {
 
 	private BlockState grass ; 
 	private BlockState stone ; 
@@ -23,7 +23,7 @@ public class TropicalIsland {
 	private int moutainLevelBottom ; 
 	private int seaLevel ;
 	
-	public TropicalIsland() {
+	public TropicalIslandSubBuilder() {
 	}
 		
 	public void buildSurface(Random random, IChunk chunkIn, Biome biomeIn, int x, int z, int startHeight, double noise,

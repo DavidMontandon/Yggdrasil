@@ -6,7 +6,7 @@ import java.util.function.Function;
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.BlockInit;
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
-import com.deedllit.yggdrasil.world.gen.surfacebuilders.subbuilders.TropicalIsland;
+import com.deedllit.yggdrasil.world.gen.surfacebuilders.subbuilders.TropicalIslandSubBuilder;
 import com.mojang.datafixers.Dynamic;
 
 import net.minecraft.block.Block;
@@ -28,7 +28,7 @@ public class BlackSandIsland extends SurfaceBuilder<SurfaceBuilderConfig> {
 	public void buildSurface(Random random, IChunk chunkIn, Biome biomeIn, int x, int z, int startHeight, double noise,
 			BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig config) {
 
-		TropicalIsland tropicalIslandBuilder = new TropicalIsland() ;
+		TropicalIslandSubBuilder tropicalIslandBuilder = new TropicalIslandSubBuilder() ;
 		tropicalIslandBuilder.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed, config,
 				-2, 5, 85,
 				Blocks.STONE.getDefaultState(), Blocks.GRASS_BLOCK.getDefaultState(), BlockInit.BLACK_SAND.get().getDefaultState());

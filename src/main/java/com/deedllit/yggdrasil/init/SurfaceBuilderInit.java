@@ -23,7 +23,8 @@ public class SurfaceBuilderInit {
 	public static final SurfaceBuilder<SurfaceBuilderConfig> HOLES = new HolesSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> WHITE_SAND_ISLAND = new WhiteSandIsland(SurfaceBuilderConfig::deserialize);
 	public static final SurfaceBuilder<SurfaceBuilderConfig> BLACK_SAND_ISLAND = new BlackSandIsland(SurfaceBuilderConfig::deserialize);
-	public static final SurfaceBuilder<SurfaceBuilderConfig> FLOATING_ISLAND_MOUTAIN = new FloatingIslandMoutainSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> FLOATING_ISLAND_MOUTAIN = new FloatingIslandMountainSurfaceBuilder(SurfaceBuilderConfig::deserialize);
+	public static final SurfaceBuilder<SurfaceBuilderConfig> FLOATING_ISLAND_HILL = new FloatingIslandHillSurfaceBuilder(SurfaceBuilderConfig::deserialize);
 	
 	
 	
