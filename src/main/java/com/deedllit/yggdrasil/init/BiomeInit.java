@@ -42,6 +42,10 @@ public class BiomeInit {
 	 * ASGARD
 	 */
 
+	public static final RegistryObject<Biome> ASGARD_MOUTAINS_BIOME = BIOMES
+			.register("asgard_moutains_biome",
+					() -> new AsgardMountainsBiome());
+
 	public static final RegistryObject<Biome> ASGARD_PLAINS_BIOME = BIOMES
 			.register("asgard_plains_biome",
 					() -> new AsgardPlainsBiome());

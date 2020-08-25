@@ -15,6 +15,7 @@ public class AsgardBiomeProvider extends BiomeProvider {
 
 
 	private static final Set<Biome> biomeList = ImmutableSet.of(BiomeInit.ASGARD_SUNFLOWER_PLAINS_BIOME.get(),
+			BiomeInit.ASGARD_MOUTAINS_BIOME.get(),
 			BiomeInit.ASGARD_PLAINS_BIOME.get(),
 			BiomeInit.ASGARD_FOREST_PLAINS_BIOME.get(),
 			BiomeInit.ASGARD_BIRCH_FOREST_BIOME.get(),
