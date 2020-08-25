@@ -22,6 +22,7 @@ public class BiomeInit {
 
 	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, Yggdrasil.MOD_ID) ; 	
 
+	
 	//https://www.mathsisfun.com/hexadecimal-decimal-colors.html
 	
 
@@ -41,6 +42,18 @@ public class BiomeInit {
 	/*
 	 * ASGARD
 	 */
+
+	public static final RegistryObject<Biome> ASGARD_LAKES_BIOME = BIOMES
+		.register("asgard_lakes_biome",
+				() -> new AsgardLakesBiome());
+	
+	public static final RegistryObject<Biome> ASGARD_DESERT_BIOME = BIOMES
+		.register("asgard_desert_biome",
+				() -> new AsgardDesertBiome());
+
+	public static final RegistryObject<Biome> ASGARD_PINK_MANGENTA_PLAINS_BIOME = BIOMES
+		.register("asgard_pink_mangenta_plains_biome",
+				() -> new AsgardPinkMangentaPlainsBiome());
 
 	public static final RegistryObject<Biome> ASGARD_HILLS_BIOME = BIOMES
 			.register("asgard_hills_biome",

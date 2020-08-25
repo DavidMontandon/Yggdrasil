@@ -33,10 +33,13 @@ public class FloatingIslandMoutainSubBuilder {
         
 		int n = (int) (noise / h) ; 
 		
+		/*
 		if(n < 0) {
 			n *= -1 ; 
 			n += 40 ; 			
 		}
+		*/
+		n = Math.abs(n) ; 
 		
         for(int i1 = 5; i1 <= 100; i1++) {
             blockpos$mutableblockpos.setPos(k, i1, l);            

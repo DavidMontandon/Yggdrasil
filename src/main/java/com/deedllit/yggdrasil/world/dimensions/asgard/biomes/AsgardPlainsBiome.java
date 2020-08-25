@@ -6,15 +6,6 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
-import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftStructure;
-import net.minecraft.world.gen.feature.structure.VillageConfig;
-import net.minecraft.world.gen.placement.ChanceConfig;
-import net.minecraft.world.gen.placement.FrequencyConfig;
-import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class AsgardPlainsBiome extends Biome {
@@ -31,8 +22,6 @@ public class AsgardPlainsBiome extends Biome {
 	    		  .waterFogColor(329011)
 	    		  .parent((String)null));
 	      	      	      
-	      this.addStructure(Feature.PILLAGER_OUTPOST.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);
 	      DefaultBiomeFeatures.addLakes(this);
@@ -40,15 +29,13 @@ public class AsgardPlainsBiome extends Biome {
 	      DefaultBiomeFeatures.addPlainsTallGrass(this);
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      DefaultBiomeFeatures.addSedimentDisks(this);
+	      AsgardDefaultBiomeFeatures.addOres(this);
 	      DefaultBiomeFeatures.addOakTreesFlowersGrass(this);
 	      	      
 	      DefaultBiomeFeatures.addMushrooms(this);
 	      DefaultBiomeFeatures.addReedsAndPumpkins(this);
+	      DefaultBiomeFeatures.addSprings(this);
 	      DefaultBiomeFeatures.addFreezeTopLayer(this);
-	      
-	      AsgardDefaultBiomeFeatures.addOres(this);
-	      AsgardDefaultBiomeFeatures.addDiamondOre(this) ; 
-	      AsgardDefaultBiomeFeatures.addEmeraldOre(this) ; 
 	      	      
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));

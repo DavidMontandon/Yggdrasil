@@ -1,7 +1,6 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.test.BrickHouse;
 import com.deedllit.yggdrasil.world.feature.structure.YggdrasilTreeStructure;
 
 import net.minecraft.world.gen.feature.Feature;

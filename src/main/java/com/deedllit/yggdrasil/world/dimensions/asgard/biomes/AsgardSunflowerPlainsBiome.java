@@ -31,8 +31,6 @@ public class AsgardSunflowerPlainsBiome extends Biome {
 	    		  .waterFogColor(329011)
 	    		  .parent("asgard_plains_biome"));
 	      	      	      
-	      this.addStructure(Feature.PILLAGER_OUTPOST.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG));
-
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);
 	      DefaultBiomeFeatures.addLakes(this);
@@ -40,14 +38,15 @@ public class AsgardSunflowerPlainsBiome extends Biome {
 	      DefaultBiomeFeatures.addPlainsTallGrass(this);
 	      AsgardDefaultBiomeFeatures.addSunFlowers(this);
 	      DefaultBiomeFeatures.addSedimentDisks(this);
-	      DefaultBiomeFeatures.addOakTreesFlowersGrass(this);
-	      DefaultBiomeFeatures.addMushrooms(this);
-	      DefaultBiomeFeatures.addReedsAndPumpkins(this);
-	      DefaultBiomeFeatures.addFreezeTopLayer(this);
-	      
 	      AsgardDefaultBiomeFeatures.addOres(this);
 	      AsgardDefaultBiomeFeatures.addDiamondOre(this) ; 
 	      AsgardDefaultBiomeFeatures.addEmeraldOre(this) ; 
+	      DefaultBiomeFeatures.addOakTreesFlowersGrass(this);
+	      DefaultBiomeFeatures.addMushrooms(this);
+	      DefaultBiomeFeatures.addReedsAndPumpkins(this);
+	      DefaultBiomeFeatures.addSprings(this);
+	      DefaultBiomeFeatures.addFreezeTopLayer(this);
+	      
 	      
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.SHEEP, 12, 4, 4));
 	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.PIG, 10, 4, 4));
