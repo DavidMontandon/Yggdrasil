@@ -111,9 +111,16 @@ public class Yggdrasil
     	    	
         instance = this ; 
         MinecraftForge.EVENT_BUS.register(this);
+        
+        this.modSetup() ;
+        
     }
     
 
+    public void modSetup() {
+        BiomeInit.setup();     	
+    }
+    
 	@SubscribeEvent
 	public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
 		final IForgeRegistry<Item> registry = event.getRegistry();

@@ -7,6 +7,7 @@ import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.vanilla.biomes.*;
+import com.deedllit.yggdrasil.world.gen.worldtype.WorldTypeVanillaMidgard;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
@@ -20,6 +21,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BiomeInit {
 
+	public static WorldTypeVanillaMidgard worldType;
 	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, Yggdrasil.MOD_ID) ; 	
 
 	
@@ -258,5 +260,9 @@ public class BiomeInit {
 		BiomeManager.addSpawnBiome(biome);
 	}
 
+	
+    public static void setup() {
+        worldType = new WorldTypeVanillaMidgard();
+    }
 
 }

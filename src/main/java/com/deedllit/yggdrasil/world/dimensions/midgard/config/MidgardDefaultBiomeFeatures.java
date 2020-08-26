@@ -21,6 +21,7 @@ import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
+import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
 import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
@@ -33,6 +34,7 @@ import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.PineFoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.SpruceFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
+import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.HeightWithChanceConfig;
 import net.minecraft.world.gen.placement.NoiseDependant;
@@ -79,6 +81,7 @@ public class MidgardDefaultBiomeFeatures {
     private static final BlockState PODZOL = Blocks.PODZOL.getDefaultState();
     private static final BlockState SPRUCE_LOG = Blocks.SPRUCE_LOG.getDefaultState() ; 
     private static final BlockState SPRUCE_LEAVES = Blocks.SPRUCE_LEAVES.getDefaultState() ; 
+    private static final BlockState WATER = Blocks.WATER.getDefaultState() ; 
 
     
     public static final SurfaceBuilderConfig TROPICAL_SURFACE_CONFIG = new SurfaceBuilderConfig(GRASS,SAND,STONE)  ;
@@ -135,6 +138,10 @@ public class MidgardDefaultBiomeFeatures {
     //public static final BlockClusterFeatureConfig JUNGLE_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(TALL_GRASS), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
 
 
+    public static void addMoreLakes(Biome biomeIn) {
+	    biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(WATER)).withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(1))));    	
+    }
+    
 	public static void addExtraPomelias(Biome biomeIn) {	
 		biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH
 				.withConfiguration(ORANGE_POMELIA_CONFIG)
