@@ -82,7 +82,7 @@ public class AsgardDefaultBiomeFeatures {
 
     
     public static void addMoreLakes(Biome biomeIn) {
-	    biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(WATER)).withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(2))));    	
+	    biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(WATER)).withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(1))));    	
     }
     
     public static void addPinkMangentaFlowers(Biome biomeIn) {    	

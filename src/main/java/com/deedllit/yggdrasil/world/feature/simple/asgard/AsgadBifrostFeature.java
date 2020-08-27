@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.feature;
+package com.deedllit.yggdrasil.world.feature.simple.asgard;
 
 import java.util.Random;
 import java.util.function.Function;
@@ -16,24 +16,95 @@ import net.minecraft.world.gen.GenerationSettings;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 
-public class AsgadWeelsFeature extends Feature<NoFeatureConfig> {
-	   private static final BlockStateMatcher IS_SAND = BlockStateMatcher.forBlock(Blocks.SAND);
-	   private final BlockState sandSlab = Blocks.POLISHED_ANDESITE_SLAB.getDefaultState();
-	   private final BlockState sandstone = Blocks.GOLD_BLOCK.getDefaultState();
-	   private final BlockState water = Blocks.WATER.getDefaultState();
+public class AsgadBifrostFeature extends Feature<NoFeatureConfig> {
+	   private static final BlockStateMatcher IS_GRASS = BlockStateMatcher.forBlock(Blocks.GRASS_BLOCK);
+	   
+	   private final BlockState base = Blocks.COBBLESTONE.getDefaultState();
+	   private final BlockState portal = Blocks.GOLD_BLOCK.getDefaultState();
 
-	   public AsgadWeelsFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49887_1_) {
+	   private final BlockState [] rainbow = {
+			   Blocks.RED_TERRACOTTA.getDefaultState(),
+			   Blocks.ORANGE_TERRACOTTA.getDefaultState(),
+			   Blocks.YELLOW_TERRACOTTA.getDefaultState(),
+			   Blocks.GREEN_TERRACOTTA.getDefaultState(),
+			   Blocks.BLUE_TERRACOTTA.getDefaultState(),
+			   Blocks.PURPLE_TERRACOTTA.getDefaultState(),
+			   Blocks.PINK_TERRACOTTA.getDefaultState()
+	   };
+
+	   public AsgadBifrostFeature(Function<Dynamic<?>, ? extends NoFeatureConfig> p_i49887_1_) {
 	      super(p_i49887_1_);
 	   }
 
+	   	   
 	   public boolean place(IWorld worldIn, ChunkGenerator<? extends GenerationSettings> generator, Random rand, BlockPos pos, NoFeatureConfig config) {
 	      for(pos = pos.up(); worldIn.isAirBlock(pos) && pos.getY() > 2; pos = pos.down()) {
 	         ;
 	      }
 
-	      if (!IS_SAND.test(worldIn.getBlockState(pos))) {
+	      if (!IS_GRASS.test(worldIn.getBlockState(pos))) {
 	         return false;
 	      } else {
+	    	  
+	    	  int dir = rand.nextInt(4) ; 	    	  
+	    	  
+	    	  for(int x = 0 ; x <= 6 ; x++) {
+		    	  for(int y = 0 ; y <= 6 ; y++) {
+	                  worldIn.setBlockState(pos.add(x , 1 , y), this.base, 2);
+		    	  }
+	    	  }
+	    	  
+	    	  //rainbow steps (0 to 13) + base 3 
+	    	  for(int x = 0 ; x <= 6 ; x++) {
+		    	  for(int y = 0 ; y <= 16 ; y++) {
+		    		  
+		    		  
+		    		  int l = Math.min(y/2, 6) ; 
+		    		  
+		    		  //south
+		    		  worldIn.setBlockState(pos.add(x , 2 + l , 6+y), this.rainbow[6-x], 2);		    			  
+		    		  
+		    		  /*
+		    		  switch(dir) {
+		    		  case 0:
+			    		  worldIn.setBlockState(pos.add(x , 2+y , 6), this.gold, 2);		    			  
+			    		  break ;
+		    		  case 1:
+			    		  worldIn.setBlockState(pos.add(6 , 2+y , x), this.gold, 2);		    			  
+			    		  break ;
+		    		  case 2:
+			    		  worldIn.setBlockState(pos.add(-x , 2+y , 6), this.gold, 2);		    			  
+			    		  break ;
+		    		  default:
+			    		  worldIn.setBlockState(pos.add(6 , 2+y , -x), this.gold, 2);		    			  
+			    		  break ;
+			    		  
+		    		  }
+		    		  */
+		    	  }
+	    	  }
+	    	  
+    		 //portal
+	    	  
+	    	  //y = 2+7
+	    	  //z = 14+6
+	    	  
+	    	  for(int x = 1 ; x <= 5 ; x++ ) {
+		    	  for(int y = 0 ; y <= 6 ; y++) {
+		    		  
+
+		    		  if(y == 0 || y == 6 || x == 1 || x == 5) 
+		    			  worldIn.setBlockState(pos.add(x , 9+y , 20), this.portal, 2);		    			  		    		  	
+		    			  
+		    		  
+		    		  
+		    		  
+		    	  }
+	    	  }
+		    		  
+	    	  
+	    	  
+	    	  /*
 	         for(int i = -2; i <= 2; ++i) {
 	            for(int j = -2; j <= 2; ++j) {
 	               if (worldIn.isAirBlock(pos.add(i, -1, j)) && worldIn.isAirBlock(pos.add(i, -2, j))) {
@@ -85,7 +156,8 @@ public class AsgadWeelsFeature extends Feature<NoFeatureConfig> {
 	            worldIn.setBlockState(pos.add(1, k1, -1), this.sandstone, 2);
 	            worldIn.setBlockState(pos.add(1, k1, 1), this.sandstone, 2);
 	         }
-
+			*/
+	    	  
 	         return true;
 	      }
 	   }

@@ -6,6 +6,7 @@ import com.deedllit.yggdrasil.world.dimensions.asgard.generator.AsgardBiomeProvi
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
@@ -31,7 +32,7 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 		super(world, type, 0.0f);
 		
 		for (int i = 0; i <= 15; ++i) {
-		    this.lightBrightnessTable[i] = i / 20.0F + 0.25F;
+			this.lightBrightnessTable[i] = i / 15F;
 		}
 	}
 	
@@ -92,32 +93,38 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 	      }
 	}
 
+
+	
 	@Override
 	public float calculateCelestialAngle(long worldTime, float partialTicks) {
 	      double d0 = MathHelper.frac((double)worldTime / 24000.0D - 0.25D);
 	      double d1 = 0.5D - Math.cos(d0 * Math.PI) / 2.0D;
 	      return (float)(d0 * 2.0D + d1) / 3.0F;
 	}
+	
 
 	@Override
-	public boolean isSurfaceWorld() {
-		return false;
-	}
-
 	@OnlyIn(Dist.CLIENT)
 	public float getCloudHeight() {
-		return 8.0F;
+		return 14.0F;
 	}
 
 	@Override
-	public boolean isNether() {
-		return false;
+	public SleepResult canSleepAt(PlayerEntity player, BlockPos pos) {
+		return SleepResult.ALLOW ; 
 	}
-	
+
 	public boolean canRespawnHere() {
 		return true;
 	}
     
+	
+	
+	@Override
+	public Vec3d getFogColor(float celestialAngle, float partialTicks) {
+		return new Vec3d(0.0D, 0.8D, 0.9D);
+	}
+	/*
 	public Vec3d getFogColor(float celestialAngle, float partialTicks) {
 		float f = MathHelper.cos(celestialAngle * ((float)Math.PI * 2F)) * 2.0F + 0.5F;
 	       f = MathHelper.clamp(f, 0.0F, 1.0F);
@@ -129,7 +136,8 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 	       f3 = f3 * (f * 0.91F + 0.09F);
 	       return new Vec3d((double)f1, (double)f2, (double)f3);
 	}
- 
+	 */
+	
 	public BlockPos getSpawnCoordinate() {
 		return SPAWN;
 	}

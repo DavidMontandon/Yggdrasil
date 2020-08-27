@@ -1,11 +1,16 @@
 package com.deedllit.yggdrasil.world.dimensions.asgard.biomes;
 
+import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.world.dimensions.asgard.config.AsgardDefaultBiomeFeatures;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraft.world.gen.placement.ChanceConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class AsgardPlainsBiome extends Biome {
@@ -21,7 +26,7 @@ public class AsgardPlainsBiome extends Biome {
 	    		  .waterColor(4159204)
 	    		  .waterFogColor(329011)
 	    		  .parent((String)null));
-	      	      	      
+	      	      	       
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);
 	      DefaultBiomeFeatures.addLakes(this);
@@ -32,6 +37,9 @@ public class AsgardPlainsBiome extends Biome {
 	      AsgardDefaultBiomeFeatures.addOres(this);
 	      DefaultBiomeFeatures.addOakTreesFlowersGrass(this);
 	      	      
+	      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, FeatureInit.ASGARD_BIFORST.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.CHANCE_HEIGHTMAP.configure(new ChanceConfig(1))));
+
+	      
 	      DefaultBiomeFeatures.addMushrooms(this);
 	      DefaultBiomeFeatures.addReedsAndPumpkins(this);
 	      DefaultBiomeFeatures.addSprings(this);

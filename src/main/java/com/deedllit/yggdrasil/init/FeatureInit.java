@@ -3,7 +3,7 @@ package com.deedllit.yggdrasil.init;
 import java.util.Locale;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.world.feature.AsgadWeelsFeature;
+import com.deedllit.yggdrasil.world.feature.simple.asgard.*;
 import com.deedllit.yggdrasil.world.feature.structure.*;
 import com.deedllit.yggdrasil.world.feature.structure.midgard.*;
 
@@ -23,7 +23,10 @@ public class FeatureInit {
 	public static Structure<NoFeatureConfig> MANGROVE_WITCH = new MangroveWitchHutStructure(NoFeatureConfig::deserialize);
 	public static IStructurePieceType MANGROVE_WITCH_PIECES = MangroveWitchHutPieces.Piece::new;
 
-	public static Feature<NoFeatureConfig> ASGARD_WELL = new AsgadWeelsFeature(NoFeatureConfig::deserialize) ; 
+	public static Feature<NoFeatureConfig> ASGARD_GOLD_WELL = new AsgadGoldWeelsFeature(NoFeatureConfig::deserialize) ; 
+	public static Feature<NoFeatureConfig> ASGARD_BIFORST = new AsgadBifrostFeature(NoFeatureConfig::deserialize) ; 
+	
+	
 	
 	public static void registerFeatures(Register<Feature<?>> event) {
 		IForgeRegistry<Feature<?>> registry = event.getRegistry();

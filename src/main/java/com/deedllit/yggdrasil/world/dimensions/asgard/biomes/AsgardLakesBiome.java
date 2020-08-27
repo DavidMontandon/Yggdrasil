@@ -24,8 +24,6 @@ public class AsgardLakesBiome extends Biome {
 	      
 	      DefaultBiomeFeatures.addCarvers(this);
 	      DefaultBiomeFeatures.addStructures(this);
-
-	      DefaultBiomeFeatures.addLakes(this);
 	      
 	      AsgardDefaultBiomeFeatures.addMoreLakes(this) ; 
 	      
