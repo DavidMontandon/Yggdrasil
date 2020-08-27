@@ -1,5 +1,7 @@
 package com.deedllit.yggdrasil.init;
 
+import java.util.Set;
+
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.dimensions.asgard.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.midgard.biomes.*;
@@ -7,7 +9,8 @@ import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.biomes.*;
 import com.deedllit.yggdrasil.world.dimensions.vanilla.biomes.*;
-import com.deedllit.yggdrasil.world.gen.worldtype.WorldTypeVanillaMidgard;
+import com.deedllit.yggdrasil.world.gen.worldtype.WorldTypeMidgard;
+import com.google.common.collect.Sets;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
@@ -21,9 +24,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BiomeInit {
 
-	public static WorldTypeVanillaMidgard worldType;
+	public static WorldTypeMidgard worldType;
 	public static final DeferredRegister<Biome> BIOMES = new DeferredRegister<>(ForgeRegistries.BIOMES, Yggdrasil.MOD_ID) ; 	
-
+	public static Set<Biome> setMidgard = Sets.newHashSet();
 	
 	//https://www.mathsisfun.com/hexadecimal-decimal-colors.html
 	
@@ -132,12 +135,12 @@ public class BiomeInit {
 			.register("midgard_thousand_lakes",
 					() -> new MidgardThousandLakesBiome());	
 
-	public static final RegistryObject<Biome> MIGARD_TROPICAL_ISLAND = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_TROPICAL_ISLAND = BIOMES
 			.register("midgard_tropical_island",
 					() -> new MidgardTropicalIslandBiome());	
 
 	
-	public static final RegistryObject<Biome> MIGARD_VOLCANIC_ISLAND = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_VOLCANIC_ISLAND = BIOMES
 			.register("midgard_volcanic_island",
 					() -> new MidgardVolcanicIslandBiome());	
 	
@@ -233,10 +236,30 @@ public class BiomeInit {
 	}
 	
 	
+	
+	private static void registerMidgardBiomes() {
+		setMidgard.add(SUNFLOWER_PLAINS_BIOME.get()) ; 
+		setMidgard.add(BADLANDS_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_MANGROVE_DRYER.get()) ; 
+		setMidgard.add(MIDGARD_CHARPARRAL_TROPICAL.get()) ; 
+		setMidgard.add(MIDGARD_ALPINE_TUNDRA.get()) ; 
+		setMidgard.add(MIDGARD_TROPICAL_BEACH.get()) ; 
+		setMidgard.add(MIDGARD_RAINBOW_MOUTAIN.get()) ; 
+		setMidgard.add(MIDGARD_TEAK_FOREST.get()) ; 
+		setMidgard.add(MIDGARD_THOUSAND_LAKES.get()) ; 
+		setMidgard.add(MIDGARD_TROPICAL_ISLAND.get()) ; 
+		setMidgard.add(MIDGARD_VOLCANIC_ISLAND.get()) ; 
+	}
+	
+	
 	/*
 	 * REGISTER IN OVERWORLD
 	 */
 	public static void registerBiomes() {
+		
+		registerMidgardBiomes() ;
+		
+		/*
 		registerBiome(1000, IRON_WOOD_BIOME.get(), Type.FOREST, Type.OVERWORLD);		
 		registerBiome(1000, MIDGARD_MANGROVE.get(), Type.SWAMP, Type.WET, Type.OVERWORLD);		
 		registerBiome(1000, MIDGARD_CHARPARRAL_TROPICAL.get(), Type.SWAMP, Type.OVERWORLD);		
@@ -246,10 +269,11 @@ public class BiomeInit {
 		registerBiome(1000, MIDGARD_RAINBOW_MOUTAIN.get(), Type.SANDY, Type.MESA, Type.HILLS, Type.OVERWORLD) ; 
 		registerBiome(1000, MIDGARD_TEAK_FOREST.get(), Type.FOREST, Type.HOT, Type.OVERWORLD) ; 
 		registerBiome(1000, MIDGARD_THOUSAND_LAKES.get(), Type.PLAINS, Type.WATER, Type.OVERWORLD) ; 
-		registerBiome(1000, MIGARD_TROPICAL_ISLAND.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 
-		registerBiome(1000, MIGARD_VOLCANIC_ISLAND.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 			
+		registerBiome(1000, MIDGARD_TROPICAL_ISLAND.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 
+		registerBiome(1000, MIDGARD_VOLCANIC_ISLAND.get(), Type.MOUNTAIN, Type.OVERWORLD) ; 			
 		registerBiome(10000, SUNFLOWER_PLAINS_BIOME.get(), Type.PLAINS, Type.OVERWORLD) ; 			
 		registerBiome(10000, BADLANDS_BIOME.get(), Type.MESA, Type.OVERWORLD) ; 			
+		*/
 	}
 
 	
@@ -262,7 +286,7 @@ public class BiomeInit {
 
 	
     public static void setup() {
-        worldType = new WorldTypeVanillaMidgard();
+        worldType = new WorldTypeMidgard();
     }
 
 }

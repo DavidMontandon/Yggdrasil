@@ -1,8 +1,8 @@
 package com.deedllit.yggdrasil.world.gen.worldtype;
 
-import com.deedllit.yggdrasil.world.dimensions.vanilla.config.ChunkGeneratorOverworldVanillaMidgard;
-import com.deedllit.yggdrasil.world.dimensions.vanilla.config.VanillaMidgardBiomeProvider;
-import com.deedllit.yggdrasil.world.dimensions.vanilla.config.VanillaMidgardWorldGenSettings;
+import com.deedllit.yggdrasil.world.dimensions.midgard.config.ChunkGeneratorOverworldVanillaMidgard;
+import com.deedllit.yggdrasil.world.dimensions.midgard.config.VanillaMidgardBiomeProvider;
+import com.deedllit.yggdrasil.world.dimensions.midgard.config.VanillaMidgardWorldGenSettings;
 
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
@@ -10,10 +10,10 @@ import net.minecraft.world.biome.provider.OverworldBiomeProviderSettings;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 
-public class WorldTypeVanillaMidgard extends WorldType {
+public class WorldTypeMidgard extends WorldType {
 
-	public WorldTypeVanillaMidgard() {
-		super("vanilla_midgard");
+	public WorldTypeMidgard() {
+		super("midgard");
 	}
 	
 	@Override

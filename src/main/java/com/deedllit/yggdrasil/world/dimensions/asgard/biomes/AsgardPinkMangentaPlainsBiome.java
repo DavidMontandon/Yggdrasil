@@ -1,5 +1,6 @@
 package com.deedllit.yggdrasil.world.dimensions.asgard.biomes;
 
+import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.world.dimensions.asgard.config.AsgardDefaultBiomeFeatures;
 
 import net.minecraft.entity.EntityClassification;

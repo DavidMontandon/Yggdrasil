@@ -1,11 +1,16 @@
 package com.deedllit.yggdrasil.world.dimensions.asgard.biomes;
 
+import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.world.dimensions.asgard.config.AsgardDefaultBiomeFeatures;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.gen.GenerationStage;
+import net.minecraft.world.gen.feature.IFeatureConfig;
+import net.minecraft.world.gen.placement.ChanceConfig;
+import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class AsgardDesertBiome extends Biome  {
@@ -36,10 +41,9 @@ public class AsgardDesertBiome extends Biome  {
 	      DefaultBiomeFeatures.addDeadBushes(this);
 	      DefaultBiomeFeatures.addExtraReedsPumpkinsCactus(this);
 	      DefaultBiomeFeatures.addSprings(this);
-	      DefaultBiomeFeatures.addDesertFeatures(this);
+	      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, FeatureInit.ASGARD_WELL.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.CHANCE_HEIGHTMAP.configure(new ChanceConfig(5))));
 	      DefaultBiomeFeatures.addFreezeTopLayer(this);
 	      
-	      this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(EntityType.RABBIT, 4, 2, 3));
 	      this.addSpawn(EntityClassification.AMBIENT, new Biome.SpawnListEntry(EntityType.BAT, 10, 8, 8));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SPIDER, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SKELETON, 100, 4, 4));

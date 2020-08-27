@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.dimensions.vanilla.config;
+package com.deedllit.yggdrasil.world.dimensions.midgard.config;
 
 import net.minecraft.world.IWorld;
 import net.minecraft.world.biome.provider.BiomeProvider;
