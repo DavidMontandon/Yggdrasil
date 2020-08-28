@@ -1,7 +1,7 @@
 package com.deedllit.yggdrasil.world.dimensions.asgard.config;
 
 import com.deedllit.yggdrasil.init.BlockInit;
-import com.deedllit.yggdrasil.world.feature.flower.AsgardFlowerBlockStateProvider;
+import com.deedllit.yggdrasil.world.feature.asgard.flowers.AsgardFlowerBlockStateProvider;
 import com.google.common.collect.ImmutableList;
 
 import net.minecraft.block.BlockState;

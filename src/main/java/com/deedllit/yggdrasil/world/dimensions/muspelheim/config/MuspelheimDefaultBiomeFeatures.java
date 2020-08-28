@@ -6,7 +6,7 @@ import com.deedllit.yggdrasil.init.FluidInit;
 import com.deedllit.yggdrasil.init.StructureInit;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.generator.MuspelheimVolcanoSurfaceBuilder;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.generator.MuspelheimVolcanoTopLayerSurfaceBuilder;
-import com.deedllit.yggdrasil.world.feature.tree.EpluphiferTree;
+import com.deedllit.yggdrasil.world.feature.muspelheim.trees.EpluphiferTree;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;

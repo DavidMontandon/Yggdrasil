@@ -1,10 +1,8 @@
-package com.deedllit.yggdrasil.world.feature.structure;
+package com.deedllit.yggdrasil.world.feature.midgard.structures;
 
 import com.deedllit.mythologycraft.config.MCConfig;
 import com.deedllit.mythologycraft.features.MCAbstractStructure;
 import com.deedllit.mythologycraft.features.StructureUtils;
-import com.deedllit.yggdrasil.world.feature.structure.piece.YggdrasilTreePieces;
-
 import com.mojang.datafixers.Dynamic;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;

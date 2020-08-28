@@ -1,6 +1,6 @@
 package com.deedllit.yggdrasil.init;
 
-import com.deedllit.yggdrasil.world.feature.tree.YggdrasilBasicTree;
+import com.deedllit.yggdrasil.world.feature.midgard.trees.YggdrasilBasicTree;
 
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;

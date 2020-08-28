@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.feature.structure.piece;
+package com.deedllit.yggdrasil.world.feature.midgard.structures;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.StructurePiecesInit;

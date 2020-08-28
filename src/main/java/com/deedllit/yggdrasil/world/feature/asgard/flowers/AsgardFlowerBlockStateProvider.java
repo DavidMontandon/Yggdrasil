@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.feature.flower;
+package com.deedllit.yggdrasil.world.feature.asgard.flowers;
 
 import java.util.Random;
 

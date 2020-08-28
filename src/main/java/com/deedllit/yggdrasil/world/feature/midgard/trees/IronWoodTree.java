@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.feature.tree;
+package com.deedllit.yggdrasil.world.feature.midgard.trees;
 
 import java.util.Random;
 

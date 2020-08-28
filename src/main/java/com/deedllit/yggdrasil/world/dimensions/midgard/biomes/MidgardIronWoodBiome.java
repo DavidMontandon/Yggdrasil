@@ -93,8 +93,12 @@ public class MidgardIronWoodBiome extends Biome {
 	      
 	      
 	      DefaultBiomeFeatures.addDoubleFlowers(this);
+	      
+	      this.addFeature(GenerationStage.Decoration.RAW_GENERATION, FeatureInit.MIDGARD_SMALL_ISLAND.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.END_ISLAND.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
+	      
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      
+	      	      
 	      this.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BlockInit.RUNE_ORE.get().getDefaultState(), 9)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(2, 0, 0, 36))));		
 	      
 	      DefaultBiomeFeatures.addOres(this);

@@ -7,8 +7,9 @@ import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
-import com.deedllit.yggdrasil.objects.bushes.muspelheim.* ; 
-import com.deedllit.yggdrasil.world.feature.tree.*;
+import com.deedllit.yggdrasil.objects.bushes.muspelheim.* ;
+import com.deedllit.yggdrasil.world.feature.midgard.trees.*;
+import com.deedllit.yggdrasil.world.feature.muspelheim.trees.*;
 
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.Block;

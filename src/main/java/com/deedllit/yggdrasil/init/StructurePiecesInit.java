@@ -1,8 +1,8 @@
 package com.deedllit.yggdrasil.init;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.world.feature.structure.YggdrasilTreeStructure;
-import com.deedllit.yggdrasil.world.feature.structure.piece.YggdrasilTreePieces;
+import com.deedllit.yggdrasil.world.feature.midgard.structures.YggdrasilTreePieces;
+import com.deedllit.yggdrasil.world.feature.midgard.structures.YggdrasilTreeStructure;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;

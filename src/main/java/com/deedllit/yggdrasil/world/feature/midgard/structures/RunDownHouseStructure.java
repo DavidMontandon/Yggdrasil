@@ -1,16 +1,13 @@
-package com.deedllit.yggdrasil.world.feature.structure.midgard;
+package com.deedllit.yggdrasil.world.feature.midgard.structures;
 
-import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
 
 import org.apache.logging.log4j.Level;
 
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.google.common.collect.Lists;
 import com.mojang.datafixers.Dynamic;
 
-import net.minecraft.entity.EntityType;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.math.BlockPos;
@@ -26,14 +23,9 @@ import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 
-public class MangroveWitchHutStructure extends Structure<NoFeatureConfig>
+public class RunDownHouseStructure extends Structure<NoFeatureConfig>
 {
-	
-	private static final List<Biome.SpawnListEntry> SPAWN_LIST = Lists.newArrayList(new Biome.SpawnListEntry(EntityType.WITCH, 1, 1, 1));
-	private static final List<Biome.SpawnListEntry> CREATURE_SPAWN_LIST = Lists.newArrayList(new Biome.SpawnListEntry(EntityType.CAT, 1, 1, 1));
-
-	
-	public MangroveWitchHutStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> config) {
+	public RunDownHouseStructure(Function<Dynamic<?>, ? extends NoFeatureConfig> config) {
 		super(config);
 	}
 
@@ -62,7 +54,7 @@ public class MangroveWitchHutStructure extends Structure<NoFeatureConfig>
 
 	@Override
 	public String getStructureName() {
-		return Yggdrasil.MOD_ID + ":mangrove_witch_hut";
+		return Yggdrasil.MOD_ID + ":run_down_house";
 	}
 
 
@@ -74,7 +66,7 @@ public class MangroveWitchHutStructure extends Structure<NoFeatureConfig>
 
 	@Override
 	public Structure.IStartFactory getStartFactory() {
-		return MangroveWitchHutStructure.Start::new;
+		return RunDownHouseStructure.Start::new;
 	}
 
 	protected int getSeedModifier() {
@@ -82,14 +74,6 @@ public class MangroveWitchHutStructure extends Structure<NoFeatureConfig>
 	}
 	
 
-	public List<Biome.SpawnListEntry> getSpawnList() {
-		return SPAWN_LIST;
-	}
-		   
-	public List<Biome.SpawnListEntry> getCreatureSpawnList() {
-		return CREATURE_SPAWN_LIST;
-	}   
-	
 	@Override
 	public boolean canBeGenerated(BiomeManager p_225558_1_, ChunkGenerator<?> chunkGen, Random rand, int chunkPosX, int chunkPosZ, Biome biome) {
 		ChunkPos chunkpos = this.getStartPositionForPosition(chunkGen, rand, chunkPosX, chunkPosZ, 0, 0);
@@ -119,7 +103,7 @@ public class MangroveWitchHutStructure extends Structure<NoFeatureConfig>
 			int surfaceY = generator.getNoiseHeight(x, z, Heightmap.Type.WORLD_SURFACE_WG);
 			BlockPos blockpos = new BlockPos(x, surfaceY, z);
 
-			MangroveWitchHutPieces.start(templateManagerIn, blockpos, rotation, this.components, this.rand);
+			RunDownHousePieces.start(templateManagerIn, blockpos, rotation, this.components, this.rand);
 
 			this.recalculateStructureSize();
 

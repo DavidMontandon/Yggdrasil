@@ -1,4 +1,4 @@
-package com.deedllit.yggdrasil.world.feature.structure;
+package com.deedllit.yggdrasil.world.feature.midgard.structures;
 
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.FeatureInit;
@@ -27,11 +27,10 @@ import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.Template;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
-public class RunDownHousePieces {
+public class MangroveWitchHutPieces {
 
-	private static final ResourceLocation LEFT_SIDE = new ResourceLocation(Yggdrasil.MOD_ID + ":run_down_house_left_side");
-	private static final ResourceLocation RIGHT_SIDE = new ResourceLocation(Yggdrasil.MOD_ID + ":run_down_house_right_side");
-	private static final Map<ResourceLocation, BlockPos> OFFSET = ImmutableMap.of(LEFT_SIDE, new BlockPos(0, 1, 0), RIGHT_SIDE, new BlockPos(0, 1, 0));
+	private static final ResourceLocation HUT = new ResourceLocation(Yggdrasil.MOD_ID + ":mangrove_witch_hut");
+	private static final Map<ResourceLocation, BlockPos> OFFSET = ImmutableMap.of(HUT, new BlockPos(0, 1, 0));
 	
 	public static void start(TemplateManager templateManager, BlockPos pos, Rotation rotation, List<StructurePiece> pieceList, Random random) {
 		int x = pos.getX();
@@ -39,11 +38,7 @@ public class RunDownHousePieces {
 	
 		BlockPos rotationOffSet = new BlockPos(0, 0, 0).rotate(rotation);
 		BlockPos blockpos = rotationOffSet.add(x, pos.getY(), z);
-		pieceList.add(new RunDownHousePieces.Piece(templateManager, LEFT_SIDE, blockpos, rotation));
-
-		rotationOffSet = new BlockPos(-10, 0, 0).rotate(rotation);
-		blockpos = rotationOffSet.add(x, pos.getY(), z);
-		pieceList.add(new RunDownHousePieces.Piece(templateManager, RIGHT_SIDE, blockpos, rotation));
+		pieceList.add(new MangroveWitchHutPieces.Piece(templateManager, HUT, blockpos, rotation));
 	}
 	
 	public static class Piece extends TemplateStructurePiece
@@ -53,9 +48,9 @@ public class RunDownHousePieces {
 
 
 		public Piece(TemplateManager templateManagerIn, ResourceLocation resourceLocationIn, BlockPos pos, Rotation rotationIn) {
-			super(FeatureInit.RDHP, 0);
+			super(FeatureInit.MANGROVE_WITCH_PIECES, 0);
 			this.resourceLocation = resourceLocationIn;
-			BlockPos blockpos = RunDownHousePieces.OFFSET.get(resourceLocation);
+			BlockPos blockpos = MangroveWitchHutPieces.OFFSET.get(resourceLocation);
 			this.templatePosition = pos.add(blockpos.getX(), blockpos.getY(), blockpos.getZ());
 			this.rotation = rotationIn;
 			this.setupPiece(templateManagerIn);
@@ -63,7 +58,7 @@ public class RunDownHousePieces {
 
 
 		public Piece(TemplateManager templateManagerIn, CompoundNBT tagCompound) {
-			super(FeatureInit.RDHP, tagCompound);
+			super(FeatureInit.MANGROVE_WITCH_PIECES, tagCompound);
 			this.resourceLocation = new ResourceLocation(tagCompound.getString("Template"));
 			this.rotation = Rotation.valueOf(tagCompound.getString("Rot"));
 			this.setupPiece(templateManagerIn);
@@ -103,7 +98,7 @@ public class RunDownHousePieces {
 		@Override
 		public boolean create(IWorld worldIn, ChunkGenerator<?> p_225577_2_, Random randomIn, MutableBoundingBox structureBoundingBoxIn, ChunkPos chunkPos) {
 			PlacementSettings placementsettings = (new PlacementSettings()).setRotation(this.rotation).setMirror(Mirror.NONE);
-			BlockPos blockpos = RunDownHousePieces.OFFSET.get(this.resourceLocation);
+			BlockPos blockpos = MangroveWitchHutPieces.OFFSET.get(this.resourceLocation);
 			this.templatePosition.add(Template.transformedBlockPos(placementsettings, new BlockPos(0 - blockpos.getX(), 0, 0 - blockpos.getZ())));
 
 			return super.create(worldIn, p_225577_2_, randomIn, structureBoundingBoxIn, chunkPos);
