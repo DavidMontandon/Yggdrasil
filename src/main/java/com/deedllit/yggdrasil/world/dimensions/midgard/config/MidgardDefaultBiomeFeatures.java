@@ -3,6 +3,8 @@ package com.deedllit.yggdrasil.world.dimensions.midgard.config;
 import java.util.OptionalInt;
 
 import com.deedllit.yggdrasil.init.BlockInit;
+import com.deedllit.yggdrasil.world.feature.asgard.flowers.AsgardFlowerBlockStateProvider;
+import com.deedllit.yggdrasil.world.feature.midgard.flowers.MidgardRainbowFlowerBlockStateProvider;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
@@ -85,6 +87,7 @@ public class MidgardDefaultBiomeFeatures {
 
     
     public static final SurfaceBuilderConfig TROPICAL_SURFACE_CONFIG = new SurfaceBuilderConfig(GRASS,SAND,STONE)  ;
+    public static final BlockClusterFeatureConfig RAINBOW_FLOWER_CONFIG = (new BlockClusterFeatureConfig.Builder(new MidgardRainbowFlowerBlockStateProvider(), new SimpleBlockPlacer())).tries(64).build();
     
     //public static final BaseTreeFeatureConfig BANYAN_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(OAK_LOG), new SimpleBlockStateProvider(OAK_LEAVES), new BlobFoliagePlacer(8, 0, 4, 0, 5), new StraightTrunkPlacer(4, 8, 3), new TwoLayerFeature(1, 1, 2))).func_236701_a_(1).func_236703_a_(ImmutableList.of(LeaveVineTreeDecorator.field_236871_b_)).build();
 
@@ -138,6 +141,10 @@ public class MidgardDefaultBiomeFeatures {
     //public static final BlockClusterFeatureConfig JUNGLE_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(TALL_GRASS), new DoublePlantBlockPlacer())).tries(64).func_227317_b_().build();
 
 
+    public static void addRainbowFlowers(Biome biomeIn) {    	
+        biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.FLOWER.withConfiguration(RAINBOW_FLOWER_CONFIG).withPlacement(Placement.NOISE_HEIGHTMAP_32.configure(new NoiseDependant(-0.8D, 15, 4))));
+    }
+    
     public static void addMoreLakes(Biome biomeIn) {
 	    biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(WATER)).withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(1))));    	
     }

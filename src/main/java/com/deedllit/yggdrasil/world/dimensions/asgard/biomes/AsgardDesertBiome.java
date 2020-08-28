@@ -42,7 +42,7 @@ public class AsgardDesertBiome extends Biome  {
 	      DefaultBiomeFeatures.addExtraReedsPumpkinsCactus(this);
 	      DefaultBiomeFeatures.addSprings(this);
 	      
-	      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, FeatureInit.ASGARD_GOLD_WELL.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.CHANCE_HEIGHTMAP.configure(new ChanceConfig(100))));
+	      this.addFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, FeatureInit.ASGARD_GOLD_WELL.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.CHANCE_HEIGHTMAP.configure(new ChanceConfig(80))));
 
 	      DefaultBiomeFeatures.addFreezeTopLayer(this);
 	      

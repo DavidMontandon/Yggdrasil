@@ -43,6 +43,10 @@ public class BiomeInit {
 	.register("vanilla_badlands_biome",
 			() -> new VanillaBadlandsBiome());
 	
+	public static final RegistryObject<Biome> PLAINS_BIOME = BIOMES
+	.register("vanilla_plains_biome",
+			() -> new VanillaPlainsBiome());
+	
 	
 	/*
 	 * ASGARD
@@ -98,11 +102,15 @@ public class BiomeInit {
  * MIDGARD
  */
 
-	public static final RegistryObject<Biome> IRON_WOOD_BIOME = BIOMES
-			.register("iron_wood",
+	public static final RegistryObject<Biome> MIDGARD_RAINBOW_PLAINS_BIOME = BIOMES
+			.register("midgard_rainbow_plains",
+					() -> new MidgardRainbowPlainsBiome());
+
+	public static final RegistryObject<Biome> MIDGARD_IRON_WOOD_BIOME = BIOMES
+			.register("midgard_iron_wood",
 					() -> new MidgardIronWoodBiome());
 
-	public static final RegistryObject<Biome> MIDGARD_MANGROVE = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE_BIOME = BIOMES
 			.register("midgard_mangrove",
 					() -> new MidgardMangroveBiome());
 	
@@ -113,40 +121,40 @@ public class BiomeInit {
 	
 	
 	*/
-	public static final RegistryObject<Biome> MIDGARD_MANGROVE_DRYER = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE_DRYER_BIOME = BIOMES
 			.register("midgard_mangrove_dryer",
 					() -> new MidgardMangroveDryerBiome());	
 
-	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_TROPICAL = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_TROPICAL_BIOME = BIOMES
 			.register("midgard_charparral_tropical",
 					() -> new MidgardChaparralTropicalBiome());	
 	
-	public static final RegistryObject<Biome> MIDGARD_ALPINE_TUNDRA = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_ALPINE_TUNDRA_BIOME = BIOMES
 			.register("midgard_alpine_tundra",
 					() -> new MidgardAlpineTundraBiome());	
 	
-	public static final RegistryObject<Biome> MIDGARD_TROPICAL_BEACH = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_TROPICAL_BEACH_BIOME = BIOMES
 			.register("midgard_tropical_beach",
 					() -> new MidgardTropicalBeachBiome());	
 
-	public static final RegistryObject<Biome> MIDGARD_RAINBOW_MOUTAIN = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_RAINBOW_MOUTAIN_BIOME = BIOMES
 			.register("midgard_rainbow_moutain",
 					() -> new MidgardRainbowMoutainBiome());	
 
-	public static final RegistryObject<Biome> MIDGARD_TEAK_FOREST = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_TEAK_FOREST_BIOME = BIOMES
 			.register("midgard_teak_forest",
 					() -> new MidgardTeakForestBiome());	
 	
-	public static final RegistryObject<Biome> MIDGARD_THOUSAND_LAKES = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_THOUSAND_LAKES_BIOME = BIOMES
 			.register("midgard_thousand_lakes",
 					() -> new MidgardThousandLakesBiome());	
 
-	public static final RegistryObject<Biome> MIDGARD_TROPICAL_ISLAND = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_TROPICAL_ISLAND_BIOME = BIOMES
 			.register("midgard_tropical_island",
 					() -> new MidgardTropicalIslandBiome());	
 
 	
-	public static final RegistryObject<Biome> MIDGARD_VOLCANIC_ISLAND = BIOMES
+	public static final RegistryObject<Biome> MIDGARD_VOLCANIC_ISLAND_BIOME = BIOMES
 			.register("midgard_volcanic_island",
 					() -> new MidgardVolcanicIslandBiome());	
 	
@@ -246,15 +254,18 @@ public class BiomeInit {
 	private static void registerMidgardBiomes() {
 		setMidgard.add(SUNFLOWER_PLAINS_BIOME.get()) ; 
 		setMidgard.add(BADLANDS_BIOME.get()) ; 
-		setMidgard.add(MIDGARD_MANGROVE_DRYER.get()) ; 
-		setMidgard.add(MIDGARD_CHARPARRAL_TROPICAL.get()) ; 
-		setMidgard.add(MIDGARD_ALPINE_TUNDRA.get()) ; 
-		setMidgard.add(MIDGARD_TROPICAL_BEACH.get()) ; 
-		setMidgard.add(MIDGARD_RAINBOW_MOUTAIN.get()) ; 
-		setMidgard.add(MIDGARD_TEAK_FOREST.get()) ; 
-		setMidgard.add(MIDGARD_THOUSAND_LAKES.get()) ; 
-		setMidgard.add(MIDGARD_TROPICAL_ISLAND.get()) ; 
-		setMidgard.add(MIDGARD_VOLCANIC_ISLAND.get()) ; 
+		setMidgard.add(PLAINS_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_RAINBOW_PLAINS_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_IRON_WOOD_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_MANGROVE_DRYER_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_CHARPARRAL_TROPICAL_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_ALPINE_TUNDRA_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_TROPICAL_BEACH_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_RAINBOW_MOUTAIN_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_TEAK_FOREST_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_THOUSAND_LAKES_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_TROPICAL_ISLAND_BIOME.get()) ; 
+		setMidgard.add(MIDGARD_VOLCANIC_ISLAND_BIOME.get()) ; 
 	}
 	
 	

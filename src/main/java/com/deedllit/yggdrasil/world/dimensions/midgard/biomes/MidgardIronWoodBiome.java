@@ -22,6 +22,7 @@ import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
+import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
@@ -93,8 +94,6 @@ public class MidgardIronWoodBiome extends Biome {
 	      
 	      
 	      DefaultBiomeFeatures.addDoubleFlowers(this);
-	      
-	      this.addFeature(GenerationStage.Decoration.RAW_GENERATION, FeatureInit.MIDGARD_SMALL_ISLAND.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.END_ISLAND.configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
 	      
 	      DefaultBiomeFeatures.addStoneVariants(this);
 	      

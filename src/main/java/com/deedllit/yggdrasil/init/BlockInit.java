@@ -6,6 +6,7 @@ import com.deedllit.yggdrasil.common.block.midgard.*;
 import com.deedllit.yggdrasil.common.block.muspelheim.*;
 import com.deedllit.yggdrasil.init.objects.blocks.*;
 import com.deedllit.yggdrasil.objects.blocks.PedestalItemBlock;
+import com.deedllit.yggdrasil.objects.blocks.YggdrasilPortalBlock;
 import com.deedllit.yggdrasil.objects.blocks.muspelheim.*;
 import com.deedllit.yggdrasil.objects.bushes.muspelheim.* ;
 import com.deedllit.yggdrasil.world.feature.midgard.trees.*;
@@ -19,6 +20,7 @@ import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.LogBlock;
+import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SoundType;
@@ -42,6 +44,19 @@ public class BlockInit {
 	/* GLOBAL
 	 * 
 	 */
+	
+	/*
+	public static final RegistryObject<Block> YGGDRASIL_PORTAL_BLOCK = BLOCKS.register("yggdrasil_portal",
+			() -> new YggdrasilPortalBlock(Block.Properties
+					.create(Material.PORTAL)
+					.doesNotBlockMovement()
+					.tickRandomly()
+					.hardnessAndResistance(-1.0F)
+					.sound(SoundType.GLASS)
+					.lightValue(11)
+					.noDrops()));
+	*/
+	
 	public static final RegistryObject<Block> VANAFREINTINE_BLOCK = BLOCKS.register("vanafreintine_block",
 			() -> new Block(Block.Properties.from(Blocks.GOLD_BLOCK)));
 	
