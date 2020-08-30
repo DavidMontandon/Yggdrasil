@@ -57,6 +57,12 @@ public class BlockInit {
 					.noDrops()));
 	*/
 	
+	
+
+	
+	
+	
+	
 	public static final RegistryObject<Block> VANAFREINTINE_BLOCK = BLOCKS.register("vanafreintine_block",
 			() -> new Block(Block.Properties.from(Blocks.GOLD_BLOCK)));
 	
@@ -127,6 +133,30 @@ public class BlockInit {
 	 * MIDGARD
 	 */
 
+	//GREEN QUARTZ
+
+	
+	public static final RegistryObject<Block> GREEN_QUARTZ_BLOCK = BLOCKS.register("green_quartz_block",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> CHISELED_GREEN_QUARTZ_BLOCK = BLOCKS.register("chiseled_green_quartz_block",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> GREEN_QUARTZ_PILLAR = BLOCKS.register("green_quartz_pillar",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> GREEN_QUARTZ_STAIRS = BLOCKS.register("green_quartz_stairs",
+			() -> new StairsBlock(() -> BlockInit.GREEN_QUARTZ_BLOCK.get().getDefaultState(),
+					Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ)));
+	
+	public static final RegistryObject<Block> SMOOTH_GREEN_QUARTZ = BLOCKS.register("smooth_green_quartz",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> SMOOTH_GREEN_QUARTZ_STAIRS = BLOCKS.register("smooth_green_quartz_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_GREEN_QUARTZ.get().getDefaultState(),
+					Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ)));
+	
+	
 	//ELM TREE
 	
 	public static final RegistryObject<Block> ELM_LOG = BLOCKS.register("elm_log",

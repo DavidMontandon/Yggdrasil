@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "yggdrasil:block/smooth_green_quartz_slab" },
+        "type=top": { "model": "yggdrasil:block/smooth_green_quartz_slab_top" },
+        "type=double": { "model": "yggdrasil:block/smooth_green_quartz" }
+    }
+}

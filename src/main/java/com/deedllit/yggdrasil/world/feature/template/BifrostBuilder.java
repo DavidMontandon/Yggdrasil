@@ -10,9 +10,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.pattern.BlockStateMatcher;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
-import net.minecraft.world.gen.ChunkGenerator;
-import net.minecraft.world.gen.GenerationSettings;
-import net.minecraft.world.gen.feature.NoFeatureConfig;
 
 public class BifrostBuilder {
 
@@ -40,7 +37,6 @@ public class BifrostBuilder {
 			   return false  ;   
 		   }			   
 	   }
-	   
 	   
 	   blockStateHolder.add(x, y, z, newBlock);
 	   return true ;
