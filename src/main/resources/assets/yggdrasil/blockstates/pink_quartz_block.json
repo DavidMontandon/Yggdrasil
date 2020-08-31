@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "":   { "model": "yggdrasil:block/pink_quartz_block" }
+    }
+}

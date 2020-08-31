@@ -181,6 +181,8 @@
 	"block.yggdrasil.smooth_green_quartz" : "Smooth Green Quartz Block",
 	"block.yggdrasil.smooth_green_quartz_stairs" : "Smooth Green Quartz Stairs",
 	"block.yggdrasil.mozaic_green_quartz_block" : "Mozaic Green Quartz Block",
+	"block.yggdrasil.green_quartz_slab" : "Green Quartz Slab",
+	"block.yggdrasil.smooth_green_quartz_slab" : "Smooth Green Quartz Slab",
 	
 	"block.yggdrasil.amethyst_quartz_block" : "Amethyst Quartz Block",
 	"block.yggdrasil.chiseled_amethyst_quartz_block" : "Chiseled Amethyst Quartz Block",
@@ -188,6 +190,17 @@
 	"block.yggdrasil.amethyst_quartz_stairs" : "Amethyst Quartz Stairs",
 	"block.yggdrasil.smooth_amethyst_quartz" : "Smooth Amethyst Quartz Block",
 	"block.yggdrasil.smooth_amethyst_quartz_stairs" : "Smooth Amethyst Quartz Stairs",
+	"block.yggdrasil.amethyst_quartz_slab" : "Amethyst Quartz Slab",
+	"block.yggdrasil.smooth_amethyst_quartz_slab" : "Smooth Amethyst Quartz Slab",
+	
+	"block.yggdrasil.pink_quartz_block" : "Pink Quartz Block",
+	"block.yggdrasil.chiseled_pink_quartz_block" : "Chiseled Pink Quartz Block",
+	"block.yggdrasil.pink_quartz_pillar" : "Pink Quartz Pillar",
+	"block.yggdrasil.pink_quartz_stairs" : "Pink Quartz Stairs",
+	"block.yggdrasil.smooth_pink_quartz" : "Smooth Pink Quartz Block",
+	"block.yggdrasil.smooth_pink_quartz_stairs" : "Smooth Pink Quartz Stairs",
+	"block.yggdrasil.pink_quartz_slab" : "Pink Quartz Slab",
+	"block.yggdrasil.smooth_pink_quartz_slab" : "Smooth Pink Quartz Slab",
 	
 	"block.yggdrasil.vanafreintine_block" : "Vanafreintine Block",
 	"block.yggdrasil.portal_shirne_block" : "Portal Shirne",

@@ -23,6 +23,7 @@ import net.minecraft.block.LogBlock;
 import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SandBlock;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.TallFlowerBlock;
@@ -133,6 +134,34 @@ public class BlockInit {
 	 * MIDGARD
 	 */
 
+	//PINK_QUARTZ
+	
+	public static final RegistryObject<Block> PINK_QUARTZ_BLOCK = BLOCKS.register("pink_quartz_block",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> CHISELED_PINK_QUARTZ_BLOCK = BLOCKS.register("chiseled_pink_quartz_block",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> PINK_QUARTZ_PILLAR = BLOCKS.register("pink_quartz_pillar",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> PINK_QUARTZ_STAIRS = BLOCKS.register("pink_quartz_stairs",
+			() -> new StairsBlock(() -> BlockInit.PINK_QUARTZ_BLOCK.get().getDefaultState(),
+					Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ)));
+	
+	public static final RegistryObject<Block> SMOOTH_PINK_QUARTZ = BLOCKS.register("smooth_pink_quartz",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> SMOOTH_PINK_QUARTZ_STAIRS = BLOCKS.register("smooth_pink_quartz_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_PINK_QUARTZ.get().getDefaultState(),
+					Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ)));
+	
+	public static final RegistryObject<Block> PINK_QUARTZ_SLAB = BLOCKS.register("pink_quartz_slab",
+			() -> new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(2.0F, 6.0F)));
+
+	public static final RegistryObject<Block> SMOOTH_PINK_QUARTZ_SLAB = BLOCKS.register("smooth_pink_quartz_slab",
+			() -> new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(2.0F, 6.0F)));
+	
 	//AMETHYST_QUARTZ
 	
 	
@@ -155,6 +184,12 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_AMETHYST_QUARTZ_STAIRS = BLOCKS.register("smooth_amethyst_quartz_stairs",
 			() -> new StairsBlock(() -> BlockInit.SMOOTH_AMETHYST_QUARTZ.get().getDefaultState(),
 					Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ)));
+	
+	public static final RegistryObject<Block> AMETHYST_QUARTZ_SLAB = BLOCKS.register("amethyst_quartz_slab",
+			() -> new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(2.0F, 6.0F)));
+
+	public static final RegistryObject<Block> SMOOTH_AMETHYST_QUARTZ_SLAB = BLOCKS.register("smooth_amethyst_quartz_slab",
+			() -> new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(2.0F, 6.0F)));
 	
 	//GREEN QUARTZ
 
@@ -182,6 +217,11 @@ public class BlockInit {
 	public static final RegistryObject<Block> MOZAIC_GREEN_QUARTZ_BLOCK = BLOCKS.register("mozaic_green_quartz_block",
 			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
 	
+	public static final RegistryObject<Block> GREEN_QUARTZ_SLAB = BLOCKS.register("green_quartz_slab",
+			() -> new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(2.0F, 6.0F)));
+
+	public static final RegistryObject<Block> SMOOTH_GREEN_QUARTZ_SLAB = BLOCKS.register("smooth_green_quartz_slab",
+			() -> new SlabBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(2.0F, 6.0F)));
 	
 	//ELM TREE
 	
