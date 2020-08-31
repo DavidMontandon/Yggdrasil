@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "yggdrasil:blocks/mozaic_green_quartz_block",
+        "end": "yggdrasil:blocks/mozaic_green_quartz_block_top"
+    }
+}

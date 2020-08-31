@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "yggdrasil:blocks/amethyst_quartz_block_bottom",
+        "top": "yggdrasil:blocks/amethyst_quartz_block_top",
+        "side": "yggdrasil:blocks/amethyst_quartz_block_side"
+    }
+}

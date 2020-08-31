@@ -133,6 +133,29 @@ public class BlockInit {
 	 * MIDGARD
 	 */
 
+	//AMETHYST_QUARTZ
+	
+	
+	public static final RegistryObject<Block> AMETHYST_QUARTZ_BLOCK = BLOCKS.register("amethyst_quartz_block",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> CHISELED_AMETHYST_QUARTZ_BLOCK = BLOCKS.register("chiseled_amethyst_quartz_block",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> AMETHYST_QUARTZ_PILLAR = BLOCKS.register("amethyst_quartz_pillar",
+			() -> new RotatedPillarBlock(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> AMETHYST_QUARTZ_STAIRS = BLOCKS.register("amethyst_quartz_stairs",
+			() -> new StairsBlock(() -> BlockInit.AMETHYST_QUARTZ_BLOCK.get().getDefaultState(),
+					Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ)));
+	
+	public static final RegistryObject<Block> SMOOTH_AMETHYST_QUARTZ = BLOCKS.register("smooth_amethyst_quartz",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
+
+	public static final RegistryObject<Block> SMOOTH_AMETHYST_QUARTZ_STAIRS = BLOCKS.register("smooth_amethyst_quartz_stairs",
+			() -> new StairsBlock(() -> BlockInit.SMOOTH_AMETHYST_QUARTZ.get().getDefaultState(),
+					Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ)));
+	
 	//GREEN QUARTZ
 
 	
@@ -155,6 +178,9 @@ public class BlockInit {
 	public static final RegistryObject<Block> SMOOTH_GREEN_QUARTZ_STAIRS = BLOCKS.register("smooth_green_quartz_stairs",
 			() -> new StairsBlock(() -> BlockInit.SMOOTH_GREEN_QUARTZ.get().getDefaultState(),
 					Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ)));
+	
+	public static final RegistryObject<Block> MOZAIC_GREEN_QUARTZ_BLOCK = BLOCKS.register("mozaic_green_quartz_block",
+			() -> new Block(Block.Properties.create(Material.ROCK, MaterialColor.QUARTZ).hardnessAndResistance(0.8F)));
 	
 	
 	//ELM TREE
