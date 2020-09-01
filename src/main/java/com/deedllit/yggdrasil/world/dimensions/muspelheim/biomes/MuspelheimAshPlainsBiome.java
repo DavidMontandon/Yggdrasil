@@ -1,6 +1,6 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes;
 
-import com.deedllit.yggdrasil.common.biome.YggdrasilBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
 import com.deedllit.yggdrasil.init.CarverInit;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
@@ -10,7 +10,7 @@ import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.GenerationStage;
 
-public class MuspelheimAshPlainsBiome extends YggdrasilBiome {
+public class MuspelheimAshPlainsBiome extends MythologycraftBiome {
 
 	public MuspelheimAshPlainsBiome(Builder biomeBuilder) {
 		super(new Biome.Builder()		

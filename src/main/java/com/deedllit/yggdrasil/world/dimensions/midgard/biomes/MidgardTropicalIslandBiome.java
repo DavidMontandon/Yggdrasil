@@ -1,5 +1,7 @@
 package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 import com.deedllit.yggdrasil.world.dimensions.midgard.config.MidgardDefaultBiomeFeatures;
 import com.google.common.collect.ImmutableList;
@@ -19,14 +21,13 @@ import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.feature.structure.OceanRuinConfig;
 import net.minecraft.world.gen.feature.structure.OceanRuinStructure;
 import net.minecraft.world.gen.feature.structure.ShipwreckConfig;
-import net.minecraft.world.gen.feature.structure.VillageConfig;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.placement.TopSolidWithNoiseConfig;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class MidgardTropicalIslandBiome extends Biome {
+public class MidgardTropicalIslandBiome extends MythologycraftBiome {
 
 	public MidgardTropicalIslandBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.WHITE_SAND_ISLAND, SurfaceBuilder.GRASS_DIRT_SAND_CONFIG)
@@ -94,7 +95,9 @@ public class MidgardTropicalIslandBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
 	 
-		//super((new Biome.Builder()).surfaceBuilder(new ConfiguredSurfaceBuilder(BOPBiomeFeatures.VOLCANO_SURFACE_BUILDER, BOPBiomeFeatures.ASH_SURFACE)).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.NONE).depth(4.5F).scale(0.0F).temperature(0.95F).downfall(0.3F).waterColor(4566514).waterFogColor(267827).parent((String)null));
+	      this.addWeight(MythologycraftClimates.SUBTROPICAL, 5);
+	      this.setBeachBiome((Biome)null);	 
+	      
 	}
 
 	

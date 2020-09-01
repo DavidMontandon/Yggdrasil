@@ -1,12 +1,12 @@
 package com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes;
 
-import com.deedllit.yggdrasil.common.biome.YggdrasilBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.config.NifelheimDefaultBiomeFeatures;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class NifelheimForzenForestBiome extends YggdrasilBiome {
+public class NifelheimForzenForestBiome extends MythologycraftBiome {
 	
 	public NifelheimForzenForestBiome(Builder biomeBuilder) {
 		super(new Biome.Builder()		

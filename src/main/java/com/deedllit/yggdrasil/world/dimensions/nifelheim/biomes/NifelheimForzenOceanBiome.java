@@ -1,6 +1,6 @@
 package com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes;
 
-import com.deedllit.yggdrasil.common.biome.YggdrasilBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.config.NifelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
@@ -8,7 +8,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class NifelheimForzenOceanBiome extends YggdrasilBiome {
+public class NifelheimForzenOceanBiome extends MythologycraftBiome {
 	
 	public NifelheimForzenOceanBiome(Builder biomeBuilder) {
 		super(new Biome.Builder()		

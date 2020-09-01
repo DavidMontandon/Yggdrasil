@@ -1,25 +1,22 @@
 package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 import com.deedllit.yggdrasil.world.dimensions.midgard.config.MidgardDefaultBiomeFeatures;
-import com.google.common.collect.Lists;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.feature.SphereReplaceConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.feature.structure.VillageConfig;
-import net.minecraft.world.gen.placement.FrequencyConfig;
-import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class MidgardAlpineTundraBiome  extends Biome { 
+public class MidgardAlpineTundraBiome extends MythologycraftBiome { 
 
 	public MidgardAlpineTundraBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.SNOWTOP, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
@@ -70,6 +67,10 @@ public class MidgardAlpineTundraBiome  extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
+	      
+	      this.addWeight(MythologycraftClimates.ALPINE, 5);
+	      this.setRiverBiome((Biome)null);
+	      this.setBeachBiome((Biome)null);
 	      
 	}
 }

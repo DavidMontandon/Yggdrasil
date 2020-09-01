@@ -1,27 +1,18 @@
 package com.deedllit.yggdrasil.world.dimensions.asgard.generator;
 
-import java.util.BitSet;
 import java.util.List;
-import java.util.ListIterator;
 
-import com.deedllit.yggdrasil.world.dimensions.nifelheim.config.NifelheimGenSettings;
 
 import net.minecraft.entity.EntityClassification;
-import net.minecraft.util.SharedSeedRandom;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.biome.provider.BiomeProvider;
-import net.minecraft.world.chunk.IChunk;
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.NoiseChunkGenerator;
 import net.minecraft.world.gen.OctavesNoiseGenerator;
-import net.minecraft.world.gen.carver.ConfiguredCarver;
 
 //CTRL SHIFT + T for original setting
 //EndChunkGenerator
@@ -29,7 +20,8 @@ import net.minecraft.world.gen.carver.ConfiguredCarver;
 //OverworldChuckGenerator
 
 public class AsgardChunkGenerator extends NoiseChunkGenerator<AsgardGenSettings> {
-		
+	
+	
 	private static final float[] field_222576_h = Util.make(new float[25], (p_222575_0_) -> {
 		for (int i = -2; i <= 2; ++i) {
 			for (int j = -2; j <= 2; ++j) {
@@ -41,7 +33,7 @@ public class AsgardChunkGenerator extends NoiseChunkGenerator<AsgardGenSettings>
 	});
 	private final OctavesNoiseGenerator depthNoise;
 	private final boolean isAmplified;
-
+	
 	public AsgardChunkGenerator(IWorld worldIn, BiomeProvider provider, AsgardGenSettings settingsIn) {
 		super(worldIn, provider, 80, 160, 256, settingsIn, true);
 		this.randomSeed.skip(2620);
@@ -61,22 +53,7 @@ public class AsgardChunkGenerator extends NoiseChunkGenerator<AsgardGenSettings>
 				4.277574920654297D, 3, -10);
 	}
 
-	@SuppressWarnings("unused")
-	protected double func_222545_a(double p_222545_1_, double p_222545_3_, int p_222545_5_) {
-		double d0 = 8.5D;
-		double d1 = ((double) p_222545_5_ - (8.5D + p_222545_1_ * 8.5D / 8.0D * 4.0D)) * 12.0D * 128.0D / 256.0D
-				/ p_222545_3_;
-		if (d1 < 0.0D) {
-			d1 *= 4.0D;
-		}
 
-		return d1;
-	}
-
-	@SuppressWarnings("unused")
-	protected double[] getBiomeNoiseColumn(int noiseX, int noiseZ) {
-	      return new double[]{(double)this.biomeProvider.func_222365_c(noiseX, noiseZ), 0.0D};
-	}
 
 	@Override
 	public List<Biome.SpawnListEntry> getPossibleCreatures(EntityClassification creatureType, BlockPos pos) {
@@ -90,4 +67,21 @@ public class AsgardChunkGenerator extends NoiseChunkGenerator<AsgardGenSettings>
     public int getSeaLevel() {
         return 0;
     }
+
+	@Override
+	protected double[] getBiomeNoiseColumn(int noiseX, int noiseZ) {
+	      return new double[]{(double)this.biomeProvider.func_222365_c(noiseX, noiseZ), 0.0D};
+	}
+
+	@Override
+	protected double func_222545_a(double p_222545_1_, double p_222545_3_, int p_222545_5_) {
+		double d1 = ((double) p_222545_5_ - (8.5D + p_222545_1_ * 8.5D / 8.0D * 4.0D)) * 12.0D * 128.0D / 256.0D
+				/ p_222545_3_;
+		if (d1 < 0.0D) {
+			d1 *= 4.0D;
+		}
+
+		return d1;
+	}
+		
 }

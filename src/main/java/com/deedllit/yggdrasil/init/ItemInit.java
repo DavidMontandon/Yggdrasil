@@ -35,7 +35,7 @@ public class ItemInit {
 	
 	//FLUID
 	public static final RegistryObject<Item> ACIDIC_BUCKET = ITEMS.register("acidic_bucket",
-			() -> new BucketItem(FluidInit.ACIDIC_FLUID, new Item.Properties().group(YggdrasilRuneItemGroup.instance)));
+			() -> new BucketItem(FluidInit.ACIDIC_FLUID, new Item.Properties().group(YggdrasilRuneItemGroup.instance).maxStackSize(1)));
 	
 	
 	public static final RegistryObject<Item> VIKING_SHIELD = ITEMS.register("viking_shield",

@@ -46,6 +46,7 @@ import com.deedllit.yggdrasil.init.BiomeInit;
 import com.deedllit.yggdrasil.init.BlockInit;
 import com.deedllit.yggdrasil.init.CarverInit;
 import com.deedllit.yggdrasil.init.DimensionInit;
+import com.deedllit.yggdrasil.init.EntityInit;
 import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.init.FluidInit;
 import com.deedllit.yggdrasil.init.ItemInit;
@@ -104,7 +105,8 @@ public class Yggdrasil
 		//FeatureInit.FEATURES.register(modEventBus);
 		SurfaceBuilderInit.SURFACE_BUILDERS.register(modEventBus);
 		StructureInit.STRUCTURES.register(modEventBus);
-    	BiomeInit.BIOMES.register(modEventBus);
+		EntityInit.ENTITY_TYPES.register(modEventBus);
+		BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);
     	CarverInit.CAVERS.register(modEventBus);

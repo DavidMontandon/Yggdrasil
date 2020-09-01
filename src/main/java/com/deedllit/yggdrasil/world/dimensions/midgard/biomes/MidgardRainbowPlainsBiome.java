@@ -1,5 +1,7 @@
 package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
 import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.world.dimensions.midgard.config.MidgardDefaultBiomeFeatures;
 
@@ -14,11 +16,10 @@ import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.feature.structure.VillageConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
-import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
-public class MidgardRainbowPlainsBiome extends Biome {
+public class MidgardRainbowPlainsBiome extends MythologycraftBiome {
 
 	public MidgardRainbowPlainsBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
@@ -70,6 +71,11 @@ public class MidgardRainbowPlainsBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
+	      
+	      this.canSpawnInBiome = false ; 
+	      this.addWeight(MythologycraftClimates.TEMPERATE_COOL, 5);
+	      this.setBeachBiome((Biome)null);	 
+
 	}
 
 }

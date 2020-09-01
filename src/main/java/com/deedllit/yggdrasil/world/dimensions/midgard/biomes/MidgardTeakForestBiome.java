@@ -1,13 +1,14 @@
 package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
-import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class MidgardTeakForestBiome extends Biome {
+public class MidgardTeakForestBiome extends MythologycraftBiome {
 
 	public MidgardTeakForestBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilder.DEFAULT, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
@@ -21,6 +22,7 @@ public class MidgardTeakForestBiome extends Biome {
 		  	.waterFogColor(2302743)
 		  	.parent((String)null));
 
+	      this.addWeight(MythologycraftClimates.SUBTROPICAL, 5);	      
 		}
 	      
   	@OnlyIn(Dist.CLIENT)

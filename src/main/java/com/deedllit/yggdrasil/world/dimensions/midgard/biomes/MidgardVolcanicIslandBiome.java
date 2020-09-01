@@ -1,5 +1,7 @@
 package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
 import com.deedllit.yggdrasil.init.BlockInit;
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 import com.deedllit.yggdrasil.world.dimensions.midgard.config.MidgardDefaultBiomeFeatures;
@@ -29,7 +31,7 @@ import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 
-public class MidgardVolcanicIslandBiome extends Biome {
+public class MidgardVolcanicIslandBiome extends MythologycraftBiome {
 
 	public static final LiquidsConfig LAVA_SPRING_CONFIG = new LiquidsConfig(Fluids.LAVA.getDefaultState(), true, 4, 1, ImmutableSet.of(Blocks.STONE, Blocks.GRANITE, Blocks.DIORITE, Blocks.ANDESITE, BlockInit.MUSPELHEIM_ASH.get()));
 
@@ -93,6 +95,11 @@ public class MidgardVolcanicIslandBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
+	      
+	      this.addWeight(MythologycraftClimates.TEMPERATE_COOL, 5);
+	      this.setBeachBiome((Biome)null);	 
+
+	      
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 import com.deedllit.yggdrasil.world.dimensions.midgard.config.MidgardDefaultBiomeFeatures;
 
@@ -11,7 +13,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class MidgardChaparralTropicalBiome extends Biome {
+public class MidgardChaparralTropicalBiome extends MythologycraftBiome {
 
 	public MidgardChaparralTropicalBiome() {
 	      super((new Biome.Builder()).surfaceBuilder(SurfaceBuilderInit.CHAPARRAL, SurfaceBuilder.GRASS_DIRT_GRAVEL_CONFIG)
@@ -59,6 +61,9 @@ public class MidgardChaparralTropicalBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.CREEPER, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
+	      
+	      this.addWeight(MythologycraftClimates.TROPICAL, 5);
+	      this.setBeachBiome((Biome)null);
 	      
 	}
 	

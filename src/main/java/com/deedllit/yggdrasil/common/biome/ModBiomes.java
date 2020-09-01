@@ -60,7 +60,7 @@ public class ModBiomes {
     	
     }
     
-    public static void registerBiome(YggdrasilBiome biome, String name)
+    public static void registerBiome(MythologycraftBiome biome, String name)
     {
         BiomeRegistry.deferStandardRegistration(biome, name);
     }

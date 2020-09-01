@@ -1,9 +1,8 @@
 package com.deedllit.yggdrasil.world.dimensions.midgard.biomes;
 
-import com.deedllit.yggdrasil.Yggdrasil;
+import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
 import com.deedllit.yggdrasil.init.BlockInit;
-import com.deedllit.yggdrasil.init.FeatureInit;
-import com.deedllit.yggdrasil.init.StructureInit;
 import com.google.common.collect.ImmutableList;
 
 import net.minecraft.entity.EntityClassification;
@@ -22,14 +21,13 @@ import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
-import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
 import net.minecraft.world.gen.placement.IPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.common.IPlantable;
 
-public class MidgardIronWoodBiome extends Biome {
+public class MidgardIronWoodBiome extends MythologycraftBiome {
 
     public static final HugeTreeFeatureConfig HUGE_IRON_WOOD_TREE_CONFIG = (new HugeTreeFeatureConfig.Builder(
     		new SimpleBlockStateProvider(BlockInit.IRON_WOOD_LOG.get().getDefaultState()), 
@@ -124,6 +122,9 @@ public class MidgardIronWoodBiome extends Biome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 100, 4, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
+	      
+	      this.addWeight(MythologycraftClimates.ARCTIC_CIRCLE, 5);
+	      
 	}
 
 	

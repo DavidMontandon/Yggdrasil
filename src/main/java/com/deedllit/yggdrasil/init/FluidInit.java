@@ -34,7 +34,7 @@ public class FluidInit {
 			() -> ACIDIC_FLUID.get(), () -> ACIDIC_FLOWING.get(),
 			FluidAttributes.builder(ACIDIC_STILL_RL, ACIDIC_FLOWING_RL).density(5).luminosity(5).rarity(Rarity.RARE)
 					.sound(SoundEvents.ITEM_HONEY_BOTTLE_DRINK).overlay(ACIDIC_OVERLAY_RL))
-							.block(() -> FluidInit.ACIDIC_BLOCK.get());
+							.block(() -> FluidInit.ACIDIC_BLOCK.get()).bucket(() -> ItemInit.ACIDIC_BUCKET.get());
 
 	public static final RegistryObject<FlowingFluidBlock> ACIDIC_BLOCK = BlockInit.BLOCKS.register("acidic",
 			() -> new FlowingFluidBlock(() -> FluidInit.ACIDIC_FLUID.get(),
