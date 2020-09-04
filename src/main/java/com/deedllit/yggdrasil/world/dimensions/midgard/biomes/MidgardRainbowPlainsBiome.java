@@ -73,7 +73,7 @@ public class MidgardRainbowPlainsBiome extends MythologycraftBiome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
 	      
 	      this.canSpawnInBiome = false ; 
-	      this.addWeight(MythologycraftClimates.TEMPERATE_COOL, 5);
+	      this.addWeight(MythologycraftClimates.HOT_DESERT, 5);
 	      this.setBeachBiome((Biome)null);	 
 
 	}

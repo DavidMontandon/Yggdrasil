@@ -22,13 +22,16 @@ public class WorldTypeMidgard extends WorldType {
 	@Override
 	public ChunkGenerator<?> createChunkGenerator(World world) {
 		
-		VanillaMidgardWorldGenSettings genSettings = new VanillaMidgardWorldGenSettings();
-		OverworldBiomeProviderSettings biomeProviderSettings = new OverworldBiomeProviderSettings(world.getWorldInfo());
 		
 		if (world.getDimension().getType() == DimensionType.OVERWORLD) {
 			Yggdrasil.LOGGER.info("=========== VanillaMidhard createChunkGenerator ===========") ;
-			//return new ChunkGeneratorOverworldVanillaMidgard(world, new VanillaMidgardBiomeProvider(biomeProviderSettings), genSettings);
-			return new OverworldChunkGenerator(world, new VanillaMidgardBiomeProvider(biomeProviderSettings), ChunkGeneratorType.SURFACE.createSettings()) ; 
+
+			VanillaMidgardWorldGenSettings genSettings = new VanillaMidgardWorldGenSettings();
+			OverworldBiomeProviderSettings biomeProviderSettings = new OverworldBiomeProviderSettings(world.getWorldInfo());
+			biomeProviderSettings.setGeneratorSettings(genSettings) ; 
+			
+			return new ChunkGeneratorOverworldVanillaMidgard(world, new VanillaMidgardBiomeProvider(biomeProviderSettings), genSettings);
+			//return new OverworldChunkGenerator(world, new VanillaMidgardBiomeProvider(biomeProviderSettings), ChunkGeneratorType.SURFACE.createSettings()) ; 
 			
 		}
 		

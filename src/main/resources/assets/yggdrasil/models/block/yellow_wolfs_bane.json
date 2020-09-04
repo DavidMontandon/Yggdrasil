@@ -1,0 +1,6 @@
+{
+  "parent": "block/tinted_cross",
+  "textures": {
+    "cross": "yggdrasil:blocks/yellow_wolfs_bane"
+  }
+}

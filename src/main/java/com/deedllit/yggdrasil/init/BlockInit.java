@@ -15,6 +15,7 @@ import com.deedllit.yggdrasil.world.feature.muspelheim.trees.*;
 import net.minecraft.block.PressurePlateBlock.Sensitivity;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CoralBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerBlock;
@@ -134,6 +135,12 @@ public class BlockInit {
 	 * MIDGARD
 	 */
 
+	public static final RegistryObject<Block> MIDGARD_RICE_BOTTOM_CROP = BLOCKS.register("rice_bottom_crop",
+			() -> new RiceBottomCropBlock(Block.Properties.from(Blocks.KELP), 
+					1, 1, 2, 2,
+					new Block[] {Blocks.SAND, Blocks.DIRT, Blocks.CLAY, Blocks.GRAVEL})
+			);
+	
 	//PINK_QUARTZ
 	
 	public static final RegistryObject<Block> PINK_QUARTZ_BLOCK = BLOCKS.register("pink_quartz_block",
@@ -474,6 +481,23 @@ public class BlockInit {
 	public static final RegistryObject<Block> EDELWEISS = BLOCKS.register("edelweiss",
 			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.REGENERATION, 2, Block.Properties.from(Blocks.POPPY))) ;
 
+	public static final RegistryObject<Block> WHITE_WOLFS_BANE = BLOCKS.register("white_wolfs_bane",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.POISON, 2, Block.Properties.from(Blocks.POPPY))) ;
+
+	public static final RegistryObject<Block> YELLOW_WOLFS_BANE = BLOCKS.register("yellow_wolfs_bane",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.POISON, 2, Block.Properties.from(Blocks.POPPY))) ;
+
+	public static final RegistryObject<Block> PURPLE_WOLFS_BANE = BLOCKS.register("purple_wolfs_bane",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.POISON, 2, Block.Properties.from(Blocks.POPPY))) ;
+
+	public static final RegistryObject<Block> PURPLE_SEA_HORSE = BLOCKS.register("purple_sea_horse",
+			() -> new CoralBlock(Blocks.DEAD_TUBE_CORAL_BLOCK, Block.Properties.create(Material.ROCK, MaterialColor.PURPLE).lightValue(5).notSolid().hardnessAndResistance(1.5F, 6.0F).sound(SoundType.CORAL)));
+
+	/*
+	public static final RegistryObject<Block> PURPLE_SEA_HORSE = BLOCKS.register("purple_sea_horse",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.WATER_BREATHING, 1, Block.Properties.from(Blocks.POPPY))) ;
+	*/
+	
 	public static final RegistryObject<Block> WHITE_SAND = BLOCKS.register("white_sand", 
 			() -> new SandBlock(15527400, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)));
 

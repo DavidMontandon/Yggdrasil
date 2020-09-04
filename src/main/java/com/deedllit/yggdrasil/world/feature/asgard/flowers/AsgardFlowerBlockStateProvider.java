@@ -15,8 +15,8 @@ import net.minecraft.world.gen.blockstateprovider.BlockStateProviderType;
 
 public class AsgardFlowerBlockStateProvider extends BlockStateProvider {
 
-	private static final BlockState[] PINK = new BlockState[]{Blocks.PEONY.getDefaultState(), Blocks.PINK_TULIP.getDefaultState()};
-	private static final BlockState[] MANGENTA = new BlockState[]{BlockInit.PURPLE_SUNFLOWER.get().getDefaultState(),  Blocks.LILAC.getDefaultState()};
+	private static final BlockState[] PINK = new BlockState[]{Blocks.PEONY.getDefaultState(), Blocks.PINK_TULIP.getDefaultState(), BlockInit.SWEET_PEA.get().getDefaultState()};
+	private static final BlockState[] MANGENTA = new BlockState[]{Blocks.LILAC.getDefaultState(), BlockInit.CHARDON.get().getDefaultState()};
 
 	
 	public AsgardFlowerBlockStateProvider() {
@@ -39,7 +39,7 @@ public class AsgardFlowerBlockStateProvider extends BlockStateProvider {
 	      if (d0 < -0.8D) {
 	         return PINK[randomIn.nextInt(PINK.length)];
 	      } else {
-	         return randomIn.nextInt(3) > 0 ? MANGENTA[randomIn.nextInt(MANGENTA.length)] : Blocks.DANDELION.getDefaultState();
+	         return randomIn.nextInt(5) > 0 ? MANGENTA[randomIn.nextInt(MANGENTA.length)] : BlockInit.PURPLE_WOLFS_BANE.get().getDefaultState();
 	      }
 	} 
 

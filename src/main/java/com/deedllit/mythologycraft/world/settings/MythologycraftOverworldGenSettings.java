@@ -1,9 +1,8 @@
-package com.deedllit.yggdrasil.world.dimensions.midgard.config;
+package com.deedllit.mythologycraft.world.settings;
 
-import com.deedllit.mythologycraft.world.settings.MythologycraftOverworldGenSettings;
+import net.minecraft.world.gen.OverworldGenSettings;
 
-
-public class VanillaMidgardWorldGenSettings extends MythologycraftOverworldGenSettings {
+public class MythologycraftOverworldGenSettings extends OverworldGenSettings {
 	
     public enum LandMassScheme {
         VANILLA,
@@ -62,19 +61,14 @@ public class VanillaMidgardWorldGenSettings extends MythologycraftOverworldGenSe
         }
     }
 
+    @Override
     public int getBiomeSize() {
         return 4 ; 
     }
 
+    @Override
     public int getRiverSize() {
     	return 4 ; 
     }
 	  
-    public TemperatureVariationScheme getTempScheme() {
-    	return TemperatureVariationScheme.MEDIUM_ZONES ; 
-	}
-
-    public RainfallVariationScheme getRainScheme() {
-    	return RainfallVariationScheme.MEDIUM_ZONES ; 
-	}
 }

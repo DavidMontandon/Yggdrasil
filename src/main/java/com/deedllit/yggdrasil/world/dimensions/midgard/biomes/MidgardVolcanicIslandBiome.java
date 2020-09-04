@@ -96,7 +96,7 @@ public class MidgardVolcanicIslandBiome extends MythologycraftBiome {
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	      this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
 	      
-	      this.addWeight(MythologycraftClimates.TEMPERATE_COOL, 5);
+	      this.addWeight(MythologycraftClimates.COOL_TEMPERATE, 5);
 	      this.setBeachBiome((Biome)null);	 
 
 	      

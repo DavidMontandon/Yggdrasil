@@ -1,6 +1,6 @@
 {
 	"parent":"item/generated",
 	"textures" : {
-		"layer0" : "yggdrasil:items/muspelheim_ikadamia_seed"
+		"layer0" : "yggdrasil:items/rice_bottom_crop_seed"
 		}
 }

@@ -1,21 +1,11 @@
 package com.deedllit.yggdrasil.world.dimensions.asgard.biomes;
 
-import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.world.dimensions.asgard.config.AsgardDefaultBiomeFeatures;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
-import net.minecraft.world.gen.GenerationStage;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.IFeatureConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftConfig;
-import net.minecraft.world.gen.feature.structure.MineshaftStructure;
-import net.minecraft.world.gen.feature.structure.VillageConfig;
-import net.minecraft.world.gen.placement.ChanceConfig;
-import net.minecraft.world.gen.placement.FrequencyConfig;
-import net.minecraft.world.gen.placement.Placement;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class AsgardPinkMangentaPlainsBiome extends Biome {
@@ -43,7 +33,7 @@ public class AsgardPinkMangentaPlainsBiome extends Biome {
 	      AsgardDefaultBiomeFeatures.addOres(this);
 	      AsgardDefaultBiomeFeatures.addDiamondOre(this) ; 
 	      AsgardDefaultBiomeFeatures.addEmeraldOre(this) ; 
-	      DefaultBiomeFeatures.addOakTreesFlowersGrass(this);
+	      AsgardDefaultBiomeFeatures.addOakTrees(this);
 	      DefaultBiomeFeatures.addMushrooms(this);
 	      DefaultBiomeFeatures.addReedsAndPumpkins(this);
 	      DefaultBiomeFeatures.addSprings(this);

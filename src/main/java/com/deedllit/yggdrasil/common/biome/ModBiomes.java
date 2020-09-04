@@ -1,5 +1,6 @@
 package com.deedllit.yggdrasil.common.biome;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.deedllit.mythologycraft.common.BiomeRegistry;
@@ -7,6 +8,9 @@ import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.BiomeInit;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes.*;
 
+import com.google.common.collect.HashMultimap;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeDictionary.Type;
@@ -15,7 +19,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 
-import static com.deedllit.mythologycraft.biomes.YggdrasilBiomes.*;
 import static com.deedllit.mythologycraft.config.MCConfig.* ; 
 
 /*
@@ -27,6 +30,8 @@ import static com.deedllit.mythologycraft.config.MCConfig.* ;
 public class ModBiomes {
 
 
+	public static List<Integer> islandBiomeIds = Lists.newArrayList();
+	
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event)
     {
