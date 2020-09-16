@@ -478,6 +478,15 @@ public class BlockInit {
 	public static final RegistryObject<Block> DESERT_GRASS = BLOCKS.register("desert_grass",
 			() -> new YggdrasilGrass(PlantType.Desert, new Block[] {Blocks.SAND, Blocks.RED_SAND} , Block.Properties.from(Blocks.GRASS))) ;
 
+	public static final RegistryObject<Block> FIRELILY = BLOCKS.register("firelily",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.REGENERATION, 2, Block.Properties.from(Blocks.POPPY))) ;
+
+	public static final RegistryObject<Block> LAVENDER = BLOCKS.register("lavender",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.REGENERATION, 2, Block.Properties.from(Blocks.POPPY))) ;
+
+	public static final RegistryObject<Block> ALPINE_BETONY = BLOCKS.register("alpine_betony",
+			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.REGENERATION, 2, Block.Properties.from(Blocks.POPPY))) ;
+
 	public static final RegistryObject<Block> EDELWEISS = BLOCKS.register("edelweiss",
 			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.REGENERATION, 2, Block.Properties.from(Blocks.POPPY))) ;
 
