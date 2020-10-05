@@ -39,9 +39,15 @@ public class NifelheimDefaultBiomeFeatures {
 	private static final BlockState COAL_ORE = Blocks.COAL_ORE.getDefaultState() ; 
 	private static final BlockState IRON_ORE = Blocks.IRON_ORE.getDefaultState() ; 
 	private static final BlockState GOLD_ORE = Blocks.GOLD_ORE.getDefaultState() ; 
+	private static final BlockState BONE_BLOCK = Blocks.BONE_BLOCK.getDefaultState() ; 
 	private static final BlockState DIAMOND_ORE = Blocks.DIAMOND_ORE.getDefaultState() ; 
 	private static final BlockState LAPIS_ORE = Blocks.LAPIS_ORE.getDefaultState() ; 
 	
+	
+	public static void addFossils(Biome biomeIn) {
+		biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, Feature.FOSSIL.withConfiguration(IFeatureConfig.NO_FEATURE_CONFIG).withPlacement(Placement.CHANCE_PASSTHROUGH.configure(new ChanceConfig(64))));
+	    biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, BONE_BLOCK, 33)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 64))));
+	}
 	
     public static void addStoneVariants(Biome biomeIn) {
 	    biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, DIRT, 33)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));

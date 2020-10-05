@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemTier;
 import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.Rarity;
 import net.minecraft.item.ShieldItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 
+import com.deedllit.mythologycraft.common.items.MythologycraftDiscItem;
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.Yggdrasil.YggdrasilRuneItemGroup;
 import com.deedllit.yggdrasil.Yggdrasil.YggdrasilToolItemGroup;
@@ -194,5 +196,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> MUSPELHEIM_ASH_CARAMBOLA_BERRY = ITEMS.register("muspelheim_ash_carambola_bush", 
 			() -> new BlockItem(BlockInit.MUSPELHEIM_ASH_CARAMBOLA_BUSH.get(), new Item.Properties().group(YggdrasilToolItemGroup.instance)));
 	
+	
+	//Disc
+	public static final RegistryObject<MythologycraftDiscItem> GRUNDAR_DISC = ITEMS.register("disc_promises",
+			() -> new MythologycraftDiscItem(5, SoundInit.LAZY_GRUNDAR_MUSIC.get(),
+					new Item.Properties().group(YggdrasilToolItemGroup.instance).maxStackSize(1).rarity(Rarity.RARE)));
 	
 }

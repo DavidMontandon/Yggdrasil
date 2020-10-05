@@ -8,7 +8,7 @@ import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class NifelheimForzenForestBiome extends MythologycraftBiome {
 	
-	public NifelheimForzenForestBiome(Builder biomeBuilder) {
+	public NifelheimForzenForestBiome() {
 		super(new Biome.Builder()		
 				.precipitation(RainType.SNOW)
 				.waterColor(4159204)

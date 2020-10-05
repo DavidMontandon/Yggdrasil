@@ -223,7 +223,9 @@
 	"block.yggdrasil.muspelheim_epluphifer_leaves" : "Epluphifer Leaves",
 	"block.yggdrasil.muspelheim_ikadamia" : "Ikadamia Seed",
 
-
+	"item.yggdrasil.disc_promises": "Grundar Music Disc",
+	"item.yggdrasil.disc_promises.desc": "Grundar by Alexander Nakarada",
+	
 	"container.yggdrasil.pedestal_item": "Pedestal",
 	"block.yggdrasil.pedestal_item": "Pedestal",
 

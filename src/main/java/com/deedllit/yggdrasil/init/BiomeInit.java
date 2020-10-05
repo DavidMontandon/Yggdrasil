@@ -227,17 +227,21 @@ public class BiomeInit {
 	 * NIFELHEIM
 	 */	
 	
+	public static final RegistryObject<Biome> NIFELHEIM_BENKONGERIKE_PLAIN_BIOME = BIOMES
+			.register("nifelheim_benkongerike_plain_biome",
+					() -> new NifelheimBenkongerikePlainBiome());
+	
 	public static final RegistryObject<Biome> NIFELHEIM_FROZEN_PLAIN_BIOME = BIOMES
 			.register("nifelheim_frozen_plain_biome",
-					() -> new NifelheimForzenPlainBiome(null));
+					() -> new NifelheimForzenPlainBiome());
 
 	public static final RegistryObject<Biome> NIFELHEIM_FROZEN_FOREST_BIOME = BIOMES
 			.register("nifelheim_frozen_forest_biome",
-					() -> new NifelheimForzenForestBiome(null));
+					() -> new NifelheimForzenForestBiome());
 	
 	public static final RegistryObject<Biome> NIFELHEIM_FROZEN_OCEAN_BIOME = BIOMES
 			.register("nifelheim_frozen_ocean_biome",
-					() -> new NifelheimForzenOceanBiome(null));
+					() -> new NifelheimForzenOceanBiome());
 	
 	
 	

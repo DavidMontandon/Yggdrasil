@@ -1,0 +1,12 @@
+{
+	"disc.grundar": {
+		"category": "disc",
+		"subtitle": "grundar",
+		"sounds": [
+			{
+				"name": "yggdrasil:disc/grundar",
+				"stream": true
+			}
+		]
+	}
+}

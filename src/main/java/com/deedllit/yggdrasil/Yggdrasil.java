@@ -51,6 +51,7 @@ import com.deedllit.yggdrasil.init.FeatureInit;
 import com.deedllit.yggdrasil.init.FluidInit;
 import com.deedllit.yggdrasil.init.ItemInit;
 import com.deedllit.yggdrasil.init.PaintingInit;
+import com.deedllit.yggdrasil.init.SoundInit;
 import com.deedllit.yggdrasil.init.StructureInit;
 import com.deedllit.yggdrasil.init.StructurePiecesInit;
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
@@ -97,6 +98,7 @@ public class Yggdrasil
     	Config.loadConfig(Config.CLIENT_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-client.toml").toString());
     	Config.loadConfig(Config.SERVER_CONFIG, FMLPaths.CONFIGDIR.get().resolve(MOD_ID + "-server.toml").toString());
 
+    	SoundInit.SOUNDS.register(modEventBus);
     	ItemInit.ITEMS.register(modEventBus);
     	FluidInit.FLUIDS.register(modEventBus);
     	BlockInit.BLOCKS.register(modEventBus);
