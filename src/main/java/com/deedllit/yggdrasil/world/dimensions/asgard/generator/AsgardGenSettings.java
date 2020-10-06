@@ -1,14 +1,13 @@
 package com.deedllit.yggdrasil.world.dimensions.asgard.generator;
 
 import net.minecraft.block.Blocks;
-import net.minecraft.fluid.Fluids;
-import net.minecraft.world.gen.GenerationSettings;
+import net.minecraft.world.gen.EndGenerationSettings;
 
-public class AsgardGenSettings extends GenerationSettings{
+public class AsgardGenSettings extends EndGenerationSettings{
 
 	public AsgardGenSettings() {		
-		this.setDefaultBlock( Blocks.STONE.getDefaultState());
-		this.setDefaultFluid( Fluids.WATER.getDefaultState().getBlockState() );
+        this.defaultBlock = Blocks.STONE.getDefaultState();
+        this.defaultFluid = Blocks.AIR.getDefaultState() ;    
 	}
 	
 	public int getBiomeSize() {
@@ -25,7 +24,7 @@ public class AsgardGenSettings extends GenerationSettings{
 
 	@Override
 	public int getBedrockFloorHeight() {
-		return 0;
+		return -10;
 	}
 	
 }

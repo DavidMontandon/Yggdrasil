@@ -3,6 +3,7 @@ package com.deedllit.yggdrasil.world.dimensions.asgard.dimension;
 
 import com.deedllit.yggdrasil.common.world.YggdrasilSurfaceDimension;
 import com.deedllit.yggdrasil.world.dimensions.asgard.generator.AsgardBiomeProvider;
+import com.deedllit.yggdrasil.world.dimensions.asgard.generator.AsgardGenSettings;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -18,7 +19,6 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.ChunkGeneratorType;
-import net.minecraft.world.gen.EndGenerationSettings;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -38,13 +38,9 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 	
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
-		
-	      EndGenerationSettings endgenerationsettings = ChunkGeneratorType.FLOATING_ISLANDS.createSettings();
-	      endgenerationsettings.setDefaultBlock(Blocks.STONE.getDefaultState());
-	      endgenerationsettings.setDefaultFluid(Blocks.AIR.getDefaultState());
-	      endgenerationsettings.setSpawnPos(this.getSpawnCoordinate());
-	      	      
-	      return ChunkGeneratorType.FLOATING_ISLANDS.create(this.world, new AsgardBiomeProvider(), endgenerationsettings);
+      return ChunkGeneratorType.FLOATING_ISLANDS.create(this.world, 
+    		  new AsgardBiomeProvider(this.getWorld()), 
+    		  new AsgardGenSettings());
 	}
 
 	@Override
@@ -97,9 +93,21 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 	
 	@Override
 	public float calculateCelestialAngle(long worldTime, float partialTicks) {
-	      double d0 = MathHelper.frac((double)worldTime / 24000.0D - 0.25D);
-	      double d1 = 0.5D - Math.cos(d0 * Math.PI) / 2.0D;
-	      return (float)(d0 * 2.0D + d1) / 3.0F;
+		int j = 6000;
+		float f1 = (j + partialTicks) / 24000.0f - 0.25f;
+		if (f1 < 0.0f) {
+			f1 += 1.0f;
+		}
+
+		if (f1 > 1.0f) {
+			f1 -= 1.0f;
+		}
+
+		float f2 = f1;
+		f1 = 1.0f - (float) ((Math.cos(f1 * Math.PI) + 1.0d) / 2.0d);
+		f1 = f2 + (f1 - f2) / 3.0f;
+		return f1;		
+		
 	}
 	
 
@@ -114,30 +122,30 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 		return SleepResult.ALLOW ; 
 	}
 
+	@Override
 	public boolean canRespawnHere() {
 		return true;
 	}
     
-	
+	@Override
+	public boolean isSurfaceWorld() {
+		return true;
+	}
 	
 	@Override
 	public Vec3d getFogColor(float celestialAngle, float partialTicks) {
-		return new Vec3d(0.0D, 0.8D, 0.9D);
+		float f = MathHelper.cos(celestialAngle * ((float) Math.PI * 2F)) * 2.0F + 0.5F;
+		f = MathHelper.clamp(f, 0.0F, 1.0F);
+		float f1 = 0.7529412F;
+		float f2 = 0.84705883F;
+		float f3 = 1.0F;
+		f1 = f1 * (f * 0.94F + 0.06F);
+		f2 = f2 * (f * 0.94F + 0.06F);
+		f3 = f3 * (f * 0.91F + 0.09F);
+		return new Vec3d((double) f1, (double) f2, (double) f3);
+		
 	}
-	/*
-	public Vec3d getFogColor(float celestialAngle, float partialTicks) {
-		float f = MathHelper.cos(celestialAngle * ((float)Math.PI * 2F)) * 2.0F + 0.5F;
-	       f = MathHelper.clamp(f, 0.0F, 1.0F);
-	       float f1 = 0.7529412F;
-	       float f2 = 0.84705883F;
-	       float f3 = 1.0F;
-	       f1 = f1 * (f * 0.94F + 0.06F);
-	       f2 = f2 * (f * 0.94F + 0.06F);
-	       f3 = f3 * (f * 0.91F + 0.09F);
-	       return new Vec3d((double)f1, (double)f2, (double)f3);
-	}
-	 */
-	
+		
 	public BlockPos getSpawnCoordinate() {
 		return SPAWN;
 	}
