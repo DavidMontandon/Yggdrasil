@@ -208,6 +208,10 @@ public class BiomeInit {
 			.register("muspelheim_volcano",
 					() -> new MuspelheimVolcanoBiome(null));
 	
+	public static final RegistryObject<Biome> MUSPELHEIM_RIVER_BIOME = BIOMES
+			.register("muspelheim_river",
+					() -> new MuspelheimFireRiver());
+	
 	
 	
 /*

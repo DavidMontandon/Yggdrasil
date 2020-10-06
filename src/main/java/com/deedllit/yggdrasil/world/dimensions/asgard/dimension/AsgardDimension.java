@@ -1,12 +1,14 @@
 package com.deedllit.yggdrasil.world.dimensions.asgard.dimension;
 
 
+import javax.annotation.Nullable;
+
 import com.deedllit.yggdrasil.common.world.YggdrasilSurfaceDimension;
 import com.deedllit.yggdrasil.world.dimensions.asgard.generator.AsgardBiomeProvider;
 import com.deedllit.yggdrasil.world.dimensions.asgard.generator.AsgardGenSettings;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.client.audio.MusicTicker.MusicType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
@@ -14,12 +16,10 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.ChunkGeneratorType;
-import net.minecraft.world.gen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -27,13 +27,11 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 	
 
 	public static final BlockPos SPAWN = new BlockPos(100, 50, 0);
-	
+	private final float[] colorsSunriseSunset = new float[4];
+
 	public AsgardDimension(World world, DimensionType type) {		
 		super(world, type, 0.0f);
-		
-		for (int i = 0; i <= 15; ++i) {
-			this.lightBrightnessTable[i] = i / 15F;
-		}
+		this.doesWaterVaporize = false ; 
 	}
 	
 	@Override
@@ -43,6 +41,12 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
     		  new AsgardGenSettings());
 	}
 
+	
+	@Override
+	public MusicType getMusicType() {		
+		return super.getMusicType();
+	}
+	
 	@Override
 	public BlockPos findSpawn(ChunkPos chunkPosIn, boolean checkValid) {
 	      for(int i = chunkPosIn.getXStart(); i <= chunkPosIn.getXEnd(); ++i) {
@@ -58,56 +62,47 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 	}
 	
 	@Override
-	public BlockPos findSpawn(int posX, int posZ, boolean checkValid) {
-	      BlockPos.Mutable blockpos$mutable = new BlockPos.Mutable(posX, 0, posZ);
-	      Biome biome = this.world.getBiome(blockpos$mutable);
-	      BlockState blockstate = biome.getSurfaceBuilderConfig().getTop();
-	      if (checkValid && !blockstate.getBlock().isIn(BlockTags.VALID_SPAWN)) {
-	         return null;
-	      } else {
-	         Chunk chunk = this.world.getChunk(posX >> 4, posZ >> 4);
-	         int i = chunk.getTopBlockY(Heightmap.Type.MOTION_BLOCKING, posX & 15, posZ & 15);
-	         if (i < 0) {
-	            return null;
-	         } else if (chunk.getTopBlockY(Heightmap.Type.WORLD_SURFACE, posX & 15, posZ & 15) > chunk.getTopBlockY(Heightmap.Type.OCEAN_FLOOR, posX & 15, posZ & 15)) {
-	            return null;
-	         } else {
-	            for(int j = i + 1; j >= 0; --j) {
-	               blockpos$mutable.setPos(posX, j, posZ);
-	               BlockState blockstate1 = this.world.getBlockState(blockpos$mutable);
-	               if (!blockstate1.getFluidState().isEmpty()) {
-	                  break;
-	               }
-
-	               if (blockstate1.equals(blockstate)) {
-	                  return blockpos$mutable.up().toImmutable();
-	               }
-	            }
-
-	            return null;
-	         }
-	      }
+	public int getMoonPhase(long worldTime) {
+		 return (int)(worldTime / 24000L % 8L + 8L) % 8;
 	}
-
-
+	
+	 @Nullable
+	 @OnlyIn(Dist.CLIENT)
+	 public float[] calcSunriseSunsetColors(float celestialAngle, float partialTicks) {
+		 float f = 0.4F;
+		 float f1 = MathHelper.cos(celestialAngle * ((float)Math.PI * 2F)) - 0.0F;
+		 float f2 = -0.0F;
+		 if (f1 >= -0.4F && f1 <= 0.4F) {
+			 float f3 = (f1 - -0.0F) / 0.4F * 0.5F + 0.5F;
+			 float f4 = 1.0F - (1.0F - MathHelper.sin(f3 * (float)Math.PI)) * 0.99F;
+			 f4 = f4 * f4;
+			 this.colorsSunriseSunset[0] = f3 * 0.3F + 0.7F;
+			 this.colorsSunriseSunset[1] = f3 * f3 * 0.7F + 0.2F;
+			 this.colorsSunriseSunset[2] = f3 * f3 * 0.0F + 0.2F;
+			 this.colorsSunriseSunset[3] = f4;
+			 return this.colorsSunriseSunset;
+		 } else {
+			 return null;
+		 }
+	 }
+	 
+	@Override
+	public boolean isSkyColored() {
+		 return true ; 
+	}
+	
 	
 	@Override
-	public float calculateCelestialAngle(long worldTime, float partialTicks) {
-		int j = 6000;
-		float f1 = (j + partialTicks) / 24000.0f - 0.25f;
-		if (f1 < 0.0f) {
-			f1 += 1.0f;
-		}
-
-		if (f1 > 1.0f) {
-			f1 -= 1.0f;
-		}
-
-		float f2 = f1;
-		f1 = 1.0f - (float) ((Math.cos(f1 * Math.PI) + 1.0d) / 2.0d);
-		f1 = f2 + (f1 - f2) / 3.0f;
-		return f1;		
-		
+	public boolean hasSkyLight() {
+		return true ; 
+	}
+	 
+	
+	@Override
+	public float calculateCelestialAngle(long worldTime, float partialTicks) {		
+		double d0 = MathHelper.frac((double)worldTime / 24000.0D - 0.25D);
+		double d1 = 0.5D - Math.cos(d0 * Math.PI) / 2.0D;
+		return (float)(d0 * 2.0D + d1) / 3.0F;	
 	}
 	
 
@@ -145,7 +140,34 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 		return new Vec3d((double) f1, (double) f2, (double) f3);
 		
 	}
+	
+	@Override
+    @OnlyIn(Dist.CLIENT)
+	public boolean doesXZShowFog(int x, int z) {
+		return false  ;
+	}
 		
+	
+	@Override
+	public boolean canDoRainSnowIce(Chunk chunk) {
+		return true;
+	}
+	
+	@Override
+	public boolean canDoLightning(Chunk chunk) {
+		return true ; 
+	}
+	
+	@Override
+	public boolean isDaytime() {
+		return true ; 
+	}
+	
+	@Override
+	public BlockPos findSpawn(int posX, int posZ, boolean checkValid) {
+		return super.findSpawn(posX, posZ, checkValid);
+	}
+	
 	public BlockPos getSpawnCoordinate() {
 		return SPAWN;
 	}

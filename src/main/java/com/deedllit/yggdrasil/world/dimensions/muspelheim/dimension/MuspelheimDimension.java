@@ -35,8 +35,7 @@ public class MuspelheimDimension extends YggdrasilSurfaceDimension {
 	
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
-		
-		return new MuspelheimChunkGenerator( world, new MuspelheimBiomeProvider(), new MuspelheimGenSettings() ) ;
+		return new MuspelheimChunkGenerator( world, new MuspelheimBiomeProvider(this.world), new MuspelheimGenSettings() ) ;
 	}
 
 	@Override
@@ -107,7 +106,7 @@ public class MuspelheimDimension extends YggdrasilSurfaceDimension {
 	public boolean isSurfaceWorld() {
 		return true;
 	}
-
+	
 	@Override
 	public Vec3d getFogColor(float celestialAngle, float partialTicks) {
 		
@@ -124,6 +123,11 @@ public class MuspelheimDimension extends YggdrasilSurfaceDimension {
 		
 	}
 
+	@Override
+	public boolean doesWaterVaporize() {
+		return true ; 
+	}
+	
     @Override
     public boolean isNether() {
     	return false;

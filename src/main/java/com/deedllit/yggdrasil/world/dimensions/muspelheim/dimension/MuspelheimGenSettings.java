@@ -15,8 +15,8 @@ public class MuspelheimGenSettings extends GenerationSettings{
 	public MuspelheimGenSettings() {		
 		//this.setDefaultBlock( Blocks.STONE.getDefaultState());
 		this.setDefaultBlock( BlockInit.MUSPELHEIM_STONE.get().getDefaultState().getBlockState() );
-		//this.setDefaultFluid( Fluids.LAVA.getDefaultState().getBlockState() );
-		this.setDefaultFluid( FluidInit.ACIDIC_FLUID.get().getDefaultState().getBlockState() );
+		this.setDefaultFluid( Fluids.LAVA.getDefaultState().getBlockState() );
+		//this.setDefaultFluid( FluidInit.ACIDIC_FLUID.get().getDefaultState().getBlockState() );
 	}
 	
 	public int getBiomeSize() {
@@ -24,7 +24,7 @@ public class MuspelheimGenSettings extends GenerationSettings{
 	}
 
 	public int getRiverSize() {
-		return 8;
+		return 1;
 	}
 
 	public int getBiomeId() {
