@@ -198,7 +198,7 @@ public class ItemInit {
 	
 	
 	//Disc
-	public static final RegistryObject<MythologycraftDiscItem> GRUNDAR_DISC = ITEMS.register("disc_promises",
+	public static final RegistryObject<MythologycraftDiscItem> GRUNDAR_DISC = ITEMS.register("disc_grundar",
 			() -> new MythologycraftDiscItem(5, SoundInit.LAZY_GRUNDAR_MUSIC.get(),
 					new Item.Properties().group(YggdrasilToolItemGroup.instance).maxStackSize(1).rarity(Rarity.RARE)));
 	
