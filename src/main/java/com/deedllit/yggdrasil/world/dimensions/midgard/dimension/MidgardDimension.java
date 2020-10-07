@@ -1,10 +1,10 @@
-package com.deedllit.yggdrasil.world.dimensions.asgard.dimension;
-
-import com.deedllit.yggdrasil.common.world.YggdrasilSurfaceDimension;
-import com.deedllit.yggdrasil.world.dimensions.asgard.generator.AsgardBiomeProvider;
-import com.deedllit.yggdrasil.world.dimensions.asgard.generator.AsgardGenSettings;
+package com.deedllit.yggdrasil.world.dimensions.midgard.dimension;
 
 import javax.annotation.Nullable;
+
+import com.deedllit.yggdrasil.common.world.YggdrasilSurfaceDimension;
+import com.deedllit.yggdrasil.world.dimensions.midgard.generator.MidgardBiomeProvider;
+import com.deedllit.yggdrasil.world.dimensions.midgard.generator.MidgardGenSettings;
 
 import net.minecraft.client.audio.MusicTicker.MusicType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,22 +20,21 @@ import net.minecraft.world.gen.ChunkGeneratorType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class AsgardDimension extends YggdrasilSurfaceDimension {
-	
+public class MidgardDimension extends YggdrasilSurfaceDimension {
 
 	public static final BlockPos SPAWN = new BlockPos(100, 50, 0);
 	private final float[] colorsSunriseSunset = new float[4];
 
-	public AsgardDimension(World world, DimensionType type) {		
+	public MidgardDimension(World world, DimensionType type) {		
 		super(world, type, 0.0f);
 		this.doesWaterVaporize = false ; 
 	}
 	
 	@Override
 	public ChunkGenerator<?> createChunkGenerator() {
-      return ChunkGeneratorType.FLOATING_ISLANDS.create(this.world, 
-    		  new AsgardBiomeProvider(this.getWorld()), 
-    		  new AsgardGenSettings());
+      return ChunkGeneratorType.SURFACE.create(this.world, 
+    		  new MidgardBiomeProvider(this.getWorld()), 
+    		  new MidgardGenSettings());
 	}
 
 	
@@ -168,5 +167,5 @@ public class AsgardDimension extends YggdrasilSurfaceDimension {
 	public BlockPos getSpawnCoordinate() {
 		return SPAWN;
 	}
-	
+
 }

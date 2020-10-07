@@ -81,6 +81,7 @@ public class Yggdrasil
     //public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
     
     public static final ResourceLocation ASGARD_DIM_TYPE = new ResourceLocation(MOD_ID, "asgard") ;  
+    public static final ResourceLocation MIDGARD_DIM_TYPE = new ResourceLocation(MOD_ID, "midgard") ;  
     public static final ResourceLocation MUSPELHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "muspelheim") ;  
     public static final ResourceLocation SVARTALVHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "svartalvheim") ;  
     public static final ResourceLocation NIFELHEIM_DIM_TYPE = new ResourceLocation(MOD_ID, "nifelheim") ;  

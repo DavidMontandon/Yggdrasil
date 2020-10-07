@@ -23,6 +23,8 @@ public class ForgeEventBusSubscriber {
 		if (DimensionType.byName(Yggdrasil.ASGARD_DIM_TYPE) == null) 
 			DimensionManager.registerDimension(Yggdrasil.ASGARD_DIM_TYPE, DimensionInit.ASGARD.get(), null, true);
 
+		DimensionManager.registerDimension(Yggdrasil.MIDGARD_DIM_TYPE, DimensionInit.MIDGARD.get(), null, true);
+
 		if (DimensionType.byName(Yggdrasil.MUSPELHEIM_DIM_TYPE) == null) 
 			DimensionManager.registerDimension(Yggdrasil.MUSPELHEIM_DIM_TYPE, DimensionInit.MUSPELHEIM.get(), null, true);
 		

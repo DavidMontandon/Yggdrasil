@@ -35,17 +35,22 @@ public class BiomeInit {
  * OVERWORLD
  */
 
-	public static final RegistryObject<Biome> SUNFLOWER_PLAINS_BIOME = BIOMES
+	public static final RegistryObject<Biome> VANILLA_SUNFLOWER_PLAINS_BIOME = BIOMES
 	.register("vanilla_sunflower_plains_biome",
 			() -> new VanillaSunflowerPlainsBiome());
 
-	public static final RegistryObject<Biome> BADLANDS_BIOME = BIOMES
+	public static final RegistryObject<Biome> VANILLA_BADLANDS_BIOME = BIOMES
 	.register("vanilla_badlands_biome",
 			() -> new VanillaBadlandsBiome());
 	
-	public static final RegistryObject<Biome> PLAINS_BIOME = BIOMES
+	public static final RegistryObject<Biome> VANILLA_PLAINS_BIOME = BIOMES
 	.register("vanilla_plains_biome",
 			() -> new VanillaPlainsBiome());
+	
+	public static final RegistryObject<Biome> VANILLA_RIVER_BIOME = BIOMES
+	.register("vanilla_river_biome",
+			() -> new VanillaRiverBiome());
+	
 	
 	
 	/*
@@ -212,6 +217,9 @@ public class BiomeInit {
 			.register("muspelheim_river",
 					() -> new MuspelheimFireRiver());
 	
+	public static final RegistryObject<Biome> MUSPELHEIM_BEACH_BIOME = BIOMES
+			.register("muspelheim_beach",
+					() -> new MuspelheimBeachBiome());
 	
 	
 /*
@@ -260,9 +268,10 @@ public class BiomeInit {
 	
 	
 	private static void registerMidgardBiomes() {
-		setMidgard.add(SUNFLOWER_PLAINS_BIOME.get()) ; 
-		setMidgard.add(BADLANDS_BIOME.get()) ; 
-		setMidgard.add(PLAINS_BIOME.get()) ; 
+		setMidgard.add(VANILLA_SUNFLOWER_PLAINS_BIOME.get()) ; 
+		setMidgard.add(VANILLA_BADLANDS_BIOME.get()) ; 
+		setMidgard.add(VANILLA_PLAINS_BIOME.get()) ; 
+		setMidgard.add(VANILLA_RIVER_BIOME.get()) ; 
 		setMidgard.add(MIDGARD_RAINBOW_PLAINS_BIOME.get()) ; 
 		setMidgard.add(MIDGARD_IRON_WOOD_BIOME.get()) ; 
 		setMidgard.add(MIDGARD_MANGROVE_DRYER_BIOME.get()) ; 
