@@ -34,6 +34,34 @@ public class BiomeInit {
 /*
  * OVERWORLD
  */
+	
+	public static final RegistryObject<Biome> VANILLA_COLD_OCEAN_BIOME = BIOMES
+			.register("vanilla_cold_ocean_biome",
+					() -> new VanillaColdOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BIRCH_FOREST_HILLS_BIOME = BIOMES
+			.register("vanilla_birch_forest_hills_biome",
+					() -> new VanillaBirchForestHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BIRCH_FOREST_BIOME = BIOMES
+			.register("vanilla_birch_forest_biome",
+					() -> new VanillaBirchForestBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BEACH_BIOME = BIOMES
+			.register("vanilla_beach_biome",
+					() -> new VanillaBeachBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BAMBOO_JUNGLE_BIOME = BIOMES
+			.register("vanilla_bamboo_jungle_biome",
+					() -> new VanillaBambooJungleBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BAMBOO_JUNGLE_HILLS_BIOME = BIOMES
+			.register("vanilla_bamboo_jungle_hills_biome",
+					() -> new VanillaBambooJungleHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BADLANDS_PLATEAU_BIOME = BIOMES
+			.register("vanilla_badlands_plateau_biome",
+					() -> new VanillaBadlandsPlateauBiome());
 
 	public static final RegistryObject<Biome> VANILLA_SUNFLOWER_PLAINS_BIOME = BIOMES
 	.register("vanilla_sunflower_plains_biome",
@@ -106,6 +134,7 @@ public class BiomeInit {
 	/*
  * MIDGARD
  */
+
 
 	public static final RegistryObject<Biome> MIDGARD_RAINBOW_PLAINS_BIOME = BIOMES
 			.register("midgard_rainbow_plains",
@@ -208,6 +237,10 @@ public class BiomeInit {
 	public static final RegistryObject<Biome> MUSPELHEIM_OCEAN_BIOME = BIOMES
 			.register("muspelheim_ocean",
 					() -> new MuspelheimOceanBiome(null));
+
+	public static final RegistryObject<Biome> MUSPELHEIM_DEEP_OCEAN_BIOME = BIOMES
+			.register("muspelheim_deep_ocean",
+					() -> new MuspelheimDeepOceanBiome(null));
 
 	public static final RegistryObject<Biome> MUSPELHEIM_VOLCANO_BIOME = BIOMES
 			.register("muspelheim_volcano",

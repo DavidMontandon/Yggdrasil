@@ -44,6 +44,7 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_ash_plains")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_cliff")), 
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_ocean")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_deep_ocean")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_volcano")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_river")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_beach"))
@@ -55,6 +56,7 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 			BiomeInit.MUSPELHEIM_ASH_PLAINS.get(), 
 			BiomeInit.MUSPELHEIM_CLIFF_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_OCEAN_BIOME.get(), 
+			BiomeInit.MUSPELHEIM_DEEP_OCEAN_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_VOLCANO_BIOME.get(),
 			BiomeInit.MUSPELHEIM_RIVER_BIOME.get(),
 			BiomeInit.MUSPELHEIM_BEACH_BIOME.get()
@@ -66,7 +68,7 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 	public MuspelheimBiomeProvider(World world) {
 		super(biomeList);
 		
-		Layer[] aLayer = DefaultBiomesFactory.getDefaultBiomesFactory(world.getSeed(), dimensionBiomes, 4, 1) ; 
+		Layer[] aLayer = DefaultBiomesFactory.getDefaultBiomesFactory(world.getSeed(), dimensionBiomes, 8, 1) ; 
 		
 		this.genBiomes = aLayer[0];
 		this.biomes = dimensionBiomes;

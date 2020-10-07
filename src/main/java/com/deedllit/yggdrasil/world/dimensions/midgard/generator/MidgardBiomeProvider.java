@@ -13,7 +13,9 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.provider.BiomeProvider;
+import net.minecraft.world.biome.provider.OverworldBiomeProviderSettings;
 import net.minecraft.world.gen.IExtendedNoiseRandom;
 import net.minecraft.world.gen.INoiseRandom;
 import net.minecraft.world.gen.LazyAreaLayerContext;
@@ -39,8 +41,16 @@ public class MidgardBiomeProvider extends BiomeProvider {
 
 
 	public static Biome[] dimensionBiomes = new Biome[]{
-			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_sunflower_plains_biome")), 
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_badlands_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_badlands_plateau_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_bamboo_jungle_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_bamboo_jungle_hills_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_beach_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_birch_forest_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_birch_forest_hills_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_cold_ocean_biome")),
+
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_sunflower_plains_biome")), 
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_plains_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_river_biome")),
 			
@@ -60,8 +70,16 @@ public class MidgardBiomeProvider extends BiomeProvider {
 	
 	
 	private static final Set<Biome> biomeList = ImmutableSet.of(
-			BiomeInit.VANILLA_SUNFLOWER_PLAINS_BIOME.get(),
 			BiomeInit.VANILLA_BADLANDS_BIOME.get(),
+			BiomeInit.VANILLA_BADLANDS_PLATEAU_BIOME.get(),
+			BiomeInit.VANILLA_BAMBOO_JUNGLE_BIOME.get(),
+			BiomeInit.VANILLA_BAMBOO_JUNGLE_HILLS_BIOME.get(),
+			BiomeInit.VANILLA_BEACH_BIOME.get(),
+			BiomeInit.VANILLA_BIRCH_FOREST_BIOME.get(),
+			BiomeInit.VANILLA_BIRCH_FOREST_HILLS_BIOME.get(),
+			BiomeInit.VANILLA_COLD_OCEAN_BIOME.get(),
+
+			BiomeInit.VANILLA_SUNFLOWER_PLAINS_BIOME.get(),
 			BiomeInit.VANILLA_PLAINS_BIOME.get(),
 			BiomeInit.VANILLA_RIVER_BIOME.get(),
 			
@@ -85,8 +103,8 @@ public class MidgardBiomeProvider extends BiomeProvider {
 	public MidgardBiomeProvider(World world) {
 		super(biomeList);
 		
-		Layer[] aLayer = DefaultBiomesFactory.getDefaultBiomesFactory(world.getSeed(), dimensionBiomes, 4, 1) ; 
-		
+		Layer[] aLayer = DefaultBiomesFactory.getDefaultBiomesFactory(world.getSeed(), dimensionBiomes, 6, 1) ; 
+	
 		this.genBiomes = aLayer[0];
 		this.biomes = dimensionBiomes;
 
@@ -96,7 +114,6 @@ public class MidgardBiomeProvider extends BiomeProvider {
 	public Biome getNoiseBiome(int x, int y, int z) {
 		return this.genBiomes.func_215738_a(x, z);
 	}
-	
 	
 	
 	

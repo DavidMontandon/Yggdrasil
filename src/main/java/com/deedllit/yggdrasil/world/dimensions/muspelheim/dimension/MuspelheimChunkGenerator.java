@@ -30,7 +30,7 @@ import net.minecraft.world.gen.carver.ConfiguredCarver;
 
 public class MuspelheimChunkGenerator extends NoiseChunkGenerator<MuspelheimGenSettings> {
 	
-    public static final int SURFACE_LEVEL = 50;
+    public static final int SURFACE_LEVEL = 61;
 
     public static final int MIN_CAVE_HEIGHT = 20;
     public static final int MAX_CAVE_HEIGHT = 40;
