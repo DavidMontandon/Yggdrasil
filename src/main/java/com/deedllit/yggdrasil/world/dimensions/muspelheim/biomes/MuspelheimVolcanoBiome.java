@@ -12,7 +12,7 @@ public class MuspelheimVolcanoBiome extends Biome {
 			.precipitation(RainType.NONE)
 			.waterColor(0x906B9F)
 			.waterFogColor(0x6E5651)
-			.surfaceBuilder(MuspelheimDefaultBiomeFeatures.VOLCANO_SURFACE_BUILDER, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_HOTROCK_COLDROCK_SAND)
+			.surfaceBuilder(MuspelheimDefaultBiomeFeatures.VOLCANO_SURFACE_BUILDER, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_MAGMA_GRAVEL)
 			.category(Category.NONE)
 			.depth(4.5f)
 			.scale(0.1f)

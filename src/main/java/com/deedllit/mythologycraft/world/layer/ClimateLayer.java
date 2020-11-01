@@ -1,6 +1,6 @@
 package com.deedllit.mythologycraft.world.layer;
 
-import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
+import com.deedllit.mythologycraft.world.biome.MythologycraftClimates;
 
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.gen.INoiseRandom;

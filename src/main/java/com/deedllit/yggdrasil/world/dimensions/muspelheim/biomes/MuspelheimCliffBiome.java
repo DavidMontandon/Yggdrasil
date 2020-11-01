@@ -13,7 +13,7 @@ public class MuspelheimCliffBiome  extends Biome {
 				.precipitation(RainType.NONE)
 				.waterColor(0x906B9F)
 				.waterFogColor(0x6E5651)
-				.surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_HOTROCK_COLDROCK_SAND)
+				.surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_MAGMA_GRAVEL)
 				.category(Category.EXTREME_HILLS)
 				.downfall(0.0f)
 				.scale(0.6f)

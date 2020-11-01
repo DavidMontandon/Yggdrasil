@@ -1,5 +1,6 @@
 package com.deedllit.yggdrasil.init;
 
+import com.deedllit.midgard.block.MidgardSeaGrassBlock;
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.common.block.*;
 import com.deedllit.yggdrasil.common.block.midgard.*;
@@ -24,6 +25,7 @@ import net.minecraft.block.LogBlock;
 import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SandBlock;
+import net.minecraft.block.SeaGrassBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
@@ -500,13 +502,10 @@ public class BlockInit {
 			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.POISON, 2, Block.Properties.from(Blocks.POPPY))) ;
 
 	public static final RegistryObject<Block> PURPLE_SEA_HORSE = BLOCKS.register("purple_sea_horse",
-			() -> new CoralBlock(Blocks.DEAD_TUBE_CORAL_BLOCK, Block.Properties.create(Material.ROCK, MaterialColor.PURPLE).lightValue(5).notSolid().hardnessAndResistance(1.5F, 6.0F).sound(SoundType.CORAL)));
+			() -> new MidgardSeaGrassBlock(Block.Properties.from(Blocks.SEAGRASS)));
 
-	/*
-	public static final RegistryObject<Block> PURPLE_SEA_HORSE = BLOCKS.register("purple_sea_horse",
-			() -> new YggdrasilFlowerBlock(PlantType.Plains, Blocks.GRASS, Effects.WATER_BREATHING, 1, Block.Properties.from(Blocks.POPPY))) ;
-	*/
 	
+		
 	public static final RegistryObject<Block> WHITE_SAND = BLOCKS.register("white_sand", 
 			() -> new SandBlock(15527400, Block.Properties.create(Material.SAND, MaterialColor.SAND).hardnessAndResistance(0.5F).sound(SoundType.SAND)));
 
@@ -520,6 +519,12 @@ public class BlockInit {
 	 *  MUSPELHEIM
 	 */		
 	
+	public static final RegistryObject<Block> SULFUR_CRYSTAL_BLOCK = BLOCKS.register("sulfur_crystal_block",
+			() -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(2.0F).sound(SoundType.STONE)));
+
+	public static final RegistryObject<Block> SULFUR_CRYSTAL = BLOCKS.register("sulfur_crystal",
+			() -> new YggdrasilSulfurCrystal(Block.Properties.from(Blocks.STONE))) ;
+
 	public static final RegistryObject<Block> MUSPELHEIM_FIRE_POPPY = BLOCKS.register("muspelheim_fire_poppy",
 			() -> new FlowerBlock(Effects.FIRE_RESISTANCE, 20, Block.Properties.from(Blocks.ALLIUM))) ;
 

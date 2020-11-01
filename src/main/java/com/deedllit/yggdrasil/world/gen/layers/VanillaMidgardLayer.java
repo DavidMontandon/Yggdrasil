@@ -2,7 +2,7 @@ package com.deedllit.yggdrasil.world.gen.layers;
 
 import java.util.function.LongFunction;
 
-import com.deedllit.yggdrasil.world.dimensions.midgard.config.VanillaMidgardWorldGenSettings;
+import com.deedllit.midgard.world.dimension.midgard.config.VanillaMidgardWorldGenSettings;
 
 import net.minecraft.world.WorldType;
 import net.minecraft.world.gen.IExtendedNoiseRandom;

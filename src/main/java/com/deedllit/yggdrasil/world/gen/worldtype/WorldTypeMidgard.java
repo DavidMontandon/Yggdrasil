@@ -1,9 +1,9 @@
 package com.deedllit.yggdrasil.world.gen.worldtype;
 
+import com.deedllit.midgard.world.dimension.midgard.config.ChunkGeneratorOverworldVanillaMidgard;
+import com.deedllit.midgard.world.dimension.midgard.config.VanillaMidgardBiomeProvider;
+import com.deedllit.midgard.world.dimension.midgard.config.VanillaMidgardWorldGenSettings;
 import com.deedllit.yggdrasil.Yggdrasil;
-import com.deedllit.yggdrasil.world.dimensions.midgard.config.ChunkGeneratorOverworldVanillaMidgard;
-import com.deedllit.yggdrasil.world.dimensions.midgard.config.VanillaMidgardBiomeProvider;
-import com.deedllit.yggdrasil.world.dimensions.midgard.config.VanillaMidgardWorldGenSettings;
 
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;

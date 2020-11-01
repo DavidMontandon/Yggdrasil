@@ -1,6 +1,6 @@
 package com.deedllit.mythologycraft.common;
 
-import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.mythologycraft.world.biome.MythologycraftBiome;
 
 public class BiomeRegistry {
 

@@ -13,8 +13,8 @@ import net.minecraft.world.gen.NetherGenSettings;
 public class MuspelheimGenSettings extends GenerationSettings{
 
 	public MuspelheimGenSettings() {		
-		//this.setDefaultBlock( Blocks.STONE.getDefaultState());
-		this.setDefaultBlock( BlockInit.MUSPELHEIM_STONE.get().getDefaultState().getBlockState() );
+		this.setDefaultBlock( Blocks.STONE.getDefaultState());
+		//this.setDefaultBlock( BlockInit.MUSPELHEIM_STONE.get().getDefaultState().getBlockState() );
 		this.setDefaultFluid( Fluids.LAVA.getDefaultState().getBlockState() );
 		//this.setDefaultFluid( FluidInit.ACIDIC_FLUID.get().getDefaultState().getBlockState() );
 	}
@@ -30,7 +30,7 @@ public class MuspelheimGenSettings extends GenerationSettings{
 	public int getBiomeId() {
 		return -1;
 	}
-
+	
 	@Override
 	public int getBedrockFloorHeight() {
 		return 0;

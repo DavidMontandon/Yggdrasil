@@ -2,6 +2,7 @@ package com.deedllit.mythologycraft.util;
 
 import java.util.function.LongFunction;
 
+import com.deedllit.midgard.world.dimension.midgard.config.VanillaMidgardWorldGenSettings;
 import com.deedllit.mythologycraft.world.layer.ClimateLayer;
 import com.deedllit.mythologycraft.world.layer.MythologycraftBiomeLayer;
 import com.deedllit.mythologycraft.world.layer.RainfallNoiseLayer;
@@ -11,7 +12,6 @@ import com.deedllit.mythologycraft.world.layer.TemperatureNoiseLayer;
 import com.deedllit.mythologycraft.world.layer.TemperatureRandomLayer;
 import com.deedllit.mythologycraft.world.layer.traits.LazyAreaLayerContextMythologycraft;
 import com.deedllit.mythologycraft.world.settings.MythologycraftOverworldGenSettings;
-import com.deedllit.yggdrasil.world.dimensions.midgard.config.VanillaMidgardWorldGenSettings;
 
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.WorldType;

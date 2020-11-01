@@ -1,4 +1,13 @@
 {
+ 	"music_grundar": {
+    	"category": "music",
+    	"sounds": [
+      		{
+        		"name": "yggdrasil:disc/grundar",
+        		"stream": true
+      		}
+    	]
+  	},
 	"disc.grundar": {
 		"category": "disc",
 		"subtitle": "grundar",

@@ -21,7 +21,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -44,7 +43,6 @@ import org.apache.logging.log4j.Logger;
 import com.deedllit.yggdrasil.common.config.YggdrasilHolder;
 import com.deedllit.yggdrasil.init.BiomeInit;
 import com.deedllit.yggdrasil.init.BlockInit;
-import com.deedllit.yggdrasil.init.CarverInit;
 import com.deedllit.yggdrasil.init.DimensionInit;
 import com.deedllit.yggdrasil.init.EntityInit;
 import com.deedllit.yggdrasil.init.FeatureInit;
@@ -68,15 +66,10 @@ public class Yggdrasil
 {
     public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "yggdrasil" ; 
-    public static final YggdrasilHolder YGGDRASIL_HOLDER = new YggdrasilHolder() ; 
+    //public static final YggdrasilHolder YGGDRASIL_HOLDER = new YggdrasilHolder() ; 
     public static Yggdrasil instance ; 
     public static boolean isAprilFools = false ; 
-    
-    //public static final ResourceLocation HOUSE_LOC = new ResourceLocation(Yggdrasil.MOD_ID, "yggdrasil_tree");
-    //public static IStructurePieceType BRICK_HOUSE_PIECE = null;
-	//@ObjectHolder(MOD_ID+":yggdrasil_tree")
-	//public static Structure<NoFeatureConfig> BRICK_HOUSE; 
-	
+    	
 	
     //public static DimensionsHolder dh = new DimensionsHolder(MOD_ID) ; 
     
@@ -89,7 +82,9 @@ public class Yggdrasil
     
     public Yggdrasil() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus() ; 
-    	modEventBus.addListener(this::setup);
+    	//modEventBus.addListener(this::setup);
+    	
+    	
     	modEventBus.addListener(this::doClientStuff);
     	    	
         //dh.addDimension("muspelheim") ;
@@ -112,7 +107,6 @@ public class Yggdrasil
 		BiomeInit.BIOMES.register(modEventBus);
     	DimensionInit.MOD_DIMENSIONS.register(modEventBus);
     	PaintingInit.PAINTINGS.register(modEventBus);
-    	CarverInit.CAVERS.register(modEventBus);
     	    	
         instance = this ; 
         MinecraftForge.EVENT_BUS.register(this);
@@ -170,11 +164,6 @@ public class Yggdrasil
 		return entry;
 	}
 	
-	private void setup(final FMLCommonSetupEvent event) {
-        DeferredWorkQueue.runLater(() -> {
-        	StructurePiecesInit.registerPieces();
-        });
-    }
 
 
     private void doClientStuff(final FMLClientSetupEvent event) {

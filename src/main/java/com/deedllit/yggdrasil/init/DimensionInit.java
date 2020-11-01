@@ -1,8 +1,8 @@
 package com.deedllit.yggdrasil.init;
 
+import com.deedllit.midgard.world.dimension.midgard.dimension.MidgardModDimension;
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.dimensions.asgard.dimension.AsgardModDimension;
-import com.deedllit.yggdrasil.world.dimensions.midgard.dimension.MidgardModDimension;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.dimension.MuspelheimModDimension;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.dimension.NifelheimModDimension;
 import com.deedllit.yggdrasil.world.dimensions.svartalvheim.dimension.SvartalvheimModDimension;

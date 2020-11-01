@@ -38,7 +38,7 @@ import net.minecraft.world.gen.layer.traits.IAreaTransformer1;
 
 public class DefaultBiomesFactory {
 
-	public static Layer[] getDefaultBiomesFactory(long seed, Biome[] dimensionBiomes, int biomeSize,  int riverSize) {
+	public static Layer[] getDefaultBiomesFactory3(long seed, Biome[] dimensionBiomes, int biomeSize, int riverSize) {
 
 		BiomeLayerUtils biomeLayerUtil = new BiomeLayerUtils(dimensionBiomes); 
 		LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory = l -> new LazyAreaLayerContext(15, seed, l);		
@@ -47,6 +47,8 @@ public class DefaultBiomesFactory {
 
         iareafactory = ZoomLayer.FUZZY.apply(contextFactory.apply(2000L), iareafactory);
         iareafactory = ZoomLayer.FUZZY.apply(contextFactory.apply(2000L), iareafactory);
+        
+        /*
         iareafactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(1L), iareafactory);
         iareafactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2001L), iareafactory);
         iareafactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), iareafactory);
@@ -66,49 +68,51 @@ public class DefaultBiomesFactory {
         iareafactory = AddMushroomIslandLayer.INSTANCE.apply(contextFactory.apply(5L), iareafactory);
         iareafactory = DeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), iareafactory);
         iareafactory = repeat(1000L, ZoomLayer.NORMAL, iareafactory, 0, contextFactory);
-
         
         
         int i = biomeSize ; 
 		int j = riverSize ;
 	
-	      IAreaFactory<LazyArea> lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, iareafactory, 0, contextFactory);
-	      lvt_7_1_ = StartRiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(100L), lvt_7_1_);
+	    IAreaFactory<LazyArea> lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, iareafactory, 0, contextFactory);
+	    lvt_7_1_ = StartRiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(100L), lvt_7_1_);
+	    
+	    //IAreaFactory<LazyArea> lvt_8_1_ = p_227475_0_.getBiomeLayer(iareafactory, p_227475_1_, contextFactory);
+		IAreaFactory<LazyArea> lvt_8_1_ = biomeLayerUtil.apply(contextFactory.apply(200), iareafactory);
+	
+	    IAreaFactory<LazyArea> lvt_9_1_ = repeat(1000L, ZoomLayer.NORMAL, lvt_7_1_, 2, contextFactory);
 	      
-	      //IAreaFactory<LazyArea> lvt_8_1_ = p_227475_0_.getBiomeLayer(iareafactory, p_227475_1_, contextFactory);
-   		  IAreaFactory<LazyArea> lvt_8_1_ = biomeLayerUtil.apply(contextFactory.apply(200), iareafactory);
-
-	      IAreaFactory<LazyArea> lvt_9_1_ = repeat(1000L, ZoomLayer.NORMAL, lvt_7_1_, 2, contextFactory);
-	      
-	      lvt_8_1_ = HillsLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_, lvt_9_1_);
-	      lvt_7_1_ = HillsLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_, lvt_9_1_);
-
-	      lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, lvt_7_1_, 2, contextFactory);
-	      lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, lvt_7_1_, j, contextFactory);
-	      lvt_7_1_ = RiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1L), lvt_7_1_);
-	      lvt_7_1_ = SmoothLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_7_1_);
-	      lvt_8_1_ = RareBiomeLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1001L), lvt_8_1_);
-
-	      for(int k = 0; k < i; ++k) {
-	         lvt_8_1_ = ZoomLayer.NORMAL.apply((IExtendedNoiseRandom)contextFactory.apply((long)(1000 + k)), lvt_8_1_);
-	         if (k == 0) {
-	            lvt_8_1_ = AddIslandLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(3L), lvt_8_1_);
-	         }
-
-	         if (k == 1 || i == 1) {
-	            lvt_8_1_ = ShoreLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_);
-	         }
-	      }
-
-	      lvt_8_1_ = SmoothLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_);
-	      lvt_8_1_ = MixRiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(100L), lvt_8_1_, lvt_7_1_);
-	      lvt_8_1_ = MixOceansLayer.INSTANCE.apply(contextFactory.apply(100L), lvt_8_1_, iareafactory1);
+	    lvt_8_1_ = HillsLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_, lvt_9_1_);
+	    lvt_7_1_ = HillsLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_, lvt_9_1_);
+	
+	    lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, lvt_7_1_, 2, contextFactory);
+	    lvt_7_1_ = repeat(1000L, ZoomLayer.NORMAL, lvt_7_1_, j, contextFactory);
+	    lvt_7_1_ = RiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1L), lvt_7_1_);
+	    lvt_7_1_ = SmoothLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_7_1_);
+	    lvt_8_1_ = RareBiomeLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1001L), lvt_8_1_);
+	
+	    for(int k = 0; k < i; ++k) {
+	       lvt_8_1_ = ZoomLayer.NORMAL.apply((IExtendedNoiseRandom)contextFactory.apply((long)(1000 + k)), lvt_8_1_);
+	       if (k == 0) {
+	          lvt_8_1_ = AddIslandLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(3L), lvt_8_1_);
+	       }
+	
+	       if (k == 1 || i == 1) {
+	          lvt_8_1_ = ShoreLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_);
+	       }
+	    }
+	
+	    lvt_8_1_ = SmoothLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), lvt_8_1_);
+	    lvt_8_1_ = MixRiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(100L), lvt_8_1_, lvt_7_1_);
+	    lvt_8_1_ = MixOceansLayer.INSTANCE.apply(contextFactory.apply(100L), lvt_8_1_, iareafactory1);
 		
 		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), iareafactory);
 		return new Layer[]{new Layer(lvt_8_1_), new Layer(voronoizoom)};
+		*/
+		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), iareafactory);
+		return new Layer[]{new Layer(iareafactory), new Layer(voronoizoom)};
 	}
-
-	public static Layer[] getDefaultBiomesFactory2(long seed, Biome[] dimensionBiomes, int biomeSize,  int riverSize) {
+	
+	public static Layer[] getDefaultBiomesFactory(long seed, Biome[] dimensionBiomes, int biomeSize,  int riverSize) {
 		
 		BiomeLayerUtils biomeLayerUtil = new BiomeLayerUtils(dimensionBiomes); 
 		

@@ -32,6 +32,7 @@ public class DimensionsHolder {
 	
 	public void doRegister() {
 				
+		/*
 		for (String key: ressources.keySet()) {
 			
 			if (DimensionType.byName(ressources.get(key)) == null) 
@@ -39,6 +40,7 @@ public class DimensionsHolder {
 
 			
 		}
+		*/
 		
 	}
 	

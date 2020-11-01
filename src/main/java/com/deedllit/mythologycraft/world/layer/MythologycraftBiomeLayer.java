@@ -1,7 +1,7 @@
 package com.deedllit.mythologycraft.world.layer;
 
-import com.deedllit.yggdrasil.common.biome.ModBiomes;
-import com.deedllit.yggdrasil.common.biome.MythologycraftClimates;
+//import com.deedllit.mythologycraft.world.biome.ModBiomes;
+import com.deedllit.mythologycraft.world.biome.MythologycraftClimates;
 
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biomes;
@@ -46,8 +46,8 @@ public enum MythologycraftBiomeLayer implements IAreaTransformer2, IDimOffset0Tr
 
         if (landSeaVal == DEEP_OCEAN) {
             return Registry.BIOME.getId(climate.getRandomOceanBiome(context, true));
-        }
-        else if ((landSeaVal == MUSHROOM_FIELDS || ModBiomes.islandBiomeIds.contains(landSeaVal)) && climate.biomeType != BiomeManager.BiomeType.ICY) {
+        } else if (landSeaVal == 0) {
+        //else if ((landSeaVal == MUSHROOM_FIELDS || ModBiomes.islandBiomeIds.contains(landSeaVal)) && climate.biomeType != BiomeManager.BiomeType.ICY) {
             return landSeaVal;
         } else if (landSeaVal == 0) {
             return Registry.BIOME.getId(climate.getRandomOceanBiome(context, false));

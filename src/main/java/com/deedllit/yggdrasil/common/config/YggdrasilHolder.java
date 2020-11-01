@@ -1,9 +1,9 @@
 package com.deedllit.yggdrasil.common.config;
 
-import com.deedllit.yggdrasil.common.biome.ModBiomes;
+//import com.deedllit.mythologycraft.world.biome.ModBiomes;
 
 public class YggdrasilHolder {
 
-	public ModBiomes biomesHolder = new ModBiomes() ; 
+	//public ModBiomes biomesHolder = new ModBiomes() ; 
 	
 }

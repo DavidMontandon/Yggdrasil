@@ -1,7 +1,6 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.config;
 
 import com.deedllit.yggdrasil.init.BlockInit;
-import com.deedllit.yggdrasil.init.CarverInit;
 import com.deedllit.yggdrasil.init.FluidInit;
 import com.deedllit.yggdrasil.init.StructureInit;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.generator.MuspelheimVolcanoSurfaceBuilder;
@@ -33,6 +32,7 @@ import net.minecraft.world.gen.feature.SphereReplaceConfig;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.ChanceConfig;
 import net.minecraft.world.gen.placement.CountRangeConfig;
+import net.minecraft.world.gen.placement.DepthAverageConfig;
 import net.minecraft.world.gen.placement.FrequencyConfig;
 import net.minecraft.world.gen.placement.NoiseDependant;
 import net.minecraft.world.gen.placement.Placement;
@@ -53,6 +53,8 @@ public class MuspelheimDefaultBiomeFeatures {
 	private static final BlockState DRAGON_GRASS = BlockInit.MUSPELHEIM_DRAGON_GRASS.get().getDefaultState();
 	private static final BlockState SLIM_GRASS = BlockInit.MUSPELHEIM_SLIM_GRASS.get().getDefaultState();
 	
+	private static final BlockState MAGMA_BLOCK = Blocks.MAGMA_BLOCK.getDefaultState();
+
 	public static final BlockClusterFeatureConfig GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(BlockInit.MUSPELHEIM_GRASS.get().getDefaultState()), new SimpleBlockPlacer())).tries(32).build();
 	public static final BlockClusterFeatureConfig DEAD_BUSH_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(DEAD_BUSH), new SimpleBlockPlacer())).tries(4).build();
 	public static final BlockClusterFeatureConfig DRAGON_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(DRAGON_GRASS), new SimpleBlockPlacer())).tries(32).build();
@@ -64,25 +66,13 @@ public class MuspelheimDefaultBiomeFeatures {
 	
 	public static final SurfaceBuilderConfig MAGMA_SURFACE = new SurfaceBuilderConfig(HOT_ROCK, HOT_ROCK, ASH);
 	public static final SurfaceBuilderConfig MAGMA_SURFACE2 = new SurfaceBuilderConfig(Blocks.DIAMOND_BLOCK.getDefaultState(), Blocks.BEDROCK.getDefaultState(), Blocks.BRICKS.getDefaultState());
-		
 	
-	
-	public static void addCavern(Biome biomeIn) {
 
-		
-		float probability ; 
-
-		
-		probability = MuspelheimCavernConfig.INSTANCE.canyon.get().floatValue();
-
-		
-		if (probability > 0.0F)
-		{
-			biomeIn.addCarver(GenerationStage.Carving.AIR, new ConfiguredCarver<>(CarverInit.CAVERN_CANYON.get(), new ProbabilityConfig(probability)));
-		}
-
-		
+    public static void addStoneVariants(Biome biomeIn) {
+	    biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, MAGMA_BLOCK, 33)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 256))));
+	    biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, GRAVEL, 33)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(8, 0, 0, 256))));
 	}
+	
 	
 	public static void addPlants(Biome biomeIn) {
 	     biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(SLIM_GRASS_CONFIG).withPlacement(Placement.NOISE_HEIGHTMAP_32.configure(new NoiseDependant(-0.8D, 1, 2))));
@@ -91,12 +81,10 @@ public class MuspelheimDefaultBiomeFeatures {
 	
 	public static void addLakes(Biome biomeIn) {
 		biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(Blocks.LAVA.getDefaultState())).withPlacement(Placement.LAVA_LAKE.configure(new ChanceConfig(80))));
-		//biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(Blocks.WATER.getDefaultState())).withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(4))));
+		biomeIn.addFeature(GenerationStage.Decoration.LOCAL_MODIFICATIONS, Feature.LAKE.withConfiguration(new BlockStateFeatureConfig(FluidInit.ACIDIC_BLOCK.get().getDefaultState())).withPlacement(Placement.WATER_LAKE.configure(new ChanceConfig(80))));
 	}
    
 	public static void addSprings(Biome biomeIn) {				   
-	   	//biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SPRING_FEATURE.withConfiguration(ACIDIC_SPRING_CONFIG).withPlacement(Placement.COUNT_VERY_BIASED_RANGE.configure(new CountRangeConfig(50, 8, 16, 256))));
-	   	//biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SPRING_FEATURE.withConfiguration(WATER_SPRING_CONFIG).withPlacement(Placement.COUNT_BIASED_RANGE.configure(new CountRangeConfig(20, 8, 8, 256))));
 	   	biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.SPRING_FEATURE.withConfiguration(LAVA_SPRING_CONFIG).withPlacement(Placement.COUNT_VERY_BIASED_RANGE.configure(new CountRangeConfig(50, 8, 16, 256))));
    	}
    

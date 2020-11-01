@@ -1,7 +1,6 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes;
 
-import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
-import com.deedllit.yggdrasil.init.CarverInit;
+import com.deedllit.mythologycraft.world.biome.MythologycraftBiome;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
@@ -17,7 +16,7 @@ public class MuspelheimAshPlainsBiome extends MythologycraftBiome {
 				.precipitation(RainType.NONE)
 				.waterColor(0x906B9F)
 				.waterFogColor(0x6E5651)
-				.surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_COLDROCK_SAND)
+				.surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_MAGMA_GRAVEL)
 				.category(Category.PLAINS)
 				.depth(0.2f)
 				.scale(0.5f)
@@ -26,12 +25,10 @@ public class MuspelheimAshPlainsBiome extends MythologycraftBiome {
 				.parent(null));
 		
 		
-		//this.addCarver(GenerationStage.Carving.AIR, new ConfiguredCarver<>(CarverInit.CAVERN_CANYON.get(), new ProbabilityConfig(probability
-
-		//MuspelheimDefaultBiomeFeatures.addCavern(this); 
 		MuspelheimDefaultBiomeFeatures.addCarver(this);
 		MuspelheimDefaultBiomeFeatures.addLakes(this);
 		MuspelheimDefaultBiomeFeatures.addSprings(this);
+		MuspelheimDefaultBiomeFeatures.addStoneVariants(this);
 		MuspelheimDefaultBiomeFeatures.addOres(this);
 		MuspelheimDefaultBiomeFeatures.addSedimentDisks(this);
 		MuspelheimDefaultBiomeFeatures.addStructures(this);

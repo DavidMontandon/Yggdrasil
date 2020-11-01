@@ -1,26 +1,73 @@
 package com.deedllit.yggdrasil.util;
 
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.sound.PlaySoundEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
+import javax.annotation.Nullable;
+
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.client.gui.PedestalItemScreen;
 import com.deedllit.yggdrasil.client.tileentity.render.PedestalItemRenderer;
+import com.deedllit.yggdrasil.init.BiomeInit;
 import com.deedllit.yggdrasil.init.BlockInit;
+import com.deedllit.yggdrasil.init.SoundInit;
 import com.deedllit.yggdrasil.init.YggdrasilContainerTypes;
 import com.deedllit.yggdrasil.init.YggdrasilTileEntityTypes;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.ISound;
+import net.minecraft.client.audio.SimpleSound;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.world.biome.Biome;
 
 @Mod.EventBusSubscriber(modid = Yggdrasil.MOD_ID, bus = Bus.MOD, value = Dist.CLIENT)
 public class ClientEventBusSubscriber {
+	
+    private static ISound playingMusic;
+    private static final Minecraft CLIENT = Minecraft.getInstance();
 
+    @SubscribeEvent
+    public static void onPlaySound(PlaySoundEvent event) {
+    
+    	Yggdrasil.LOGGER.info("ON PLAY SOUND") ; 
+    	
+    	if (CLIENT.player != null) {
+    		
+    		SoundEvent sound = getMusicSound(CLIENT.player);
+    		if (sound == null) {
+    	    	Yggdrasil.LOGGER.info("ON PLAY SOUND - NULL") ; 
+                event.setResultSound(null);
+                return;
+            }    		
+    		
+	    	Yggdrasil.LOGGER.info("ON PLAY SOUND - PLAYING") ; 
+            playingMusic = SimpleSound.music(sound);
+            event.setResultSound(playingMusic);    		
+    	}
+    	
+    }
+
+    @Nullable
+    public static SoundEvent getMusicSound(PlayerEntity player) {
+        Biome biome = player.world.getBiome(player.getPosition());
+        
+        if(biome == BiomeInit.ASGARD_PLAINS_BIOME.get()) {
+            return SoundInit.LAZY_GRUNDAR_MUSIC.get() ;            	
+        }
+        
+        return SoundInit.LAZY_GRUNDAR_MUSIC.get() ;    
+    }
+
+	
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
 		
@@ -58,6 +105,8 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInit.FIRELILY.get(), basicRender);		
 		RenderTypeLookup.setRenderLayer(BlockInit.LAVENDER.get(), basicRender);		
 		
+		RenderTypeLookup.setRenderLayer(BlockInit.SULFUR_CRYSTAL.get(), basicRender);		
+
 		//RenderTypeLookup.setRenderLayer(BlockInit.PISTIA_WATER_LETTUCE.get(), basicRender);		
 		//RenderTypeLookup.setRenderLayer(BlockInit.MIDGARD_RICE_TOP_CROP.get(), basicRender);		
 
@@ -80,7 +129,6 @@ public class ClientEventBusSubscriber {
 
 		ClientRegistry.bindTileEntityRenderer(YggdrasilTileEntityTypes.ITEM_PEDESTAL.get(), PedestalItemRenderer::new);
 		
-		Yggdrasil.LOGGER.info("Render Registered! ");
 		
 	}
 	

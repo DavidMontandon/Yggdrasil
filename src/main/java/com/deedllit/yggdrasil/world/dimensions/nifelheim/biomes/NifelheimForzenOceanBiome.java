@@ -1,6 +1,6 @@
 package com.deedllit.yggdrasil.world.dimensions.nifelheim.biomes;
 
-import com.deedllit.yggdrasil.common.biome.MythologycraftBiome;
+import com.deedllit.mythologycraft.world.biome.MythologycraftBiome;
 import com.deedllit.yggdrasil.world.dimensions.nifelheim.config.NifelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
