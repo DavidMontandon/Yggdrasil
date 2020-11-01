@@ -5,8 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.LongFunction;
 
-import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardAddIslandLayer;
-import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardDeepOceanLayer;
+import com.deedllit.midgard.world.dimension.midgard.generator.layer.*;
 import com.deedllit.mythologycraft.world.gen.DefaultBiomesFactory;
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.BiomeInit;
@@ -65,8 +64,15 @@ public class MidgardBiomeProvider extends BiomeProvider {
 					.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_luke_warm_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_warm_ocean_biome")),
-
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_desert_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_desert_hills_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_desert_lakes_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_eroded_badlands_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_flower_forest_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_forest_biome")),			
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_frozen_ocean_biome")),
+			
+			
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_luke_warm_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_warm_ocean_biome")),
@@ -104,8 +110,15 @@ public class MidgardBiomeProvider extends BiomeProvider {
 			BiomeInit.VANILLA_DEEP_LUKE_WARM_OCEAN_BIOME.get(),
 			BiomeInit.VANILLA_DEEP_OCEAN_BIOME.get(), 
 			BiomeInit.VANILLA_DEEP_WARM_OCEAN_BIOME.get(),
-			
+			BiomeInit.VANILLA_DESERT_BIOME.get(),
+			BiomeInit.VANILLA_DESERT_HILLS_BIOME.get(),
+			BiomeInit.VANILLA_DESERT_LAKES_BIOME.get(),
+			BiomeInit.VANILLA_ERODED_BADLANDS_BIOME.get(),
+			BiomeInit.VANILLA_FLOWER_FOREST_BIOME.get(),
+			BiomeInit.VANILLA_FOREST_BIOME.get(),
 			BiomeInit.VANILLA_FROZEN_OCEAN_BIOME .get(),
+
+			
 			BiomeInit.VANILLA_LUKE_WARM_OCEAN_BIOME .get(),
 			BiomeInit.VANILLA_OCEAN_BIOME .get(),
 			BiomeInit.VANILLA_WARM_OCEAN_BIOME .get(),
@@ -122,9 +135,7 @@ public class MidgardBiomeProvider extends BiomeProvider {
 			BiomeInit.MIDGARD_TROPICAL_ISLAND_BIOME.get(), BiomeInit.MIDGARD_VOLCANIC_ISLAND_BIOME.get());
 
 	private final Layer genBiomes;
-	private final Biome[] biomes;
 	double biomeSize = 32.0d;
-	private VoronoiGenerator biomeNoise;
 
 	public MidgardBiomeProvider(World world) {
 		super(biomeList);
@@ -132,25 +143,6 @@ public class MidgardBiomeProvider extends BiomeProvider {
 		Layer[] aLayer = buildWorld(world.getSeed());
 
 		this.genBiomes = aLayer[0];
-		this.biomes = dimensionBiomes;
-
-		/*
-		 * super(biomeList);
-		 * 
-		 * this.genBiomes = null; this.biomes = null;
-		 * 
-		 * //Layer[] aLayer =
-		 * DefaultBiomesFactory.getDefaultBiomesFactory(world.getSeed(),
-		 * dimensionBiomes, 6, 1) ;
-		 * 
-		 * //Layer[] aLayer = buildWorld(world.getSeed()) ;
-		 * 
-		 * 
-		 * //this.genBiomes = aLayer[0]; //this.biomes = dimensionBiomes;
-		 * 
-		 * this.biomeNoise = new VoronoiGenerator(); this.biomeNoise.setSeed((int)
-		 * 122121 );
-		 */
 	}
 
 	private Layer[] buildWorld(long seed) {
@@ -172,7 +164,7 @@ public class MidgardBiomeProvider extends BiomeProvider {
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(50L), landSeaFactory);
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(70L), landSeaFactory);
-		landSeaFactory = RemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		landSeaFactory = MidgardRemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), landSeaFactory);
@@ -182,7 +174,7 @@ public class MidgardBiomeProvider extends BiomeProvider {
 		landSeaFactory = MidgardDeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
 				
 		
-		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), landSeaFactory);
+		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10L), landSeaFactory);
 		return new Layer[] { new Layer(landSeaFactory), new Layer(voronoizoom) };
 	}
 

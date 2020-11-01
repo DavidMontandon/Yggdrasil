@@ -23,6 +23,7 @@ public class MidgardLayerUtil {
 	public static final int LUKEWARM_OCEAN = Registry.BIOME.getId(BiomeInit.VANILLA_LUKE_WARM_OCEAN_BIOME.get());
 	public static final int FROZEN_OCEAN = Registry.BIOME.getId(BiomeInit.VANILLA_FROZEN_OCEAN_BIOME.get());
 	
+	public static final int PLAINS = Registry.BIOME.getId(BiomeInit.VANILLA_PLAINS_BIOME.get());
 
     public static boolean isOcean(int biomeIn) {
         return biomeIn == COLD_OCEAN || biomeIn == DEEP_COLD_OCEAN || biomeIn == DEEP_FROZEN_OCEAN;
