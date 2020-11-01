@@ -33,6 +33,7 @@ import net.minecraft.world.gen.layer.DeepOceanLayer;
 import net.minecraft.world.gen.layer.IslandLayer;
 import net.minecraft.world.gen.layer.Layer;
 import net.minecraft.world.gen.layer.LayerUtil;
+import net.minecraft.world.gen.layer.OceanLayer;
 import net.minecraft.world.gen.layer.RareBiomeLayer;
 import net.minecraft.world.gen.layer.RemoveTooMuchOceanLayer;
 import net.minecraft.world.gen.layer.RiverLayer;
@@ -153,6 +154,10 @@ public class MidgardBiomeProvider extends BiomeProvider {
 	}
 
 	private Layer[] buildWorld(long seed) {
+		
+        int biomeSize = 4;
+        int riverSize = 1;
+		
 		LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory = l -> new LazyAreaLayerContext(15, seed, l);
 		IAreaFactory<LazyArea> parentLayer = IslandLayer.INSTANCE.apply(contextFactory.apply(1));
 		IAreaFactory<LazyArea> landSeaFactory = (new BiomeLayerUtils()).apply(contextFactory.apply(200), parentLayer);
@@ -172,11 +177,11 @@ public class MidgardBiomeProvider extends BiomeProvider {
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), landSeaFactory);
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
+
 		landSeaFactory = AddMushroomIslandLayer.INSTANCE.apply(contextFactory.apply(5L), landSeaFactory);
 		landSeaFactory = MidgardDeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
-
-
-
+				
+		
 		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), landSeaFactory);
 		return new Layer[] { new Layer(landSeaFactory), new Layer(voronoizoom) };
 	}
