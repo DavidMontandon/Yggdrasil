@@ -9,6 +9,6 @@ public enum MidgardRemoveTooMuchOceanLayer implements ICastleTransformer {
 	public int apply(INoiseRandom context, int north, int west, int south, int east, int center) {
 		return MidgardLayerUtil.isShallowOcean(center) && MidgardLayerUtil.isShallowOcean(north)
 				&& MidgardLayerUtil.isShallowOcean(west) && MidgardLayerUtil.isShallowOcean(east) && MidgardLayerUtil.isShallowOcean(south)
-				&& context.random(2) == 0 ? MidgardLayerUtil.PLAINS : center;
+				&& context.random(2) == 0 ? 1 : center;
 	}
 }

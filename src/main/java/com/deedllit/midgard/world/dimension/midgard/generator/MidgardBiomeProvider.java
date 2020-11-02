@@ -29,6 +29,7 @@ import net.minecraft.world.gen.layer.AddBambooForestLayer;
 import net.minecraft.world.gen.layer.AddIslandLayer;
 import net.minecraft.world.gen.layer.AddMushroomIslandLayer;
 import net.minecraft.world.gen.layer.DeepOceanLayer;
+import net.minecraft.world.gen.layer.EdgeLayer;
 import net.minecraft.world.gen.layer.IslandLayer;
 import net.minecraft.world.gen.layer.Layer;
 import net.minecraft.world.gen.layer.LayerUtil;
@@ -48,20 +49,16 @@ public class MidgardBiomeProvider extends BiomeProvider {
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_badlands_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_badlands_plateau_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_bamboo_jungle_biome")),
-			ForgeRegistries.BIOMES
-					.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_bamboo_jungle_hills_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_bamboo_jungle_hills_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_beach_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_birch_forest_biome")),
-			ForgeRegistries.BIOMES
-					.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_birch_forest_hills_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_birch_forest_hills_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_cold_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_dark_forest_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_dark_forest_hill_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_cold_ocean_biome")),
-			ForgeRegistries.BIOMES
-					.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_frozen_ocean_biome")),
-			ForgeRegistries.BIOMES
-					.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_luke_warm_ocean_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_frozen_ocean_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_luke_warm_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_deep_warm_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_desert_biome")),
@@ -71,15 +68,25 @@ public class MidgardBiomeProvider extends BiomeProvider {
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_flower_forest_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_forest_biome")),			
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_frozen_ocean_biome")),
-			
-			
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_frozen_river_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_giant_spruce_tagia_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_giant_spruce_tagia_hills_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_giant_tree_tagia_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_giant_tree_tagia_hills_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_gravelly_mountains_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_jungle_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_jungle_edge_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_jungle_hills_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_luke_warm_ocean_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_modified_bandlands_plateau_biome")),
+			
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_mountains_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_ocean_biome")),
-			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_warm_ocean_biome")),
-
-			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_sunflower_plains_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_plains_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_river_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_sunflower_plains_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_warm_ocean_biome")),
+
 
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":midgard_rainbow_plains")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":midgard_iron_wood")),
@@ -116,23 +123,40 @@ public class MidgardBiomeProvider extends BiomeProvider {
 			BiomeInit.VANILLA_ERODED_BADLANDS_BIOME.get(),
 			BiomeInit.VANILLA_FLOWER_FOREST_BIOME.get(),
 			BiomeInit.VANILLA_FOREST_BIOME.get(),
-			BiomeInit.VANILLA_FROZEN_OCEAN_BIOME .get(),
+			BiomeInit.VANILLA_FROZEN_OCEAN_BIOME.get(),
+			BiomeInit.VANILLA_FROZEN_RIVER_BIOME.get(),
+			BiomeInit.VANILLA_GIANT_SPRUCE_TAGIA_BIOME.get(),
+			BiomeInit.VANILLA_GIANT_SPRUCE_TAGIA_HILLS_BIOME.get(),
+			BiomeInit.VANILLA_GIANT_TREE_TAGIA_BIOME.get(),
+			BiomeInit.VANILLA_GIANT_TREE_TAGIA_HILLS_BIOME.get(),
+			BiomeInit.VANILLA_GRAVELLY_MOUNTAINS_BIOME.get(),
+			BiomeInit.VANILLA_JUNGLE_BIOME.get(),
+			BiomeInit.VANILLA_JUNGLE_EDGE_BIOME.get(),
+			BiomeInit.VANILLA_JUNGLE_HILLS_BIOME.get(),
+			BiomeInit.VANILLA_LUKE_WARM_OCEAN_BIOME .get(),
+			BiomeInit.VANILLA_MODIFIED_BADLANDS_PLATEAU_BIOME.get(),
 
 			
-			BiomeInit.VANILLA_LUKE_WARM_OCEAN_BIOME .get(),
+			BiomeInit.VANILLA_MOUNTAINS_BIOME.get(),
 			BiomeInit.VANILLA_OCEAN_BIOME .get(),
-			BiomeInit.VANILLA_WARM_OCEAN_BIOME .get(),
-
-			BiomeInit.VANILLA_SUNFLOWER_PLAINS_BIOME.get(), 
 			BiomeInit.VANILLA_PLAINS_BIOME.get(),
 			BiomeInit.VANILLA_RIVER_BIOME.get(),
+			BiomeInit.VANILLA_SUNFLOWER_PLAINS_BIOME.get(), 
+			BiomeInit.VANILLA_WARM_OCEAN_BIOME .get(),
 
-			BiomeInit.MIDGARD_RAINBOW_PLAINS_BIOME.get(), BiomeInit.MIDGARD_IRON_WOOD_BIOME.get(),
-			BiomeInit.MIDGARD_MANGROVE_BIOME.get(), BiomeInit.MIDGARD_MANGROVE_DRYER_BIOME.get(),
-			BiomeInit.MIDGARD_CHARPARRAL_TROPICAL_BIOME.get(), BiomeInit.MIDGARD_ALPINE_TUNDRA_BIOME.get(),
-			BiomeInit.MIDGARD_TROPICAL_BEACH_BIOME.get(), BiomeInit.MIDGARD_RAINBOW_MOUTAIN_BIOME.get(),
-			BiomeInit.MIDGARD_TEAK_FOREST_BIOME.get(), BiomeInit.MIDGARD_THOUSAND_LAKES_BIOME.get(),
-			BiomeInit.MIDGARD_TROPICAL_ISLAND_BIOME.get(), BiomeInit.MIDGARD_VOLCANIC_ISLAND_BIOME.get());
+
+			BiomeInit.MIDGARD_RAINBOW_PLAINS_BIOME.get(), 
+			BiomeInit.MIDGARD_IRON_WOOD_BIOME.get(),
+			BiomeInit.MIDGARD_MANGROVE_BIOME.get(), 
+			BiomeInit.MIDGARD_MANGROVE_DRYER_BIOME.get(),
+			BiomeInit.MIDGARD_CHARPARRAL_TROPICAL_BIOME.get(), 
+			BiomeInit.MIDGARD_ALPINE_TUNDRA_BIOME.get(),
+			BiomeInit.MIDGARD_TROPICAL_BEACH_BIOME.get(), 
+			BiomeInit.MIDGARD_RAINBOW_MOUTAIN_BIOME.get(),
+			BiomeInit.MIDGARD_TEAK_FOREST_BIOME.get(), 
+			BiomeInit.MIDGARD_THOUSAND_LAKES_BIOME.get(),
+			BiomeInit.MIDGARD_TROPICAL_ISLAND_BIOME.get(), 
+			BiomeInit.MIDGARD_VOLCANIC_ISLAND_BIOME.get());
 
 	private final Layer genBiomes;
 	double biomeSize = 32.0d;
@@ -150,6 +174,7 @@ public class MidgardBiomeProvider extends BiomeProvider {
         int biomeSize = 4;
         int riverSize = 1;
 		
+        //LayerUtil
 		LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory = l -> new LazyAreaLayerContext(15, seed, l);
 		IAreaFactory<LazyArea> parentLayer = IslandLayer.INSTANCE.apply(contextFactory.apply(1));
 		IAreaFactory<LazyArea> landSeaFactory = (new BiomeLayerUtils()).apply(contextFactory.apply(200), parentLayer);
@@ -165,6 +190,13 @@ public class MidgardBiomeProvider extends BiomeProvider {
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(50L), landSeaFactory);
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(70L), landSeaFactory);
 		landSeaFactory = MidgardRemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		landSeaFactory = MidgardEdgeLayer.CoolWarm.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		landSeaFactory = MidgardEdgeLayer.HeatIce.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		landSeaFactory = MidgardEdgeLayer.Special.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
+
+		
+		
+		
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), landSeaFactory);
@@ -172,7 +204,7 @@ public class MidgardBiomeProvider extends BiomeProvider {
 
 		landSeaFactory = AddMushroomIslandLayer.INSTANCE.apply(contextFactory.apply(5L), landSeaFactory);
 		landSeaFactory = MidgardDeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
-				
+		
 		
 		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10L), landSeaFactory);
 		return new Layer[] { new Layer(landSeaFactory), new Layer(voronoizoom) };
