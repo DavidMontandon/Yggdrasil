@@ -36,6 +36,11 @@ public class BiomeInit {
  */
 	
 	
+	
+	public static final RegistryObject<Biome> VANILLA_MUSHROOM_FIELDS_BIOME = BIOMES
+		.register("vanilla_mushroom_fields_biome",
+			() -> new VanillaMushroomFieldsBiome());
+	
 	public static final RegistryObject<Biome> VANILLA_MODIFIED_BADLANDS_PLATEAU_BIOME = BIOMES
 			.register("vanilla_modified_bandlands_plateau_biome",
 					() -> new VanillaModifiedBadlandsPlateauBiome());
@@ -455,7 +460,9 @@ public class BiomeInit {
 		setMidgard.add(VANILLA_LUKE_WARM_OCEAN_BIOME.get()) ; 
 		setMidgard.add(VANILLA_MODIFIED_BADLANDS_PLATEAU_BIOME.get()) ;
 
-		setMidgard.add(VANILLA_MOUNTAINS_BIOME .get()) ;
+		setMidgard.add(VANILLA_MOUNTAINS_BIOME.get()) ;
+		setMidgard.add(VANILLA_MUSHROOM_FIELDS_BIOME.get()) ;
+
 		setMidgard.add(VANILLA_OCEAN_BIOME.get()) ; 
 		setMidgard.add(VANILLA_PLAINS_BIOME.get()) ; 
 		setMidgard.add(VANILLA_RIVER_BIOME.get()) ; 
@@ -519,6 +526,7 @@ public class BiomeInit {
         BiomeDictionary.addTypes(VANILLA_MODIFIED_BADLANDS_PLATEAU_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
 
         BiomeDictionary.addTypes(VANILLA_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MUSHROOM_FIELDS_BIOME.get(), BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.RARE, BiomeDictionary.Type.LUSH, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_OCEAN_BIOME .get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_PLAINS_BIOME.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_RIVER_BIOME.get(), BiomeDictionary.Type.RIVER, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);

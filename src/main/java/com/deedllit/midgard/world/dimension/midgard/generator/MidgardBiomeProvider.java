@@ -28,11 +28,13 @@ import net.minecraft.world.gen.area.LazyArea;
 import net.minecraft.world.gen.layer.AddBambooForestLayer;
 import net.minecraft.world.gen.layer.AddIslandLayer;
 import net.minecraft.world.gen.layer.AddMushroomIslandLayer;
+import net.minecraft.world.gen.layer.AddSnowLayer;
 import net.minecraft.world.gen.layer.DeepOceanLayer;
 import net.minecraft.world.gen.layer.EdgeLayer;
 import net.minecraft.world.gen.layer.IslandLayer;
 import net.minecraft.world.gen.layer.Layer;
 import net.minecraft.world.gen.layer.LayerUtil;
+import net.minecraft.world.gen.layer.MixRiverLayer;
 import net.minecraft.world.gen.layer.OceanLayer;
 import net.minecraft.world.gen.layer.RareBiomeLayer;
 import net.minecraft.world.gen.layer.RemoveTooMuchOceanLayer;
@@ -81,6 +83,7 @@ public class MidgardBiomeProvider extends BiomeProvider {
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_modified_bandlands_plateau_biome")),
 			
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_mountains_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_mushroom_fields_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_ocean_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_plains_biome")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_river_biome")),
@@ -138,6 +141,7 @@ public class MidgardBiomeProvider extends BiomeProvider {
 
 			
 			BiomeInit.VANILLA_MOUNTAINS_BIOME.get(),
+			BiomeInit.VANILLA_MUSHROOM_FIELDS_BIOME.get(),
 			BiomeInit.VANILLA_OCEAN_BIOME .get(),
 			BiomeInit.VANILLA_PLAINS_BIOME.get(),
 			BiomeInit.VANILLA_RIVER_BIOME.get(),
@@ -179,7 +183,45 @@ public class MidgardBiomeProvider extends BiomeProvider {
 		IAreaFactory<LazyArea> parentLayer = IslandLayer.INSTANCE.apply(contextFactory.apply(1));
 		IAreaFactory<LazyArea> landSeaFactory = (new BiomeLayerUtils()).apply(contextFactory.apply(200), parentLayer);
 
+		
+		landSeaFactory = ZoomLayer.FUZZY.apply(contextFactory.apply(2000L), landSeaFactory);
+		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(1L), landSeaFactory);
+		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2001L), landSeaFactory);
+		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(50L), landSeaFactory);
+		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(70L), landSeaFactory);	    
+		landSeaFactory = MidgardRemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		
+		//IAreaFactory<LazyArea> oceanFactory = MidgardOceanLayer.INSTANCE.apply(contextFactory.apply(2L));
+	    //oceanFactory = MidgardLayerUtil.repeat(2001L, ZoomLayer.NORMAL, oceanFactory, 6, contextFactory) ;
+	    //landSeaFactory = MidgardAddSnowLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		
+		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
+		//landSeaFactory = MidgardEdgeLayer.CoolWarm.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		//landSeaFactory = MidgardEdgeLayer.HeatIce.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+		landSeaFactory = MidgardEdgeLayer.Special.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
+		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), landSeaFactory);
+		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), landSeaFactory);
+		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
+		
+		landSeaFactory = MidgardAddMushroomIslandLayer.INSTANCE.apply(contextFactory.apply(5L), landSeaFactory);
+		landSeaFactory = MidgardDeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
+		
+		
+		landSeaFactory = ZoomLayer.FUZZY.apply(contextFactory.apply(2004L), landSeaFactory);
+
+		
+		/*
+		//Rivers
+        IAreaFactory<LazyArea> riversFactory = MidgardLayerUtil.repeat(1000L, ZoomLayer.NORMAL, landSeaFactory, riverSize, contextFactory);
+        riversFactory = MidgardRiverLayer.INSTANCE.apply(contextFactory.apply(1L), riversFactory);
+        riversFactory = SmoothLayer.INSTANCE.apply(contextFactory.apply(1000L), riversFactory);
+        landSeaFactory = MidgardMixRiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(100L), landSeaFactory, riversFactory);
+		 */
+
 		//LAND AND SEA
+		
+		/*
 		landSeaFactory = ZoomLayer.FUZZY.apply(contextFactory.apply(2000L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(1000L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(1001L), landSeaFactory);
@@ -190,13 +232,15 @@ public class MidgardBiomeProvider extends BiomeProvider {
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(50L), landSeaFactory);
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(70L), landSeaFactory);
 		landSeaFactory = MidgardRemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+
+	    //IAreaFactory<LazyArea> oceanFactory = MidgardOceanLayer.INSTANCE.apply(contextFactory.apply(2L));
+	    //oceanFactory = MidgardLayerUtil.repeat(2001L, ZoomLayer.NORMAL, oceanFactory, 6, contextFactory) ;
+	    //landSeaFactory = MidgardAddSnowLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
+
 		landSeaFactory = MidgardEdgeLayer.CoolWarm.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
 		landSeaFactory = MidgardEdgeLayer.HeatIce.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
 		landSeaFactory = MidgardEdgeLayer.Special.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
 
-		
-		
-		
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), landSeaFactory);
@@ -204,6 +248,10 @@ public class MidgardBiomeProvider extends BiomeProvider {
 
 		landSeaFactory = AddMushroomIslandLayer.INSTANCE.apply(contextFactory.apply(5L), landSeaFactory);
 		landSeaFactory = MidgardDeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
+		*/
+		
+		
+		
 		
 		
 		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10L), landSeaFactory);
