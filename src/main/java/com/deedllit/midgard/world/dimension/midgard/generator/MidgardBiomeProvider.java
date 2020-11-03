@@ -199,17 +199,25 @@ public class MidgardBiomeProvider extends BiomeProvider {
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
 		//landSeaFactory = MidgardEdgeLayer.CoolWarm.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
 		//landSeaFactory = MidgardEdgeLayer.HeatIce.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
-		landSeaFactory = MidgardEdgeLayer.Special.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
+		//landSeaFactory = MidgardEdgeLayer.Special.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
+		
+		
+		
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), landSeaFactory);
 		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), landSeaFactory);
 		landSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
 		
 		landSeaFactory = MidgardAddMushroomIslandLayer.INSTANCE.apply(contextFactory.apply(5L), landSeaFactory);
 		landSeaFactory = MidgardDeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
+		landSeaFactory = MidgardBiomeEdgeLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory)  ; 
 		
 		
 		landSeaFactory = ZoomLayer.FUZZY.apply(contextFactory.apply(2004L), landSeaFactory);
 
+		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2004L), landSeaFactory);
+		landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2005L), landSeaFactory);
+		
+		
 		
 		/*
 		//Rivers
