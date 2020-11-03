@@ -4,14 +4,18 @@ import java.util.function.LongFunction;
 
 import com.deedllit.yggdrasil.init.BiomeInit;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.IExtendedNoiseRandom;
+import net.minecraft.world.gen.INoiseRandom;
+import net.minecraft.world.gen.LazyAreaLayerContext;
 import net.minecraft.world.gen.area.IArea;
 import net.minecraft.world.gen.area.IAreaFactory;
 import net.minecraft.world.gen.area.LazyArea;
 import net.minecraft.world.gen.layer.*;
 import net.minecraft.world.gen.layer.traits.IAreaTransformer1;
+import net.minecraft.world.gen.layer.traits.IC0Transformer;
 
 public class MidgardLayerUtil {
 
@@ -38,6 +42,43 @@ public class MidgardLayerUtil {
 	public static final int MUSHROOM_FIELD_SHORE = Registry.BIOME.getId(Biomes.MUSHROOM_FIELD_SHORE);
 	
 	
+
+	
+	
+	public static Layer createWorld(World world) {
+		
+		LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory = l -> new LazyAreaLayerContext(15, world.getSeed(), l);
+		
+		
+		IAreaFactory<LazyArea> earthSeaFactory = createEarthSea(contextFactory);
+		
+		return new Layer(earthSeaFactory);
+		
+	}
+	
+
+
+	private static IAreaFactory<LazyArea> createEarthSea(LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory) {
+		IAreaFactory<LazyArea> earthSeaFactory = IslandLayer.INSTANCE.apply(contextFactory.apply(1));
+		//IAreaFactory<LazyArea> earthSeaFactory = (new BiomeLayerUtils()).apply(contextFactory.apply(200), parentLayer);
+
+		//LAND AND SEA 
+		earthSeaFactory = ZoomLayer.FUZZY.apply(contextFactory.apply(2000L), earthSeaFactory);
+		earthSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(1L), earthSeaFactory);
+		earthSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2001L), earthSeaFactory);
+		earthSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), earthSeaFactory);
+		earthSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(50L), earthSeaFactory);
+		earthSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(70L), earthSeaFactory);	    
+		earthSeaFactory = MidgardRemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), earthSeaFactory);
+		earthSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), earthSeaFactory);
+		earthSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), earthSeaFactory);
+		earthSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), earthSeaFactory);
+		earthSeaFactory = MidgardAddIslandLayer.INSTANCE.apply(contextFactory.apply(4L), earthSeaFactory);
+		return earthSeaFactory;
+	}
+
+
+
 	public static IAreaFactory<LazyArea> repeat(long seed, IAreaTransformer1 parent, IAreaFactory<LazyArea> targetFactory,
 			int count, LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory) {
 
@@ -60,7 +101,6 @@ public class MidgardLayerUtil {
 		return biomeIn == WARM_OCEAN || biomeIn == LUKEWARM_OCEAN || biomeIn == OCEAN || biomeIn == COLD_OCEAN
 				|| biomeIn == FROZEN_OCEAN;
 	}
-
 
 
 }

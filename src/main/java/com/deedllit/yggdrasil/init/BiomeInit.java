@@ -36,6 +36,48 @@ public class BiomeInit {
  */
 	
 	
+
+
+	public static final RegistryObject<Biome> VANILLA_WOODED_HILLS_BIOME = BIOMES
+			.register("vanilla_wooded_hills_biome",
+				() -> new VanillaWoodedHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_TALL_BIRCH_HILLS_BIOME = BIOMES
+			.register("vanilla_tall_birch_hills_biome",
+				() -> new VanillaTallBirchHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_TALL_BIRCH_FOREST_BIOME = BIOMES
+			.register("vanilla_tall_birch_forest_biome",
+				() -> new VanillaTallBirchForestBiome());
+
+	public static final RegistryObject<Biome> VANILLA_TAIGA_MOUNTAIN_BIOME = BIOMES
+			.register("vanilla_taiga_mountains_biome",
+				() -> new VanillaTaigaMountainsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_TAIGA_HILLS_BIOME = BIOMES
+			.register("vanilla_taiga_hills_biome",
+				() -> new VanillaTaigaHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_TAIGA_BIOME = BIOMES
+			.register("vanilla_taiga_biome",
+				() -> new VanillaTaigaBiome());
+
+	
+	
+	
+	public static final RegistryObject<Biome> VANILLA_SWAMP_HILLS_BIOME = BIOMES
+			.register("vanilla_swamp_hills_biome",
+				() -> new VanillaSwampHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_SWAMP_BIOME = BIOMES
+			.register("vanilla_swamp_biome",
+				() -> new VanillaSwampBiome());
+
+	public static final RegistryObject<Biome> VANILLA_STONE_SHORE_BIOME = BIOMES
+			.register("vanilla_stone_shore_biome",
+				() -> new VanillaStoneShoreBiome());
+
+	
 	public static final RegistryObject<Biome> VANILLA_SNOWY_TUNDRA_BIOME = BIOMES
 			.register("vanilla_snowy_tundra_biome",
 				() -> new VanillaSnowyTundraBiome());
@@ -78,12 +120,12 @@ public class BiomeInit {
 
 	
 	
-	public static final RegistryObject<Biome> VANILLA_WOODED_MOUTAINS_BIOME = BIOMES
-			.register("vanilla_wooded_moutains_biome",
+	public static final RegistryObject<Biome> VANILLA_WOODED_MOUNTAINS_BIOME = BIOMES
+			.register("vanilla_wooded_mountains_biome",
 				() -> new VanillaWoodedMountainsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_WODDED_BADLANDS_PLATEAU_BIOME = BIOMES
-			.register("vanilla_wodded_badlands_plateau_biome",
+	public static final RegistryObject<Biome> VANILLA_WOODED_BADLANDS_PLATEAU_BIOME = BIOMES
+			.register("vanilla_wooded_badlands_plateau_biome",
 				() -> new VanillaWoodedBadlandsPlateauBiome());
 
 	public static final RegistryObject<Biome> VANILLA_MODIFIED_GRAVELLY_MOUNTAINS_BIOME = BIOMES
@@ -139,20 +181,20 @@ public class BiomeInit {
 			.register("vanilla_frozen_river_biome",
 					() -> new VanillaFrozenRiverBiome());
 
-	public static final RegistryObject<Biome> VANILLA_GIANT_SPRUCE_TAGIA_BIOME = BIOMES
-			.register("vanilla_giant_spruce_tagia_biome",
+	public static final RegistryObject<Biome> VANILLA_GIANT_SPRUCE_TAIGA_BIOME = BIOMES
+			.register("vanilla_giant_spruce_taiga_biome",
 					() -> new VanillaGiantSpruceTaigaBiome());
 
-	public static final RegistryObject<Biome> VANILLA_GIANT_SPRUCE_TAGIA_HILLS_BIOME = BIOMES
-			.register("vanilla_giant_spruce_tagia_hills_biome",
+	public static final RegistryObject<Biome> VANILLA_GIANT_SPRUCE_TAIGA_HILLS_BIOME = BIOMES
+			.register("vanilla_giant_spruce_taiga_hills_biome",
 					() -> new VanillaGiantSpruceTaigaHillsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_GIANT_TREE_TAGIA_BIOME = BIOMES
-			.register("vanilla_giant_tree_tagia_biome",
+	public static final RegistryObject<Biome> VANILLA_GIANT_TREE_TAIGA_BIOME = BIOMES
+			.register("vanilla_giant_tree_taiga_biome",
 					() -> new VanillaGiantTreeTaigaBiome());
 
-	public static final RegistryObject<Biome> VANILLA_GIANT_TREE_TAGIA_HILLS_BIOME = BIOMES
-			.register("vanilla_giant_tree_tagia_hills_biome",
+	public static final RegistryObject<Biome> VANILLA_GIANT_TREE_TAIGA_HILLS_BIOME = BIOMES
+			.register("vanilla_giant_tree_taiga_hills_biome",
 					() -> new VanillaGiantTreeTaigaHillsBiome());
 
 	public static final RegistryObject<Biome> VANILLA_GRAVELLY_MOUNTAINS_BIOME = BIOMES
@@ -524,10 +566,10 @@ public class BiomeInit {
 		setMidgard.add(VANILLA_FOREST_BIOME.get()) ; 
 		setMidgard.add(VANILLA_FROZEN_OCEAN_BIOME.get()) ;
 		setMidgard.add(VANILLA_FROZEN_RIVER_BIOME.get()) ;
-		setMidgard.add(VANILLA_GIANT_SPRUCE_TAGIA_BIOME.get()) ;
-		setMidgard.add(VANILLA_GIANT_SPRUCE_TAGIA_HILLS_BIOME.get()) ;
-		setMidgard.add(VANILLA_GIANT_TREE_TAGIA_BIOME.get()) ;
-		setMidgard.add(VANILLA_GIANT_TREE_TAGIA_HILLS_BIOME.get()) ;
+		setMidgard.add(VANILLA_GIANT_SPRUCE_TAIGA_BIOME.get()) ;
+		setMidgard.add(VANILLA_GIANT_SPRUCE_TAIGA_HILLS_BIOME.get()) ;
+		setMidgard.add(VANILLA_GIANT_TREE_TAIGA_BIOME.get()) ;
+		setMidgard.add(VANILLA_GIANT_TREE_TAIGA_HILLS_BIOME.get()) ;
 		setMidgard.add(VANILLA_GRAVELLY_MOUNTAINS_BIOME.get()) ;
 		setMidgard.add(VANILLA_JUNGLE_BIOME.get()) ;
 		setMidgard.add(VANILLA_JUNGLE_EDGE_BIOME.get()) ;
@@ -555,9 +597,19 @@ public class BiomeInit {
 		setMidgard.add(VANILLA_SNOWY_TAIGA_HILLS_BIOME.get()) ; 
 		setMidgard.add(VANILLA_SNOWY_TAIGA_MOUNTAINS_BIOME.get()) ; 
 		setMidgard.add(VANILLA_SNOWY_TUNDRA_BIOME.get()) ; 
-
+		setMidgard.add(VANILLA_STONE_SHORE_BIOME.get()) ;
 		setMidgard.add(VANILLA_SUNFLOWER_PLAINS_BIOME.get()) ;
+		setMidgard.add(VANILLA_SWAMP_BIOME.get()) ;
+		setMidgard.add(VANILLA_SWAMP_HILLS_BIOME.get()) ;
+		setMidgard.add(VANILLA_TAIGA_BIOME.get()) ; 
+		setMidgard.add(VANILLA_TAIGA_HILLS_BIOME.get()) ; 
+		setMidgard.add(VANILLA_TAIGA_MOUNTAIN_BIOME.get()) ; 
+		setMidgard.add(VANILLA_TALL_BIRCH_FOREST_BIOME.get()) ; 
+		setMidgard.add(VANILLA_TALL_BIRCH_HILLS_BIOME.get()) ; 
 		setMidgard.add(VANILLA_WARM_OCEAN_BIOME.get()) ; 
+		setMidgard.add(VANILLA_WOODED_BADLANDS_PLATEAU_BIOME.get()) ; 
+		setMidgard.add(VANILLA_WOODED_HILLS_BIOME.get()) ; 		
+		setMidgard.add(VANILLA_WOODED_MOUNTAINS_BIOME.get()) ; 
 
 		
 		
@@ -579,128 +631,53 @@ public class BiomeInit {
 	 * REGISTER IN OVERWORLD
 	 */
 	public static void registerBiomes() {
-		
-		/*
-		 *         addTypes(Biomes.OCEAN,                            OCEAN, OVERWORLD                                                   );
-        addTypes(Biomes.PLAINS,                           PLAINS, OVERWORLD                                                  );
-        addTypes(Biomes.DESERT,                           HOT,      DRY,        SANDY, OVERWORLD                             );
-        addTypes(Biomes.MOUNTAINS,                    MOUNTAIN, HILLS, OVERWORLD                                         );
-        addTypes(Biomes.FOREST,                           FOREST, OVERWORLD                                                  );
-        addTypes(Biomes.TAIGA,                            COLD,     CONIFEROUS, FOREST, OVERWORLD                            );
-        addTypes(Biomes.SWAMP,                        WET,      SWAMP, OVERWORLD                                         );
-        addTypes(Biomes.RIVER,                            RIVER, OVERWORLD                                                   );
-        addTypes(Biomes.NETHER,                             HOT,      DRY,        NETHER                            );
-        addTypes(Biomes.THE_END,                              COLD,     DRY,        END                               );
-        addTypes(Biomes.FROZEN_OCEAN,                     COLD,     OCEAN,      SNOWY, OVERWORLD                             );
-        addTypes(Biomes.FROZEN_RIVER,                     COLD,     RIVER,      SNOWY, OVERWORLD                             );
-        addTypes(Biomes.SNOWY_TUNDRA,                       COLD,     SNOWY,      WASTELAND, OVERWORLD                         );
-        addTypes(Biomes.SNOWY_MOUNTAINS,                    COLD,     SNOWY,      MOUNTAIN, OVERWORLD                          );
-        addTypes(Biomes.MUSHROOM_FIELDS,                  MUSHROOM, RARE, OVERWORLD                                          );
-        addTypes(Biomes.MUSHROOM_FIELD_SHORE,            MUSHROOM, BEACH,      RARE, OVERWORLD                              );
-        addTypes(Biomes.BEACH,                            BEACH, OVERWORLD                                                   );
-        addTypes(Biomes.DESERT_HILLS,                     HOT,      DRY,        SANDY,    HILLS, OVERWORLD                   );
-        addTypes(Biomes.WOODED_HILLS,                     FOREST,   HILLS, OVERWORLD                                         );
-        addTypes(Biomes.TAIGA_HILLS,                      COLD,     CONIFEROUS, FOREST,   HILLS, OVERWORLD                   );
-        addTypes(Biomes.MOUNTAIN_EDGE,               MOUNTAIN, OVERWORLD                                                );
-        addTypes(Biomes.JUNGLE,                           HOT,      WET,        DENSE,    JUNGLE, OVERWORLD                  );
-        addTypes(Biomes.JUNGLE_HILLS,                     HOT,      WET,        DENSE,    JUNGLE,   HILLS, OVERWORLD         );
-        addTypes(Biomes.JUNGLE_EDGE,                      HOT,      WET,        JUNGLE,   FOREST,   RARE, OVERWORLD          );
-        addTypes(Biomes.DEEP_OCEAN,                       OCEAN, OVERWORLD                                                   );
-        addTypes(Biomes.STONE_SHORE,                      BEACH, OVERWORLD                                                   );
-        addTypes(Biomes.SNOWY_BEACH,                       COLD,     BEACH,      SNOWY, OVERWORLD                             );
-        addTypes(Biomes.BIRCH_FOREST,                     FOREST, OVERWORLD                                                  );
-        addTypes(Biomes.BIRCH_FOREST_HILLS,               FOREST,   HILLS, OVERWORLD                                         );
-        addTypes(Biomes.DARK_FOREST,                    SPOOKY,   DENSE,      FOREST, OVERWORLD                            );
-        addTypes(Biomes.SNOWY_TAIGA,                       COLD,     CONIFEROUS, FOREST,   SNOWY, OVERWORLD                   );
-        addTypes(Biomes.SNOWY_TAIGA_HILLS,                 COLD,     CONIFEROUS, FOREST,   SNOWY,    HILLS, OVERWORLD         );
-        addTypes(Biomes.GIANT_TREE_TAIGA,                    COLD,     CONIFEROUS, FOREST, OVERWORLD                            );
-        addTypes(Biomes.GIANT_TREE_TAIGA_HILLS,              COLD,     CONIFEROUS, FOREST,   HILLS, OVERWORLD                   );
-        addTypes(Biomes.WOODED_MOUNTAINS,         MOUNTAIN, FOREST,     SPARSE, OVERWORLD                            );
-        addTypes(Biomes.SAVANNA,                          HOT,      SAVANNA,    PLAINS,   SPARSE, OVERWORLD                  );
-        addTypes(Biomes.SAVANNA_PLATEAU,                  HOT,      SAVANNA,    PLAINS,   SPARSE,   RARE, OVERWORLD, PLATEAU          );
-        addTypes(Biomes.BADLANDS,                             MESA,     SANDY,  DRY, OVERWORLD                               );
-        addTypes(Biomes.WOODED_BADLANDS_PLATEAU,                        MESA,     SANDY,    DRY,    SPARSE, OVERWORLD, PLATEAU        );
-        addTypes(Biomes.BADLANDS_PLATEAU,                  MESA,     SANDY,     DRY, OVERWORLD, PLATEAU                               );
-        addTypes(Biomes.SMALL_END_ISLANDS,                   END                                                     );
-        addTypes(Biomes.END_MIDLANDS,                   END                                                     );
-        addTypes(Biomes.END_HIGHLANDS,                   END                                                     );
-        addTypes(Biomes.END_BARRENS,                   END                                                     );
-        addTypes(Biomes.WARM_OCEAN,                   OCEAN,   HOT, OVERWORLD                                            );
-        addTypes(Biomes.LUKEWARM_OCEAN,                   OCEAN, OVERWORLD                                                   );
-        addTypes(Biomes.COLD_OCEAN,                   OCEAN,   COLD, OVERWORLD                                           );
-        addTypes(Biomes.DEEP_WARM_OCEAN,                   OCEAN,   HOT, OVERWORLD                                            );
-        addTypes(Biomes.DEEP_LUKEWARM_OCEAN,                   OCEAN, OVERWORLD                                                   );
-        addTypes(Biomes.DEEP_COLD_OCEAN,                   OCEAN,   COLD, OVERWORLD                                           );
-        addTypes(Biomes.DEEP_FROZEN_OCEAN,                   OCEAN,   COLD, OVERWORLD                                           );
-        addTypes(Biomes.THE_VOID,                             VOID                                                    );
-        addTypes(Biomes.SUNFLOWER_PLAINS,                   PLAINS,   RARE, OVERWORLD                                          );
-        addTypes(Biomes.DESERT_LAKES,                   HOT,      DRY,        SANDY,    RARE, OVERWORLD                    );
-        addTypes(Biomes.GRAVELLY_MOUNTAINS,            MOUNTAIN, SPARSE,     RARE, OVERWORLD                              );
-        addTypes(Biomes.FLOWER_FOREST,                   FOREST,   HILLS,      RARE, OVERWORLD                              );
-        addTypes(Biomes.TAIGA_MOUNTAINS,                    COLD,     CONIFEROUS, FOREST,   MOUNTAIN, RARE, OVERWORLD          );
-        addTypes(Biomes.SWAMP_HILLS,                WET,      SWAMP,      HILLS,    RARE, OVERWORLD                    );
-        addTypes(Biomes.ICE_SPIKES,                COLD,     SNOWY,      HILLS,    RARE, OVERWORLD                    );
-        addTypes(Biomes.MODIFIED_JUNGLE,                   HOT,      WET,        DENSE,    JUNGLE,   MOUNTAIN, RARE, OVERWORLD, MODIFIED);
-        addTypes(Biomes.MODIFIED_JUNGLE_EDGE,              HOT,      SPARSE,     JUNGLE,   HILLS,    RARE, OVERWORLD, MODIFIED          );
-        addTypes(Biomes.TALL_BIRCH_FOREST,             FOREST,   DENSE,      HILLS,    RARE, OVERWORLD                    );
-        addTypes(Biomes.TALL_BIRCH_HILLS,       FOREST,   DENSE,      MOUNTAIN, RARE, OVERWORLD                    );
-        addTypes(Biomes.DARK_FOREST_HILLS,            SPOOKY,   DENSE,      FOREST,   MOUNTAIN, RARE, OVERWORLD          );
-        addTypes(Biomes.SNOWY_TAIGA_MOUNTAINS,               COLD,     CONIFEROUS, FOREST,   SNOWY,    MOUNTAIN, RARE, OVERWORLD);
-        addTypes(Biomes.GIANT_SPRUCE_TAIGA,            DENSE,    FOREST,     RARE, OVERWORLD                              );
-        addTypes(Biomes.GIANT_SPRUCE_TAIGA_HILLS,      DENSE,    FOREST,     HILLS,    RARE, OVERWORLD                    );
-        addTypes(Biomes.MODIFIED_GRAVELLY_MOUNTAINS, MOUNTAIN, SPARSE,     RARE, OVERWORLD, MODIFIED                              );
-        addTypes(Biomes.SHATTERED_SAVANNA,                  HOT,      DRY,        SPARSE,   SAVANNA,  MOUNTAIN, RARE, OVERWORLD);
-        addTypes(Biomes.SHATTERED_SAVANNA_PLATEAU,             HOT,      DRY,        SPARSE,   SAVANNA,  HILLS,    RARE, OVERWORLD, PLATEAU);
-        addTypes(Biomes.ERODED_BADLANDS,                     HOT,      DRY,        SPARSE,  MOUNTAIN, RARE, OVERWORLD);
-        addTypes(Biomes.MODIFIED_WOODED_BADLANDS_PLATEAU,                HOT,      DRY,        SPARSE,   HILLS,    RARE, OVERWORLD, PLATEAU, MODIFIED          );
-		 */
+
 		
 		registerMidgardBiomes() ;
 		
-        BiomeDictionary.addTypes(VANILLA_BADLANDS_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_BADLANDS_PLATEAU_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_BADLANDS_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.SANDY, BiomeDictionary.Type.DRY, BiomeDictionary.Type.DRY, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_BADLANDS_PLATEAU_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.SANDY, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY,  BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_BAMBOO_JUNGLE_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.RARE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_BAMBOO_JUNGLE_HILLS_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.RARE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_BEACH_BIOME.get(), BiomeDictionary.Type.BEACH, BiomeDictionary.Type.COLD, Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_BIRCH_FOREST_HILLS_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD );
+        BiomeDictionary.addTypes(VANILLA_BEACH_BIOME.get(), BiomeDictionary.Type.BEACH, Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_BIRCH_FOREST_HILLS_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS,  BiomeDictionary.Type.OVERWORLD );
         BiomeDictionary.addTypes(VANILLA_COLD_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DARK_FOREST_BIOME.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DARK_FOREST_HILL_BIOME.get(), BiomeDictionary.Type.HILLS, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DEEP_COLD_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.COLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DEEP_FROZEN_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.COLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DEEP_LUKE_WARM_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.HOT, BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DEEP_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DEEP_WARM_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.HOT,  BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DESERT_BIOME.get(), BiomeDictionary.Type.DEAD, BiomeDictionary.Type.SANDY, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT,  BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DESERT_HILLS_BIOME.get(), BiomeDictionary.Type.DEAD, BiomeDictionary.Type.SANDY, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_DESERT_LAKES_BIOME.get(), BiomeDictionary.Type.SANDY, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_ERODED_BADLANDS_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.SANDY, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_FLOWER_FOREST_BIOME .get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_FOREST_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.DENSE,  BiomeDictionary.Type.OVERWORLD);        
-        BiomeDictionary.addTypes(VANILLA_FROZEN_OCEAN_BIOME .get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.COLD,  BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_FROZEN_RIVER_BIOME.get(), BiomeDictionary.Type.RIVER, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.COLD, BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_GIANT_SPRUCE_TAGIA_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD,  BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_GIANT_SPRUCE_TAGIA_HILLS_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD,  BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_GIANT_TREE_TAGIA_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_GIANT_TREE_TAGIA_HILLS_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_GRAVELLY_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_JUNGLE_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.RARE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_JUNGLE_EDGE_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.RARE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_JUNGLE_HILLS_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_LUKE_WARM_OCEAN_BIOME .get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.HOT,  BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MODIFIED_BADLANDS_PLATEAU_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MODIFIED_GRAVELLY_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MODIFIED_JUNGLE_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MODIFIED_JUNGLE_EDGE_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MODIFIED_WOODED_BADLANDS_PLATEAU_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MOUNTAIN_EDGE_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MUSHROOM_FIELDS_BIOME.get(), BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.RARE, BiomeDictionary.Type.LUSH, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_MUSHROOM_FIELD_SHORE_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_OCEAN_BIOME .get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_PLAINS_BIOME.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
-        BiomeDictionary.addTypes(VANILLA_RIVER_BIOME.get(), BiomeDictionary.Type.RIVER, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
-        
+        BiomeDictionary.addTypes(VANILLA_DARK_FOREST_BIOME.get(), BiomeDictionary.Type.SPOOKY, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DARK_FOREST_HILL_BIOME.get(), BiomeDictionary.Type.SPOOKY, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DEEP_COLD_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DEEP_FROZEN_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DEEP_LUKE_WARM_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DEEP_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DEEP_WARM_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DESERT_BIOME.get(), BiomeDictionary.Type.HOT, BiomeDictionary.Type.SANDY, BiomeDictionary.Type.DRY, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DESERT_HILLS_BIOME.get(), BiomeDictionary.Type.HILLS, BiomeDictionary.Type.SANDY, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_DESERT_LAKES_BIOME.get(), BiomeDictionary.Type.SANDY, BiomeDictionary.Type.RARE, BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_ERODED_BADLANDS_BIOME.get(), BiomeDictionary.Type.HOT, BiomeDictionary.Type.DRY, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_FLOWER_FOREST_BIOME .get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_FOREST_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.OVERWORLD);        
+        BiomeDictionary.addTypes(VANILLA_FROZEN_OCEAN_BIOME .get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_FROZEN_RIVER_BIOME.get(), BiomeDictionary.Type.RIVER, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_GIANT_SPRUCE_TAIGA_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_GIANT_SPRUCE_TAIGA_HILLS_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.DENSE,  BiomeDictionary.Type.RARE, BiomeDictionary.Type.HILLS,  BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_GIANT_TREE_TAIGA_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD, BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_GIANT_TREE_TAIGA_HILLS_BIOME.get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.COLD, BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);        
+        BiomeDictionary.addTypes(VANILLA_GRAVELLY_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);        
+        BiomeDictionary.addTypes(VANILLA_JUNGLE_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.HOT, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_JUNGLE_EDGE_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.RARE, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_JUNGLE_HILLS_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HOT, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_LUKE_WARM_OCEAN_BIOME .get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MODIFIED_BADLANDS_PLATEAU_BIOME.get(), BiomeDictionary.Type.HOT, BiomeDictionary.Type.DRY, BiomeDictionary.Type.RARE, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.MODIFIED, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MODIFIED_GRAVELLY_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.RARE, BiomeDictionary.Type.MODIFIED, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MODIFIED_JUNGLE_BIOME.get(), BiomeDictionary.Type.HOT, BiomeDictionary.Type.WET, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.DRY, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.RARE, BiomeDictionary.Type.MODIFIED, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MODIFIED_JUNGLE_EDGE_BIOME.get(), BiomeDictionary.Type.HOT, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.RARE, BiomeDictionary.Type.MODIFIED, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MODIFIED_WOODED_BADLANDS_PLATEAU_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.SANDY, BiomeDictionary.Type.DRY, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MOUNTAIN_EDGE_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MUSHROOM_FIELDS_BIOME.get(), BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.RARE,BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_MUSHROOM_FIELD_SHORE_BIOME.get(), BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.BEACH, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_OCEAN_BIOME .get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_PLAINS_BIOME.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_RIVER_BIOME.get(), BiomeDictionary.Type.RIVER, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_SAVANNA_BIOME.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.SAVANNA, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_SAVANNA_PLATEAU_BIOME.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.SAVANNA, BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_SHATTERED_SAVANNA_BIOME.get(), BiomeDictionary.Type.DRY, BiomeDictionary.Type.HOT, BiomeDictionary.Type.SAVANNA, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
@@ -711,10 +688,19 @@ public class BiomeInit {
         BiomeDictionary.addTypes(VANILLA_SNOWY_TAIGA_HILLS_BIOME.get(), BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.COLD, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_SNOWY_TAIGA_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.COLD, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.CONIFEROUS,BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_SNOWY_TUNDRA_BIOME.get(), BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.COLD, BiomeDictionary.Type.WASTELAND, BiomeDictionary.Type.OVERWORLD);
-
-        
-        BiomeDictionary.addTypes(VANILLA_SUNFLOWER_PLAINS_BIOME.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_STONE_SHORE_BIOME.get(), BiomeDictionary.Type.BEACH, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_SUNFLOWER_PLAINS_BIOME.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_SWAMP_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.SWAMP, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_SWAMP_HILLS_BIOME.get(), BiomeDictionary.Type.WET, BiomeDictionary.Type.SWAMP, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.RARE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_TAIGA_BIOME .get(), BiomeDictionary.Type.COLD, BiomeDictionary.Type.FOREST,  BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_TAIGA_HILLS_BIOME .get(), BiomeDictionary.Type.COLD, BiomeDictionary.Type.FOREST,  BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_TAIGA_MOUNTAIN_BIOME .get(), BiomeDictionary.Type.COLD, BiomeDictionary.Type.FOREST,  BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.RARE, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_TALL_BIRCH_FOREST_BIOME .get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.DENSE,  BiomeDictionary.Type.RARE, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_TALL_BIRCH_HILLS_BIOME .get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.DENSE,  BiomeDictionary.Type.RARE, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(VANILLA_WARM_OCEAN_BIOME .get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.HOT,  BiomeDictionary.Type.WATER, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_WOODED_BADLANDS_PLATEAU_BIOME .get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.FOREST,  BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(VANILLA_WOODED_HILLS_BIOME .get(), BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.OVERWORLD);        
+        BiomeDictionary.addTypes(VANILLA_WOODED_MOUNTAINS_BIOME.get(), BiomeDictionary.Type.MESA, BiomeDictionary.Type.SANDY,  BiomeDictionary.Type.DRY, BiomeDictionary.Type.SPARSE, BiomeDictionary.Type.PLATEAU, BiomeDictionary.Type.OVERWORLD);
         
 
         
