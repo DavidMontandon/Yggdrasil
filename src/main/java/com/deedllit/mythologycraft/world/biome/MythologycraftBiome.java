@@ -26,6 +26,7 @@ public class MythologycraftBiome extends Biome {
 		this.canSpawnInBiome = true;	
 	}
 	
+	/*
 	public void setCaveDecoration(MythologyCaveDecoration mcd) {		
 		if( mcd!= null ) {
 			this.caveDecoration = mcd ;			
@@ -33,6 +34,7 @@ public class MythologycraftBiome extends Biome {
 			this.caveDecoration = MythologycraftCaveDecorations.DEFAULT_DECORATION ;
 		}
 	}
+	*/
 	
     public void addWeight(MythologycraftClimates climate, int weight) {
         this.weightMap.put(climate, weight);
@@ -46,6 +48,13 @@ public class MythologycraftBiome extends Biome {
             this.riverBiomeId = -1;
     }	
 
+	public void setBeachBiome(int id) {
+        if (id != -1)
+            this.beachBiomeId = id  ; 
+        else
+            this.beachBiomeId = -1;
+    }
+    
     @SuppressWarnings("deprecation")
 	public void setBeachBiome(Biome biome) {
         if (biome != null)

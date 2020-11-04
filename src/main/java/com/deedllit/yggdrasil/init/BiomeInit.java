@@ -35,293 +35,207 @@ public class BiomeInit {
  * OVERWORLD
  */
 	
+
+	public static final RegistryObject<Biome> VANILLA_BADLANDS_BIOME = 
+			BIOMES.register("vanilla_badlands_biome", () -> new VanillaBadlandsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BADLANDS_PLATEAU_BIOME = 
+			BIOMES.register("vanilla_badlands_plateau_biome", () -> new VanillaBadlandsPlateauBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BAMBOO_JUNGLE_BIOME = 
+			BIOMES.register("vanilla_bamboo_jungle_biome", () -> new VanillaBambooJungleBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BAMBOO_JUNGLE_HILLS_BIOME = 
+			BIOMES.register("vanilla_bamboo_jungle_hills_biome", () -> new VanillaBambooJungleHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BEACH_BIOME = 
+			BIOMES.register("vanilla_beach_biome", () -> new VanillaBeachBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BIRCH_FOREST_BIOME = 
+			BIOMES.register("vanilla_birch_forest_biome", () -> new VanillaBirchForestBiome());
+
+	public static final RegistryObject<Biome> VANILLA_BIRCH_FOREST_HILLS_BIOME = 
+			BIOMES.register("vanilla_birch_forest_hills_biome", () -> new VanillaBirchForestHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_COLD_OCEAN_BIOME = 
+			BIOMES.register("vanilla_cold_ocean_biome", () -> new VanillaColdOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DARK_FOREST_BIOME = 
+			BIOMES.register("vanilla_dark_forest_biome", () -> new VanillaDarkForestBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DARK_FOREST_HILL_BIOME = 
+			BIOMES.register("vanilla_dark_forest_hill_biome", () -> new VanillaDarkForestHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DEEP_COLD_OCEAN_BIOME = 
+			BIOMES.register("vanilla_deep_cold_ocean_biome", () -> new VanillaDeepColdOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DEEP_FROZEN_OCEAN_BIOME = 
+			BIOMES.register("vanilla_deep_frozen_ocean_biome", () -> new VanillaDeepFrozenOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DEEP_LUKE_WARM_OCEAN_BIOME = 
+			BIOMES.register("vanilla_deep_luke_warm_ocean_biome",() -> new VanillaDeepLukewarmOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DEEP_OCEAN_BIOME = 
+			BIOMES.register("vanilla_deep_ocean_biome", () -> new VanillaDeepOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DEEP_WARM_OCEAN_BIOME = 
+			BIOMES.register("vanilla_deep_warm_ocean_biome", () -> new VanillaDeepWarmOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DESERT_BIOME = 
+			BIOMES.register("vanilla_desert_biome", () -> new VanillaDesertBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DESERT_HILLS_BIOME = 
+			BIOMES.register("vanilla_desert_hills_biome", () -> new VanillaDesertHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_DESERT_LAKES_BIOME = 
+			BIOMES.register("vanilla_desert_lakes_biome", () -> new VanillaDesertLakesBiome());
+
+	public static final RegistryObject<Biome> VANILLA_ERODED_BADLANDS_BIOME = 
+			BIOMES.register("vanilla_eroded_badlands_biome", () -> new VanillaErodedBadlandsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_FLOWER_FOREST_BIOME = 
+			BIOMES.register("vanilla_flower_forest_biome", () -> new VanillaFlowerForestBiome());
+
+	public static final RegistryObject<Biome> VANILLA_FOREST_BIOME = 
+			BIOMES.register("vanilla_forest_biome",() -> new VanillaForestBiome());
+
+	public static final RegistryObject<Biome> VANILLA_FROZEN_OCEAN_BIOME = 
+			BIOMES.register("vanilla_frozen_ocean_biome",() -> new VanillaFrozenOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_FROZEN_RIVER_BIOME = 
+			BIOMES.register("vanilla_frozen_river_biome",() -> new VanillaFrozenRiverBiome());
+
+	public static final RegistryObject<Biome> VANILLA_GIANT_SPRUCE_TAIGA_BIOME = 
+			BIOMES.register("vanilla_giant_spruce_taiga_biome",() -> new VanillaGiantSpruceTaigaBiome());
+
+	public static final RegistryObject<Biome> VANILLA_GIANT_SPRUCE_TAIGA_HILLS_BIOME = 
+			BIOMES.register("vanilla_giant_spruce_taiga_hills_biome",() -> new VanillaGiantSpruceTaigaHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_GIANT_TREE_TAIGA_BIOME = 
+			BIOMES.register("vanilla_giant_tree_taiga_biome", () -> new VanillaGiantTreeTaigaBiome());
+
+	public static final RegistryObject<Biome> VANILLA_GIANT_TREE_TAIGA_HILLS_BIOME = 
+			BIOMES.register("vanilla_giant_tree_taiga_hills_biome", () -> new VanillaGiantTreeTaigaHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_GRAVELLY_MOUNTAINS_BIOME = 
+			BIOMES.register("vanilla_gravelly_mountains_biome", () -> new VanillaGravellyMountainsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_JUNGLE_BIOME = 
+			BIOMES.register("vanilla_jungle_biome",() -> new VanillaJungleBiome());
+
+	public static final RegistryObject<Biome> VANILLA_JUNGLE_EDGE_BIOME = 
+			BIOMES.register("vanilla_jungle_edge_biome",() -> new VanillaJungleEdgeBiome());
+
+	public static final RegistryObject<Biome> VANILLA_JUNGLE_HILLS_BIOME = 
+			BIOMES.register("vanilla_jungle_hills_biome", () -> new VanillaJungleHillsBiome());
+
+	public static final RegistryObject<Biome> VANILLA_LUKE_WARM_OCEAN_BIOME = 
+			BIOMES.register("vanilla_luke_warm_ocean_biome", () -> new VanillaLukewarmOceanBiome());
+
+	public static final RegistryObject<Biome> VANILLA_MODIFIED_BADLANDS_PLATEAU_BIOME = 
+			BIOMES.register("vanilla_modified_bandlands_plateau_biome", () -> new VanillaModifiedBadlandsPlateauBiome());
 	
+	public static final RegistryObject<Biome> VANILLA_MODIFIED_GRAVELLY_MOUNTAINS_BIOME = 
+			BIOMES.register("vanilla_modified_gravelly_mountains_biome", () -> new VanillaModifiedGravellyMountainsBiome());
 
+	public static final RegistryObject<Biome> VANILLA_MODIFIED_JUNGLE_BIOME = 
+			BIOMES.register("vanilla_modified_jungle_biome", () -> new VanillaModifiedJungleBiome());
 
-	public static final RegistryObject<Biome> VANILLA_WOODED_HILLS_BIOME = BIOMES
-			.register("vanilla_wooded_hills_biome",
-				() -> new VanillaWoodedHillsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_TALL_BIRCH_HILLS_BIOME = BIOMES
-			.register("vanilla_tall_birch_hills_biome",
-				() -> new VanillaTallBirchHillsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_TALL_BIRCH_FOREST_BIOME = BIOMES
-			.register("vanilla_tall_birch_forest_biome",
-				() -> new VanillaTallBirchForestBiome());
-
-	public static final RegistryObject<Biome> VANILLA_TAIGA_MOUNTAIN_BIOME = BIOMES
-			.register("vanilla_taiga_mountains_biome",
-				() -> new VanillaTaigaMountainsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_TAIGA_HILLS_BIOME = BIOMES
-			.register("vanilla_taiga_hills_biome",
-				() -> new VanillaTaigaHillsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_TAIGA_BIOME = BIOMES
-			.register("vanilla_taiga_biome",
-				() -> new VanillaTaigaBiome());
-
+	public static final RegistryObject<Biome> VANILLA_MODIFIED_JUNGLE_EDGE_BIOME = 
+			BIOMES.register("vanilla_modified_jungle_edge_biome", () -> new VanillaModifiedJungleEdgeBiome());
 	
+	public static final RegistryObject<Biome> VANILLA_MODIFIED_WOODED_BADLANDS_PLATEAU_BIOME = 
+			BIOMES.register("vanilla_modified_wooded_badlands_plateau_biome", () -> new VanillaModifiedWoodedBadlandsPlateauBiome());
 	
+	public static final RegistryObject<Biome> VANILLA_MOUNTAINS_BIOME = 
+			BIOMES.register("vanilla_mountains_biome", () -> new VanillaMountainsBiome());
 	
-	public static final RegistryObject<Biome> VANILLA_SWAMP_HILLS_BIOME = BIOMES
-			.register("vanilla_swamp_hills_biome",
-				() -> new VanillaSwampHillsBiome());
+	public static final RegistryObject<Biome> VANILLA_MOUNTAIN_EDGE_BIOME = 
+			BIOMES.register("vanilla_mountain_edge_biome", () -> new VanillaMountainEdgeBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SWAMP_BIOME = BIOMES
-			.register("vanilla_swamp_biome",
-				() -> new VanillaSwampBiome());
+	public static final RegistryObject<Biome> VANILLA_MUSHROOM_FIELDS_BIOME = 
+			BIOMES.register("vanilla_mushroom_fields_biome", () -> new VanillaMushroomFieldsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_STONE_SHORE_BIOME = BIOMES
-			.register("vanilla_stone_shore_biome",
-				() -> new VanillaStoneShoreBiome());
-
+	public static final RegistryObject<Biome> VANILLA_MUSHROOM_FIELD_SHORE_BIOME = 
+			BIOMES.register("vanilla_mushroom_field_shore_biome", () -> new VanillaMushroomFieldShoreBiome());
 	
-	public static final RegistryObject<Biome> VANILLA_SNOWY_TUNDRA_BIOME = BIOMES
-			.register("vanilla_snowy_tundra_biome",
-				() -> new VanillaSnowyTundraBiome());
+	public static final RegistryObject<Biome> VANILLA_OCEAN_BIOME = 
+			BIOMES.register("vanilla_ocean_biome", () -> new VanillaOceanBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SNOWY_TAIGA_MOUNTAINS_BIOME = BIOMES
-			.register("vanilla_snowy_taiga_mountains_biome",
-				() -> new VanillaSnowyTaigaMountainsBiome());
+	public static final RegistryObject<Biome> VANILLA_PLAINS_BIOME = 
+			BIOMES.register("vanilla_plains_biome", () -> new VanillaPlainsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SNOWY_TAIGA_HILLS_BIOME = BIOMES
-			.register("vanilla_snowy_taiga_hills_biome",
-				() -> new VanillaSnowyTaigaHillsBiome());
+	public static final RegistryObject<Biome> VANILLA_RIVER_BIOME = 
+			BIOMES.register("vanilla_river_biome", () -> new VanillaRiverBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SNOWY_TAIGA_BIOME = BIOMES
-			.register("vanilla_snowy_taiga_biome",
-				() -> new VanillaSnowyTaigaBiome());
+	public static final RegistryObject<Biome> VANILLA_SAVANNA_BIOME = 
+			BIOMES.register("vanilla_savanna_biome", () -> new VanillaSavannaBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SNOWY_MOUNTAINS_BIOME = BIOMES
-			.register("vanilla_snowy_mountains_biome",
-				() -> new VanillaSnowyMountainsBiome());
+	public static final RegistryObject<Biome> VANILLA_SAVANNA_PLATEAU_BIOME = 
+			BIOMES.register("vanilla_savanna_plateau_biome", () -> new VanillaSavannaPlateauBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SNOWY_BEACH_BIOME = BIOMES
-			.register("vanilla_snowy_beach_biome",
-				() -> new VanillaSnowyBeachBiome());
+	public static final RegistryObject<Biome> VANILLA_SHATTERED_SAVANNA_BIOME = 
+			BIOMES.register("vanilla_shattered_savanna_biome", () -> new VanillaShatteredSavannaBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SHATTERED_SAVANNA_PLATEAU_BIOME = BIOMES
-			.register("vanilla_shattered_savanna_plateau_biome",
-				() -> new VanillaShatteredSavannaPlateauBiome());
+	public static final RegistryObject<Biome> VANILLA_SHATTERED_SAVANNA_PLATEAU_BIOME = 
+			BIOMES.register("vanilla_shattered_savanna_plateau_biome", () -> new VanillaShatteredSavannaPlateauBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SHATTERED_SAVANNA_BIOME = BIOMES
-			.register("vanilla_shattered_savanna_biome",
-				() -> new VanillaShatteredSavannaBiome());
+	public static final RegistryObject<Biome> VANILLA_SNOWY_BEACH_BIOME = 
+			BIOMES.register("vanilla_snowy_beach_biome", () -> new VanillaSnowyBeachBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SAVANNA_PLATEAU_BIOME = BIOMES
-			.register("vanilla_savanna_plateau_biome",
-				() -> new VanillaSavannaPlateauBiome());
+	public static final RegistryObject<Biome> VANILLA_SNOWY_MOUNTAINS_BIOME = 
+			BIOMES.register("vanilla_snowy_mountains_biome", () -> new VanillaSnowyMountainsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_SAVANNA_BIOME = BIOMES
-			.register("vanilla_savanna_biome",
-				() -> new VanillaSavannaBiome());
+	public static final RegistryObject<Biome> VANILLA_SNOWY_TAIGA_BIOME = 
+			BIOMES.register("vanilla_snowy_taiga_biome", () -> new VanillaSnowyTaigaBiome());
 
-	
-	
-	public static final RegistryObject<Biome> VANILLA_WOODED_MOUNTAINS_BIOME = BIOMES
-			.register("vanilla_wooded_mountains_biome",
-				() -> new VanillaWoodedMountainsBiome());
+	public static final RegistryObject<Biome> VANILLA_SNOWY_TAIGA_HILLS_BIOME = 
+			BIOMES.register("vanilla_snowy_taiga_hills_biome", () -> new VanillaSnowyTaigaHillsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_WOODED_BADLANDS_PLATEAU_BIOME = BIOMES
-			.register("vanilla_wooded_badlands_plateau_biome",
-				() -> new VanillaWoodedBadlandsPlateauBiome());
+	public static final RegistryObject<Biome> VANILLA_SNOWY_TAIGA_MOUNTAINS_BIOME = 
+			BIOMES.register("vanilla_snowy_taiga_mountains_biome", () -> new VanillaSnowyTaigaMountainsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_MODIFIED_GRAVELLY_MOUNTAINS_BIOME = BIOMES
-			.register("vanilla_modified_gravelly_mountains_biome",
-				() -> new VanillaModifiedGravellyMountainsBiome());
+	public static final RegistryObject<Biome> VANILLA_SNOWY_TUNDRA_BIOME = 
+			BIOMES.register("vanilla_snowy_tundra_biome", () -> new VanillaSnowyTundraBiome());
 
-	public static final RegistryObject<Biome> VANILLA_MODIFIED_JUNGLE_BIOME = BIOMES
-			.register("vanilla_modified_jungle_biome",
-				() -> new VanillaModifiedJungleBiome());
+	public static final RegistryObject<Biome> VANILLA_SUNFLOWER_PLAINS_BIOME = 
+			BIOMES.register("vanilla_sunflower_plains_biome", () -> new VanillaSunflowerPlainsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_MODIFIED_JUNGLE_EDGE_BIOME = BIOMES
-			.register("vanilla_modified_jungle_edge_biome",
-				() -> new VanillaModifiedJungleEdgeBiome());
+	public static final RegistryObject<Biome> VANILLA_STONE_SHORE_BIOME = 
+			BIOMES.register("vanilla_stone_shore_biome", () -> new VanillaStoneShoreBiome());
 
-	public static final RegistryObject<Biome> VANILLA_MODIFIED_WOODED_BADLANDS_PLATEAU_BIOME = BIOMES
-			.register("vanilla_modified_wooded_badlands_plateau_biome",
-				() -> new VanillaModifiedWoodedBadlandsPlateauBiome());
+	public static final RegistryObject<Biome> VANILLA_SWAMP_BIOME = 
+			BIOMES.register("vanilla_swamp_biome", () -> new VanillaSwampBiome());
 
-	public static final RegistryObject<Biome> VANILLA_MOUNTAIN_EDGE_BIOME = BIOMES
-			.register("vanilla_mountain_edge_biome",
-				() -> new VanillaMountainEdgeBiome());
+	public static final RegistryObject<Biome> VANILLA_SWAMP_HILLS_BIOME = 
+			BIOMES.register("vanilla_swamp_hills_biome", () -> new VanillaSwampHillsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_MUSHROOM_FIELD_SHORE_BIOME = BIOMES
-			.register("vanilla_mushroom_field_shore_biome",
-				() -> new VanillaMushroomFieldShoreBiome());
+	public static final RegistryObject<Biome> VANILLA_TAIGA_BIOME = 
+			BIOMES.register("vanilla_taiga_biome", () -> new VanillaTaigaBiome());
 
-	
-	
-	public static final RegistryObject<Biome> VANILLA_MUSHROOM_FIELDS_BIOME = BIOMES
-		.register("vanilla_mushroom_fields_biome",
-			() -> new VanillaMushroomFieldsBiome());
-	
-	public static final RegistryObject<Biome> VANILLA_MODIFIED_BADLANDS_PLATEAU_BIOME = BIOMES
-			.register("vanilla_modified_bandlands_plateau_biome",
-					() -> new VanillaModifiedBadlandsPlateauBiome());
+	public static final RegistryObject<Biome> VANILLA_TAIGA_HILLS_BIOME = 
+			BIOMES.register("vanilla_taiga_hills_biome",() -> new VanillaTaigaHillsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_JUNGLE_HILLS_BIOME = BIOMES
-			.register("vanilla_jungle_hills_biome",
-					() -> new VanillaJungleHillsBiome());
+	public static final RegistryObject<Biome> VANILLA_TAIGA_MOUNTAIN_BIOME = 
+			BIOMES.register("vanilla_taiga_mountains_biome", () -> new VanillaTaigaMountainsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_JUNGLE_EDGE_BIOME = BIOMES
-			.register("vanilla_jungle_edge_biome",
-					() -> new VanillaJungleEdgeBiome());
-	
-	public static final RegistryObject<Biome> VANILLA_JUNGLE_BIOME = BIOMES
-			.register("vanilla_jungle_biome",
-					() -> new VanillaJungleBiome());
+	public static final RegistryObject<Biome> VANILLA_TALL_BIRCH_FOREST_BIOME = 
+			BIOMES.register("vanilla_tall_birch_forest_biome", () -> new VanillaTallBirchForestBiome());
 
-	
-	
-	
-	public static final RegistryObject<Biome> VANILLA_FROZEN_RIVER_BIOME = BIOMES
-			.register("vanilla_frozen_river_biome",
-					() -> new VanillaFrozenRiverBiome());
+	public static final RegistryObject<Biome> VANILLA_TALL_BIRCH_HILLS_BIOME = 
+			BIOMES.register("vanilla_tall_birch_hills_biome", () -> new VanillaTallBirchHillsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_GIANT_SPRUCE_TAIGA_BIOME = BIOMES
-			.register("vanilla_giant_spruce_taiga_biome",
-					() -> new VanillaGiantSpruceTaigaBiome());
+	public static final RegistryObject<Biome> VANILLA_WARM_OCEAN_BIOME = 
+			BIOMES.register("vanilla_warm_ocean_biome", () -> new VanillaWarmOceanBiome());
 
-	public static final RegistryObject<Biome> VANILLA_GIANT_SPRUCE_TAIGA_HILLS_BIOME = BIOMES
-			.register("vanilla_giant_spruce_taiga_hills_biome",
-					() -> new VanillaGiantSpruceTaigaHillsBiome());
+	public static final RegistryObject<Biome> VANILLA_WOODED_BADLANDS_PLATEAU_BIOME = 
+			BIOMES.register("vanilla_wooded_badlands_plateau_biome", () -> new VanillaWoodedBadlandsPlateauBiome());
 
-	public static final RegistryObject<Biome> VANILLA_GIANT_TREE_TAIGA_BIOME = BIOMES
-			.register("vanilla_giant_tree_taiga_biome",
-					() -> new VanillaGiantTreeTaigaBiome());
+	public static final RegistryObject<Biome> VANILLA_WOODED_HILLS_BIOME = 
+			BIOMES.register("vanilla_wooded_hills_biome", () -> new VanillaWoodedHillsBiome());
 
-	public static final RegistryObject<Biome> VANILLA_GIANT_TREE_TAIGA_HILLS_BIOME = BIOMES
-			.register("vanilla_giant_tree_taiga_hills_biome",
-					() -> new VanillaGiantTreeTaigaHillsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_GRAVELLY_MOUNTAINS_BIOME = BIOMES
-			.register("vanilla_gravelly_mountains_biome",
-					() -> new VanillaGravellyMountainsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_MOUNTAINS_BIOME = BIOMES
-			.register("vanilla_mountains_biome",
-					() -> new VanillaMountainsBiome());
-
-	
-	
-	public static final RegistryObject<Biome> VANILLA_FOREST_BIOME = BIOMES
-			.register("vanilla_forest_biome",
-					() -> new VanillaForestBiome());
-
-	public static final RegistryObject<Biome> VANILLA_FLOWER_FOREST_BIOME = BIOMES
-			.register("vanilla_flower_forest_biome",
-					() -> new VanillaFlowerForestBiome());
-
-	public static final RegistryObject<Biome> VANILLA_ERODED_BADLANDS_BIOME = BIOMES
-			.register("vanilla_eroded_badlands_biome",
-					() -> new VanillaErodedBadlandsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DESERT_LAKES_BIOME = BIOMES
-			.register("vanilla_desert_lakes_biome",
-					() -> new VanillaDesertLakesBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DESERT_HILLS_BIOME = BIOMES
-			.register("vanilla_desert_hills_biome",
-					() -> new VanillaDesertHillsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DESERT_BIOME = BIOMES
-			.register("vanilla_desert_biome",
-					() -> new VanillaDesertBiome());
-
-	
-	
-	
-	public static final RegistryObject<Biome> VANILLA_FROZEN_OCEAN_BIOME = BIOMES
-			.register("vanilla_frozen_ocean_biome",
-					() -> new VanillaFrozenOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_OCEAN_BIOME = BIOMES
-			.register("vanilla_ocean_biome",
-					() -> new VanillaOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_LUKE_WARM_OCEAN_BIOME = BIOMES
-			.register("vanilla_luke_warm_ocean_biome",
-					() -> new VanillaLukewarmOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_WARM_OCEAN_BIOME = BIOMES
-			.register("vanilla_warm_ocean_biome",
-					() -> new VanillaWarmOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DEEP_LUKE_WARM_OCEAN_BIOME = BIOMES
-			.register("vanilla_deep_luke_warm_ocean_biome",
-					() -> new VanillaDeepLukewarmOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DEEP_OCEAN_BIOME = BIOMES
-			.register("vanilla_deep_ocean_biome",
-					() -> new VanillaDeepOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DEEP_WARM_OCEAN_BIOME = BIOMES
-			.register("vanilla_deep_warm_ocean_biome",
-					() -> new VanillaDeepWarmOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DEEP_COLD_OCEAN_BIOME = BIOMES
-			.register("vanilla_deep_cold_ocean_biome",
-					() -> new VanillaDeepColdOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DARK_FOREST_HILL_BIOME = BIOMES
-			.register("vanilla_dark_forest_hill_biome",
-					() -> new VanillaDarkForestHillsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DARK_FOREST_BIOME = BIOMES
-			.register("vanilla_dark_forest_biome",
-					() -> new VanillaDarkForestBiome());
-
-	public static final RegistryObject<Biome> VANILLA_DEEP_FROZEN_OCEAN_BIOME = BIOMES
-			.register("vanilla_deep_frozen_ocean_biome",
-					() -> new VanillaDeepFrozenOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_COLD_OCEAN_BIOME = BIOMES
-			.register("vanilla_cold_ocean_biome",
-					() -> new VanillaColdOceanBiome());
-
-	public static final RegistryObject<Biome> VANILLA_BIRCH_FOREST_HILLS_BIOME = BIOMES
-			.register("vanilla_birch_forest_hills_biome",
-					() -> new VanillaBirchForestHillsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_BIRCH_FOREST_BIOME = BIOMES
-			.register("vanilla_birch_forest_biome",
-					() -> new VanillaBirchForestBiome());
-
-	public static final RegistryObject<Biome> VANILLA_BEACH_BIOME = BIOMES
-			.register("vanilla_beach_biome",
-					() -> new VanillaBeachBiome());
-
-	public static final RegistryObject<Biome> VANILLA_BAMBOO_JUNGLE_BIOME = BIOMES
-			.register("vanilla_bamboo_jungle_biome",
-					() -> new VanillaBambooJungleBiome());
-
-	public static final RegistryObject<Biome> VANILLA_BAMBOO_JUNGLE_HILLS_BIOME = BIOMES
-			.register("vanilla_bamboo_jungle_hills_biome",
-					() -> new VanillaBambooJungleHillsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_BADLANDS_PLATEAU_BIOME = BIOMES
-			.register("vanilla_badlands_plateau_biome",
-					() -> new VanillaBadlandsPlateauBiome());
-
-	public static final RegistryObject<Biome> VANILLA_SUNFLOWER_PLAINS_BIOME = BIOMES
-	.register("vanilla_sunflower_plains_biome",
-			() -> new VanillaSunflowerPlainsBiome());
-
-	public static final RegistryObject<Biome> VANILLA_BADLANDS_BIOME = BIOMES
-	.register("vanilla_badlands_biome",
-			() -> new VanillaBadlandsBiome());
-	
-	public static final RegistryObject<Biome> VANILLA_PLAINS_BIOME = BIOMES
-	.register("vanilla_plains_biome",
-			() -> new VanillaPlainsBiome());
-	
-	public static final RegistryObject<Biome> VANILLA_RIVER_BIOME = BIOMES
-	.register("vanilla_river_biome",
-			() -> new VanillaRiverBiome());
-	
+	public static final RegistryObject<Biome> VANILLA_WOODED_MOUNTAINS_BIOME = 
+			BIOMES.register("vanilla_wooded_mountains_biome", () -> new VanillaWoodedMountainsBiome());
 	
 	
 	/*
@@ -379,64 +293,47 @@ public class BiomeInit {
  */
 
 
-	public static final RegistryObject<Biome> MIDGARD_RAINBOW_PLAINS_BIOME = BIOMES
-			.register("midgard_rainbow_plains",
-					() -> new MidgardRainbowPlainsBiome());
+	public static final RegistryObject<Biome> MIDGARD_ALPINE_TUNDRA_BIOME = 
+			BIOMES.register("midgard_alpine_tundra", () -> new MidgardAlpineTundraBiome());	
 
-	public static final RegistryObject<Biome> MIDGARD_IRON_WOOD_BIOME = BIOMES
-			.register("midgard_iron_wood",
-					() -> new MidgardIronWoodBiome());
+	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_TROPICAL_BIOME = 
+			BIOMES.register("midgard_charparral_tropical", () -> new MidgardChaparralTropicalBiome());	
 
-	public static final RegistryObject<Biome> MIDGARD_MANGROVE_BIOME = BIOMES
-			.register("midgard_mangrove",
-					() -> new MidgardMangroveBiome());
+	public static final RegistryObject<Biome> MIDGARD_IRON_WOOD_BIOME = 
+			BIOMES.register("midgard_iron_wood", () -> new MidgardIronWoodBiome());
 	
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE_BIOME = 
+			BIOMES.register("midgard_mangrove", () -> new MidgardMangroveBiome());
+	
+	public static final RegistryObject<Biome> MIDGARD_MANGROVE_DRYER_BIOME = 
+			BIOMES.register("midgard_mangrove_dryer", () -> new MidgardMangroveDryerBiome());	
+
+	public static final RegistryObject<Biome> MIDGARD_RAINBOW_MOUTAIN_BIOME = 
+			BIOMES.register("midgard_rainbow_moutain", () -> new MidgardRainbowMoutainBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_RAINBOW_PLAINS_BIOME = 
+			BIOMES.register("midgard_rainbow_plains", () -> new MidgardRainbowPlainsBiome());
+
+	public static final RegistryObject<Biome> MIDGARD_TEAK_FOREST_BIOME = 
+			BIOMES.register("midgard_teak_forest", () -> new MidgardTeakForestBiome());	
+
+	public static final RegistryObject<Biome> MIDGARD_THOUSAND_LAKES_BIOME = 
+			BIOMES.register("midgard_thousand_lakes", () -> new MidgardThousandLakesBiome());	
+	
+	public static final RegistryObject<Biome> MIDGARD_TROPICAL_BEACH_BIOME = 
+			BIOMES.register("midgard_tropical_beach", () -> new MidgardTropicalBeachBiome());	
+
+	public static final RegistryObject<Biome> MIDGARD_TROPICAL_ISLAND_BIOME = 
+			BIOMES.register("midgard_tropical_island", () -> new MidgardTropicalIslandBiome());	
+
+	public static final RegistryObject<Biome> MIDGARD_VOLCANIC_ISLAND_BIOME = 
+			BIOMES.register("midgard_volcanic_island", () -> new MidgardVolcanicIslandBiome());	
+
 	/*
 	public static final RegistryObject<Biome> MIDGARD_MANGROVE_RIVER = BIOMES
 			.register("midgard_mangrove_river",
 					() -> new MidgardMangroveRiverBiome());	
-	
-	
-	*/
-	public static final RegistryObject<Biome> MIDGARD_MANGROVE_DRYER_BIOME = BIOMES
-			.register("midgard_mangrove_dryer",
-					() -> new MidgardMangroveDryerBiome());	
 
-	public static final RegistryObject<Biome> MIDGARD_CHARPARRAL_TROPICAL_BIOME = BIOMES
-			.register("midgard_charparral_tropical",
-					() -> new MidgardChaparralTropicalBiome());	
-	
-	public static final RegistryObject<Biome> MIDGARD_ALPINE_TUNDRA_BIOME = BIOMES
-			.register("midgard_alpine_tundra",
-					() -> new MidgardAlpineTundraBiome());	
-	
-	public static final RegistryObject<Biome> MIDGARD_TROPICAL_BEACH_BIOME = BIOMES
-			.register("midgard_tropical_beach",
-					() -> new MidgardTropicalBeachBiome());	
-
-	public static final RegistryObject<Biome> MIDGARD_RAINBOW_MOUTAIN_BIOME = BIOMES
-			.register("midgard_rainbow_moutain",
-					() -> new MidgardRainbowMoutainBiome());	
-
-	public static final RegistryObject<Biome> MIDGARD_TEAK_FOREST_BIOME = BIOMES
-			.register("midgard_teak_forest",
-					() -> new MidgardTeakForestBiome());	
-	
-	public static final RegistryObject<Biome> MIDGARD_THOUSAND_LAKES_BIOME = BIOMES
-			.register("midgard_thousand_lakes",
-					() -> new MidgardThousandLakesBiome());	
-
-	public static final RegistryObject<Biome> MIDGARD_TROPICAL_ISLAND_BIOME = BIOMES
-			.register("midgard_tropical_island",
-					() -> new MidgardTropicalIslandBiome());	
-
-	
-	public static final RegistryObject<Biome> MIDGARD_VOLCANIC_ISLAND_BIOME = BIOMES
-			.register("midgard_volcanic_island",
-					() -> new MidgardVolcanicIslandBiome());	
-	
-					
-	/*
 	public static final RegistryObject<Biome> MIDGARD_FYNBOS = BIOMES
 			.register("midgard_fynbos",
 					() -> new MidgardFynbos());	

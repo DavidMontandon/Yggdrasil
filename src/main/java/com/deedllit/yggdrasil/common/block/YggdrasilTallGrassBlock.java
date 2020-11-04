@@ -29,6 +29,12 @@ public abstract class YggdrasilTallGrassBlock extends TallGrassBlock {
 		return this.biomeType ; 
 	}
 	
+
+	@Override
+	public PlantType getPlantType(IBlockReader world, BlockPos pos) {
+		return this.getPlantType(); 
+	}
+	
 	public void setPlantType(PlantType type) {
 		this.biomeType = type ;  		
 	}
@@ -41,13 +47,14 @@ public abstract class YggdrasilTallGrassBlock extends TallGrassBlock {
 		return true;
 	}
 	
+	/*
 	@Override
 	public boolean isValidGround(BlockState state, IBlockReader worldIn, BlockPos pos) {
 		
 		return isAllowed(state, worldIn, pos) ; 
 		
 	}
-
+	 */
 	
 	public boolean isAllowed(BlockState state, IBlockReader worldIn, BlockPos pos) {
 			

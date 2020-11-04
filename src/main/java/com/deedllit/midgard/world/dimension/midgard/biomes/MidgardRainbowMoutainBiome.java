@@ -1,10 +1,17 @@
 package com.deedllit.midgard.world.dimension.midgard.biomes;
 
+import com.deedllit.midgard.world.dimension.vanilla.config.VanillaDefaultBiomeFeatures;
 import com.deedllit.mythologycraft.world.biome.MythologycraftBiome;
 import com.deedllit.mythologycraft.world.biome.MythologycraftClimates;
 import com.deedllit.yggdrasil.init.SurfaceBuilderInit;
 
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.DefaultBiomeFeatures;
+import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.structure.MineshaftConfig;
+import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 
 public class MidgardRainbowMoutainBiome extends MythologycraftBiome {
@@ -21,11 +28,40 @@ public class MidgardRainbowMoutainBiome extends MythologycraftBiome {
 	    		  .waterFogColor(329011)
 	    		  .parent((String) null ));
 	      
-	      this.canSpawnInBiome = false ; 
-	      this.addWeight(MythologycraftClimates.SUBTROPICAL, 5);
-	      this.setBeachBiome((Biome)null);	 
-	      this.setRiverBiome((Biome)null);	 
-	      
+			this.addStructure(Feature.MINESHAFT.withConfiguration(new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL)));
+
+		    DefaultBiomeFeatures.addCarvers(this);
+		    DefaultBiomeFeatures.addStructures(this);
+		    DefaultBiomeFeatures.addLakes(this);
+		    DefaultBiomeFeatures.addMonsterRooms(this);
+		    DefaultBiomeFeatures.addStoneVariants(this);
+		    DefaultBiomeFeatures.addOres(this);
+		    DefaultBiomeFeatures.addExtraGoldOre(this);
+		    DefaultBiomeFeatures.addSedimentDisks(this);
+		    
+		    VanillaDefaultBiomeFeatures.addGrassAndDeadBushes(this);
+
+		    DefaultBiomeFeatures.addMushrooms(this);
+		    DefaultBiomeFeatures.addReedsPumpkinsCactus(this);
+		    DefaultBiomeFeatures.addSprings(this);
+		    DefaultBiomeFeatures.addFreezeTopLayer(this);
+		    
+		    this.addSpawn(EntityClassification.AMBIENT, new Biome.SpawnListEntry(EntityType.BAT, 10, 8, 8));
+		    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SPIDER, 100, 4, 4));
+		    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIE, 95, 4, 4));
+		    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ZOMBIE_VILLAGER, 5, 1, 1));
+		    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SKELETON, 100, 4, 4));
+		    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.CREEPER, 100, 4, 4));
+		    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 100, 4, 4));
+		    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
+		    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
+
+
+			this.canSpawnInBiome = false;
+			this.addWeight(MythologycraftClimates.SUBTROPICAL, 5);
+			this.setBeachBiome((Biome) null);
+			this.setRiverBiome((Biome) null);
+
 		}
 
 }

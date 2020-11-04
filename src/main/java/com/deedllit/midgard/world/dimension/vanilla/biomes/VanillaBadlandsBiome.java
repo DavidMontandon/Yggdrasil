@@ -1,9 +1,12 @@
 package com.deedllit.midgard.world.dimension.vanilla.biomes;
 
 import com.deedllit.midgard.world.dimension.vanilla.config.VanillaDefaultBiomeFeatures;
+import com.deedllit.mythologycraft.world.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.init.BiomeInit;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.Feature;
@@ -47,9 +50,9 @@ public class VanillaBadlandsBiome extends Biome {
 	    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.SLIME, 100, 4, 4));
 	    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 	    this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
-
+	    
 	}
-
+	
 	@OnlyIn(Dist.CLIENT)
 	public int getFoliageColor() {
 	    return 10387789;

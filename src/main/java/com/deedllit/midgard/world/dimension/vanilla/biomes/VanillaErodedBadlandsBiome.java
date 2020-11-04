@@ -1,5 +1,7 @@
 package com.deedllit.midgard.world.dimension.vanilla.biomes;
 
+import com.deedllit.midgard.world.dimension.vanilla.config.VanillaDefaultBiomeFeatures;
+
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.Biome;
@@ -29,7 +31,9 @@ public class VanillaErodedBadlandsBiome extends Biome {
 		DefaultBiomeFeatures.addOres(this);
 		DefaultBiomeFeatures.addExtraGoldOre(this);
 		DefaultBiomeFeatures.addSedimentDisks(this);
-		DefaultBiomeFeatures.addGrassAndDeadBushes(this);
+
+		VanillaDefaultBiomeFeatures.addGrassAndDeadBushes(this);
+		
 		DefaultBiomeFeatures.addMushrooms(this);
 		DefaultBiomeFeatures.addReedsPumpkinsCactus(this);
 		DefaultBiomeFeatures.addSprings(this);
