@@ -1,7 +1,10 @@
 package com.deedllit.midgard.world.dimension.vanilla.biomes;
 
+import com.deedllit.yggdrasil.Yggdrasil;
+
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.DefaultBiomeFeatures;
 import net.minecraft.world.gen.feature.Feature;
@@ -9,6 +12,7 @@ import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftConfig;
 import net.minecraft.world.gen.feature.structure.MineshaftStructure;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class VanillaSnowyTundraBiome extends Biome {
 	public VanillaSnowyTundraBiome() {
@@ -51,4 +55,10 @@ public class VanillaSnowyTundraBiome extends Biome {
 		this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.ENDERMAN, 10, 1, 4));
 		this.addSpawn(EntityClassification.MONSTER, new Biome.SpawnListEntry(EntityType.WITCH, 5, 1, 1));
 	}
+	
+	@Override
+	public Biome getRiver() {
+		return ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":vanilla_frozen_river_biome"));
+	}
+	
 }

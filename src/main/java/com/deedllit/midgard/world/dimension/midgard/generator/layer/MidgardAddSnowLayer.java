@@ -12,9 +12,9 @@ public enum MidgardAddSnowLayer implements IC1Transformer {
 		} else {
 			int i = context.random(6);
 			if (i == 0) {
-				return 4 ;
+				return MidgardLayerUtil.FOREST ;
 			} else {
-				return i == 1 ? 4 : 1 ;
+				return i == 1 ? MidgardLayerUtil.FOREST : MidgardLayerUtil.PLAINS ;
 			}
 		}
 	}

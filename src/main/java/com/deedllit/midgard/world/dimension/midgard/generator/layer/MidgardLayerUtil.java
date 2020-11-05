@@ -32,9 +32,14 @@ public class MidgardLayerUtil {
 
 	public static final int RIVER = Registry.BIOME.getId(BiomeInit.VANILLA_RIVER_BIOME.get());
 
+	//1
 	public static final int PLAINS = Registry.BIOME.getId(BiomeInit.VANILLA_PLAINS_BIOME.get());
-	public static final int FOREST = Registry.BIOME.getId(BiomeInit.VANILLA_FOREST_BIOME.get());
+	//2
+	public static final int DESERT = Registry.BIOME.getId(BiomeInit.VANILLA_DESERT_BIOME.get());
+	//3
 	public static final int MOUTAINS = Registry.BIOME.getId(BiomeInit.VANILLA_MOUNTAINS_BIOME.get());
+	//4
+	public static final int FOREST = Registry.BIOME.getId(BiomeInit.VANILLA_FOREST_BIOME.get());
 
 	public static final int FROZEN_RIVER = Registry.BIOME.getId(BiomeInit.VANILLA_FROZEN_RIVER_BIOME.get());
 	public static final int SNOWY_TUNDRA = Registry.BIOME.getId(Biomes.SNOWY_TUNDRA);

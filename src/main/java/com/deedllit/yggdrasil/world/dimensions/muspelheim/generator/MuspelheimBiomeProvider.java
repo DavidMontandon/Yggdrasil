@@ -7,6 +7,7 @@ import com.deedllit.mythologycraft.world.gen.DefaultBiomesFactory;
 import com.deedllit.mythologycraft.world.layer.MythologycraftBiomeLayer;
 import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.init.BiomeInit;
+import com.deedllit.yggdrasil.world.dimensions.muspelheim.generator.layer.*;
 import com.google.common.collect.ImmutableSet;
 
 import net.minecraft.util.ResourceLocation;
@@ -20,18 +21,10 @@ import net.minecraft.world.gen.INoiseRandom;
 import net.minecraft.world.gen.LazyAreaLayerContext;
 import net.minecraft.world.gen.area.IAreaFactory;
 import net.minecraft.world.gen.area.LazyArea;
-import net.minecraft.world.gen.layer.AddBambooForestLayer;
-import net.minecraft.world.gen.layer.AddIslandLayer;
-import net.minecraft.world.gen.layer.AddMushroomIslandLayer;
-import net.minecraft.world.gen.layer.DeepOceanLayer;
-import net.minecraft.world.gen.layer.IslandLayer;
+import net.minecraft.world.gen.layer.EdgeLayer;
 import net.minecraft.world.gen.layer.Layer;
-import net.minecraft.world.gen.layer.LayerUtil;
-import net.minecraft.world.gen.layer.RareBiomeLayer;
-import net.minecraft.world.gen.layer.RemoveTooMuchOceanLayer;
-import net.minecraft.world.gen.layer.RiverLayer;
-import net.minecraft.world.gen.layer.SmoothLayer;
-import net.minecraft.world.gen.layer.StartRiverLayer;
+
+
 import net.minecraft.world.gen.layer.ZoomLayer;
 import net.minecraft.world.gen.layer.traits.IC0Transformer;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -55,7 +48,7 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 			BiomeInit.MUSPELHEIM_PLAINS.get(), 
 			BiomeInit.MUSPELHEIM_ASH_PLAINS.get(), 
 			BiomeInit.MUSPELHEIM_CLIFF_BIOME.get(), 
-			BiomeInit.MUSPELHEIM_OCEAN_BIOME.get(), 
+			BiomeInit.MUSPELHEIM_OCEAN_BIOME.get(),
 			BiomeInit.MUSPELHEIM_DEEP_OCEAN_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_VOLCANO_BIOME.get(),
 			BiomeInit.MUSPELHEIM_RIVER_BIOME.get(),
@@ -68,7 +61,9 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 	public MuspelheimBiomeProvider(World world) {
 		super(biomeList);
 		
-		Layer[] aLayer = DefaultBiomesFactory.getDefaultBiomesFactory(world.getSeed(), dimensionBiomes, 8, 1) ; 
+		//Layer[] aLayer = DefaultBiomesFactory.getDefaultBiomesFactory(world.getSeed(), dimensionBiomes, 8, 1) ; 
+		
+		Layer[] aLayer = buildWorld(world.getSeed()) ;
 		
 		this.genBiomes = aLayer[0];
 		this.biomes = dimensionBiomes;
@@ -81,88 +76,28 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
         int biomeSize = 4;
         int riverSize = 1;
 		
-
-        biomeSize = LayerUtil.getModdedBiomeSize(WorldType.DEFAULT, biomeSize);
-
-        
-        IAreaFactory<LazyArea> landSeaFactory = IslandLayer.INSTANCE.apply(contextFactory.apply(1L));
-
-		//INIT
-		landSeaFactory = ZoomLayer.FUZZY.apply(contextFactory.apply(2000L), landSeaFactory);
-        landSeaFactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(1L), landSeaFactory);
-        landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2001L), landSeaFactory);
-        landSeaFactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
-        landSeaFactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(50L), landSeaFactory);
-        landSeaFactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(70L), landSeaFactory);
-        landSeaFactory = RemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), landSeaFactory);
-        landSeaFactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), landSeaFactory);
-        landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), landSeaFactory);
-        landSeaFactory = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), landSeaFactory);
-        landSeaFactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
-        landSeaFactory = AddMushroomIslandLayer.INSTANCE.apply(contextFactory.apply(5L), landSeaFactory);
-        landSeaFactory = DeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
-
-        //ISLAND AND OCEAN
-        landSeaFactory = AddMushroomIslandLayer.INSTANCE.apply(contextFactory.apply(5L), landSeaFactory);
-        landSeaFactory = DeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), landSeaFactory);
-
-        
-        //ALLOCATE BIOME
-		IAreaFactory<LazyArea> biomesFactory = (new BiomeLayerUtils()).apply(contextFactory.apply(200), landSeaFactory);
-
-		//SET RIVER AND SUB BIOME 
-        IAreaFactory<LazyArea> riverAndSubBiomesInitFactory = StartRiverLayer.INSTANCE.apply(contextFactory.apply(100L), landSeaFactory);
-        riverAndSubBiomesInitFactory = LayerUtil.repeat(1000L, ZoomLayer.NORMAL, riverAndSubBiomesInitFactory, 2, contextFactory);
-        IAreaFactory<LazyArea> riversInitFactory = LayerUtil.repeat(1000L, ZoomLayer.NORMAL, riverAndSubBiomesInitFactory, riverSize, contextFactory);
-        riversInitFactory = RiverLayer.INSTANCE.apply(contextFactory.apply(1L), riversInitFactory);
-        riversInitFactory = SmoothLayer.INSTANCE.apply(contextFactory.apply(1000L), riversInitFactory);
-
-        
-        //MIX BIOMES
-        biomesFactory = RareBiomeLayer.INSTANCE.apply(contextFactory.apply(1001L), biomesFactory);
-
+        IAreaFactory<LazyArea> earthSea = MuspelheimIslandLayer.INSTANCE.apply(contextFactory.apply(1L));
+		earthSea = ZoomLayer.FUZZY.apply(contextFactory.apply(2000L), earthSea);
+		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(1L), earthSea);
+		earthSea = ZoomLayer.NORMAL.apply(contextFactory.apply(2001L), earthSea);
+		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), earthSea);
+		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(50L), earthSea);
+		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(70L), earthSea);
+		earthSea = MuspelheimRemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), earthSea);
 		
-        for (int i = 0; i < biomeSize; ++i)
-        {
-            biomesFactory = ZoomLayer.NORMAL.apply(contextFactory.apply((long)(1000 + i)), biomesFactory);
-            if (i == 0) 
-            	biomesFactory = AddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), biomesFactory);
-        }
+		IAreaFactory<LazyArea> oceans = MuspelheimOceanLayer.INSTANCE.apply(contextFactory.apply(2L));
+		oceans = MuspelheimLayerUtil.repeat(2001L, ZoomLayer.NORMAL, oceans, 6, contextFactory);
 		
-        biomesFactory = SmoothLayer.INSTANCE.apply(contextFactory.apply(1000L), biomesFactory);
+		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), earthSea);
+		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), earthSea);
+		earthSea = MuspelheimEdgeLayer.CoolWarm.INSTANCE.apply(contextFactory.apply(2L), earthSea);
+		earthSea = MuspelheimEdgeLayer.HeatIce.INSTANCE.apply(contextFactory.apply(2L), earthSea);
+		earthSea = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), earthSea);
+		earthSea = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), earthSea);
+		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(4L), earthSea);
 
-        biomesFactory = AddBambooForestLayer.INSTANCE.apply(contextFactory.apply(1001L), biomesFactory);
-        biomesFactory = LayerUtil.repeat(1000L, ZoomLayer.NORMAL, biomesFactory, 2, contextFactory);
-		
-                
-        
-        /*
-        IAreaFactory<LazyArea> riverAndSubBiomesInitFactory = StartRiverLayer.INSTANCE.apply(contextFactory.apply(100L), factory);
-        riverAndSubBiomesInitFactory = LayerUtil.repeat(1000L, ZoomLayer.NORMAL, riverAndSubBiomesInitFactory, 2, contextFactory);
-        
-        IAreaFactory<LazyArea> riversInitFactory = LayerUtil.repeat(1000L, ZoomLayer.NORMAL, riverAndSubBiomesInitFactory, 4 , contextFactory);
-        riversInitFactory = RiverLayer.INSTANCE.apply(contextFactory.apply(1L), riversInitFactory);
-        riversInitFactory = SmoothLayer.INSTANCE.apply(contextFactory.apply(1000L), riversInitFactory);
-
-        IAreaFactory<LazyArea> biomesFactory = createBiomeFactory(landSeaFactory, contextFactory);
-        biomesFactory = RareBiomeLayer.INSTANCE.apply(contextFactory.apply(1001L), biomesFactory);
-
-		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1000), biomeLayer);
-		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1001), biomeLayer);
-		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1002), biomeLayer);
-		biomeLayer = AddIslandLayer.INSTANCE.apply(contextFactory.apply(1L), biomeLayer);
-		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1003), biomeLayer);
-		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1004), biomeLayer);
-		biomeLayer = ZoomLayer.NORMAL.apply(contextFactory.apply(1005), biomeLayer);
-		biomeLayer = AddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), biomeLayer);
-		
-		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), biomesFactory);
-		return new Layer[]{new Layer(biomesFactory), new Layer(voronoizoom)};
-
-		*/
-		
-		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), biomesFactory);
-		return new Layer[]{new Layer(biomesFactory), new Layer(voronoizoom)};
+		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), earthSea);
+		return new Layer[]{new Layer(earthSea), new Layer(voronoizoom)};
 	}
 	
 

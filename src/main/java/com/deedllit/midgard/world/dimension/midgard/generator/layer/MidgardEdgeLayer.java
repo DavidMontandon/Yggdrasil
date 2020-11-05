@@ -9,8 +9,12 @@ public class MidgardEdgeLayer {
 		INSTANCE;
 
 		public int apply(INoiseRandom context, int north, int west, int south, int east, int center) {
-			return center != 1 || north != 3 && west != 3 && east != 3 && south != 3 && north != 4 && west != 4
-					&& east != 4 && south != 4 ? center : 2;
+			return center != MidgardLayerUtil.PLAINS
+					|| north != MidgardLayerUtil.MOUTAINS && west != MidgardLayerUtil.MOUTAINS
+							&& east != MidgardLayerUtil.MOUTAINS && south != MidgardLayerUtil.MOUTAINS
+							&& north != MidgardLayerUtil.FOREST && west != MidgardLayerUtil.FOREST
+							&& east != MidgardLayerUtil.FOREST && south != MidgardLayerUtil.FOREST ? center
+									: MidgardLayerUtil.DESERT;
 		}
 	}
 
@@ -18,8 +22,12 @@ public class MidgardEdgeLayer {
 		INSTANCE;
 
 		public int apply(INoiseRandom context, int north, int west, int south, int east, int center) {
-			return center != 4 || north != 1 && west != 1 && east != 1 && south != 1 && north != 2 && west != 2
-					&& east != 2 && south != 2 ? center : 3;
+			return center != MidgardLayerUtil.FOREST
+					|| north != MidgardLayerUtil.PLAINS && west != MidgardLayerUtil.PLAINS
+							&& east != MidgardLayerUtil.PLAINS && south != MidgardLayerUtil.PLAINS
+							&& north != MidgardLayerUtil.DESERT && west != MidgardLayerUtil.DESERT
+							&& east != MidgardLayerUtil.DESERT && south != MidgardLayerUtil.DESERT ? center
+									: MidgardLayerUtil.MOUTAINS;
 		}
 	}
 
