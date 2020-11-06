@@ -3,6 +3,9 @@ package com.deedllit.yggdrasil.world.dimensions.muspelheim.generator;
 import java.util.Set;
 import java.util.function.LongFunction;
 
+import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardAddSnowLayer;
+import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardDeepOceanLayer;
+import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardEdgeLayer;
 import com.deedllit.mythologycraft.world.gen.DefaultBiomesFactory;
 import com.deedllit.mythologycraft.world.layer.MythologycraftBiomeLayer;
 import com.deedllit.yggdrasil.Yggdrasil;
@@ -63,14 +66,14 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 		
 		//Layer[] aLayer = DefaultBiomesFactory.getDefaultBiomesFactory(world.getSeed(), dimensionBiomes, 8, 1) ; 
 		
-		Layer[] aLayer = buildWorld(world.getSeed()) ;
-		
-		this.genBiomes = aLayer[0];
+		//Layer[] aLayer = buildWorld(world.getSeed()) ;
+		//this.genBiomes = aLayer[0];
+		this.genBiomes = buildWorld(world.getSeed()) ;
 		this.biomes = dimensionBiomes;
 		
 	}
 
-	private Layer[] buildWorld(long seed) {
+	private Layer buildWorld(long seed) {
 		LongFunction<IExtendedNoiseRandom<LazyArea>> contextFactory = l -> new LazyAreaLayerContext(15, seed, l);		
 		
         int biomeSize = 4;
@@ -84,20 +87,44 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(50L), earthSea);
 		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(70L), earthSea);
 		earthSea = MuspelheimRemoveTooMuchOceanLayer.INSTANCE.apply(contextFactory.apply(2L), earthSea);
-		
+		earthSea = MuspelheimDeepOceanLayer.INSTANCE.apply(contextFactory.apply(4L), earthSea);
+
+		earthSea = MuspelheimAddForestLayer.INSTANCE.apply(contextFactory.apply(2L), earthSea);
+		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), earthSea);
+		earthSea = MuspelheimEdgeLayer.Warm.INSTANCE.apply(contextFactory.apply(2L), earthSea);
+		earthSea = MuspelheimEdgeLayer.Heat.INSTANCE.apply(contextFactory.apply(2L), earthSea);
+
+		/*
 		IAreaFactory<LazyArea> oceans = MuspelheimOceanLayer.INSTANCE.apply(contextFactory.apply(2L));
 		oceans = MuspelheimLayerUtil.repeat(2001L, ZoomLayer.NORMAL, oceans, 6, contextFactory);
+		 */
+
+	    int i = biomeSize ;
+	    
+	    
+	    for(int k = 0; k < i; ++k) {
+	    	earthSea = ZoomLayer.NORMAL.apply((IExtendedNoiseRandom)contextFactory.apply((long)(1000 + k)), earthSea);
+	    	if (k == 0) {
+	    		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(3L), earthSea);
+	    	}
+	
+	    	/*
+	    	if (k == 1 || i == 1) {
+	    		biomes = MidgardShoreLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), biomes);
+	    	}
+	    	*/
+	    }
+
 		
 		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(2L), earthSea);
 		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(3L), earthSea);
-		earthSea = MuspelheimEdgeLayer.CoolWarm.INSTANCE.apply(contextFactory.apply(2L), earthSea);
-		earthSea = MuspelheimEdgeLayer.HeatIce.INSTANCE.apply(contextFactory.apply(2L), earthSea);
 		earthSea = ZoomLayer.NORMAL.apply(contextFactory.apply(2002L), earthSea);
 		earthSea = ZoomLayer.NORMAL.apply(contextFactory.apply(2003L), earthSea);
-		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(4L), earthSea);
-
-		IAreaFactory<LazyArea> voronoizoom = ZoomLayer.FUZZY.apply(contextFactory.apply(10), earthSea);
-		return new Layer[]{new Layer(earthSea), new Layer(voronoizoom)};
+		//earthSea = MuspelheimAddIslandLayer.INSTANCE.apply(contextFactory.apply(4L), earthSea);
+				
+		
+		return new Layer(earthSea) ; 
+		
 	}
 	
 

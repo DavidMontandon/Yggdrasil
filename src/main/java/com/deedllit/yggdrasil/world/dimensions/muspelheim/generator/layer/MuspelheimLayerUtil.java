@@ -28,7 +28,7 @@ public class MuspelheimLayerUtil {
 	public static final int PLAINS = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_ASH_PLAINS.get());
 	public static final int MOUTAINS = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_CLIFF_BIOME.get());
 	public static final int FOREST = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_PLAINS.get());
-	public static final int DESERT = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_VOLCANO_BIOME.get());
+	public static final int VOLCANO = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_VOLCANO_BIOME.get());
 	
 	
 	
