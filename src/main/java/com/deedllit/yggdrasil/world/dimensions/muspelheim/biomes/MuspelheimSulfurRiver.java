@@ -9,36 +9,32 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraftforge.registries.ForgeRegistries;
 
-public class MuspelheimBeachBiome extends Biome {
+public class MuspelheimSulfurRiver extends Biome {
 
-	public MuspelheimBeachBiome() {
+	public MuspelheimSulfurRiver() {
 		super(new Biome.Builder()		
-			.precipitation(RainType.NONE)
-			.waterColor(0x906B9F)
-			.waterFogColor(0x6E5651)
-			.surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_SULFUR_GRAVEL)
-			.category(Category.BEACH)
-			.depth(0.2f)
-			.scale(0.1f)
-			.temperature(1.0f)
-			.downfall(0.0f)
-			.parent(null));
-				
+				.precipitation(RainType.NONE)
+				.waterColor(0x906B9F)
+				.waterFogColor(0x6E5651)
+				.surfaceBuilder(SurfaceBuilder.DEFAULT, YggdrasilSurfaceBuilderConfigLists.MUSPELHEIM_ASH_SULFUR_GRAVEL)
+				.category(Category.RIVER)
+				.downfall(0.0f)
+				.scale(0.1f)
+				.temperature(2.0f)
+				.depth(-1.0f)
+				.parent(null)) ;
+		
 		MuspelheimDefaultBiomeFeatures.addCarver(this);
 		MuspelheimDefaultBiomeFeatures.addLakes(this);
 		MuspelheimDefaultBiomeFeatures.addSprings(this);
 		MuspelheimDefaultBiomeFeatures.addOres(this);
 		MuspelheimDefaultBiomeFeatures.addSedimentDisks(this);
-		MuspelheimDefaultBiomeFeatures.addStructures(this);
-		MuspelheimDefaultBiomeFeatures.addSickTrees(this); 
-		MuspelheimDefaultBiomeFeatures.addPlants(this) ; 
-		MuspelheimDefaultBiomeFeatures.addDeadBushes(this) ; 
-
 	}
-	
+
 	@Override
 	public Biome getRiver() {
-		return ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_river")) ; 
+		return ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_sulfur_river")) ; 
 	}
+
 	
 }

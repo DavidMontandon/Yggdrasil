@@ -1,6 +1,7 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.generator.layer;
 
 import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardLayerUtil;
+import com.deedllit.yggdrasil.Yggdrasil;
 
 import net.minecraft.world.gen.INoiseRandom;
 import net.minecraft.world.gen.layer.traits.ICastleTransformer;
@@ -28,6 +29,7 @@ public enum MuspelheimDeepOceanLayer implements ICastleTransformer {
 			}
 
 			if (i > 3) {
+				Yggdrasil.LOGGER.info(" MuspelheimDeepOceanLayer --> DEEP OCEAN ") ;
 				return MuspelheimLayerUtil.DEEP_OCEAN;
 			
 			}

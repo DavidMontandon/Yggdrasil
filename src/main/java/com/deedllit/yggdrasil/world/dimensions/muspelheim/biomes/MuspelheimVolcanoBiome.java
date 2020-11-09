@@ -1,9 +1,12 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes;
 
+import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class MuspelheimVolcanoBiome extends Biome { 
 	
@@ -29,4 +32,10 @@ public class MuspelheimVolcanoBiome extends Biome {
 
 	}
 
+	@Override
+	public Biome getRiver() {
+		return ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_river")) ; 
+	}
+
+	
 }

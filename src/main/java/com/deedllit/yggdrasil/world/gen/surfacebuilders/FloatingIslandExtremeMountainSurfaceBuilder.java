@@ -12,9 +12,9 @@ import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilderConfig;
 
-public class FloatingIslandMountainSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
+public class FloatingIslandExtremeMountainSurfaceBuilder extends SurfaceBuilder<SurfaceBuilderConfig> {
 
-	public FloatingIslandMountainSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> p_i51305_1_) {
+	public FloatingIslandExtremeMountainSurfaceBuilder(Function<Dynamic<?>, ? extends SurfaceBuilderConfig> p_i51305_1_) {
 		super(p_i51305_1_);
 	}
 
@@ -23,7 +23,7 @@ public class FloatingIslandMountainSurfaceBuilder extends SurfaceBuilder<Surface
 			BlockState defaultBlock, BlockState defaultFluid, int seaLevel, long seed, SurfaceBuilderConfig config) {
 		
 		FloatingIslandMoutainSubBuilder floatingIsland = new FloatingIslandMoutainSubBuilder() ;
-		floatingIsland.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed, config, 0.15, false);
+		floatingIsland.buildSurface(random, chunkIn, biomeIn, x, z, startHeight, noise, defaultBlock, defaultFluid, seaLevel, seed, config, 0.07, false);
 
 		
 	}

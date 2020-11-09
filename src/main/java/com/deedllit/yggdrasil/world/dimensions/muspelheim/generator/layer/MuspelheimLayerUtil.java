@@ -24,12 +24,14 @@ public class MuspelheimLayerUtil {
 	public static final int DEEP_OCEAN = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_DEEP_OCEAN_BIOME.get());
 
 	public static final int RIVER = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_RIVER_BIOME.get());
+	public static final int SULFUR_RIVER = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_SULFUR_RIVER_BIOME.get());
 
-	public static final int PLAINS = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_ASH_PLAINS.get());
+	public static final int PLAINS = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_ASH_PLAINS_BIOME.get());
 	public static final int MOUTAINS = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_CLIFF_BIOME.get());
-	public static final int FOREST = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_PLAINS.get());
+	public static final int FOREST = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_PLAINS_BIOME.get());
 	public static final int VOLCANO = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_VOLCANO_BIOME.get());
 	
+	public static final int ACIDURIC_LAKE = Registry.BIOME.getId(BiomeInit.MUSPELHEIM_ACIDURIC_LAKE_BIOME.get());
 	
 	
 	public static IAreaFactory<LazyArea> repeat(long seed, IAreaTransformer1 parent, IAreaFactory<LazyArea> targetFactory,

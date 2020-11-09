@@ -1,14 +1,17 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes;
 
+import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.Category;
 import net.minecraft.world.biome.Biome.RainType;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class MuspelheimExtremeHillBiome extends Biome {
 
@@ -36,6 +39,10 @@ public class MuspelheimExtremeHillBiome extends Biome {
 		
 	}
 	
+	@Override
+	public Biome getRiver() {
+		return ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_river")) ; 
+	}
 
 
 }

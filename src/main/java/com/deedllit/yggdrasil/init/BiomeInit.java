@@ -35,7 +35,7 @@ public class BiomeInit {
  * OVERWORLD
  */
 	
-
+	
 	public static final RegistryObject<Biome> VANILLA_BADLANDS_BIOME = 
 			BIOMES.register("vanilla_badlands_biome", () -> new VanillaBadlandsBiome());
 
@@ -242,12 +242,29 @@ public class BiomeInit {
 	 * ASGARD
 	 */
 
+	public static final RegistryObject<Biome> ASGARD_SNOWY_TAIGA_EXTREME_MOUNTAIN_BIOME = BIOMES
+			.register("asgard_snowy_taiga_extreme_mountain_biome", () -> new AsgardSnowyTaigaExtremeMountainsBiome());
+
+	public static final RegistryObject<Biome> ASGARD_SNOWY_TAIGA_HILLS_BIOME = BIOMES
+			.register("asgard_snowy_taiga_hills_biome", () -> new AsgardSnowyTaigaHillsBiome());
+
+	public static final RegistryObject<Biome> ASGARD_EXTREME_MOUTAINS_BIOME = BIOMES
+			.register("asgard_extreme_moutains_biome", () -> new AsgardExtremeMoutainBiome());
+
+	public static final RegistryObject<Biome> ASGARD_SNOWY_TAIGA_MOUNTAIN_BIOME = BIOMES
+			.register("asgard_snowy_taiga_mountain_biome", () -> new AsgardSnowyTaigaMountainsBiome());
 	
+	public static final RegistryObject<Biome> ASGARD_SNOWY_TAIGA_BIOME = BIOMES
+			.register("asgard_snowy_taiga_biome", () -> new AsgardSnowyTaigaBiome());
+
 	public static final RegistryObject<Biome> ASGARD_SMALL_ISLANDS_BIOME = BIOMES
 			.register("asgard_small_islands_biome",
 					() -> new AsgardSmallIslandsBiome());
 	
-	
+	public static final RegistryObject<Biome> ASGARD_SNOWY_TUNDRA_BIOME = BIOMES
+			.register("asgard_snowy_tundra_biome",
+			() -> new AsgardSnowyTundraBiome());
+
 	public static final RegistryObject<Biome> ASGARD_LAKES_BIOME = BIOMES
 		.register("asgard_lakes_biome",
 				() -> new AsgardLakesBiome());
@@ -362,11 +379,11 @@ public class BiomeInit {
 			.register("muspelheim_extreme_hill",
 					() -> new MuspelheimExtremeHillBiome(null));
 
-	public static final RegistryObject<Biome> MUSPELHEIM_PLAINS = BIOMES
+	public static final RegistryObject<Biome> MUSPELHEIM_PLAINS_BIOME = BIOMES
 			.register("muspelheim_plains",
 					() -> new MuspelheimPlainsBiome(null));
 	
-	public static final RegistryObject<Biome> MUSPELHEIM_ASH_PLAINS = BIOMES
+	public static final RegistryObject<Biome> MUSPELHEIM_ASH_PLAINS_BIOME = BIOMES
 			.register("muspelheim_ash_plains",
 					() -> new MuspelheimAshPlainsBiome(null));
 		
@@ -389,11 +406,22 @@ public class BiomeInit {
 	public static final RegistryObject<Biome> MUSPELHEIM_RIVER_BIOME = BIOMES
 			.register("muspelheim_river",
 					() -> new MuspelheimFireRiver());
+
+	public static final RegistryObject<Biome> MUSPELHEIM_SULFUR_RIVER_BIOME = BIOMES
+			.register("muspelheim_sulfur_river",
+					() -> new MuspelheimSulfurRiver());
 	
 	public static final RegistryObject<Biome> MUSPELHEIM_BEACH_BIOME = BIOMES
 			.register("muspelheim_beach",
 					() -> new MuspelheimBeachBiome());
 	
+	public static final RegistryObject<Biome> MUSPELHEIM_ACIDURIC_LAKE_BIOME = BIOMES
+			.register("muspelheim_aciduric_lake_biome",
+					() -> new MuspelheimAciduricLakeBiome());
+
+	public static final RegistryObject<Biome> MUSPELHEIM_ACIDURIC_BEACH_BIOME = BIOMES
+			.register("muspelheim_aciduric_beach_biome",
+					() -> new MuspelheimAciduricBeachBiome());
 	
 /*
  * SVARTALVHEIM
@@ -614,6 +642,21 @@ public class BiomeInit {
         BiomeDictionary.addTypes(MIDGARD_TROPICAL_ISLAND_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
         BiomeDictionary.addTypes(MIDGARD_VOLCANIC_ISLAND_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
 
+        
+        
+        BiomeDictionary.addTypes(MUSPELHEIM_ASH_PLAINS_BIOME.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_PLAINS_BIOME.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.DRY, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_CLIFF_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_DEEP_OCEAN_BIOME.get(), BiomeDictionary.Type.OCEAN, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_VOLCANO_BIOME.get(), BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_BEACH_BIOME.get(), BiomeDictionary.Type.BEACH, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_RIVER_BIOME.get(), BiomeDictionary.Type.RIVER, BiomeDictionary.Type.HOT, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_ACIDURIC_BEACH_BIOME.get(), BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.BEACH, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+        BiomeDictionary.addTypes(MUSPELHEIM_ACIDURIC_LAKE_BIOME.get(), BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.COLD, BiomeDictionary.Type.OVERWORLD);
+
+        
+        
         Yggdrasil.LOGGER.info("Yggdrasil_Debug = BiomeInit.registerBiomes() =");
         
 

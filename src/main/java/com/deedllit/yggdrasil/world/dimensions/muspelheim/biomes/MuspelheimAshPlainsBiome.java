@@ -1,12 +1,15 @@
 package com.deedllit.yggdrasil.world.dimensions.muspelheim.biomes;
 
 import com.deedllit.mythologycraft.world.biome.MythologycraftBiome;
+import com.deedllit.yggdrasil.Yggdrasil;
 import com.deedllit.yggdrasil.world.dimensions.muspelheim.config.MuspelheimDefaultBiomeFeatures;
 import com.deedllit.yggdrasil.world.gen.YggdrasilSurfaceBuilderConfigLists;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.carver.ConfiguredCarver;
 import net.minecraft.world.gen.surfacebuilders.SurfaceBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.world.gen.GenerationStage;
 
 public class MuspelheimAshPlainsBiome extends MythologycraftBiome {
@@ -36,5 +39,11 @@ public class MuspelheimAshPlainsBiome extends MythologycraftBiome {
 		MuspelheimDefaultBiomeFeatures.addDeadBushes(this) ; 
 
 	}
+
+	@Override
+	public Biome getRiver() {
+		return ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_river")) ; 
+	}
+	
 	
 }

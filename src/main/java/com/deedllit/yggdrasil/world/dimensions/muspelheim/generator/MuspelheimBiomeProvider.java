@@ -6,6 +6,7 @@ import java.util.function.LongFunction;
 import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardAddSnowLayer;
 import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardDeepOceanLayer;
 import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardEdgeLayer;
+import com.deedllit.midgard.world.dimension.midgard.generator.layer.MidgardStartRiverLayer;
 import com.deedllit.mythologycraft.world.gen.DefaultBiomesFactory;
 import com.deedllit.mythologycraft.world.layer.MythologycraftBiomeLayer;
 import com.deedllit.yggdrasil.Yggdrasil;
@@ -43,19 +44,23 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_deep_ocean")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_volcano")),
 			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_river")),
-			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_beach"))
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_beach")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_aciduric_beach_biome")),
+			ForgeRegistries.BIOMES.getValue(new ResourceLocation(Yggdrasil.MOD_ID + ":muspelheim_aciduric_lake_biome"))
 			} ;
 
 	private static final Set<Biome> biomeList = ImmutableSet.of(
 			BiomeInit.MUSPELHEIM.get(), 
-			BiomeInit.MUSPELHEIM_PLAINS.get(), 
-			BiomeInit.MUSPELHEIM_ASH_PLAINS.get(), 
+			BiomeInit.MUSPELHEIM_PLAINS_BIOME.get(), 
+			BiomeInit.MUSPELHEIM_ASH_PLAINS_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_CLIFF_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_OCEAN_BIOME.get(),
 			BiomeInit.MUSPELHEIM_DEEP_OCEAN_BIOME.get(), 
 			BiomeInit.MUSPELHEIM_VOLCANO_BIOME.get(),
 			BiomeInit.MUSPELHEIM_RIVER_BIOME.get(),
-			BiomeInit.MUSPELHEIM_BEACH_BIOME.get()
+			BiomeInit.MUSPELHEIM_BEACH_BIOME.get(),
+			BiomeInit.MUSPELHEIM_ACIDURIC_BEACH_BIOME.get(),
+			BiomeInit.MUSPELHEIM_ACIDURIC_LAKE_BIOME.get()
 			);
 
 	private final Layer genBiomes;
@@ -100,19 +105,21 @@ public class MuspelheimBiomeProvider extends BiomeProvider {
 		 */
 
 	    int i = biomeSize ;
-	    
-	    
+	    //earthSea = MuspelheimRiverLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1L), earthSea);
+	    //earthSea = MuspelheimRiverMixLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(100L), earthSea);
+	    earthSea = MuspelheimRareBiomeLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1001L), earthSea);
+
 	    for(int k = 0; k < i; ++k) {
 	    	earthSea = ZoomLayer.NORMAL.apply((IExtendedNoiseRandom)contextFactory.apply((long)(1000 + k)), earthSea);
 	    	if (k == 0) {
 	    		earthSea = MuspelheimAddIslandLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(3L), earthSea);
 	    	}
 	
-	    	/*
+	    	
 	    	if (k == 1 || i == 1) {
-	    		biomes = MidgardShoreLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), biomes);
+	    		earthSea = MuspelheimShoreLayer.INSTANCE.apply((IExtendedNoiseRandom)contextFactory.apply(1000L), earthSea);
 	    	}
-	    	*/
+	    	
 	    }
 
 		

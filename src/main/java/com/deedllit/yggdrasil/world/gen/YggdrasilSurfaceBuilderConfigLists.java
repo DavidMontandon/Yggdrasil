@@ -17,10 +17,13 @@ public class YggdrasilSurfaceBuilderConfigLists {
 	public static final BlockState MUSPELHEIM_GRASS = BlockInit.MUSPELHEIM_GRASS.get().getDefaultState();
 	public static final BlockState MUSPELHEIM_ASH = BlockInit.MUSPELHEIM_ASH.get().getDefaultState();
 	public static final BlockState MAGMA_BLOCK = Blocks.MAGMA_BLOCK.getDefaultState();
+	public static final BlockState SULFUR_BLOCK = BlockInit.SULFUR_BLOCK.get().getDefaultState();
 	
 	public static SurfaceBuilderConfig STONE_STONE_STONE = new SurfaceBuilderConfig(STONE, STONE, STONE);
 	
+	public static SurfaceBuilderConfig MUSPELHEIM_GRASS_SULFUR_MAGMA = new SurfaceBuilderConfig(MUSPELHEIM_GRASS, SULFUR_BLOCK, MAGMA_BLOCK);
 	public static SurfaceBuilderConfig MUSPELHEIM_ASH_MAGMA_GRAVEL = new SurfaceBuilderConfig(MUSPELHEIM_ASH, MAGMA_BLOCK, GRAVEL);
+	public static SurfaceBuilderConfig MUSPELHEIM_ASH_SULFUR_GRAVEL = new SurfaceBuilderConfig(MUSPELHEIM_ASH, SULFUR_BLOCK, GRAVEL);
 	public static SurfaceBuilderConfig MUSPELHEIM_HOTROCK_COLDROCK_SAND = new SurfaceBuilderConfig(MUSPELHEIM_HOTROCK, MUSPELHEIM_COLDROCK, SAND);
 	public static SurfaceBuilderConfig MUSPELHEIM_GRASS_ASH_SAND = new SurfaceBuilderConfig(MUSPELHEIM_GRASS, MUSPELHEIM_ASH, SAND);
 	public static SurfaceBuilderConfig MUSPELHEIM_ASH_COLDROCK_SAND = new SurfaceBuilderConfig(MUSPELHEIM_ASH, MUSPELHEIM_COLDROCK, SAND);

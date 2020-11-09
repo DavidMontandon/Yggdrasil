@@ -10,12 +10,18 @@ public enum MuspelheimAddForestLayer implements IC1Transformer {
 		if (MuspelheimLayerUtil.isShallowOcean(value)) {
 			return value;
 		} else {
-			int i = context.random(6);
+			
+			return MuspelheimLayerUtil.ACIDURIC_LAKE ; 
+			
+			/*
+			int i = context.random(10);
 			if (i == 0) {
-				return MuspelheimLayerUtil.FOREST ;
+				return MuspelheimLayerUtil.ACIDURIC_LAKE ;
 			} else {
 				return i == 1 ? MuspelheimLayerUtil.FOREST : MuspelheimLayerUtil.PLAINS ;
 			}
+			*/
+			
 		}
 	}
 }
